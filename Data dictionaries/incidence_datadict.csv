@@ -1,0 +1,4 @@
+ColumnID,ColumnDescription,TopicArea
+"Age-Adjusted Incidence Rate - cases per 100,000","Number of new hospitalisations from stroke for those aged 75 and above divided by population at the county level  (age-adjusted to the 2000 US standard population and expressed as per 100,000 population in the year)",incidence
+Average Annual Count,Average number of stroke hospitalsiations for those aged 75 and above per year over the past 5 years from 2011 to 2015 at the county level,incidence
+Recent Trend,Overall trend in the incidence rate over the past 5 years from 2011 to 2015 at the county level,incidence

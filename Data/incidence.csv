@@ -1,0 +1,3142 @@
+County,FIPS,"Age-Adjusted Incidence Rate - cases per 100,000",Average Annual Count,Recent Trend
+"US (SEER+NPCR)(1,10)",0,62.7,214612,falling
+"Autauga County, Alabama(6,10)",1001,75.7,45,stable
+"Baldwin County, Alabama(6,10)",1003,67.3,168,stable
+"Barbour County, Alabama(6,10)",1005,75.5,27,stable
+"Bibb County, Alabama(6,10)",1007,87.3,25,stable
+"Blount County, Alabama(6,10)",1009,69.7,49,stable
+"Bullock County, Alabama(6,10)",1011,66.3,11,stable
+"Butler County, Alabama(6,10)",1013,59.2,19,stable
+"Calhoun County, Alabama(6,10)",1015,84.8,122,stable
+"Chambers County, Alabama(6,10)",1017,75.9,32,falling
+"Cherokee County, Alabama(6,10)",1019,83.4,34,stable
+"Chilton County, Alabama(6,10)",1021,74.4,37,stable
+"Choctaw County, Alabama(6,10)",1023,49.9,12,stable
+"Clarke County, Alabama(6,10)",1025,70.1,25,stable
+"Clay County, Alabama(6,10)",1027,83.4,14,stable
+"Cleburne County, Alabama(6,10)",1029,75.8,16,stable
+"Coffee County, Alabama(6,10)",1031,71.7,41,stable
+"Colbert County, Alabama(6,10)",1033,75.9,55,stable
+"Conecuh County, Alabama(6,10)",1035,73.8,12,stable
+"Coosa County, Alabama(6,10)",1037,83.6,16,stable
+"Covington County, Alabama(6,10)",1039,83.9,46,stable
+"Crenshaw County, Alabama(6,10)",1041,62.2,13,stable
+"Cullman County, Alabama(6,10)",1043,70.2,75,stable
+"Dale County, Alabama(6,10)",1045,77.7,46,stable
+"Dallas County, Alabama(6,10)",1047,76.9,41,stable
+"DeKalb County, Alabama(6,10)",1049,61.5,53,stable
+"Elmore County, Alabama(6,10)",1051,78.6,68,stable
+"Escambia County, Alabama(6,10)",1053,76.1,38,stable
+"Etowah County, Alabama(6,10)",1055,82.2,108,stable
+"Fayette County, Alabama(6,10)",1057,77.4,17,stable
+"Franklin County, Alabama(6,10)",1059,73.4,30,stable
+"Geneva County, Alabama(6,10)",1061,91.2,37,stable
+"Greene County, Alabama(6,10)",1063,88.6,12,stable
+"Hale County, Alabama(6,10)",1065,71.8,16,stable
+"Henry County, Alabama(6,10)",1067,66.5,15,falling
+"Houston County, Alabama(6,10)",1069,71.3,86,stable
+"Jackson County, Alabama(6,10)",1071,81.7,60,stable
+"Jefferson County, Alabama(6,10)",1073,65.3,480,falling
+"Lamar County, Alabama(6,10)",1075,80.7,15,stable
+"Lauderdale County, Alabama(6,10)",1077,69.5,85,stable
+"Lawrence County, Alabama(6,10)",1079,88.2,35,stable
+"Lee County, Alabama(6,10)",1081,59.8,69,stable
+"Limestone County, Alabama(6,10)",1083,73.8,67,stable
+"Lowndes County, Alabama(6,10)",1085,58,6,stable
+"Macon County, Alabama(6,10)",1087,58.1,13,stable
+"Madison County, Alabama(6,10)",1089,64.9,234,falling
+"Marengo County, Alabama(6,10)",1091,61.8,15,stable
+"Marion County, Alabama(6,10)",1093,74.7,31,stable
+"Marshall County, Alabama(6,10)",1095,79.7,88,stable
+"Mobile County, Alabama(6,10)",1097,76.3,349,stable
+"Monroe County, Alabama(6,10)",1099,62.3,17,stable
+"Montgomery County, Alabama(6,10)",1101,61.4,142,falling
+"Morgan County, Alabama(6,10)",1103,81.2,118,stable
+"Perry County, Alabama(6,10)",1105,83.2,9,stable
+"Pickens County, Alabama(6,10)",1107,66.2,20,stable
+"Pike County, Alabama(6,10)",1109,62,20,stable
+"Randolph County, Alabama(6,10)",1111,75.6,22,stable
+"Russell County, Alabama(6,10)",1113,79.5,49,stable
+"St. Clair County, Alabama(6,10)",1115,75.6,74,stable
+"Shelby County, Alabama(6,10)",1117,57.5,106,stable
+"Sumter County, Alabama(6,10)",1119,56.2,11,stable
+"Talladega County, Alabama(6,10)",1121,74.1,72,stable
+"Tallapoosa County, Alabama(6,10)",1123,70.9,39,stable
+"Tuscaloosa County, Alabama(6,10)",1125,72.6,133,stable
+"Walker County, Alabama(6,10)",1127,99.1,91,stable
+"Washington County, Alabama(6,10)",1129,75.2,14,stable
+"Wilcox County, Alabama(6,10)",1131,74,13,stable
+"Winston County, Alabama(6,10)",1133,91.6,33,stable
+"Aleutians East Borough, Alaska(6,10)",2013,*,5,*
+"Aleutians West Census Area, Alaska(6,10)",2016,*,1,*
+"Anchorage Borough, Alaska(6,10)",2020,62.3,133,stable
+"Bethel Census Area, Alaska(6,10)",2050,63.3,8,stable
+"Bristol Bay Borough, Alaska(6,10)",2060,*,5,*
+"Denali, Alaska(6,10)",2068,*,1,*
+"Dillingham Census Area, Alaska(6,10)",2070,*,1,*
+"Fairbanks North Star, Alaska(6,10)",2090,58.3,34,stable
+"Haines Borough, Alaska(6,10)",2100,*,1,*
+"Juneau Borough, Alaska(6,10)",2110,35.7,11,stable
+"Kenai Peninsula Borough, Alaska(6,10)",2122,65.3,37,stable
+"Ketchikan Gateway Borough, Alaska(6,10)",2130,88.4,10,stable
+"Kodiak Island Borough, Alaska(6,10)",2150,74.9,5,stable
+"Lake and Peninsula Borough, Alaska(6,10)",2164,*,5,*
+"Matanuska-Susitna Borough, Alaska(6,10)",2170,70.1,49,stable
+"Nome Census Area, Alaska(6,10)",2180,104.4,8,stable
+"North Slope Borough, Alaska(6,10)",2185,153.5,4,stable
+"Northwest Arctic Borough, Alaska(6,10)",2188,68,1,stable
+"Prince of Wales-Outer Ketchikan, Alaska(6,10)",2201,82.4,6,stable
+"Sitka Borough, Alaska(6,10)",2220,44.9,6,stable
+"Skagway Hoonah Angoon Census Area, Alaska(6,10)",2232,*,5,*
+"Southeast Fairbanks Census Area, Alaska(6,10)",2240,77,3,stable
+"Valdez-Cordova Census Area, Alaska(6,10)",2261,66.2,4,stable
+"Wade Hampton Census Area, Alaska(6,10)",2270,*,5,*
+"Wrangell-Petersburg Census Area, Alaska(6,10)",2280,79.1,4,stable
+"Yakutat City and Borough, Alaska(6,10)",2282,*,5,*
+"Yukon-Koyukuk Census Area, Alaska(6,10)",2290,58.6,1,stable
+"Apache County, Arizona(6,10)",4001,23.1,14,rising
+"Cochise County, Arizona(6,10)",4003,47.7,86,stable
+"Coconino County, Arizona(6,10)",4005,36.8,37,stable
+"Gila County, Arizona(6,10)",4007,54.8,50,stable
+"Graham County, Arizona(6,10)",4009,46,18,stable
+"Greenlee County, Arizona(6,10)",4011,64.6,8,stable
+"La Paz County, Arizona(6,10)",4012,54.7,23,stable
+"Maricopa County, Arizona(6,10)",4013,52.7,2057,falling
+"Mohave County, Arizona(6,10)",4015,77.6,282,stable
+"Navajo County, Arizona(6,10)",4017,40.1,44,stable
+"Pima County, Arizona(6,10)",4019,51.8,630,stable
+"Pinal County, Arizona(6,10)",4021,46.4,203,falling
+"Santa Cruz County, Arizona(6,10)",4023,36.7,21,stable
+"Yavapai County, Arizona(6,10)",4025,52.3,201,stable
+"Yuma County, Arizona(6,10)",4027,48.1,113,stable
+"Arkansas County, Arkansas(6,10)",5001,86.8,23,stable
+"Ashley County, Arkansas(6,10)",5003,77.3,21,stable
+"Baxter County, Arkansas(6,10)",5005,85.7,69,stable
+"Benton County, Arkansas(6,10)",5007,57.3,131,stable
+"Boone County, Arkansas(6,10)",5009,68.4,37,stable
+"Bradley County, Arkansas(6,10)",5011,86.4,11,stable
+"Calhoun County, Arkansas(6,10)",5013,83,8,stable
+"Carroll County, Arkansas(6,10)",5015,60.1,27,stable
+"Chicot County, Arkansas(6,10)",5017,77,14,stable
+"Clark County, Arkansas(6,10)",5019,72,17,stable
+"Clay County, Arkansas(6,10)",5021,109.3,28,stable
+"Cleburne County, Arkansas(6,10)",5023,83.9,36,stable
+"Cleveland County, Arkansas(6,10)",5025,77.8,7,stable
+"Columbia County, Arkansas(6,10)",5027,72.2,19,stable
+"Conway County, Arkansas(6,10)",5029,75.4,19,stable
+"Craighead County, Arkansas(6,10)",5031,75.6,76,stable
+"Crawford County, Arkansas(6,10)",5033,79.3,54,stable
+"Crittenden County, Arkansas(6,10)",5035,75.7,35,stable
+"Cross County, Arkansas(6,10)",5037,77.6,16,stable
+"Dallas County, Arkansas(6,10)",5039,82.9,11,stable
+"Desha County, Arkansas(6,10)",5041,79.8,15,stable
+"Drew County, Arkansas(6,10)",5043,78.2,19,falling
+"Faulkner County, Arkansas(6,10)",5045,76.6,80,stable
+"Franklin County, Arkansas(6,10)",5047,77.8,21,stable
+"Fulton County, Arkansas(6,10)",5049,65.2,16,stable
+"Garland County, Arkansas(6,10)",5051,81.3,123,stable
+"Grant County, Arkansas(6,10)",5053,96.9,23,stable
+"Greene County, Arkansas(6,10)",5055,90,47,stable
+"Hempstead County, Arkansas(6,10)",5057,61.6,19,stable
+"Hot Spring County, Arkansas(6,10)",5059,94.6,39,stable
+"Howard County, Arkansas(6,10)",5061,96.5,14,stable
+"Independence County, Arkansas(6,10)",5063,82.7,36,stable
+"Izard County, Arkansas(6,10)",5065,55.9,11,stable
+"Jackson County, Arkansas(6,10)",5067,104.6,22,stable
+"Jefferson County, Arkansas(6,10)",5069,98.3,86,stable
+"Johnson County, Arkansas(6,10)",5071,97.4,27,falling
+"Lafayette County, Arkansas(6,10)",5073,98.3,10,falling
+"Lawrence County, Arkansas(6,10)",5075,102.8,23,stable
+"Lee County, Arkansas(6,10)",5077,57.2,6,stable
+"Lincoln County, Arkansas(6,10)",5079,64.1,12,stable
+"Little River County, Arkansas(6,10)",5081,80.3,16,stable
+"Logan County, Arkansas(6,10)",5083,87.5,25,stable
+"Lonoke County, Arkansas(6,10)",5085,92.3,60,stable
+"Madison County, Arkansas(6,10)",5087,68,12,stable
+"Marion County, Arkansas(6,10)",5089,82.8,24,stable
+"Miller County, Arkansas(6,10)",5091,81.6,39,stable
+"Mississippi County, Arkansas(6,10)",5093,74.2,38,stable
+"Monroe County, Arkansas(6,10)",5095,89.7,9,stable
+"Montgomery County, Arkansas(6,10)",5097,67.9,9,stable
+"Nevada County, Arkansas(6,10)",5099,69.4,7,stable
+"Newton County, Arkansas(6,10)",5101,64.4,11,stable
+"Ouachita County, Arkansas(6,10)",5103,84.4,28,stable
+"Perry County, Arkansas(6,10)",5105,99.4,16,stable
+"Phillips County, Arkansas(6,10)",5107,88.5,21,stable
+"Pike County, Arkansas(6,10)",5109,88.2,11,stable
+"Poinsett County, Arkansas(6,10)",5111,114.5,38,stable
+"Polk County, Arkansas(6,10)",5113,67.8,24,stable
+"Pope County, Arkansas(6,10)",5115,86.5,57,stable
+"Prairie County, Arkansas(6,10)",5117,89.4,10,stable
+"Pulaski County, Arkansas(6,10)",5119,68.3,275,stable
+"Randolph County, Arkansas(6,10)",5121,84.5,23,stable
+"St. Francis County, Arkansas(6,10)",5123,65.4,18,stable
+"Saline County, Arkansas(6,10)",5125,74.8,102,stable
+"Scott County, Arkansas(6,10)",5127,92.2,17,stable
+"Searcy County, Arkansas(6,10)",5129,72.8,12,stable
+"Sebastian County, Arkansas(6,10)",5131,78.8,110,stable
+"Sevier County, Arkansas(6,10)",5133,70.8,10,stable
+"Sharp County, Arkansas(6,10)",5135,89.8,28,stable
+"Stone County, Arkansas(6,10)",5137,67.4,16,stable
+"Union County, Arkansas(6,10)",5139,89.6,48,stable
+"Van Buren County, Arkansas(6,10)",5141,65.9,21,stable
+"Washington County, Arkansas(6,10)",5143,67.4,117,stable
+"White County, Arkansas(6,10)",5145,91.9,83,stable
+"Woodruff County, Arkansas(6,10)",5147,108.8,9,stable
+"Yell County, Arkansas(6,10)",5149,88.7,26,stable
+"Alameda County, California(7,8)",6001,46.5,685,falling
+"Alpine County, California(7,9)",6003,*,1,*
+"Amador County, California(7,9)",6005,59.3,40,stable
+"Butte County, California(7,9)",6007,62.3,171,stable
+"Calaveras County, California(7,9)",6009,53.2,43,stable
+"Colusa County, California(7,9)",6011,56.3,9,stable
+"Contra Costa County, California(7,8)",6013,49.5,552,falling
+"Del Norte County, California(7,9)",6015,79.4,27,stable
+"El Dorado County, California(7,9)",6017,50.6,118,stable
+"Fresno County, California(7,9)",6019,51.7,413,stable
+"Glenn County, California(7,9)",6021,61.7,17,stable
+"Humboldt County, California(7,9)",6023,56.8,84,stable
+"Imperial County, California(7,9)",6025,45,71,stable
+"Inyo County, California(7,9)",6027,45.9,11,stable
+"Kern County, California(7,9)",6029,56.3,373,stable
+"Kings County, California(7,9)",6031,49,52,stable
+"Lake County, California(7,9)",6033,74.7,72,stable
+"Lassen County, California(7,9)",6035,61.5,21,stable
+"Los Angeles County, California(7,9)",6037,40.4,3703,falling
+"Madera County, California(7,9)",6039,52.2,74,stable
+"Marin County, California(7,8)",6041,42.5,147,falling
+"Mariposa County, California(7,9)",6043,55,15,stable
+"Mendocino County, California(7,9)",6045,52.5,60,stable
+"Merced County, California(7,9)",6047,57.1,118,falling
+"Modoc County, California(7,9)",6049,43.9,4,stable
+"Mono County, California(7,9)",6051,25.1,1,stable
+"Monterey County, California(7,9)",6053,42.9,161,stable
+"Napa County, California(7,9)",6055,53.5,90,falling
+"Nevada County, California(7,9)",6057,48,77,stable
+"Orange County, California(7,9)",6059,44.1,1324,falling
+"Placer County, California(7,9)",6061,50.3,224,stable
+"Plumas County, California(7,9)",6063,44.6,13,stable
+"Riverside County, California(7,9)",6065,47.6,1029,stable
+"Sacramento County, California(7,9)",6067,57.7,795,stable
+"San Benito County, California(7,9)",6069,41.1,20,stable
+"San Bernardino County, California(7,9)",6071,49.8,805,falling
+"San Diego County, California(7,9)",6073,50,1487,falling
+"San Francisco County, California(7,8)",6075,49.7,461,falling
+"San Joaquin County, California(7,9)",6077,57.5,355,stable
+"San Luis Obispo County, California(7,9)",6079,47,159,stable
+"San Mateo County, California(7,8)",6081,45.7,373,falling
+"Santa Barbara County, California(7,9)",6083,42.6,187,stable
+"Santa Clara County, California(7,9)",6085,41.7,707,stable
+"Santa Cruz County, California(7,9)",6087,38.3,101,stable
+"Shasta County, California(7,9)",6089,63.4,156,stable
+"Sierra County, California(7,9)",6091,*,5,*
+"Siskiyou County, California(7,9)",6093,60.9,42,stable
+"Solano County, California(7,9)",6095,58.6,248,stable
+"Sonoma County, California(7,9)",6097,49.6,286,falling
+"Stanislaus County, California(7,9)",6099,57.7,271,stable
+"Sutter County, California(7,9)",6101,56.7,54,stable
+"Tehama County, California(7,9)",6103,65.4,52,falling
+"Trinity County, California(7,9)",6105,67.4,17,stable
+"Tulare County, California(7,9)",6107,48.1,172,falling
+"Tuolumne County, California(7,9)",6109,58.8,54,stable
+"Ventura County, California(7,9)",6111,42,346,falling
+"Yolo County, California(7,9)",6113,43,76,stable
+"Yuba County, California(7,9)",6115,68.3,42,stable
+"Adams County, Colorado(6,10)",8001,53.2,184,stable
+"Alamosa County, Colorado(6,10)",8003,48.2,5,stable
+"Arapahoe County, Colorado(6,10)",8005,48.2,255,stable
+"Archuleta County, Colorado(6,10)",8007,32.1,4,falling
+"Baca County, Colorado(6,10)",8009,79.2,7,stable
+"Bent County, Colorado(6,10)",8011,45,6,stable
+"Boulder County, Colorado(6,10)",8013,36.2,96,stable
+"Broomfield County, Colorado(6,10)",8014,48.7,21,stable
+"Chaffee County, Colorado(6,10)",8015,37.1,9,stable
+"Cheyenne County, Colorado(6,10)",8017,*,5,*
+"Clear Creek County, Colorado(6,10)",8019,38.4,1,stable
+"Conejos County, Colorado(6,10)",8021,35.2,6,stable
+"Costilla County, Colorado(6,10)",8023,*,5,*
+"Crowley County, Colorado(6,10)",8025,*,1,*
+"Custer County, Colorado(6,10)",8027,59.9,2,stable
+"Delta County, Colorado(6,10)",8029,46.8,21,falling
+"Denver County, Colorado(6,10)",8031,49.4,266,stable
+"Dolores County, Colorado(6,10)",8033,*,5,*
+"Douglas County, Colorado(6,10)",8035,38,77,stable
+"Eagle County, Colorado(6,10)",8037,29,11,stable
+"Elbert County, Colorado(6,10)",8039,48.5,12,stable
+"El Paso County, Colorado(6,10)",8041,50.8,284,falling
+"Fremont County, Colorado(6,10)",8043,57,40,stable
+"Garfield County, Colorado(6,10)",8045,43.5,17,stable
+"Gilpin County, Colorado(6,10)",8047,*,1,*
+"Grand County, Colorado(6,10)",8049,47.5,4,stable
+"Gunnison County, Colorado(6,10)",8051,25.3,5,stable
+"Hinsdale County, Colorado(6,10)",8053,*,5,*
+"Huerfano County, Colorado(6,10)",8055,59.2,6,stable
+"Jackson County, Colorado(6,10)",8057,*,1,*
+"Jefferson County, Colorado(6,10)",8059,43.9,260,stable
+"Kiowa County, Colorado(6,10)",8061,*,5,*
+"Kit Carson County, Colorado(6,10)",8063,55.8,8,stable
+"Lake County, Colorado(6,10)",8065,*,5,*
+"La Plata County, Colorado(6,10)",8067,34.9,17,stable
+"Larimer County, Colorado(6,10)",8069,39.8,122,stable
+"Las Animas County, Colorado(6,10)",8071,47.5,12,stable
+"Lincoln County, Colorado(6,10)",8073,54.3,6,stable
+"Logan County, Colorado(6,10)",8075,36.5,8,stable
+"Mesa County, Colorado(6,10)",8077,56.5,100,stable
+"Mineral County, Colorado(6,10)",8079,*,1,*
+"Moffat County, Colorado(6,10)",8081,40.1,4,stable
+"Montezuma County, Colorado(6,10)",8083,40.6,13,stable
+"Montrose County, Colorado(6,10)",8085,49.7,26,stable
+"Morgan County, Colorado(6,10)",8087,49.7,14,stable
+"Otero County, Colorado(6,10)",8089,40.6,9,stable
+"Ouray County, Colorado(6,10)",8091,*,5,*
+"Park County, Colorado(6,10)",8093,36.1,6,falling
+"Phillips County, Colorado(6,10)",8095,53.1,2,stable
+"Pitkin County, Colorado(6,10)",8097,24.2,2,rising
+"Prowers County, Colorado(6,10)",8099,68.2,12,stable
+"Pueblo County, Colorado(6,10)",8101,50.6,101,stable
+"Rio Blanco County, Colorado(6,10)",8103,*,5,*
+"Rio Grande County, Colorado(6,10)",8105,30.2,7,stable
+"Routt County, Colorado(6,10)",8107,31.6,4,stable
+"Saguache County, Colorado(6,10)",8109,60.7,2,stable
+"San Juan County, Colorado(6,10)",8111,*,5,*
+"San Miguel County, Colorado(6,10)",8113,*,5,*
+"Sedgwick County, Colorado(6,10)",8115,*,1,*
+"Summit County, Colorado(6,10)",8117,15.6,6,stable
+"Teller County, Colorado(6,10)",8119,41.8,13,stable
+"Washington County, Colorado(6,10)",8121,*,5,*
+"Weld County, Colorado(6,10)",8123,46.2,99,stable
+"Yuma County, Colorado(6,10)",8125,62.7,6,stable
+"Fairfield County, Connecticut(7,8)",9001,54.9,569,falling
+"Hartford County, Connecticut(7,8)",9003,62.5,660,falling
+"Litchfield County, Connecticut(7,8)",9005,63,158,stable
+"Middlesex County, Connecticut(7,8)",9007,66.1,142,stable
+"New Haven County, Connecticut(7,8)",9009,70.7,716,falling
+"New London County, Connecticut(7,8)",9011,69.4,226,stable
+"Tolland County, Connecticut(7,8)",9013,62.8,96,stable
+"Windham County, Connecticut(7,8)",9015,65.4,84,stable
+"Kent County, Delaware(6,10)",10001,80,149,stable
+"New Castle County, Delaware(6,10)",10003,68.1,389,stable
+"Sussex County, Delaware(6,10)",10005,74.4,237,stable
+"District of Columbia(6,10)",11001,59.4,349,stable
+"Alachua County, Florida(6,10)",12001,68.7,162,stable
+"Baker County, Florida(6,10)",12003,100.4,29,stable
+"Bay County, Florida(6,10)",12005,88.7,183,stable
+"Bradford County, Florida(6,10)",12007,82.2,26,stable
+"Brevard County, Florida(6,10)",12009,74.9,649,falling
+"Broward County, Florida(6,10)",12011,53.6,1127,falling
+"Calhoun County, Florida(6,10)",12013,78.2,13,stable
+"Charlotte County, Florida(6,10)",12015,63.3,235,falling
+"Citrus County, Florida(6,10)",12017,79.7,242,stable
+"Clay County, Florida(6,10)",12019,79.5,159,stable
+"Collier County, Florida(6,10)",12021,44.2,270,falling
+"Columbia County, Florida(6,10)",12023,88.8,79,stable
+"DeSoto County, Florida(6,10)",12027,58,26,stable
+"Dixie County, Florida(6,10)",12029,100.7,28,stable
+"Duval County, Florida(6,10)",12031,78.9,687,stable
+"Escambia County, Florida(6,10)",12033,78.7,279,stable
+"Flagler County, Florida(6,10)",12035,68.2,118,stable
+"Franklin County, Florida(6,10)",12037,94.1,18,stable
+"Gadsden County, Florida(6,10)",12039,67,40,stable
+"Gilchrist County, Florida(6,10)",12041,74.9,19,stable
+"Glades County, Florida(6,10)",12043,55.9,15,stable
+"Gulf County, Florida(6,10)",12045,93,18,stable
+"Hamilton County, Florida(6,10)",12047,67.9,10,stable
+"Hardee County, Florida(6,10)",12049,69.5,22,stable
+"Hendry County, Florida(6,10)",12051,65.4,23,stable
+"Hernando County, Florida(6,10)",12053,75.4,239,stable
+"Highlands County, Florida(6,10)",12055,73.7,153,stable
+"Hillsborough County, Florida(6,10)",12057,70.7,897,falling
+"Holmes County, Florida(6,10)",12059,71.6,18,stable
+"Indian River County, Florida(6,10)",12061,67.2,178,stable
+"Jackson County, Florida(6,10)",12063,49,33,stable
+"Jefferson County, Florida(6,10)",12065,42.6,7,stable
+"Lafayette County, Florida(6,10)",12067,98.3,11,stable
+"Lake County, Florida(6,10)",12069,76.5,402,stable
+"Lee County, Florida(6,10)",12071,59.4,649,stable
+"Leon County, Florida(6,10)",12073,55.4,132,stable
+"Levy County, Florida(6,10)",12075,104.5,69,stable
+"Liberty County, Florida(6,10)",12077,74,8,stable
+"Madison County, Florida(6,10)",12079,55.2,12,stable
+"Manatee County, Florida(6,10)",12081,59.3,326,stable
+"Marion County, Florida(6,10)",12083,82.8,495,falling
+"Martin County, Florida(6,10)",12085,59.7,175,stable
+"Miami-Dade County, Florida(6,10)",12086,44.6,1308,stable
+"Monroe County, Florida(6,10)",12087,55.5,64,stable
+"Nassau County, Florida(6,10)",12089,81.5,81,stable
+"Okaloosa County, Florida(6,10)",12091,72.2,151,stable
+"Okeechobee County, Florida(6,10)",12093,94.1,50,stable
+"Orange County, Florida(6,10)",12095,57.8,586,stable
+"Osceola County, Florida(6,10)",12097,54.7,145,stable
+"Palm Beach County, Florida(6,10)",12099,54.5,1181,stable
+"Pasco County, Florida(6,10)",12101,76.4,550,stable
+"Pinellas County, Florida(6,10)",12103,69.3,1030,stable
+"Polk County, Florida(6,10)",12105,74.7,629,falling
+"Putnam County, Florida(6,10)",12107,98.1,108,stable
+"St. Johns County, Florida(6,10)",12109,65.7,164,stable
+"St. Lucie County, Florida(6,10)",12111,65,279,stable
+"Santa Rosa County, Florida(6,10)",12113,75.9,132,stable
+"Sarasota County, Florida(6,10)",12115,58.4,481,stable
+"Seminole County, Florida(6,10)",12117,54.4,244,falling
+"Sumter County, Florida(6,10)",12119,65.6,178,falling
+"Suwannee County, Florida(6,10)",12121,88.2,55,stable
+"Taylor County, Florida(6,10)",12123,85,27,stable
+"Union County, Florida(6,10)",12125,204.5,37,stable
+"Volusia County, Florida(6,10)",12127,71.2,566,stable
+"Wakulla County, Florida(6,10)",12129,96.7,33,stable
+"Walton County, Florida(6,10)",12131,74.8,59,stable
+"Washington County, Florida(6,10)",12133,75.6,25,stable
+"Appling County, Georgia(7,9)",13001,74.6,13,stable
+"Atkinson County, Georgia(7,9)",13003,59.7,3,stable
+"Bacon County, Georgia(7,9)",13005,87.6,9,stable
+"Baker County, Georgia(7,9)",13007,73.1,1,stable
+"Baldwin County, Georgia(7,9)",13009,74.5,38,stable
+"Banks County, Georgia(7,9)",13011,65.5,11,stable
+"Barrow County, Georgia(7,9)",13013,90.3,57,stable
+"Bartow County, Georgia(7,9)",13015,92.1,93,stable
+"Ben Hill County, Georgia(7,9)",13017,84.1,16,stable
+"Berrien County, Georgia(7,9)",13019,78.4,16,stable
+"Bibb County, Georgia(7,9)",13021,79.7,132,stable
+"Bleckley County, Georgia(7,9)",13023,72.4,9,stable
+"Brantley County, Georgia(7,9)",13025,87.9,16,stable
+"Brooks County, Georgia(7,9)",13027,77.9,18,stable
+"Bryan County, Georgia(7,9)",13029,85.3,24,stable
+"Bulloch County, Georgia(7,9)",13031,78.7,42,stable
+"Burke County, Georgia(7,9)",13033,86.8,23,stable
+"Butts County, Georgia(7,9)",13035,96.3,27,stable
+"Calhoun County, Georgia(7,9)",13037,63.8,2,stable
+"Camden County, Georgia(7,9)",13039,67.8,27,stable
+"Candler County, Georgia(7,9)",13043,83.6,13,stable
+"Carroll County, Georgia(7,9)",13045,84,86,stable
+"Catoosa County, Georgia(7,9)",13047,65.9,48,stable
+"Charlton County, Georgia(7,9)",13049,60.7,11,stable
+"Chatham County, Georgia(7,9)",13051,65.5,181,stable
+"Chattahoochee County, Georgia(7,9)",13053,85.1,5,stable
+"Chattooga County, Georgia(7,9)",13055,101.7,29,stable
+"Cherokee County, Georgia(7,9)",13057,73.7,133,stable
+"Clarke County, Georgia(7,9)",13059,62.1,50,stable
+"Clay County, Georgia(7,9)",13061,64.3,1,stable
+"Clayton County, Georgia(7,8)",13063,66.1,117,falling
+"Clinch County, Georgia(7,9)",13065,87.2,5,stable
+"Cobb County, Georgia(7,8)",13067,60.8,339,falling
+"Coffee County, Georgia(7,9)",13069,79.5,32,stable
+"Colquitt County, Georgia(7,9)",13071,90,46,stable
+"Columbia County, Georgia(7,9)",13073,62,75,stable
+"Cook County, Georgia(7,9)",13075,90.6,19,stable
+"Coweta County, Georgia(7,9)",13077,65.3,76,stable
+"Crawford County, Georgia(7,9)",13079,101.6,18,stable
+"Crisp County, Georgia(7,9)",13081,72.9,23,stable
+"Dade County, Georgia(7,9)",13083,80,15,stable
+"Dawson County, Georgia(7,9)",13085,74.5,19,stable
+"Decatur County, Georgia(7,9)",13087,70.6,21,stable
+"DeKalb County, Georgia(7,8)",13089,54.1,313,falling
+"Dodge County, Georgia(7,9)",13091,82.3,22,stable
+"Dooly County, Georgia(7,9)",13093,59.2,12,stable
+"Dougherty County, Georgia(7,9)",13095,73.7,70,stable
+"Douglas County, Georgia(7,9)",13097,82.1,92,stable
+"Early County, Georgia(7,9)",13099,61.7,7,stable
+"Echols County, Georgia(7,9)",13101,*,5,*
+"Effingham County, Georgia(7,9)",13103,85.3,39,stable
+"Elbert County, Georgia(7,9)",13105,73.9,18,stable
+"Emanuel County, Georgia(7,9)",13107,67.7,16,stable
+"Evans County, Georgia(7,9)",13109,69,7,stable
+"Fannin County, Georgia(7,9)",13111,73.5,27,stable
+"Fayette County, Georgia(7,9)",13113,48,59,stable
+"Floyd County, Georgia(7,9)",13115,81.8,94,stable
+"Forsyth County, Georgia(7,9)",13117,60.8,88,stable
+"Franklin County, Georgia(7,9)",13119,82.3,27,stable
+"Fulton County, Georgia(7,8)",13121,55.2,433,falling
+"Gilmer County, Georgia(7,9)",13123,76.9,34,stable
+"Glascock County, Georgia(7)",13125,*,1,*
+"Glynn County, Georgia(7,9)",13127,72.3,71,stable
+"Gordon County, Georgia(7,9)",13129,95.4,57,stable
+"Grady County, Georgia(7,9)",13131,74.5,25,stable
+"Greene County, Georgia(7)",13133,70.2,17,stable
+"Gwinnett County, Georgia(7,8)",13135,52,286,falling
+"Habersham County, Georgia(7,9)",13137,64.5,33,stable
+"Hall County, Georgia(7,9)",13139,61.4,106,stable
+"Hancock County, Georgia(7)",13141,39.7,7,stable
+"Haralson County, Georgia(7,9)",13143,95.2,35,falling
+"Harris County, Georgia(7,9)",13145,62.7,26,stable
+"Hart County, Georgia(7,9)",13147,69.2,23,stable
+"Heard County, Georgia(7,9)",13149,104.7,13,stable
+"Henry County, Georgia(7,9)",13151,61.3,104,stable
+"Houston County, Georgia(7,9)",13153,73.6,94,stable
+"Irwin County, Georgia(7,9)",13155,83.9,8,stable
+"Jackson County, Georgia(7,9)",13157,78.6,48,stable
+"Jasper County, Georgia(7)",13159,79.3,14,stable
+"Jeff Davis County, Georgia(7,9)",13161,76.5,11,stable
+"Jefferson County, Georgia(7)",13163,63,12,stable
+"Jenkins County, Georgia(7,9)",13165,69.3,9,stable
+"Johnson County, Georgia(7,9)",13167,65.7,6,stable
+"Jones County, Georgia(7,9)",13169,80.7,29,stable
+"Lamar County, Georgia(7,9)",13171,86.6,16,stable
+"Lanier County, Georgia(7,9)",13173,78,10,stable
+"Laurens County, Georgia(7,9)",13175,69.9,39,stable
+"Lee County, Georgia(7,9)",13177,84,21,stable
+"Liberty County, Georgia(7,9)",13179,77.5,32,stable
+"Lincoln County, Georgia(7,9)",13181,65.7,5,stable
+"Long County, Georgia(7,9)",13183,89.5,12,stable
+"Lowndes County, Georgia(7,9)",13185,65.3,60,stable
+"Lumpkin County, Georgia(7,9)",13187,72.5,22,stable
+"McDuffie County, Georgia(7,9)",13189,70.2,20,stable
+"McIntosh County, Georgia(7,9)",13191,55.2,9,stable
+"Macon County, Georgia(7,9)",13193,69.8,13,stable
+"Madison County, Georgia(7,9)",13195,90.7,29,stable
+"Marion County, Georgia(7,9)",13197,65.3,9,falling
+"Meriwether County, Georgia(7,9)",13199,67.7,21,stable
+"Miller County, Georgia(7,9)",13201,89.2,6,stable
+"Mitchell County, Georgia(7,9)",13205,85.2,21,stable
+"Monroe County, Georgia(7,9)",13207,73.4,26,stable
+"Montgomery County, Georgia(7,9)",13209,72.1,5,stable
+"Morgan County, Georgia(7)",13211,66.3,18,stable
+"Murray County, Georgia(7,9)",13213,104.1,44,stable
+"Muscogee County, Georgia(7,9)",13215,70.4,132,stable
+"Newton County, Georgia(7,9)",13217,79.4,67,stable
+"Oconee County, Georgia(7,9)",13219,47.5,17,stable
+"Oglethorpe County, Georgia(7,9)",13221,75.5,12,stable
+"Paulding County, Georgia(7,9)",13223,78.7,85,stable
+"Peach County, Georgia(7,9)",13225,78.2,20,stable
+"Pickens County, Georgia(7,9)",13227,82.3,32,stable
+"Pierce County, Georgia(7,9)",13229,80.8,20,stable
+"Pike County, Georgia(7,9)",13231,76.4,17,stable
+"Polk County, Georgia(7,9)",13233,102.4,46,stable
+"Pulaski County, Georgia(7,9)",13235,51,6,stable
+"Putnam County, Georgia(7)",13237,74.7,21,stable
+"Quitman County, Georgia(7,9)",13239,110.9,3,stable
+"Rabun County, Georgia(7,9)",13241,67.5,16,stable
+"Randolph County, Georgia(7,9)",13243,56.8,4,stable
+"Richmond County, Georgia(7,9)",13245,73.2,150,falling
+"Rockdale County, Georgia(7,9)",13247,61.2,51,stable
+"Schley County, Georgia(7,9)",13249,70.8,6,stable
+"Screven County, Georgia(7,9)",13251,79.4,13,stable
+"Seminole County, Georgia(7,9)",13253,66.9,7,stable
+"Spalding County, Georgia(7,9)",13255,74.4,53,stable
+"Stephens County, Georgia(7,9)",13257,77.7,29,stable
+"Stewart County, Georgia(7,9)",13259,65.9,2,stable
+"Sumter County, Georgia(7,9)",13261,63.8,24,stable
+"Talbot County, Georgia(7,9)",13263,73.4,5,stable
+"Taliaferro County, Georgia(7)",13265,*,1,*
+"Tattnall County, Georgia(7,9)",13267,101.6,28,stable
+"Taylor County, Georgia(7,9)",13269,54.3,4,stable
+"Telfair County, Georgia(7,9)",13271,55.9,13,stable
+"Terrell County, Georgia(7,9)",13273,63.3,6,stable
+"Thomas County, Georgia(7,9)",13275,74.9,39,stable
+"Tift County, Georgia(7,9)",13277,71.7,29,stable
+"Toombs County, Georgia(7,9)",13279,74,21,stable
+"Towns County, Georgia(7,9)",13281,62.9,17,stable
+"Treutlen County, Georgia(7,9)",13283,79.2,8,stable
+"Troup County, Georgia(7,9)",13285,72,54,stable
+"Turner County, Georgia(7,9)",13287,80.4,7,stable
+"Twiggs County, Georgia(7,9)",13289,92.8,14,stable
+"Union County, Georgia(7,9)",13291,70.7,28,stable
+"Upson County, Georgia(7,9)",13293,88.7,33,stable
+"Walker County, Georgia(7,9)",13295,85,74,stable
+"Walton County, Georgia(7,9)",13297,68.3,59,stable
+"Ware County, Georgia(7,9)",13299,71.4,34,stable
+"Warren County, Georgia(7)",13301,84.9,5,stable
+"Washington County, Georgia(7)",13303,68.9,19,stable
+"Wayne County, Georgia(7,9)",13305,76.5,23,stable
+"Webster County, Georgia(7,9)",13307,*,5,*
+"Wheeler County, Georgia(7,9)",13309,63.3,7,stable
+"White County, Georgia(7,9)",13311,70.1,25,stable
+"Whitfield County, Georgia(7,9)",13313,78.4,81,stable
+"Wilcox County, Georgia(7,9)",13315,65,5,stable
+"Wilkes County, Georgia(7,9)",13317,66.8,12,stable
+"Wilkinson County, Georgia(7,9)",13319,80.2,9,stable
+"Worth County, Georgia(7,9)",13321,71.6,21,stable
+"Hawaii County, Hawaii(7,9)",15001,45.9,109,stable
+"Honolulu County, Hawaii(7,9)",15003,48.4,548,stable
+"Kalawao County, Hawaii(7,9)",15005,*,5,*
+"Kauai County, Hawaii(7,9)",15007,46,41,stable
+"Maui County, Hawaii(7,9)",15009,43.6,78,stable
+"Ada County, Idaho(6,10)",16001,52.5,189,stable
+"Adams County, Idaho(6,10)",16003,69.7,3,stable
+"Bannock County, Idaho(6,10)",16005,41.6,34,stable
+"Bear Lake County, Idaho(6,10)",16007,*,5,*
+"Benewah County, Idaho(6,10)",16009,79.5,12,stable
+"Bingham County, Idaho(6,10)",16011,39.3,20,stable
+"Blaine County, Idaho(6,10)",16013,23.3,7,stable
+"Boise County, Idaho(6,10)",16015,69.7,8,stable
+"Bonner County, Idaho(6,10)",16017,54.8,34,stable
+"Bonneville County, Idaho(6,10)",16019,35.7,33,stable
+"Boundary County, Idaho(6,10)",16021,46.3,5,stable
+"Butte County, Idaho(6,10)",16023,*,5,*
+"Camas County, Idaho(6,10)",16025,*,5,*
+"Canyon County, Idaho(6,10)",16027,56.3,97,stable
+"Caribou County, Idaho(6,10)",16029,*,5,*
+"Cassia County, Idaho(6,10)",16031,34.7,10,stable
+"Clark County, Idaho(6,10)",16033,*,1,*
+"Clearwater County, Idaho(6,10)",16035,56.2,10,stable
+"Custer County, Idaho(6,10)",16037,52.9,6,stable
+"Elmore County, Idaho(6,10)",16039,73.3,19,stable
+"Franklin County, Idaho(6,10)",16041,*,5,*
+"Fremont County, Idaho(6,10)",16043,41.3,8,stable
+"Gem County, Idaho(6,10)",16045,67.7,19,stable
+"Gooding County, Idaho(6,10)",16047,67.3,10,stable
+"Idaho County, Idaho(6,10)",16049,49.1,16,stable
+"Jefferson County, Idaho(6,10)",16051,34.6,9,stable
+"Jerome County, Idaho(6,10)",16053,48.4,8,stable
+"Kootenai County, Idaho(6,10)",16055,56.6,94,stable
+"Latah County, Idaho(6,10)",16057,51.2,19,stable
+"Lemhi County, Idaho(6,10)",16059,47,5,stable
+"Lewis County, Idaho(6,10)",16061,67.4,6,stable
+"Lincoln County, Idaho(6,10)",16063,*,5,*
+"Madison County, Idaho(6,10)",16065,*,5,*
+"Minidoka County, Idaho(6,10)",16067,55.2,11,stable
+"Nez Perce County, Idaho(6,10)",16069,70.2,40,stable
+"Oneida County, Idaho(6,10)",16071,*,1,*
+"Owyhee County, Idaho(6,10)",16073,41,3,stable
+"Payette County, Idaho(6,10)",16075,65.5,20,stable
+"Power County, Idaho(6,10)",16077,42.4,5,stable
+"Shoshone County, Idaho(6,10)",16079,99.3,22,stable
+"Teton County, Idaho(6,10)",16081,*,5,*
+"Twin Falls County, Idaho(6,10)",16083,53.5,45,stable
+"Valley County, Idaho(6,10)",16085,42.3,8,stable
+"Washington County, Idaho(6,10)",16087,68.4,9,stable
+"Adams County, Illinois(6,10)",17001,74.2,66,stable
+"Alexander County, Illinois(6,10)",17003,94.4,13,stable
+"Bond County, Illinois(6,10)",17005,70.7,17,stable
+"Boone County, Illinois(6,10)",17007,66.6,34,stable
+"Brown County, Illinois(6,10)",17009,82.3,8,stable
+"Bureau County, Illinois(6,10)",17011,69.6,32,stable
+"Calhoun County, Illinois(6,10)",17013,81.6,4,stable
+"Carroll County, Illinois(6,10)",17015,54.7,16,stable
+"Cass County, Illinois(6,10)",17017,89.9,13,stable
+"Champaign County, Illinois(6,10)",17019,62.7,105,stable
+"Christian County, Illinois(6,10)",17021,94.3,43,stable
+"Clark County, Illinois(6,10)",17023,76.3,19,stable
+"Clay County, Illinois(6,10)",17025,79.6,13,stable
+"Clinton County, Illinois(6,10)",17027,64.4,31,stable
+"Coles County, Illinois(6,10)",17029,80.7,46,stable
+"Cook County, Illinois(6,10)",17031,63.8,3357,falling
+"Crawford County, Illinois(6,10)",17033,89.5,26,stable
+"Cumberland County, Illinois(6,10)",17035,89.2,11,stable
+"DeKalb County, Illinois(6,10)",17037,72.8,61,stable
+"De Witt County, Illinois(6,10)",17039,95.3,23,stable
+"Douglas County, Illinois(6,10)",17041,66.9,19,stable
+"DuPage County, Illinois(6,10)",17043,56.9,531,falling
+"Edgar County, Illinois(6,10)",17045,77.5,22,stable
+"Edwards County, Illinois(6,10)",17047,89.5,11,stable
+"Effingham County, Illinois(6,10)",17049,68.5,31,stable
+"Fayette County, Illinois(6,10)",17051,58,14,stable
+"Ford County, Illinois(6,10)",17053,67.7,16,stable
+"Franklin County, Illinois(6,10)",17055,104.3,61,stable
+"Fulton County, Illinois(6,10)",17057,75.7,40,stable
+"Gallatin County, Illinois(6,10)",17059,88.3,6,falling
+"Greene County, Illinois(6,10)",17061,72.7,12,stable
+"Grundy County, Illinois(6,10)",17063,90.4,43,stable
+"Hamilton County, Illinois(6,10)",17065,85.5,9,stable
+"Hancock County, Illinois(6,10)",17067,75.3,23,stable
+"Hardin County, Illinois(6,10)",17069,90.7,4,stable
+"Henderson County, Illinois(6,10)",17071,78.5,7,stable
+"Henry County, Illinois(6,10)",17073,75.7,54,stable
+"Iroquois County, Illinois(6,10)",17075,72.8,33,stable
+"Jackson County, Illinois(6,10)",17077,69.5,39,stable
+"Jasper County, Illinois(6,10)",17079,68,11,stable
+"Jefferson County, Illinois(6,10)",17081,92.8,44,falling
+"Jersey County, Illinois(6,10)",17083,78.9,21,stable
+"Jo Daviess County, Illinois(6,10)",17085,56.9,24,stable
+"Johnson County, Illinois(6,10)",17087,84.4,17,stable
+"Kane County, Illinois(6,10)",17089,59.7,268,stable
+"Kankakee County, Illinois(6,10)",17091,74,92,stable
+"Kendall County, Illinois(6,10)",17093,55.2,47,stable
+"Knox County, Illinois(6,10)",17095,69.9,55,stable
+"Lake County, Illinois(6,10)",17097,59.1,381,stable
+"La Salle County, Illinois(6,10)",17099,76.8,111,stable
+"Lawrence County, Illinois(6,10)",17101,88.3,17,stable
+"Lee County, Illinois(6,10)",17103,67.5,33,falling
+"Livingston County, Illinois(6,10)",17105,82.3,42,stable
+"Logan County, Illinois(6,10)",17107,90.8,32,stable
+"McDonough County, Illinois(6,10)",17109,63.4,21,stable
+"McHenry County, Illinois(6,10)",17111,65.9,187,falling
+"McLean County, Illinois(6,10)",17113,64.9,99,stable
+"Macon County, Illinois(6,10)",17115,97.5,142,falling
+"Macoupin County, Illinois(6,10)",17117,80,50,stable
+"Madison County, Illinois(6,10)",17119,84.1,267,falling
+"Marion County, Illinois(6,10)",17121,92.2,51,stable
+"Marshall County, Illinois(6,10)",17123,59.4,14,stable
+"Mason County, Illinois(6,10)",17125,93.2,22,stable
+"Massac County, Illinois(6,10)",17127,101,20,stable
+"Menard County, Illinois(6,10)",17129,76.4,15,stable
+"Mercer County, Illinois(6,10)",17131,77.1,17,stable
+"Monroe County, Illinois(6,10)",17133,61.7,26,stable
+"Montgomery County, Illinois(6,10)",17135,87.3,36,stable
+"Morgan County, Illinois(6,10)",17137,77.7,34,stable
+"Moultrie County, Illinois(6,10)",17139,57.6,13,stable
+"Ogle County, Illinois(6,10)",17141,66.9,43,stable
+"Peoria County, Illinois(6,10)",17143,84.1,178,stable
+"Perry County, Illinois(6,10)",17145,75.3,23,stable
+"Piatt County, Illinois(6,10)",17147,80,16,stable
+"Pike County, Illinois(6,10)",17149,69,19,stable
+"Pope County, Illinois(6,10)",17151,105.7,5,falling
+"Pulaski County, Illinois(6,10)",17153,113.1,8,stable
+"Putnam County, Illinois(6,10)",17155,74,9,stable
+"Randolph County, Illinois(6,10)",17157,78.7,31,stable
+"Richland County, Illinois(6,10)",17159,81.9,17,rising
+"Rock Island County, Illinois(6,10)",17161,67.2,125,stable
+"St. Clair County, Illinois(6,10)",17163,76.4,221,stable
+"Saline County, Illinois(6,10)",17165,92.6,35,stable
+"Sangamon County, Illinois(6,10)",17167,77.8,181,stable
+"Schuyler County, Illinois(6,10)",17169,83.4,7,stable
+"Scott County, Illinois(6,10)",17171,83.6,4,stable
+"Shelby County, Illinois(6,10)",17173,77.8,27,stable
+"Stark County, Illinois(6,10)",17175,78,9,stable
+"Stephenson County, Illinois(6,10)",17177,64.6,45,stable
+"Tazewell County, Illinois(6,10)",17179,88.1,153,falling
+"Union County, Illinois(6,10)",17181,103.7,28,stable
+"Vermilion County, Illinois(6,10)",17183,87,94,stable
+"Wabash County, Illinois(6,10)",17185,92.1,17,falling
+"Warren County, Illinois(6,10)",17187,74.2,15,stable
+"Washington County, Illinois(6,10)",17189,74.6,13,stable
+"Wayne County, Illinois(6,10)",17191,89.5,20,stable
+"White County, Illinois(6,10)",17193,81.2,16,falling
+"Whiteside County, Illinois(6,10)",17195,72.4,59,stable
+"Will County, Illinois(6,10)",17197,72.5,416,falling
+"Williamson County, Illinois(6,10)",17199,97.6,83,stable
+"Winnebago County, Illinois(6,10)",17201,74.3,250,stable
+"Woodford County, Illinois(6,10)",17203,61.6,31,stable
+"Adams County, Indiana(6,10)",18001,50.4,17,rising
+"Allen County, Indiana(6,10)",18003,62,225,stable
+"Bartholomew County, Indiana(6,10)",18005,78.2,67,stable
+"Benton County, Indiana(6,10)",18007,83.1,7,stable
+"Blackford County, Indiana(6,10)",18009,75.7,15,stable
+"Boone County, Indiana(6,10)",18011,67.3,37,stable
+"Brown County, Indiana(6,10)",18013,61.8,12,stable
+"Carroll County, Indiana(6,10)",18015,67,19,stable
+"Cass County, Indiana(6,10)",18017,89.8,40,stable
+"Clark County, Indiana(6,10)",18019,88.7,109,stable
+"Clay County, Indiana(6,10)",18021,74.3,27,stable
+"Clinton County, Indiana(6,10)",18023,76.6,27,stable
+"Crawford County, Indiana(6,10)",18025,94.8,11,stable
+"Daviess County, Indiana(6,10)",18027,63.2,21,stable
+"Dearborn County, Indiana(6,10)",18029,82.9,50,stable
+"Decatur County, Indiana(6,10)",18031,70.1,23,stable
+"DeKalb County, Indiana(6,10)",18033,69.2,35,stable
+"Delaware County, Indiana(6,10)",18035,80.6,110,stable
+"Dubois County, Indiana(6,10)",18037,55.5,26,stable
+"Elkhart County, Indiana(6,10)",18039,70.6,142,stable
+"Fayette County, Indiana(6,10)",18041,87.4,27,stable
+"Floyd County, Indiana(6,10)",18043,79.3,65,stable
+"Fountain County, Indiana(6,10)",18045,83.3,22,stable
+"Franklin County, Indiana(6,10)",18047,64.8,16,stable
+"Fulton County, Indiana(6,10)",18049,84.2,21,stable
+"Gibson County, Indiana(6,10)",18051,70.7,31,stable
+"Grant County, Indiana(6,10)",18053,86.2,80,stable
+"Greene County, Indiana(6,10)",18055,82,37,stable
+"Hamilton County, Indiana(6,10)",18057,47.3,104,stable
+"Hancock County, Indiana(6,10)",18059,83.9,67,stable
+"Harrison County, Indiana(6,10)",18061,91.5,45,rising
+"Hendricks County, Indiana(6,10)",18063,70.5,100,falling
+"Henry County, Indiana(6,10)",18065,77.4,51,stable
+"Howard County, Indiana(6,10)",18067,75,79,stable
+"Huntington County, Indiana(6,10)",18069,65.4,27,stable
+"Jackson County, Indiana(6,10)",18071,82.3,44,stable
+"Jasper County, Indiana(6,10)",18073,86.2,35,stable
+"Jay County, Indiana(6,10)",18075,69.8,20,stable
+"Jefferson County, Indiana(6,10)",18077,81.9,30,stable
+"Jennings County, Indiana(6,10)",18079,98.2,28,stable
+"Johnson County, Indiana(6,10)",18081,68.7,103,stable
+"Knox County, Indiana(6,10)",18083,77,39,stable
+"Kosciusko County, Indiana(6,10)",18085,71.9,62,stable
+"LaGrange County, Indiana(6,10)",18087,56.4,19,stable
+"Lake County, Indiana(6,10)",18089,75,414,stable
+"LaPorte County, Indiana(6,10)",18091,77.3,101,stable
+"Lawrence County, Indiana(6,10)",18093,89.5,53,stable
+"Madison County, Indiana(6,10)",18095,82.4,135,stable
+"Marion County, Indiana(6,10)",18097,80,680,stable
+"Marshall County, Indiana(6,10)",18099,67.6,41,stable
+"Martin County, Indiana(6,10)",18101,72.3,12,stable
+"Miami County, Indiana(6,10)",18103,77.2,32,stable
+"Monroe County, Indiana(6,10)",18105,67.6,83,stable
+"Montgomery County, Indiana(6,10)",18107,70.9,35,stable
+"Morgan County, Indiana(6,10)",18109,84.2,63,stable
+"Newton County, Indiana(6,10)",18111,75.5,13,stable
+"Noble County, Indiana(6,10)",18113,69.2,33,stable
+"Ohio County, Indiana(6,10)",18115,123.3,8,stable
+"Orange County, Indiana(6,10)",18117,86,24,stable
+"Owen County, Indiana(6,10)",18119,85.5,22,stable
+"Parke County, Indiana(6,10)",18121,75.6,15,stable
+"Perry County, Indiana(6,10)",18123,102.1,26,stable
+"Pike County, Indiana(6,10)",18125,66.6,10,stable
+"Porter County, Indiana(6,10)",18127,73.8,131,stable
+"Posey County, Indiana(6,10)",18129,60.8,21,stable
+"Pulaski County, Indiana(6,10)",18131,71.3,11,stable
+"Putnam County, Indiana(6,10)",18133,95.7,43,stable
+"Randolph County, Indiana(6,10)",18135,83.6,27,stable
+"Ripley County, Indiana(6,10)",18137,76.2,29,stable
+"Rush County, Indiana(6,10)",18139,80.9,16,stable
+"St. Joseph County, Indiana(6,10)",18141,71.6,210,falling
+"Scott County, Indiana(6,10)",18143,92.2,24,stable
+"Shelby County, Indiana(6,10)",18145,82.5,45,stable
+"Spencer County, Indiana(6,10)",18147,78.6,23,stable
+"Starke County, Indiana(6,10)",18149,94.4,31,stable
+"Steuben County, Indiana(6,10)",18151,71.8,33,rising
+"Sullivan County, Indiana(6,10)",18153,82.5,24,stable
+"Switzerland County, Indiana(6,10)",18155,85.5,13,stable
+"Tippecanoe County, Indiana(6,10)",18157,64.1,89,stable
+"Tipton County, Indiana(6,10)",18159,73.6,14,stable
+"Union County, Indiana(6,10)",18161,65.5,5,stable
+"Vanderburgh County, Indiana(6,10)",18163,80,167,stable
+"Vermillion County, Indiana(6,10)",18165,93.2,22,stable
+"Vigo County, Indiana(6,10)",18167,81.2,98,stable
+"Wabash County, Indiana(6,10)",18169,64.6,26,stable
+"Warren County, Indiana(6,10)",18171,66.8,9,falling
+"Warrick County, Indiana(6,10)",18173,66.7,45,stable
+"Washington County, Indiana(6,10)",18175,96.9,35,stable
+"Wayne County, Indiana(6,10)",18177,86,79,stable
+"Wells County, Indiana(6,10)",18179,52.9,17,stable
+"White County, Indiana(6,10)",18181,76.4,24,stable
+"Whitley County, Indiana(6,10)",18183,63.8,24,stable
+"Adair County, Iowa(7,8)",19001,65.5,6,stable
+"Adams County, Iowa(7,8)",19003,69.8,6,stable
+"Allamakee County, Iowa(7,8)",19005,40.8,11,stable
+"Appanoose County, Iowa(7,8)",19007,79,17,rising
+"Audubon County, Iowa(7,8)",19009,42.6,2,stable
+"Benton County, Iowa(7,8)",19011,68,20,stable
+"Black Hawk County, Iowa(7,8)",19013,73.3,110,stable
+"Boone County, Iowa(7,8)",19015,61.7,19,stable
+"Bremer County, Iowa(7,8)",19017,41.7,12,stable
+"Buchanan County, Iowa(7,8)",19019,83.1,19,stable
+"Buena Vista County, Iowa(7,8)",19021,41.3,8,stable
+"Butler County, Iowa(7,8)",19023,45.7,8,stable
+"Calhoun County, Iowa(7,8)",19025,55.1,7,stable
+"Carroll County, Iowa(7,8)",19027,61.2,16,stable
+"Cass County, Iowa(7,8)",19029,73.3,13,stable
+"Cedar County, Iowa(7,8)",19031,66.5,14,stable
+"Cerro Gordo County, Iowa(7,8)",19033,66.1,41,stable
+"Cherokee County, Iowa(7,8)",19035,48.6,12,stable
+"Chickasaw County, Iowa(7,8)",19037,53.4,8,stable
+"Clarke County, Iowa(7,8)",19039,71.1,7,rising
+"Clay County, Iowa(7,8)",19041,58.5,15,stable
+"Clayton County, Iowa(7,8)",19043,61,18,stable
+"Clinton County, Iowa(7,8)",19045,64.1,40,stable
+"Crawford County, Iowa(7,8)",19047,55.5,14,stable
+"Dallas County, Iowa(7,8)",19049,62,36,stable
+"Davis County, Iowa(7,8)",19051,54.5,8,stable
+"Decatur County, Iowa(7,8)",19053,65.8,9,stable
+"Delaware County, Iowa(7,8)",19055,38.5,7,stable
+"Des Moines County, Iowa(7,8)",19057,87,47,stable
+"Dickinson County, Iowa(7,8)",19059,59.7,16,stable
+"Dubuque County, Iowa(7,8)",19061,60,72,falling
+"Emmet County, Iowa(7,8)",19063,70.4,12,stable
+"Fayette County, Iowa(7,8)",19065,60.6,21,stable
+"Floyd County, Iowa(7,8)",19067,66,14,stable
+"Franklin County, Iowa(7,8)",19069,55.3,10,rising
+"Fremont County, Iowa(7,8)",19071,77.2,10,stable
+"Greene County, Iowa(7,8)",19073,64.4,11,rising
+"Grundy County, Iowa(7,8)",19075,48.8,7,stable
+"Guthrie County, Iowa(7,8)",19077,56.1,7,stable
+"Hamilton County, Iowa(7,8)",19079,64.8,12,stable
+"Hancock County, Iowa(7,8)",19081,59.1,7,stable
+"Hardin County, Iowa(7,8)",19083,59.2,18,stable
+"Harrison County, Iowa(7,8)",19085,86.4,16,stable
+"Henry County, Iowa(7,8)",19087,71.2,20,stable
+"Howard County, Iowa(7,8)",19089,42.4,4,stable
+"Humboldt County, Iowa(7,8)",19091,55.2,11,stable
+"Ida County, Iowa(7,8)",19093,56.3,8,stable
+"Iowa County, Iowa(7,8)",19095,48.1,13,stable
+"Jackson County, Iowa(7,8)",19097,66.8,20,stable
+"Jasper County, Iowa(7,8)",19099,73.1,38,stable
+"Jefferson County, Iowa(7,8)",19101,49.8,9,stable
+"Johnson County, Iowa(7,8)",19103,50.6,51,stable
+"Jones County, Iowa(7,8)",19105,58.8,19,stable
+"Keokuk County, Iowa(7,8)",19107,68.8,12,stable
+"Kossuth County, Iowa(7,8)",19109,58.6,16,stable
+"Lee County, Iowa(7,8)",19111,73.3,34,stable
+"Linn County, Iowa(7,8)",19113,66.3,154,falling
+"Louisa County, Iowa(7,8)",19115,64.4,7,stable
+"Lucas County, Iowa(7,8)",19117,61,10,stable
+"Lyon County, Iowa(7,8)",19119,45.2,5,stable
+"Madison County, Iowa(7,8)",19121,58.4,9,stable
+"Mahaska County, Iowa(7,8)",19123,79.2,20,stable
+"Marion County, Iowa(7,8)",19125,57.7,22,stable
+"Marshall County, Iowa(7,8)",19127,66.5,37,falling
+"Mills County, Iowa(7,8)",19129,74.1,15,stable
+"Mitchell County, Iowa(7,8)",19131,48.9,11,stable
+"Monona County, Iowa(7,8)",19133,58.8,11,stable
+"Monroe County, Iowa(7,8)",19135,75.2,7,stable
+"Montgomery County, Iowa(7,8)",19137,59.9,12,stable
+"Muscatine County, Iowa(7,8)",19139,62.9,29,stable
+"O'Brien County, Iowa(7,8)",19141,53.3,10,stable
+"Osceola County, Iowa(7,8)",19143,53,7,stable
+"Page County, Iowa(7,8)",19145,98.4,21,stable
+"Palo Alto County, Iowa(7,8)",19147,61.1,7,stable
+"Plymouth County, Iowa(7,8)",19149,55.5,20,stable
+"Pocahontas County, Iowa(7,8)",19151,52.9,4,stable
+"Polk County, Iowa(7,8)",19153,75.9,311,stable
+"Pottawattamie County, Iowa(7,8)",19155,84.9,92,stable
+"Poweshiek County, Iowa(7,8)",19157,43.6,10,stable
+"Ringgold County, Iowa(7)",19159,46.2,2,stable
+"Sac County, Iowa(7,8)",19161,57.9,12,stable
+"Scott County, Iowa(7,8)",19163,73.2,136,stable
+"Shelby County, Iowa(7,8)",19165,52.5,8,stable
+"Sioux County, Iowa(7,8)",19167,43.3,14,stable
+"Story County, Iowa(7,8)",19169,56.8,45,stable
+"Tama County, Iowa(7,8)",19171,65.8,18,stable
+"Taylor County, Iowa(7,8)",19173,58.8,8,stable
+"Union County, Iowa(7,8)",19175,75,15,stable
+"Van Buren County, Iowa(7,8)",19177,75.4,7,rising
+"Wapello County, Iowa(7,8)",19179,79.2,38,stable
+"Warren County, Iowa(7,8)",19181,70.4,39,stable
+"Washington County, Iowa(7,8)",19183,53.5,18,stable
+"Wayne County, Iowa(7,8)",19185,63.8,4,stable
+"Webster County, Iowa(7,8)",19187,68.5,36,stable
+"Winnebago County, Iowa(7,8)",19189,62,12,rising
+"Winneshiek County, Iowa(7,8)",19191,36.1,8,stable
+"Woodbury County, Iowa(7,8)",19193,72.2,81,stable
+"Worth County, Iowa(7,8)",19195,46.2,7,stable
+"Wright County, Iowa(7,8)",19197,56.5,10,stable
+"Allen County, Kansas(6)",20001,*,*,*
+"Anderson County, Kansas(6)",20003,*,*,*
+"Atchison County, Kansas(6)",20005,*,*,*
+"Barber County, Kansas(6)",20007,*,*,*
+"Barton County, Kansas(6)",20009,*,*,*
+"Bourbon County, Kansas(6)",20011,*,*,*
+"Brown County, Kansas(6)",20013,*,*,*
+"Butler County, Kansas(6)",20015,*,*,*
+"Chase County, Kansas(6)",20017,*,*,*
+"Chautauqua County, Kansas(6)",20019,*,*,*
+"Cherokee County, Kansas(6)",20021,*,*,*
+"Cheyenne County, Kansas(6)",20023,*,*,*
+"Clark County, Kansas(6)",20025,*,*,*
+"Clay County, Kansas(6)",20027,*,*,*
+"Cloud County, Kansas(6)",20029,*,*,*
+"Coffey County, Kansas(6)",20031,*,*,*
+"Comanche County, Kansas(6)",20033,*,*,*
+"Cowley County, Kansas(6)",20035,*,*,*
+"Crawford County, Kansas(6)",20037,*,*,*
+"Decatur County, Kansas(6)",20039,*,*,*
+"Dickinson County, Kansas(6)",20041,*,*,*
+"Doniphan County, Kansas(6)",20043,*,*,*
+"Douglas County, Kansas(6)",20045,*,*,*
+"Edwards County, Kansas(6)",20047,*,*,*
+"Elk County, Kansas(6)",20049,*,*,*
+"Ellis County, Kansas(6)",20051,*,*,*
+"Ellsworth County, Kansas(6)",20053,*,*,*
+"Finney County, Kansas(6)",20055,*,*,*
+"Ford County, Kansas(6)",20057,*,*,*
+"Franklin County, Kansas(6)",20059,*,*,*
+"Geary County, Kansas(6)",20061,*,*,*
+"Gove County, Kansas(6)",20063,*,*,*
+"Graham County, Kansas(6)",20065,*,*,*
+"Grant County, Kansas(6)",20067,*,*,*
+"Gray County, Kansas(6)",20069,*,*,*
+"Greeley County, Kansas(6)",20071,*,*,*
+"Greenwood County, Kansas(6)",20073,*,*,*
+"Hamilton County, Kansas(6)",20075,*,*,*
+"Harper County, Kansas(6)",20077,*,*,*
+"Harvey County, Kansas(6)",20079,*,*,*
+"Haskell County, Kansas(6)",20081,*,*,*
+"Hodgeman County, Kansas(6)",20083,*,*,*
+"Jackson County, Kansas(6)",20085,*,*,*
+"Jefferson County, Kansas(6)",20087,*,*,*
+"Jewell County, Kansas(6)",20089,*,*,*
+"Johnson County, Kansas(6)",20091,*,*,*
+"Kearny County, Kansas(6)",20093,*,*,*
+"Kingman County, Kansas(6)",20095,*,*,*
+"Kiowa County, Kansas(6)",20097,*,*,*
+"Labette County, Kansas(6)",20099,*,*,*
+"Lane County, Kansas(6)",20101,*,*,*
+"Leavenworth County, Kansas(6)",20103,*,*,*
+"Lincoln County, Kansas(6)",20105,*,*,*
+"Linn County, Kansas(6)",20107,*,*,*
+"Logan County, Kansas(6)",20109,*,*,*
+"Lyon County, Kansas(6)",20111,*,*,*
+"McPherson County, Kansas(6)",20113,*,*,*
+"Marion County, Kansas(6)",20115,*,*,*
+"Marshall County, Kansas(6)",20117,*,*,*
+"Meade County, Kansas(6)",20119,*,*,*
+"Miami County, Kansas(6)",20121,*,*,*
+"Mitchell County, Kansas(6)",20123,*,*,*
+"Montgomery County, Kansas(6)",20125,*,*,*
+"Morris County, Kansas(6)",20127,*,*,*
+"Morton County, Kansas(6)",20129,*,*,*
+"Nemaha County, Kansas(6)",20131,*,*,*
+"Neosho County, Kansas(6)",20133,*,*,*
+"Ness County, Kansas(6)",20135,*,*,*
+"Norton County, Kansas(6)",20137,*,*,*
+"Osage County, Kansas(6)",20139,*,*,*
+"Osborne County, Kansas(6)",20141,*,*,*
+"Ottawa County, Kansas(6)",20143,*,*,*
+"Pawnee County, Kansas(6)",20145,*,*,*
+"Phillips County, Kansas(6)",20147,*,*,*
+"Pottawatomie County, Kansas(6)",20149,*,*,*
+"Pratt County, Kansas(6)",20151,*,*,*
+"Rawlins County, Kansas(6)",20153,*,*,*
+"Reno County, Kansas(6)",20155,*,*,*
+"Republic County, Kansas(6)",20157,*,*,*
+"Rice County, Kansas(6)",20159,*,*,*
+"Riley County, Kansas(6)",20161,*,*,*
+"Rooks County, Kansas(6)",20163,*,*,*
+"Rush County, Kansas(6)",20165,*,*,*
+"Russell County, Kansas(6)",20167,*,*,*
+"Saline County, Kansas(6)",20169,*,*,*
+"Scott County, Kansas(6)",20171,*,*,*
+"Sedgwick County, Kansas(6)",20173,*,*,*
+"Seward County, Kansas(6)",20175,*,*,*
+"Shawnee County, Kansas(6)",20177,*,*,*
+"Sheridan County, Kansas(6)",20179,*,*,*
+"Sherman County, Kansas(6)",20181,*,*,*
+"Smith County, Kansas(6)",20183,*,*,*
+"Stafford County, Kansas(6)",20185,*,*,*
+"Stanton County, Kansas(6)",20187,*,*,*
+"Stevens County, Kansas(6)",20189,*,*,*
+"Sumner County, Kansas(6)",20191,*,*,*
+"Thomas County, Kansas(6)",20193,*,*,*
+"Trego County, Kansas(6)",20195,*,*,*
+"Wabaunsee County, Kansas(6)",20197,*,*,*
+"Wallace County, Kansas(6)",20199,*,*,*
+"Washington County, Kansas(6)",20201,*,*,*
+"Wichita County, Kansas(6)",20203,*,*,*
+"Wilson County, Kansas(6)",20205,*,*,*
+"Woodson County, Kansas(6)",20207,*,*,*
+"Wyandotte County, Kansas(6)",20209,*,*,*
+"Adair County, Kentucky(7,9)",21001,91.8,5,stable
+"Allen County, Kentucky(7,9)",21003,83.3,5,stable
+"Anderson County, Kentucky(7,9)",21005,95.7,5,stable
+"Ballard County, Kentucky(7,9)",21007,95.1,5,stable
+"Barren County, Kentucky(7,9)",21009,107.5,5,stable
+"Bath County, Kentucky(7,9)",21011,109.4,5,stable
+"Bell County, Kentucky(7,9)",21013,100.2,5,stable
+"Boone County, Kentucky(7,9)",21015,86.1,5,stable
+"Bourbon County, Kentucky(7,9)",21017,93.7,5,stable
+"Boyd County, Kentucky(7,9)",21019,93.3,5,stable
+"Boyle County, Kentucky(7,9)",21021,77.8,5,stable
+"Bracken County, Kentucky(7,9)",21023,121.5,5,stable
+"Breathitt County, Kentucky(7,9)",21025,106.5,5,stable
+"Breckinridge County, Kentucky(7,9)",21027,110.7,5,stable
+"Bullitt County, Kentucky(7,9)",21029,91.7,5,stable
+"Butler County, Kentucky(7,9)",21031,87.5,5,rising
+"Caldwell County, Kentucky(7,9)",21033,104,5,stable
+"Calloway County, Kentucky(7,9)",21035,79.5,5,stable
+"Campbell County, Kentucky(7,9)",21037,95,5,stable
+"Carlisle County, Kentucky(7,9)",21039,95.5,5,stable
+"Carroll County, Kentucky(7,9)",21041,120.9,5,stable
+"Carter County, Kentucky(7,9)",21043,103.5,5,stable
+"Casey County, Kentucky(7,9)",21045,108.6,5,stable
+"Christian County, Kentucky(7,9)",21047,85.7,5,falling
+"Clark County, Kentucky(7,9)",21049,94,5,stable
+"Clay County, Kentucky(7,9)",21051,119.2,5,stable
+"Clinton County, Kentucky(7,9)",21053,112.2,5,stable
+"Crittenden County, Kentucky(7,9)",21055,76.9,5,stable
+"Cumberland County, Kentucky(7,9)",21057,96.9,5,stable
+"Daviess County, Kentucky(7,9)",21059,111,5,stable
+"Edmonson County, Kentucky(7,9)",21061,86.2,5,stable
+"Elliott County, Kentucky(7,9)",21063,74.2,5,stable
+"Estill County, Kentucky(7,9)",21065,125.4,5,stable
+"Fayette County, Kentucky(7,9)",21067,74.3,5,stable
+"Fleming County, Kentucky(7,9)",21069,91.1,5,stable
+"Floyd County, Kentucky(7,9)",21071,149.9,5,falling
+"Franklin County, Kentucky(7,9)",21073,93.3,5,stable
+"Fulton County, Kentucky(7,9)",21075,113,5,stable
+"Gallatin County, Kentucky(7,9)",21077,104.2,5,stable
+"Garrard County, Kentucky(7,9)",21079,98.3,5,stable
+"Grant County, Kentucky(7,9)",21081,96.2,5,stable
+"Graves County, Kentucky(7,9)",21083,85.9,5,stable
+"Grayson County, Kentucky(7,9)",21085,130.3,5,stable
+"Green County, Kentucky(7,9)",21087,86.9,5,stable
+"Greenup County, Kentucky(7,9)",21089,107.5,5,stable
+"Hancock County, Kentucky(7,9)",21091,82.5,5,stable
+"Hardin County, Kentucky(7,9)",21093,101.9,5,stable
+"Harlan County, Kentucky(7,9)",21095,128,5,stable
+"Harrison County, Kentucky(7,9)",21097,96.6,5,stable
+"Hart County, Kentucky(7,9)",21099,115.2,5,stable
+"Henderson County, Kentucky(7,9)",21101,98.3,5,stable
+"Henry County, Kentucky(7,9)",21103,109.8,5,stable
+"Hickman County, Kentucky(7,9)",21105,80.2,5,stable
+"Hopkins County, Kentucky(7,9)",21107,90,5,stable
+"Jackson County, Kentucky(7,9)",21109,118.7,5,stable
+"Jefferson County, Kentucky(7,9)",21111,89.6,5,stable
+"Jessamine County, Kentucky(7,9)",21113,89.9,5,stable
+"Johnson County, Kentucky(7,9)",21115,114,5,stable
+"Kenton County, Kentucky(7,9)",21117,91,5,stable
+"Knott County, Kentucky(7,9)",21119,116.9,5,stable
+"Knox County, Kentucky(7,9)",21121,125.9,5,falling
+"Larue County, Kentucky(7,9)",21123,75.1,5,stable
+"Laurel County, Kentucky(7,9)",21125,89.7,5,stable
+"Lawrence County, Kentucky(7,9)",21127,114.2,5,stable
+"Lee County, Kentucky(7,9)",21129,118.4,5,stable
+"Leslie County, Kentucky(7,9)",21131,152,5,stable
+"Letcher County, Kentucky(7,9)",21133,118.8,5,stable
+"Lewis County, Kentucky(7,9)",21135,113.3,5,stable
+"Lincoln County, Kentucky(7,9)",21137,99.2,5,stable
+"Livingston County, Kentucky(7,9)",21139,113.3,5,stable
+"Logan County, Kentucky(7,9)",21141,103.8,5,falling
+"Lyon County, Kentucky(7,9)",21143,86.8,5,stable
+"McCracken County, Kentucky(7,9)",21145,81,5,stable
+"McCreary County, Kentucky(7,9)",21147,158.2,5,stable
+"McLean County, Kentucky(7,9)",21149,102.3,5,stable
+"Madison County, Kentucky(7,9)",21151,91.7,5,stable
+"Magoffin County, Kentucky(7,9)",21153,110.7,5,rising
+"Marion County, Kentucky(7,9)",21155,101.4,5,stable
+"Marshall County, Kentucky(7,9)",21157,83.7,5,stable
+"Martin County, Kentucky(7,9)",21159,145.9,5,stable
+"Mason County, Kentucky(7,9)",21161,124.6,5,stable
+"Meade County, Kentucky(7,9)",21163,118.9,5,stable
+"Menifee County, Kentucky(7,9)",21165,125.2,5,stable
+"Mercer County, Kentucky(7,9)",21167,93.9,5,stable
+"Metcalfe County, Kentucky(7,9)",21169,108,5,stable
+"Monroe County, Kentucky(7,9)",21171,106.8,5,stable
+"Montgomery County, Kentucky(7,9)",21173,95.2,5,stable
+"Morgan County, Kentucky(7,9)",21175,99.3,5,stable
+"Muhlenberg County, Kentucky(7,9)",21177,103,5,stable
+"Nelson County, Kentucky(7,9)",21179,90.6,5,stable
+"Nicholas County, Kentucky(7,9)",21181,106.8,5,stable
+"Ohio County, Kentucky(7,9)",21183,125.2,5,stable
+"Oldham County, Kentucky(7,9)",21185,78,5,stable
+"Owen County, Kentucky(7,9)",21187,91.5,5,stable
+"Owsley County, Kentucky(7,9)",21189,148.2,5,stable
+"Pendleton County, Kentucky(7,9)",21191,97.9,5,stable
+"Perry County, Kentucky(7,9)",21193,140.5,5,falling
+"Pike County, Kentucky(7,9)",21195,123.5,5,stable
+"Powell County, Kentucky(7,9)",21197,153.7,5,stable
+"Pulaski County, Kentucky(7,9)",21199,93.7,5,stable
+"Robertson County, Kentucky(7,9)",21201,111.9,5,stable
+"Rockcastle County, Kentucky(7,9)",21203,118.2,5,stable
+"Rowan County, Kentucky(7,9)",21205,93.1,5,stable
+"Russell County, Kentucky(7,9)",21207,103.2,5,stable
+"Scott County, Kentucky(7,9)",21209,88.3,39,stable
+"Shelby County, Kentucky(7,9)",21211,77.2,38,stable
+"Simpson County, Kentucky(7,9)",21213,106.8,20,stable
+"Spencer County, Kentucky(7,9)",21215,85,13,stable
+"Taylor County, Kentucky(7,9)",21217,101,34,stable
+"Todd County, Kentucky(7,9)",21219,83.8,14,stable
+"Trigg County, Kentucky(7,9)",21221,94.8,18,stable
+"Trimble County, Kentucky(7,9)",21223,113.9,14,stable
+"Union County, Kentucky(7,9)",21225,107.3,19,stable
+"Warren County, Kentucky(7,9)",21227,91.8,102,stable
+"Washington County, Kentucky(7,9)",21229,81.1,14,stable
+"Wayne County, Kentucky(7,9)",21231,102.6,30,stable
+"Webster County, Kentucky(7,9)",21233,110.1,21,stable
+"Whitley County, Kentucky(7,9)",21235,123.1,52,stable
+"Wolfe County, Kentucky(7,9)",21237,118.4,9,stable
+"Woodford County, Kentucky(7,9)",21239,69,22,stable
+"Acadia Parish, Louisiana(7,9)",22001,80.1,51,stable
+"Allen Parish, Louisiana(7,9)",22003,71.6,17,stable
+"Ascension Parish, Louisiana(7,9)",22005,68.9,61,stable
+"Assumption Parish, Louisiana(7,9)",22007,78,19,stable
+"Avoyelles Parish, Louisiana(7,9)",22009,85.6,40,stable
+"Beauregard Parish, Louisiana(7,9)",22011,77.3,32,stable
+"Bienville Parish, Louisiana(7,9)",22013,82.3,14,stable
+"Bossier Parish, Louisiana(7,9)",22015,75.9,93,stable
+"Caddo Parish, Louisiana(7,9)",22017,69.2,199,stable
+"Calcasieu Parish, Louisiana(7,9)",22019,68.6,143,stable
+"Caldwell Parish, Louisiana(7,9)",22021,95.9,14,stable
+"Cameron Parish, Louisiana(7,9)",22023,64.4,3,stable
+"Catahoula Parish, Louisiana(7,9)",22025,93.1,10,stable
+"Claiborne Parish, Louisiana(7,9)",22027,69.6,13,stable
+"Concordia Parish, Louisiana(7,9)",22029,77.6,21,stable
+"De Soto Parish, Louisiana(7,9)",22031,81.3,29,stable
+"East Baton Rouge Parish, Louisiana(7,9)",22033,56.5,238,stable
+"East Carroll Parish, Louisiana(7,9)",22035,98.6,10,stable
+"East Feliciana Parish, Louisiana(7,9)",22037,61.6,17,stable
+"Evangeline Parish, Louisiana(7,9)",22039,82.6,32,stable
+"Franklin Parish, Louisiana(7,9)",22041,77.9,23,stable
+"Grant Parish, Louisiana(7,9)",22043,101.4,26,stable
+"Iberia Parish, Louisiana(7,9)",22045,78.9,62,stable
+"Iberville Parish, Louisiana(7,9)",22047,93,36,stable
+"Jackson Parish, Louisiana(7,9)",22049,80.9,16,stable
+"Jefferson Parish, Louisiana(7,9)",22051,67.7,338,stable
+"Jefferson Davis Parish, Louisiana(7,9)",22053,82.3,33,stable
+"Lafayette Parish, Louisiana(7,9)",22055,70.2,143,stable
+"LaFourche Parish, Louisiana(7,9)",22057,71.7,75,stable
+"La Salle Parish, Louisiana(7,9)",22059,88,14,falling
+"Lincoln Parish, Louisiana(7,9)",22061,60.8,25,stable
+"Livingston Parish, Louisiana(7,9)",22063,82.6,100,stable
+"Madison Parish, Louisiana(7,9)",22065,66.9,7,stable
+"Morehouse Parish, Louisiana(7,9)",22067,76.5,25,stable
+"Natchitoches Parish, Louisiana(7,9)",22069,66.6,31,stable
+"Orleans Parish, Louisiana(7,9)",22071,68.2,244,stable
+"Ouachita Parish, Louisiana(7,9)",22073,78.6,124,stable
+"Plaquemines Parish, Louisiana(7,9)",22075,70.5,15,stable
+"Pointe Coupee Parish, Louisiana(7,9)",22077,54.4,19,stable
+"Rapides Parish, Louisiana(7,9)",22079,69.5,105,stable
+"Red River Parish, Louisiana(7,9)",22081,58.6,8,stable
+"Richland Parish, Louisiana(7,9)",22083,79.9,21,stable
+"Sabine Parish, Louisiana(7,9)",22085,67,25,falling
+"St. Bernard Parish, Louisiana(7,9)",22087,97.8,31,stable
+"St. Charles Parish, Louisiana(7,9)",22089,71.3,34,stable
+"St. Helena Parish, Louisiana(7,9)",22091,65.2,11,stable
+"St. James Parish, Louisiana(7,9)",22093,58.5,16,stable
+"St. John the Baptist Parish, Louisiana(7,9)",22095,61.8,25,stable
+"St. Landry Parish, Louisiana(7,9)",22097,80.7,74,stable
+"St. Martin Parish, Louisiana(7,9)",22099,75.3,40,stable
+"St. Mary Parish, Louisiana(7,9)",22101,67.1,38,stable
+"St. Tammany Parish, Louisiana(7,9)",22103,67.5,177,stable
+"Tangipahoa Parish, Louisiana(7,9)",22105,79.4,98,stable
+"Tensas Parish, Louisiana(7,9)",22107,58.6,2,stable
+"Terrebonne Parish, Louisiana(7,9)",22109,76.9,88,stable
+"Union Parish, Louisiana(7,9)",22111,79.2,22,stable
+"Vermilion Parish, Louisiana(7,9)",22113,77.6,47,stable
+"Vernon Parish, Louisiana(7,9)",22115,92.7,41,stable
+"Washington Parish, Louisiana(7,9)",22117,92.4,51,stable
+"Webster Parish, Louisiana(7,9)",22119,86.7,44,stable
+"West Baton Rouge Parish, Louisiana(7,9)",22121,72.1,20,stable
+"West Carroll Parish, Louisiana(7,9)",22123,79.4,14,stable
+"West Feliciana Parish, Louisiana(7,9)",22125,80.3,12,stable
+"Winn Parish, Louisiana(7,9)",22127,80.8,17,stable
+"Androscoggin County, Maine(6,10)",23001,78.8,103,stable
+"Aroostook County, Maine(6,10)",23003,84.5,90,stable
+"Cumberland County, Maine(6,10)",23005,68.4,235,stable
+"Franklin County, Maine(6,10)",23007,58.3,26,stable
+"Hancock County, Maine(6,10)",23009,68.8,54,stable
+"Kennebec County, Maine(6,10)",23011,75.8,119,stable
+"Knox County, Maine(6,10)",23013,72.7,47,stable
+"Lincoln County, Maine(6,10)",23015,51.7,32,stable
+"Oxford County, Maine(6,10)",23017,86.4,72,stable
+"Penobscot County, Maine(6,10)",23019,84.5,158,stable
+"Piscataquis County, Maine(6,10)",23021,76.2,19,stable
+"Sagadahoc County, Maine(6,10)",23023,66.8,33,stable
+"Somerset County, Maine(6,10)",23025,85,62,stable
+"Waldo County, Maine(6,10)",23027,84.2,46,stable
+"Washington County, Maine(6,10)",23029,87.9,43,stable
+"York County, Maine(6,10)",23031,72.3,189,stable
+"Allegany County, Maryland(6,10)",24001,78.5,80,stable
+"Anne Arundel County, Maryland(6,10)",24003,65.1,366,stable
+"Baltimore County, Maryland(6,10)",24005,67.6,659,stable
+"Calvert County, Maryland(6,10)",24009,64.9,55,stable
+"Caroline County, Maryland(6,10)",24011,76,30,stable
+"Carroll County, Maryland(6,10)",24013,61.1,115,stable
+"Cecil County, Maryland(6,10)",24015,80.2,87,stable
+"Charles County, Maryland(6,10)",24017,55.8,72,stable
+"Dorchester County, Maryland(6,10)",24019,74,36,stable
+"Frederick County, Maryland(6,10)",24021,53.6,126,stable
+"Garrett County, Maryland(6,10)",24023,50,19,stable
+"Harford County, Maryland(6,10)",24025,69.3,186,rising
+"Howard County, Maryland(6,10)",24027,44.9,116,stable
+"Kent County, Maryland(6,10)",24029,62.1,22,stable
+"Montgomery County, Maryland(6,10)",24031,35.5,369,falling
+"Prince Georges County, Maryland(6,10)",24033,46.8,359,falling
+"Queen Annes County, Maryland(6,10)",24035,64.7,41,stable
+"St. Marys County, Maryland(6,10)",24037,69.3,70,stable
+"Somerset County, Maryland(6,10)",24039,96.3,27,stable
+"Talbot County, Maryland(6,10)",24041,52.1,36,stable
+"Washington County, Maryland(6,10)",24043,72.1,124,stable
+"Wicomico County, Maryland(6,10)",24045,79.9,89,falling
+"Worcester County, Maryland(6,10)",24047,70.3,61,stable
+"Baltimore City, Maryland(6,10)",24510,81.7,514,stable
+"Barnstable County, Massachusetts(6,10)",25001,60.4,245,stable
+"Berkshire County, Massachusetts(6,10)",25003,70.8,137,stable
+"Bristol County, Massachusetts(6,10)",25005,73.1,474,stable
+"Dukes County, Massachusetts(6,10)",25007,54.6,15,stable
+"Essex County, Massachusetts(6,10)",25009,67.8,600,stable
+"Franklin County, Massachusetts(6,10)",25011,52.6,52,stable
+"Hampden County, Massachusetts(6,10)",25013,67.9,366,stable
+"Hampshire County, Massachusetts(6,10)",25015,53.4,92,stable
+"Middlesex County, Massachusetts(6,10)",25017,62.8,1033,falling
+"Nantucket County, Massachusetts(6,10)",25019,52.8,4,stable
+"Norfolk County, Massachusetts(6,10)",25021,63.5,509,stable
+"Plymouth County, Massachusetts(6,10)",25023,72.6,428,stable
+"Suffolk County, Massachusetts(6,10)",25025,70.6,450,falling
+"Worcester County, Massachusetts(6,10)",25027,70.3,618,stable
+"Alcona County, Michigan(6,10)",26001,66.2,13,stable
+"Alger County, Michigan(6,10)",26003,48.9,6,stable
+"Allegan County, Michigan(6,10)",26005,54,68,stable
+"Alpena County, Michigan(6,10)",26007,77.7,37,falling
+"Antrim County, Michigan(6,10)",26009,59.3,22,stable
+"Arenac County, Michigan(6,10)",26011,104.9,25,stable
+"Baraga County, Michigan(6,10)",26013,75,7,stable
+"Barry County, Michigan(6,10)",26015,46,36,stable
+"Bay County, Michigan(6,10)",26017,61.6,89,stable
+"Benzie County, Michigan(6,10)",26019,71.7,19,stable
+"Berrien County, Michigan(6,10)",26021,69.8,141,stable
+"Branch County, Michigan(6,10)",26023,61.9,32,stable
+"Calhoun County, Michigan(6,10)",26025,71.7,121,stable
+"Cass County, Michigan(6,10)",26027,56.5,37,stable
+"Charlevoix County, Michigan(6,10)",26029,62.5,26,stable
+"Cheboygan County, Michigan(6,10)",26031,73.9,30,stable
+"Chippewa County, Michigan(6,10)",26033,74.2,36,stable
+"Clare County, Michigan(6,10)",26035,75.6,35,stable
+"Clinton County, Michigan(6,10)",26037,36.8,29,stable
+"Crawford County, Michigan(6,10)",26039,73.7,19,stable
+"Delta County, Michigan(6,10)",26041,64,38,stable
+"Dickinson County, Michigan(6,10)",26043,51.2,22,stable
+"Eaton County, Michigan(6,10)",26045,52.4,70,stable
+"Emmet County, Michigan(6,10)",26047,63,27,stable
+"Genesee County, Michigan(6,10)",26049,80.4,397,stable
+"Gladwin County, Michigan(6,10)",26051,79.9,37,stable
+"Gogebic County, Michigan(6,10)",26053,63.2,15,stable
+"Grand Traverse County, Michigan(6,10)",26055,66.6,72,stable
+"Gratiot County, Michigan(6,10)",26057,67,35,stable
+"Hillsdale County, Michigan(6,10)",26059,63,41,stable
+"Houghton County, Michigan(6,10)",26061,49.8,19,stable
+"Huron County, Michigan(6,10)",26063,57.4,33,stable
+"Ingham County, Michigan(6,10)",26065,58.8,153,stable
+"Ionia County, Michigan(6,10)",26067,63.6,41,stable
+"Iosco County, Michigan(6,10)",26069,66.3,36,stable
+"Iron County, Michigan(6,10)",26071,60.5,13,stable
+"Isabella County, Michigan(6,10)",26073,69.8,43,stable
+"Jackson County, Michigan(6,10)",26075,82.9,159,stable
+"Kalamazoo County, Michigan(6,10)",26077,61.4,161,stable
+"Kalkaska County, Michigan(6,10)",26079,74.4,20,stable
+"Kent County, Michigan(6,10)",26081,59.3,351,stable
+"Keweenaw County, Michigan(6,10)",26083,*,5,*
+"Lake County, Michigan(6,10)",26085,77.9,14,stable
+"Lapeer County, Michigan(6,10)",26087,72.5,78,stable
+"Leelanau County, Michigan(6,10)",26089,36.6,16,stable
+"Lenawee County, Michigan(6,10)",26091,60.6,75,stable
+"Livingston County, Michigan(6,10)",26093,55.3,110,stable
+"Luce County, Michigan(6,10)",26095,84.6,10,stable
+"Mackinac County, Michigan(6,10)",26097,62.2,10,stable
+"Macomb County, Michigan(7,8)",26099,75.6,754,falling
+"Manistee County, Michigan(6,10)",26101,67.5,25,stable
+"Marquette County, Michigan(6,10)",26103,65.8,56,stable
+"Mason County, Michigan(6,10)",26105,55.5,26,stable
+"Mecosta County, Michigan(6,10)",26107,70.2,38,stable
+"Menominee County, Michigan(6,10)",26109,50.7,21,stable
+"Midland County, Michigan(6,10)",26111,58.3,58,stable
+"Missaukee County, Michigan(6,10)",26113,74,17,stable
+"Monroe County, Michigan(6,10)",26115,64.1,117,stable
+"Montcalm County, Michigan(6,10)",26117,75.6,54,stable
+"Montmorency County, Michigan(6,10)",26119,79.1,17,stable
+"Muskegon County, Michigan(6,10)",26121,78.4,157,stable
+"Newaygo County, Michigan(6,10)",26123,64.3,42,stable
+"Oakland County, Michigan(7,8)",26125,63,864,stable
+"Oceana County, Michigan(6,10)",26127,52,21,stable
+"Ogemaw County, Michigan(6,10)",26129,73.6,25,stable
+"Ontonagon County, Michigan(6,10)",26131,71.4,8,falling
+"Osceola County, Michigan(6,10)",26133,97.8,33,stable
+"Oscoda County, Michigan(6,10)",26135,88,16,stable
+"Otsego County, Michigan(6,10)",26137,69,25,falling
+"Ottawa County, Michigan(6,10)",26139,39.9,107,stable
+"Presque Isle County, Michigan(6,10)",26141,57.9,13,stable
+"Roscommon County, Michigan(6,10)",26143,81.5,39,stable
+"Saginaw County, Michigan(6,10)",26145,69.6,175,stable
+"St. Clair County, Michigan(6,10)",26147,70.3,143,falling
+"St. Joseph County, Michigan(6,10)",26149,66.4,51,stable
+"Sanilac County, Michigan(6,10)",26151,50.8,32,stable
+"Schoolcraft County, Michigan(6,10)",26153,70.9,8,stable
+"Shiawassee County, Michigan(6,10)",26155,78,65,stable
+"Tuscola County, Michigan(6,10)",26157,74.2,57,stable
+"Van Buren County, Michigan(6,10)",26159,68.3,61,stable
+"Washtenaw County, Michigan(6,10)",26161,54.6,170,stable
+"Wayne County, Michigan(7,8)",26163,83.4,1632,falling
+"Wexford County, Michigan(6,10)",26165,91.5,40,stable
+"Aitkin County, Minnesota(6)",27001,*,*,*
+"Anoka County, Minnesota(6)",27003,*,*,*
+"Becker County, Minnesota(6)",27005,*,*,*
+"Beltrami County, Minnesota(6)",27007,*,*,*
+"Benton County, Minnesota(6)",27009,*,*,*
+"Big Stone County, Minnesota(6)",27011,*,*,*
+"Blue Earth County, Minnesota(6)",27013,*,*,*
+"Brown County, Minnesota(6)",27015,*,*,*
+"Carlton County, Minnesota(6)",27017,*,*,*
+"Carver County, Minnesota(6)",27019,*,*,*
+"Cass County, Minnesota(6)",27021,*,*,*
+"Chippewa County, Minnesota(6)",27023,*,*,*
+"Chisago County, Minnesota(6)",27025,*,*,*
+"Clay County, Minnesota(6)",27027,*,*,*
+"Clearwater County, Minnesota(6)",27029,*,*,*
+"Cook County, Minnesota(6)",27031,*,*,*
+"Cottonwood County, Minnesota(6)",27033,*,*,*
+"Crow Wing County, Minnesota(6)",27035,*,*,*
+"Dakota County, Minnesota(6)",27037,*,*,*
+"Dodge County, Minnesota(6)",27039,*,*,*
+"Douglas County, Minnesota(6)",27041,*,*,*
+"Faribault County, Minnesota(6)",27043,*,*,*
+"Fillmore County, Minnesota(6)",27045,*,*,*
+"Freeborn County, Minnesota(6)",27047,*,*,*
+"Goodhue County, Minnesota(6)",27049,*,*,*
+"Grant County, Minnesota(6)",27051,*,*,*
+"Hennepin County, Minnesota(6)",27053,*,*,*
+"Houston County, Minnesota(6)",27055,*,*,*
+"Hubbard County, Minnesota(6)",27057,*,*,*
+"Isanti County, Minnesota(6)",27059,*,*,*
+"Itasca County, Minnesota(6)",27061,*,*,*
+"Jackson County, Minnesota(6)",27063,*,*,*
+"Kanabec County, Minnesota(6)",27065,*,*,*
+"Kandiyohi County, Minnesota(6)",27067,*,*,*
+"Kittson County, Minnesota(6)",27069,*,*,*
+"Koochiching County, Minnesota(6)",27071,*,*,*
+"Lac qui Parle County, Minnesota(6)",27073,*,*,*
+"Lake County, Minnesota(6)",27075,*,*,*
+"Lake of the Woods County, Minnesota(6)",27077,*,*,*
+"Le Sueur County, Minnesota(6)",27079,*,*,*
+"Lincoln County, Minnesota(6)",27081,*,*,*
+"Lyon County, Minnesota(6)",27083,*,*,*
+"McLeod County, Minnesota(6)",27085,*,*,*
+"Mahnomen County, Minnesota(6)",27087,*,*,*
+"Marshall County, Minnesota(6)",27089,*,*,*
+"Martin County, Minnesota(6)",27091,*,*,*
+"Meeker County, Minnesota(6)",27093,*,*,*
+"Mille Lacs County, Minnesota(6)",27095,*,*,*
+"Morrison County, Minnesota(6)",27097,*,*,*
+"Mower County, Minnesota(6)",27099,*,*,*
+"Murray County, Minnesota(6)",27101,*,*,*
+"Nicollet County, Minnesota(6)",27103,*,*,*
+"Nobles County, Minnesota(6)",27105,*,*,*
+"Norman County, Minnesota(6)",27107,*,*,*
+"Olmsted County, Minnesota(6)",27109,*,*,*
+"Otter Tail County, Minnesota(6)",27111,*,*,*
+"Pennington County, Minnesota(6)",27113,*,*,*
+"Pine County, Minnesota(6)",27115,*,*,*
+"Pipestone County, Minnesota(6)",27117,*,*,*
+"Polk County, Minnesota(6)",27119,*,*,*
+"Pope County, Minnesota(6)",27121,*,*,*
+"Ramsey County, Minnesota(6)",27123,*,*,*
+"Red Lake County, Minnesota(6)",27125,*,*,*
+"Redwood County, Minnesota(6)",27127,*,*,*
+"Renville County, Minnesota(6)",27129,*,*,*
+"Rice County, Minnesota(6)",27131,*,*,*
+"Rock County, Minnesota(6)",27133,*,*,*
+"Roseau County, Minnesota(6)",27135,*,*,*
+"St. Louis County, Minnesota(6)",27137,*,*,*
+"Scott County, Minnesota(6)",27139,*,*,*
+"Sherburne County, Minnesota(6)",27141,*,*,*
+"Sibley County, Minnesota(6)",27143,*,*,*
+"Stearns County, Minnesota(6)",27145,*,*,*
+"Steele County, Minnesota(6)",27147,*,*,*
+"Stevens County, Minnesota(6)",27149,*,*,*
+"Swift County, Minnesota(6)",27151,*,*,*
+"Todd County, Minnesota(6)",27153,*,*,*
+"Traverse County, Minnesota(6)",27155,*,*,*
+"Wabasha County, Minnesota(6)",27157,*,*,*
+"Wadena County, Minnesota(6)",27159,*,*,*
+"Waseca County, Minnesota(6)",27161,*,*,*
+"Washington County, Minnesota(6)",27163,*,*,*
+"Watonwan County, Minnesota(6)",27165,*,*,*
+"Wilkin County, Minnesota(6)",27167,*,*,*
+"Winona County, Minnesota(6)",27169,*,*,*
+"Wright County, Minnesota(6)",27171,*,*,*
+"Yellow Medicine County, Minnesota(6)",27173,*,*,*
+"Adams County, Mississippi(6,10)",28001,69.2,27,stable
+"Alcorn County, Mississippi(6,10)",28003,75.9,35,stable
+"Amite County, Mississippi(6,10)",28005,57,9,stable
+"Attala County, Mississippi(6,10)",28007,63,15,stable
+"Benton County, Mississippi(6,10)",28009,62,5,stable
+"Bolivar County, Mississippi(6,10)",28011,77,29,stable
+"Calhoun County, Mississippi(6,10)",28013,88.6,19,stable
+"Carroll County, Mississippi(6,10)",28015,73.2,13,stable
+"Chickasaw County, Mississippi(6,10)",28017,78.5,14,falling
+"Choctaw County, Mississippi(6,10)",28019,45.3,7,stable
+"Claiborne County, Mississippi(6,10)",28021,94,12,stable
+"Clarke County, Mississippi(6,10)",28023,75.9,19,stable
+"Clay County, Mississippi(6,10)",28025,79.1,22,stable
+"Coahoma County, Mississippi(6,10)",28027,76.5,19,stable
+"Copiah County, Mississippi(6,10)",28029,86.4,28,stable
+"Covington County, Mississippi(6,10)",28031,78.7,21,stable
+"DeSoto County, Mississippi(6,10)",28033,79,120,stable
+"Forrest County, Mississippi(6,10)",28035,84.5,59,stable
+"Franklin County, Mississippi(6,10)",28037,50.7,7,stable
+"George County, Mississippi(6,10)",28039,75,17,stable
+"Greene County, Mississippi(6,10)",28041,47,9,stable
+"Grenada County, Mississippi(6,10)",28043,94,27,stable
+"Hancock County, Mississippi(6,10)",28045,73.2,39,stable
+"Harrison County, Mississippi(6,10)",28047,90.4,181,stable
+"Hinds County, Mississippi(6,10)",28049,75.9,176,stable
+"Holmes County, Mississippi(6,10)",28051,95.1,17,stable
+"Humphreys County, Mississippi(6,10)",28053,72.8,5,stable
+"Issaquena County, Mississippi(6,10)",28055,*,5,*
+"Itawamba County, Mississippi(6,10)",28057,96.5,30,stable
+"Jackson County, Mississippi(6,10)",28059,76.2,114,falling
+"Jasper County, Mississippi(6,10)",28061,79.6,20,stable
+"Jefferson County, Mississippi(6,10)",28063,78,5,stable
+"Jefferson Davis County, Mississippi(6,10)",28065,69.4,14,stable
+"Jones County, Mississippi(6,10)",28067,63.7,52,stable
+"Kemper County, Mississippi(6,10)",28069,57.4,6,stable
+"Lafayette County, Mississippi(6,10)",28071,64,26,stable
+"Lamar County, Mississippi(6,10)",28073,63.3,35,stable
+"Lauderdale County, Mississippi(6,10)",28075,71.3,67,stable
+"Lawrence County, Mississippi(6,10)",28077,106.7,19,stable
+"Leake County, Mississippi(6,10)",28079,75.5,22,stable
+"Lee County, Mississippi(6,10)",28081,91.4,81,stable
+"Leflore County, Mississippi(6,10)",28083,82.9,28,stable
+"Lincoln County, Mississippi(6,10)",28085,68.5,26,stable
+"Lowndes County, Mississippi(6,10)",28087,70.7,43,stable
+"Madison County, Mississippi(6,10)",28089,71.6,66,stable
+"Marion County, Mississippi(6,10)",28091,82.6,29,falling
+"Marshall County, Mississippi(6,10)",28093,80.7,32,stable
+"Monroe County, Mississippi(6,10)",28095,82,36,stable
+"Montgomery County, Mississippi(6,10)",28097,66.1,12,stable
+"Neshoba County, Mississippi(6,10)",28099,59.5,17,stable
+"Newton County, Mississippi(6,10)",28101,68.8,20,stable
+"Noxubee County, Mississippi(6,10)",28103,58.5,10,stable
+"Oktibbeha County, Mississippi(6,10)",28105,52.6,22,stable
+"Panola County, Mississippi(6,10)",28107,75.3,27,stable
+"Pearl River County, Mississippi(6,10)",28109,89.6,62,stable
+"Perry County, Mississippi(6,10)",28111,82.4,14,stable
+"Pike County, Mississippi(6,10)",28113,78.6,36,stable
+"Pontotoc County, Mississippi(6,10)",28115,81.2,29,stable
+"Prentiss County, Mississippi(6,10)",28117,83.2,28,stable
+"Quitman County, Mississippi(6,10)",28119,75.2,5,stable
+"Rankin County, Mississippi(6,10)",28121,77.4,113,stable
+"Scott County, Mississippi(6,10)",28123,88,29,stable
+"Sharkey County, Mississippi(6,10)",28125,56.6,5,stable
+"Simpson County, Mississippi(6,10)",28127,86.1,26,stable
+"Smith County, Mississippi(6,10)",28129,61.9,11,stable
+"Stone County, Mississippi(6,10)",28131,83.1,18,falling
+"Sunflower County, Mississippi(6,10)",28133,65.9,20,stable
+"Tallahatchie County, Mississippi(6,10)",28135,81.2,11,stable
+"Tate County, Mississippi(6,10)",28137,88.3,25,stable
+"Tippah County, Mississippi(6,10)",28139,72.3,17,stable
+"Tishomingo County, Mississippi(6,10)",28141,79.1,24,stable
+"Tunica County, Mississippi(6,10)",28143,84.3,6,stable
+"Union County, Mississippi(6,10)",28145,73.1,25,stable
+"Walthall County, Mississippi(6,10)",28147,51.2,8,stable
+"Warren County, Mississippi(6,10)",28149,74.2,39,stable
+"Washington County, Mississippi(6,10)",28151,76.5,44,rising
+"Wayne County, Mississippi(6,10)",28153,61.7,13,stable
+"Webster County, Mississippi(6,10)",28155,91.6,14,stable
+"Wilkinson County, Mississippi(6,10)",28157,61.3,9,stable
+"Winston County, Mississippi(6,10)",28159,84.7,23,stable
+"Yalobusha County, Mississippi(6,10)",28161,115.5,22,stable
+"Yazoo County, Mississippi(6,10)",28163,95.4,25,stable
+"Adair County, Missouri(6,10)",29001,58.6,17,stable
+"Andrew County, Missouri(6,10)",29003,51.3,13,stable
+"Atchison County, Missouri(6,10)",29005,72,9,stable
+"Audrain County, Missouri(6,10)",29007,90.1,27,stable
+"Barry County, Missouri(6,10)",29009,78.1,41,rising
+"Barton County, Missouri(6,10)",29011,67.6,10,rising
+"Bates County, Missouri(6,10)",29013,81.4,21,stable
+"Benton County, Missouri(6,10)",29015,89.9,35,stable
+"Bollinger County, Missouri(6,10)",29017,96.4,14,stable
+"Boone County, Missouri(6,10)",29019,63.4,84,falling
+"Buchanan County, Missouri(6,10)",29021,87.8,90,stable
+"Butler County, Missouri(6,10)",29023,96.5,58,stable
+"Caldwell County, Missouri(6,10)",29025,89.6,9,stable
+"Callaway County, Missouri(6,10)",29027,80.2,41,stable
+"Camden County, Missouri(6,10)",29029,69.6,53,stable
+"Cape Girardeau County, Missouri(6,10)",29031,70.3,60,stable
+"Carroll County, Missouri(6,10)",29033,95.2,15,stable
+"Carter County, Missouri(6,10)",29035,110.4,7,stable
+"Cass County, Missouri(6,10)",29037,71,83,stable
+"Cedar County, Missouri(6,10)",29039,79.3,19,stable
+"Chariton County, Missouri(6,10)",29041,68.2,6,stable
+"Christian County, Missouri(6,10)",29043,63.2,51,stable
+"Clark County, Missouri(6,10)",29045,95.9,11,stable
+"Clay County, Missouri(6,10)",29047,79.6,175,stable
+"Clinton County, Missouri(6,10)",29049,84.1,24,stable
+"Cole County, Missouri(6,10)",29051,64.4,51,stable
+"Cooper County, Missouri(6,10)",29053,69.4,13,stable
+"Crawford County, Missouri(6,10)",29055,93.7,32,stable
+"Dade County, Missouri(6,10)",29057,83.8,8,stable
+"Dallas County, Missouri(6,10)",29059,80.2,20,stable
+"Daviess County, Missouri(6,10)",29061,75.8,11,stable
+"DeKalb County, Missouri(6,10)",29063,39.7,4,stable
+"Dent County, Missouri(6,10)",29065,74.8,15,stable
+"Douglas County, Missouri(6,10)",29067,52.3,9,stable
+"Dunklin County, Missouri(6,10)",29069,100.1,39,stable
+"Franklin County, Missouri(6,10)",29071,77.3,90,stable
+"Gasconade County, Missouri(6,10)",29073,64.4,13,falling
+"Gentry County, Missouri(6,10)",29075,66.5,5,stable
+"Greene County, Missouri(6,10)",29077,70.5,222,stable
+"Grundy County, Missouri(6,10)",29079,71.9,9,stable
+"Harrison County, Missouri(6,10)",29081,80.3,13,stable
+"Henry County, Missouri(6,10)",29083,100.7,31,stable
+"Hickory County, Missouri(6,10)",29085,74.1,18,stable
+"Holt County, Missouri(6,10)",29087,68.3,3,stable
+"Howard County, Missouri(6,10)",29089,54.6,5,rising
+"Howell County, Missouri(6,10)",29091,81.8,42,stable
+"Iron County, Missouri(6,10)",29093,103.9,18,stable
+"Jackson County, Missouri(6,10)",29095,75.5,540,stable
+"Jasper County, Missouri(6,10)",29097,86.6,111,stable
+"Jefferson County, Missouri(6,10)",29099,86.6,197,stable
+"Johnson County, Missouri(6,10)",29101,67,35,stable
+"Knox County, Missouri(6,10)",29103,93.1,4,stable
+"Laclede County, Missouri(6,10)",29105,76.9,33,stable
+"Lafayette County, Missouri(6,10)",29107,74.2,30,stable
+"Lawrence County, Missouri(6,10)",29109,66.9,32,stable
+"Lewis County, Missouri(6,10)",29111,80.1,9,rising
+"Lincoln County, Missouri(6,10)",29113,88.6,47,stable
+"Linn County, Missouri(6,10)",29115,92,15,stable
+"Livingston County, Missouri(6,10)",29117,86.8,16,stable
+"McDonald County, Missouri(6,10)",29119,78.6,21,stable
+"Macon County, Missouri(6,10)",29121,42.2,8,rising
+"Madison County, Missouri(6,10)",29123,107.4,21,stable
+"Maries County, Missouri(6,10)",29125,61.1,10,stable
+"Marion County, Missouri(6,10)",29127,88.2,31,stable
+"Mercer County, Missouri(6,10)",29129,114.2,5,stable
+"Miller County, Missouri(6,10)",29131,89.2,26,stable
+"Mississippi County, Missouri(6,10)",29133,100.6,20,stable
+"Moniteau County, Missouri(6,10)",29135,55.6,12,stable
+"Monroe County, Missouri(6,10)",29137,78.2,12,stable
+"Montgomery County, Missouri(6,10)",29139,83.1,12,stable
+"Morgan County, Missouri(6,10)",29141,85.5,27,stable
+"New Madrid County, Missouri(6,10)",29143,113.1,26,stable
+"Newton County, Missouri(6,10)",29145,58.2,40,stable
+"Nodaway County, Missouri(6,10)",29147,73.8,16,stable
+"Oregon County, Missouri(6,10)",29149,65.9,14,stable
+"Osage County, Missouri(6,10)",29151,59.9,8,stable
+"Ozark County, Missouri(6,10)",29153,79.3,12,stable
+"Pemiscot County, Missouri(6,10)",29155,89.6,21,stable
+"Perry County, Missouri(6,10)",29157,75.9,20,stable
+"Pettis County, Missouri(6,10)",29159,71.5,33,stable
+"Phelps County, Missouri(6,10)",29161,72.5,38,stable
+"Pike County, Missouri(6,10)",29163,94.5,20,stable
+"Platte County, Missouri(6,10)",29165,60.3,58,stable
+"Polk County, Missouri(6,10)",29167,66.2,24,stable
+"Pulaski County, Missouri(6,10)",29169,103.5,33,stable
+"Putnam County, Missouri(6,10)",29171,93.8,9,stable
+"Ralls County, Missouri(6,10)",29173,67.1,7,stable
+"Randolph County, Missouri(6,10)",29175,85.7,27,stable
+"Ray County, Missouri(6,10)",29177,93.1,25,stable
+"Reynolds County, Missouri(6,10)",29179,68.4,5,stable
+"Ripley County, Missouri(6,10)",29181,95.8,22,stable
+"St. Charles County, Missouri(6,10)",29183,74.1,262,stable
+"St. Clair County, Missouri(6,10)",29185,73.6,11,falling
+"Ste. Genevieve County, Missouri(6,10)",29186,54.3,15,stable
+"St. Francois County, Missouri(6,10)",29187,106.8,80,stable
+"St. Louis County, Missouri(6,10)",29189,69.4,852,stable
+"Saline County, Missouri(6,10)",29195,74.6,20,stable
+"Schuyler County, Missouri(6,10)",29197,64.7,2,stable
+"Scotland County, Missouri(6,10)",29199,58.7,6,stable
+"Scott County, Missouri(6,10)",29201,99.1,47,stable
+"Shannon County, Missouri(6,10)",29203,70.5,7,stable
+"Shelby County, Missouri(6,10)",29205,72,5,stable
+"Stoddard County, Missouri(6,10)",29207,94.2,41,stable
+"Stone County, Missouri(6,10)",29209,67.1,41,stable
+"Sullivan County, Missouri(6,10)",29211,89.2,10,stable
+"Taney County, Missouri(6,10)",29213,81,56,stable
+"Texas County, Missouri(6,10)",29215,71.4,24,stable
+"Vernon County, Missouri(6,10)",29217,76.2,19,rising
+"Warren County, Missouri(6,10)",29219,76.8,32,stable
+"Washington County, Missouri(6,10)",29221,93.9,30,stable
+"Wayne County, Missouri(6,10)",29223,115.6,27,stable
+"Webster County, Missouri(6,10)",29225,74.5,32,stable
+"Worth County, Missouri(6,10)",29227,*,1,*
+"Wright County, Missouri(6,10)",29229,83.5,19,falling
+"St. Louis City, Missouri(6,10)",29510,89.5,277,stable
+"Beaverhead County, Montana(6,10)",30001,52.2,5,stable
+"Big Horn County, Montana(6,10)",30003,43,7,stable
+"Blaine County, Montana(6,10)",30005,77.1,4,stable
+"Broadwater County, Montana(6,10)",30007,45.5,6,stable
+"Carbon County, Montana(6,10)",30009,35.9,4,stable
+"Carter County, Montana(6,10)",30011,*,1,*
+"Cascade County, Montana(6,10)",30013,67.4,70,stable
+"Chouteau County, Montana(6,10)",30015,59.9,7,rising
+"Custer County, Montana(6,10)",30017,70.8,9,stable
+"Daniels County, Montana(6,10)",30019,*,5,*
+"Dawson County, Montana(6,10)",30021,84.7,9,stable
+"Deer Lodge County, Montana(6,10)",30023,60.1,11,stable
+"Fallon County, Montana(6,10)",30025,*,1,*
+"Fergus County, Montana(6,10)",30027,59.1,14,stable
+"Flathead County, Montana(6,10)",30029,59.1,67,stable
+"Gallatin County, Montana(6,10)",30031,37.6,27,falling
+"Garfield County, Montana(6,10)",30033,*,5,*
+"Glacier County, Montana(6,10)",30035,93.4,13,stable
+"Golden Valley County, Montana(6,10)",30037,*,1,*
+"Granite County, Montana(6,10)",30039,*,5,*
+"Hill County, Montana(6,10)",30041,64.7,9,stable
+"Jefferson County, Montana(6,10)",30043,72.3,9,stable
+"Judith Basin County, Montana(6,10)",30045,*,1,*
+"Lake County, Montana(6,10)",30047,52.6,19,stable
+"Lewis and Clark County, Montana(6,10)",30049,65.2,47,stable
+"Liberty County, Montana(6,10)",30051,*,1,*
+"Lincoln County, Montana(6,10)",30053,72.2,26,stable
+"McCone County, Montana(6,10)",30055,*,1,*
+"Madison County, Montana(6,10)",30057,45.8,8,stable
+"Meagher County, Montana(6,10)",30059,97.7,5,stable
+"Mineral County, Montana(6,10)",30061,66.6,3,stable
+"Missoula County, Montana(6,10)",30063,57.5,63,stable
+"Musselshell County, Montana(6,10)",30065,82.9,8,stable
+"Park County, Montana(6,10)",30067,43.6,11,stable
+"Petroleum County, Montana(6,10)",30069,*,5,*
+"Phillips County, Montana(6,10)",30071,53.6,2,stable
+"Pondera County, Montana(6,10)",30073,67,8,stable
+"Powder River County, Montana(6,10)",30075,*,5,*
+"Powell County, Montana(6,10)",30077,86.2,10,stable
+"Prairie County, Montana(6,10)",30079,*,1,*
+"Ravalli County, Montana(6,10)",30081,49.2,29,stable
+"Richland County, Montana(6,10)",30083,78.7,8,stable
+"Roosevelt County, Montana(6,10)",30085,65,8,stable
+"Rosebud County, Montana(6,10)",30087,56.9,3,stable
+"Sanders County, Montana(6,10)",30089,62.9,15,stable
+"Sheridan County, Montana(6,10)",30091,68.8,7,stable
+"Silver Bow County, Montana(6,10)",30093,56.9,27,stable
+"Stillwater County, Montana(6,10)",30095,49.7,5,stable
+"Sweet Grass County, Montana(6,10)",30097,71.1,6,stable
+"Teton County, Montana(6,10)",30099,61.6,8,stable
+"Toole County, Montana(6,10)",30101,78.4,7,stable
+"Treasure County, Montana(6,10)",30103,*,1,*
+"Valley County, Montana(6,10)",30105,48.9,4,rising
+"Wheatland County, Montana(6,10)",30107,*,1,*
+"Wibaux County, Montana(6,10)",30109,*,5,*
+"Yellowstone County, Montana(6,10)",30111,61.3,103,stable
+"Adams County, Nebraska(6,10)",31001,63.1,22,stable
+"Antelope County, Nebraska(6,10)",31003,51.1,4,stable
+"Arthur County, Nebraska(6,10)",31005,*,5,*
+"Banner County, Nebraska(6,10)",31007,*,1,*
+"Blaine County, Nebraska(6,10)",31009,*,5,*
+"Boone County, Nebraska(6,10)",31011,50.3,2,stable
+"Box Butte County, Nebraska(6,10)",31013,49.7,9,stable
+"Boyd County, Nebraska(6,10)",31015,*,5,*
+"Brown County, Nebraska(6,10)",31017,*,1,*
+"Buffalo County, Nebraska(6,10)",31019,49.6,21,stable
+"Burt County, Nebraska(6,10)",31021,66.8,9,stable
+"Butler County, Nebraska(6,10)",31023,48.8,8,stable
+"Cass County, Nebraska(6,10)",31025,65.9,17,stable
+"Cedar County, Nebraska(6,10)",31027,33.4,7,stable
+"Chase County, Nebraska(6,10)",31029,78,3,stable
+"Cherry County, Nebraska(6,10)",31031,38.5,1,stable
+"Cheyenne County, Nebraska(6,10)",31033,61,6,stable
+"Clay County, Nebraska(6,10)",31035,54.7,7,stable
+"Colfax County, Nebraska(6,10)",31037,46.5,7,stable
+"Cuming County, Nebraska(6,10)",31039,41.6,4,stable
+"Custer County, Nebraska(6,10)",31041,49,10,stable
+"Dakota County, Nebraska(6,10)",31043,73.2,13,stable
+"Dawes County, Nebraska(6,10)",31045,44.5,7,stable
+"Dawson County, Nebraska(6,10)",31047,46.4,15,stable
+"Deuel County, Nebraska(6,10)",31049,*,5,*
+"Dixon County, Nebraska(6,10)",31051,63.9,8,stable
+"Dodge County, Nebraska(6,10)",31053,70.5,34,stable
+"Douglas County, Nebraska(6,10)",31055,69.7,336,stable
+"Dundy County, Nebraska(6,10)",31057,*,5,*
+"Fillmore County, Nebraska(6,10)",31059,49.1,7,stable
+"Franklin County, Nebraska(6,10)",31061,*,1,*
+"Frontier County, Nebraska(6,10)",31063,*,1,*
+"Furnas County, Nebraska(6,10)",31065,65.8,3,stable
+"Gage County, Nebraska(6,10)",31067,60,21,stable
+"Garden County, Nebraska(6,10)",31069,*,5,*
+"Garfield County, Nebraska(6,10)",31071,*,5,*
+"Gosper County, Nebraska(6,10)",31073,*,5,*
+"Grant County, Nebraska(6,10)",31075,*,1,*
+"Greeley County, Nebraska(6,10)",31077,*,1,*
+"Hall County, Nebraska(6,10)",31079,58.1,36,stable
+"Hamilton County, Nebraska(6,10)",31081,48.9,8,stable
+"Harlan County, Nebraska(6,10)",31083,*,5,*
+"Hayes County, Nebraska(6,10)",31085,*,5,*
+"Hitchcock County, Nebraska(6,10)",31087,*,5,*
+"Holt County, Nebraska(6,10)",31089,50.2,10,stable
+"Hooker County, Nebraska(6,10)",31091,*,1,*
+"Howard County, Nebraska(6,10)",31093,54.3,3,stable
+"Jefferson County, Nebraska(6,10)",31095,65.9,10,stable
+"Johnson County, Nebraska(6,10)",31097,97.6,5,stable
+"Kearney County, Nebraska(6,10)",31099,61.3,4,stable
+"Keith County, Nebraska(6,10)",31101,50.1,9,stable
+"Keya Paha County, Nebraska(6,10)",31103,*,5,*
+"Kimball County, Nebraska(6,10)",31105,61.3,6,stable
+"Knox County, Nebraska(6,10)",31107,59.4,6,stable
+"Lancaster County, Nebraska(6,10)",31109,57.9,157,stable
+"Lincoln County, Nebraska(6,10)",31111,58.1,28,stable
+"Logan County, Nebraska(6,10)",31113,*,5,*
+"Loup County, Nebraska(6,10)",31115,*,1,*
+"McPherson County, Nebraska(6,10)",31117,*,1,*
+"Madison County, Nebraska(6,10)",31119,61.5,23,stable
+"Merrick County, Nebraska(6,10)",31121,68.9,10,stable
+"Morrill County, Nebraska(6,10)",31123,72,3,stable
+"Nance County, Nebraska(6,10)",31125,*,5,*
+"Nemaha County, Nebraska(6,10)",31127,63.1,8,stable
+"Nuckolls County, Nebraska(6,10)",31129,65.3,7,stable
+"Otoe County, Nebraska(6,10)",31131,60.5,15,rising
+"Pawnee County, Nebraska(6,10)",31133,61,1,stable
+"Perkins County, Nebraska(6,10)",31135,*,5,*
+"Phelps County, Nebraska(6,10)",31137,44.7,4,stable
+"Pierce County, Nebraska(6,10)",31139,56.6,8,stable
+"Platte County, Nebraska(6,10)",31141,55.2,19,stable
+"Polk County, Nebraska(6,10)",31143,65.8,3,stable
+"Red Willow County, Nebraska(6,10)",31145,50.3,10,stable
+"Richardson County, Nebraska(6,10)",31147,60.8,6,stable
+"Rock County, Nebraska(6,10)",31149,*,5,*
+"Saline County, Nebraska(6,10)",31151,79.9,10,stable
+"Sarpy County, Nebraska(6,10)",31153,65.3,79,stable
+"Saunders County, Nebraska(6,10)",31155,61.8,19,stable
+"Scotts Bluff County, Nebraska(6,10)",31157,46.3,20,stable
+"Seward County, Nebraska(6,10)",31159,44.2,7,stable
+"Sheridan County, Nebraska(6,10)",31161,43.1,6,stable
+"Sherman County, Nebraska(6,10)",31163,*,5,*
+"Sioux County, Nebraska(6,10)",31165,*,5,*
+"Stanton County, Nebraska(6,10)",31167,*,1,*
+"Thayer County, Nebraska(6,10)",31169,58.7,7,stable
+"Thomas County, Nebraska(6,10)",31171,*,5,*
+"Thurston County, Nebraska(6,10)",31173,66,6,stable
+"Valley County, Nebraska(6,10)",31175,*,1,*
+"Washington County, Nebraska(6,10)",31177,44.1,13,stable
+"Wayne County, Nebraska(6,10)",31179,29.9,5,stable
+"Webster County, Nebraska(6,10)",31181,68.8,3,stable
+"Wheeler County, Nebraska(6,10)",31183,*,1,*
+"York County, Nebraska(6,10)",31185,36.8,5,stable
+"Churchill County, Nevada(6)",32001,*,*,*
+"Clark County, Nevada(6)",32003,*,*,*
+"Douglas County, Nevada(6)",32005,*,*,*
+"Elko County, Nevada(6)",32007,*,*,*
+"Esmeralda County, Nevada(6)",32009,*,*,*
+"Eureka County, Nevada(6)",32011,*,*,*
+"Humboldt County, Nevada(6)",32013,*,*,*
+"Lander County, Nevada(6)",32015,*,*,*
+"Lincoln County, Nevada(6)",32017,*,*,*
+"Lyon County, Nevada(6)",32019,*,*,*
+"Mineral County, Nevada(6)",32021,*,*,*
+"Nye County, Nevada(6)",32023,*,*,*
+"Pershing County, Nevada(6)",32027,*,*,*
+"Storey County, Nevada(6)",32029,*,*,*
+"Washoe County, Nevada(6)",32031,*,*,*
+"White Pine County, Nevada(6)",32033,*,*,*
+"Carson City, Nevada(6)",32510,*,*,*
+"Belknap County, New Hampshire(6,10)",33001,66.1,54,falling
+"Carroll County, New Hampshire(6,10)",33003,66.2,51,stable
+"Cheshire County, New Hampshire(6,10)",33005,67.6,65,stable
+"Coos County, New Hampshire(6,10)",33007,70.8,38,stable
+"Grafton County, New Hampshire(6,10)",33009,56.7,63,stable
+"Hillsborough County, New Hampshire(6,10)",33011,66.9,285,stable
+"Merrimack County, New Hampshire(6,10)",33013,67.8,120,stable
+"Rockingham County, New Hampshire(6,10)",33015,73.2,244,stable
+"Strafford County, New Hampshire(6,10)",33017,75.6,98,stable
+"Sullivan County, New Hampshire(6,10)",33019,72.7,42,stable
+"Atlantic County, New Jersey(7,8)",34001,70.5,232,falling
+"Bergen County, New Jersey(7,8)",34003,51.2,578,falling
+"Burlington County, New Jersey(7,8)",34005,65.6,340,stable
+"Camden County, New Jersey(7,8)",34007,72.1,404,stable
+"Cape May County, New Jersey(7,8)",34009,83.8,134,stable
+"Cumberland County, New Jersey(7,8)",34011,74.1,124,stable
+"Essex County, New Jersey(7,8)",34013,51.4,397,falling
+"Gloucester County, New Jersey(7,8)",34015,80.7,248,stable
+"Hudson County, New Jersey(7,8)",34017,49.1,277,falling
+"Hunterdon County, New Jersey(7,8)",34019,55.1,82,falling
+"Mercer County, New Jersey(7,8)",34021,59.7,237,falling
+"Middlesex County, New Jersey(7,8)",34023,53.5,457,stable
+"Monmouth County, New Jersey(7,8)",34025,64,473,stable
+"Morris County, New Jersey(7,8)",34027,50.6,289,falling
+"Ocean County, New Jersey(7,8)",34029,71.8,643,falling
+"Passaic County, New Jersey(7,8)",34031,54.5,278,falling
+"Salem County, New Jersey(7,8)",34033,73.6,64,falling
+"Somerset County, New Jersey(7,8)",34035,48.9,169,falling
+"Sussex County, New Jersey(7,8)",34037,64.2,104,falling
+"Union County, New Jersey(7,8)",34039,48.5,276,falling
+"Warren County, New Jersey(7,8)",34041,66.2,87,falling
+"Bernalillo County, New Mexico(7,8)",35001,39.8,275,falling
+"Catron County, New Mexico(7)",35003,41.5,2,stable
+"Chaves County, New Mexico(7,8)",35005,48.1,38,falling
+"Cibola County, New Mexico(7,8)",35006,51.6,17,stable
+"Colfax County, New Mexico(7,8)",35007,38.7,11,stable
+"Curry County, New Mexico(7,8)",35009,47.3,23,stable
+"DeBaca County, New Mexico(7)",35011,*,1,*
+"Dona Ana County, New Mexico(7,8)",35013,43.4,94,stable
+"Eddy County, New Mexico(7,8)",35015,47.5,27,stable
+"Grant County, New Mexico(7,8)",35017,45.4,24,stable
+"Guadalupe County, New Mexico(7)",35019,*,5,*
+"Harding County, New Mexico(7)",35021,*,1,*
+"Hidalgo County, New Mexico(7)",35023,*,5,*
+"Lea County, New Mexico(7,8)",35025,58.3,36,falling
+"Lincoln County, New Mexico(7,8)",35027,46.3,19,stable
+"Los Alamos County, New Mexico(7,8)",35028,27,9,stable
+"Luna County, New Mexico(7,8)",35029,57.1,20,stable
+"McKinley County, New Mexico(7,8)",35031,14.1,11,falling
+"Mora County, New Mexico(7)",35033,*,5,*
+"Otero County, New Mexico(7,8)",35035,59.2,47,stable
+"Quay County, New Mexico(7,8)",35037,62.6,7,stable
+"Rio Arriba County, New Mexico(7,8)",35039,35.3,14,stable
+"Roosevelt County, New Mexico(7,8)",35041,55.8,12,stable
+"Sandoval County, New Mexico(7,8)",35043,40.8,56,stable
+"San Juan County, New Mexico(7,8)",35045,44.6,55,stable
+"San Miguel County, New Mexico(7,8)",35047,37.3,12,stable
+"Santa Fe County, New Mexico(7,8)",35049,32.7,61,stable
+"Sierra County, New Mexico(7,8)",35051,55.5,14,stable
+"Socorro County, New Mexico(7,8)",35053,47.9,8,stable
+"Taos County, New Mexico(7,8)",35055,35.9,18,stable
+"Torrance County, New Mexico(7,8)",35057,49.5,13,stable
+"Union County, New Mexico(7,8)",35059,*,5,*
+"Valencia County, New Mexico(7,8)",35061,50.8,40,stable
+"Albany County, New York(6,10)",36001,73.9,260,stable
+"Allegany County, New York(6,10)",36003,77.6,48,stable
+"Bronx County, New York(6,10)",36005,51.2,643,stable
+"Broome County, New York(6,10)",36007,62.6,162,stable
+"Cattaraugus County, New York(6,10)",36009,76.3,79,stable
+"Cayuga County, New York(6,10)",36011,78.6,81,stable
+"Chautauqua County, New York(6,10)",36013,68.1,120,stable
+"Chemung County, New York(6,10)",36015,77,86,stable
+"Chenango County, New York(6,10)",36017,72.2,47,stable
+"Clinton County, New York(6,10)",36019,95.8,92,stable
+"Columbia County, New York(6,10)",36021,79.3,72,rising
+"Cortland County, New York(6,10)",36023,79.9,45,stable
+"Delaware County, New York(6,10)",36025,69.7,53,stable
+"Dutchess County, New York(6,10)",36027,65,224,stable
+"Erie County, New York(6,10)",36029,76.7,884,stable
+"Essex County, New York(6,10)",36031,68.4,38,stable
+"Franklin County, New York(6,10)",36033,78.7,48,stable
+"Fulton County, New York(6,10)",36035,80.5,56,stable
+"Genesee County, New York(6,10)",36037,80.4,59,stable
+"Greene County, New York(6,10)",36039,73.3,53,stable
+"Hamilton County, New York(6,10)",36041,78.6,5,stable
+"Herkimer County, New York(6,10)",36043,71.8,65,stable
+"Jefferson County, New York(6,10)",36045,79.9,86,stable
+"Kings County, New York(6,10)",36047,50.2,1220,stable
+"Lewis County, New York(6,10)",36049,63.6,24,stable
+"Livingston County, New York(6,10)",36051,67.7,50,stable
+"Madison County, New York(6,10)",36053,80,67,stable
+"Monroe County, New York(6,10)",36055,65.8,571,falling
+"Montgomery County, New York(6,10)",36057,81.7,55,stable
+"Nassau County, New York(6,10)",36059,59.4,994,stable
+"New York County, New York(6,10)",36061,50.7,890,stable
+"Niagara County, New York(6,10)",36063,80.8,229,stable
+"Oneida County, New York(6,10)",36065,80.8,247,stable
+"Onondaga County, New York(6,10)",36067,78.8,434,falling
+"Ontario County, New York(6,10)",36069,73.3,104,stable
+"Orange County, New York(6,10)",36071,67.9,246,stable
+"Orleans County, New York(6,10)",36073,90.7,49,stable
+"Oswego County, New York(6,10)",36075,93.1,128,stable
+"Otsego County, New York(6,10)",36077,66.7,53,stable
+"Putnam County, New York(6,10)",36079,69.4,75,stable
+"Queens County, New York(6,10)",36081,48.7,1163,falling
+"Rensselaer County, New York(6,10)",36083,84.5,155,stable
+"Richmond County, New York(6,10)",36085,67.1,346,stable
+"Rockland County, New York(6,10)",36087,50.5,175,stable
+"St. Lawrence County, New York(6,10)",36089,83.2,110,falling
+"Saratoga County, New York(6,10)",36091,72.4,186,stable
+"Schenectady County, New York(6,10)",36093,71.3,133,stable
+"Schoharie County, New York(6,10)",36095,65.3,27,stable
+"Schuyler County, New York(6,10)",36097,71.2,20,stable
+"Seneca County, New York(6,10)",36099,81.7,35,stable
+"Steuben County, New York(6,10)",36101,80.1,102,stable
+"Suffolk County, New York(6,10)",36103,70.6,1197,stable
+"Sullivan County, New York(6,10)",36105,72.2,69,stable
+"Tioga County, New York(6,10)",36107,65.3,46,falling
+"Tompkins County, New York(6,10)",36109,57.7,52,stable
+"Ulster County, New York(6,10)",36111,71.9,162,stable
+"Warren County, New York(6,10)",36113,71.4,64,rising
+"Washington County, New York(6,10)",36115,88.7,69,falling
+"Wayne County, New York(6,10)",36117,73.6,86,stable
+"Westchester County, New York(6,10)",36119,53.4,613,stable
+"Wyoming County, New York(6,10)",36121,68.7,32,stable
+"Yates County, New York(6,10)",36123,73.5,23,stable
+"Alamance County, North Carolina(6,10)",37001,71.9,133,stable
+"Alexander County, North Carolina(6,10)",37003,76.2,38,stable
+"Alleghany County, North Carolina(6,10)",37005,63.4,14,stable
+"Anson County, North Carolina(6,10)",37007,80.8,24,stable
+"Ashe County, North Carolina(6,10)",37009,70.8,32,stable
+"Avery County, North Carolina(6,10)",37011,66.5,19,stable
+"Beaufort County, North Carolina(6,10)",37013,84.1,60,stable
+"Bertie County, North Carolina(6,10)",37015,70.1,18,stable
+"Bladen County, North Carolina(6,10)",37017,64.9,32,stable
+"Brunswick County, North Carolina(6,10)",37019,69.9,125,stable
+"Buncombe County, North Carolina(6,10)",37021,66.7,213,stable
+"Burke County, North Carolina(6,10)",37023,83.5,98,stable
+"Cabarrus County, North Carolina(6,10)",37025,77.2,133,stable
+"Caldwell County, North Carolina(6,10)",37027,83.1,87,falling
+"Camden County, North Carolina(6,10)",37029,42,7,stable
+"Carteret County, North Carolina(6,10)",37031,76.7,79,stable
+"Caswell County, North Carolina(6,10)",37033,71,24,rising
+"Catawba County, North Carolina(6,10)",37035,69.4,128,stable
+"Chatham County, North Carolina(6,10)",37037,53.7,54,stable
+"Cherokee County, North Carolina(6,10)",37039,79.7,41,stable
+"Chowan County, North Carolina(6,10)",37041,66.7,17,stable
+"Clay County, North Carolina(6,10)",37043,69.4,12,stable
+"Cleveland County, North Carolina(6,10)",37045,72.9,92,stable
+"Columbus County, North Carolina(6,10)",37047,83.2,63,stable
+"Craven County, North Carolina(6,10)",37049,81.6,105,stable
+"Cumberland County, North Carolina(6,10)",37051,73.9,204,stable
+"Currituck County, North Carolina(6,10)",37053,78.7,20,falling
+"Dare County, North Carolina(6,10)",37055,66.4,29,stable
+"Davidson County, North Carolina(6,10)",37057,84.6,172,stable
+"Davie County, North Carolina(6,10)",37059,82.4,49,stable
+"Duplin County, North Carolina(6,10)",37061,62.1,43,stable
+"Durham County, North Carolina(6,10)",37063,61.9,149,stable
+"Edgecombe County, North Carolina(6,10)",37065,66.3,45,stable
+"Forsyth County, North Carolina(6,10)",37067,71.9,279,stable
+"Franklin County, North Carolina(6,10)",37069,76.8,51,stable
+"Gaston County, North Carolina(6,10)",37071,87.8,213,stable
+"Gates County, North Carolina(6,10)",37073,52.2,6,stable
+"Graham County, North Carolina(6,10)",37075,49.3,9,stable
+"Granville County, North Carolina(6,10)",37077,82.4,54,stable
+"Greene County, North Carolina(6,10)",37079,70.7,19,stable
+"Guilford County, North Carolina(6,10)",37081,71.3,369,stable
+"Halifax County, North Carolina(6,10)",37083,69.4,53,stable
+"Harnett County, North Carolina(6,10)",37085,86.7,91,stable
+"Haywood County, North Carolina(6,10)",37087,70.2,65,stable
+"Henderson County, North Carolina(6,10)",37089,59.9,107,stable
+"Hertford County, North Carolina(6,10)",37091,68.3,20,stable
+"Hoke County, North Carolina(6,10)",37093,97.1,32,stable
+"Hyde County, North Carolina(6,10)",37095,84.1,4,stable
+"Iredell County, North Carolina(6,10)",37097,74.7,133,stable
+"Jackson County, North Carolina(6,10)",37099,65.2,31,stable
+"Johnston County, North Carolina(6,10)",37101,70.9,118,stable
+"Jones County, North Carolina(6,10)",37103,86.9,15,stable
+"Lee County, North Carolina(6,10)",37105,76.9,49,falling
+"Lenoir County, North Carolina(6,10)",37107,73,55,stable
+"Lincoln County, North Carolina(6,10)",37109,72.3,67,stable
+"McDowell County, North Carolina(6,10)",37111,88.7,52,stable
+"Macon County, North Carolina(6,10)",37113,76.2,48,stable
+"Madison County, North Carolina(6,10)",37115,56.6,16,stable
+"Martin County, North Carolina(6,10)",37117,68.7,26,stable
+"Mecklenburg County, North Carolina(6,10)",37119,60.2,454,stable
+"Mitchell County, North Carolina(6,10)",37121,81.7,18,stable
+"Montgomery County, North Carolina(6,10)",37123,71.4,24,stable
+"Moore County, North Carolina(6,10)",37125,74.5,110,stable
+"Nash County, North Carolina(6,10)",37127,73,83,stable
+"New Hanover County, North Carolina(6,10)",37129,66.5,156,stable
+"Northampton County, North Carolina(6,10)",37131,72.9,26,stable
+"Onslow County, North Carolina(6,10)",37133,86,99,stable
+"Orange County, North Carolina(6,10)",37135,57.9,67,stable
+"Pamlico County, North Carolina(6,10)",37137,84.1,21,stable
+"Pasquotank County, North Carolina(6,10)",37139,69.4,34,stable
+"Pender County, North Carolina(6,10)",37141,71.1,47,stable
+"Perquimans County, North Carolina(6,10)",37143,69.9,17,stable
+"Person County, North Carolina(6,10)",37145,84.8,40,stable
+"Pitt County, North Carolina(6,10)",37147,63,93,stable
+"Polk County, North Carolina(6,10)",37149,50.5,17,stable
+"Randolph County, North Carolina(6,10)",37151,86.9,145,stable
+"Richmond County, North Carolina(6,10)",37153,86.1,47,stable
+"Robeson County, North Carolina(6,10)",37155,69.5,93,stable
+"Rockingham County, North Carolina(6,10)",37157,89.9,111,stable
+"Rowan County, North Carolina(6,10)",37159,86.8,146,stable
+"Rutherford County, North Carolina(6,10)",37161,80,78,stable
+"Sampson County, North Carolina(6,10)",37163,77.9,58,stable
+"Scotland County, North Carolina(6,10)",37165,85.4,38,stable
+"Stanly County, North Carolina(6,10)",37167,80.9,62,stable
+"Stokes County, North Carolina(6,10)",37169,91.1,60,stable
+"Surry County, North Carolina(6,10)",37171,83.7,85,stable
+"Swain County, North Carolina(6,10)",37173,96.1,20,stable
+"Transylvania County, North Carolina(6,10)",37175,53.7,31,stable
+"Tyrrell County, North Carolina(6,10)",37177,97.8,4,stable
+"Union County, North Carolina(6,10)",37179,63.9,115,stable
+"Vance County, North Carolina(6,10)",37181,71.2,37,stable
+"Wake County, North Carolina(6,10)",37183,56.7,408,falling
+"Warren County, North Carolina(6,10)",37185,82.2,24,stable
+"Washington County, North Carolina(6,10)",37187,58.7,9,stable
+"Watauga County, North Carolina(6,10)",37189,51.6,24,stable
+"Wayne County, North Carolina(6,10)",37191,77.3,107,stable
+"Wilkes County, North Carolina(6,10)",37193,77.3,73,stable
+"Wilson County, North Carolina(6,10)",37195,71.6,69,stable
+"Yadkin County, North Carolina(6,10)",37197,82.7,40,stable
+"Yancey County, North Carolina(6,10)",37199,86.9,27,stable
+"Adams County, North Dakota(6,10)",38001,*,1,*
+"Barnes County, North Dakota(6,10)",38003,65,8,falling
+"Benson County, North Dakota(6,10)",38005,59.6,2,stable
+"Billings County, North Dakota(6,10)",38007,*,5,*
+"Bottineau County, North Dakota(6,10)",38009,58.5,4,stable
+"Bowman County, North Dakota(6,10)",38011,81.8,2,stable
+"Burke County, North Dakota(6,10)",38013,*,5,*
+"Burleigh County, North Dakota(6,10)",38015,52.5,47,stable
+"Cass County, North Dakota(6,10)",38017,60.6,82,rising
+"Cavalier County, North Dakota(6,10)",38019,50.7,2,stable
+"Dickey County, North Dakota(6,10)",38021,50,2,rising
+"Divide County, North Dakota(6,10)",38023,*,1,*
+"Dunn County, North Dakota(6,10)",38025,*,1,*
+"Eddy County, North Dakota(6,10)",38027,*,1,*
+"Emmons County, North Dakota(6,10)",38029,43.8,5,stable
+"Foster County, North Dakota(6,10)",38031,*,1,*
+"Golden Valley County, North Dakota(6,10)",38033,*,5,*
+"Grand Forks County, North Dakota(6,10)",38035,60.1,34,stable
+"Grant County, North Dakota(6,10)",38037,*,1,*
+"Griggs County, North Dakota(6,10)",38039,*,1,*
+"Hettinger County, North Dakota(6,10)",38041,*,1,*
+"Kidder County, North Dakota(6,10)",38043,*,5,*
+"LaMoure County, North Dakota(6,10)",38045,*,1,*
+"Logan County, North Dakota(6,10)",38047,*,5,*
+"McHenry County, North Dakota(6,10)",38049,64.2,8,stable
+"McIntosh County, North Dakota(6,10)",38051,*,5,*
+"McKenzie County, North Dakota(6,10)",38053,43.7,1,stable
+"McLean County, North Dakota(6,10)",38055,54.2,10,stable
+"Mercer County, North Dakota(6,10)",38057,50.8,4,stable
+"Morton County, North Dakota(6,10)",38059,69,22,stable
+"Mountrail County, North Dakota(6,10)",38061,70.9,4,stable
+"Nelson County, North Dakota(6,10)",38063,72.9,6,stable
+"Oliver County, North Dakota(6,10)",38065,*,1,*
+"Pembina County, North Dakota(6,10)",38067,66.2,10,stable
+"Pierce County, North Dakota(6,10)",38069,41.2,1,stable
+"Ramsey County, North Dakota(6,10)",38071,73.8,9,stable
+"Ransom County, North Dakota(6,10)",38073,68.2,4,stable
+"Renville County, North Dakota(6,10)",38075,*,5,*
+"Richland County, North Dakota(6,10)",38077,45.8,11,stable
+"Rolette County, North Dakota(6,10)",38079,76.9,8,stable
+"Sargent County, North Dakota(6,10)",38081,100.7,8,falling
+"Sheridan County, North Dakota(6,10)",38083,*,5,*
+"Sioux County, North Dakota(6,10)",38085,*,5,*
+"Slope County, North Dakota(6,10)",38087,*,5,*
+"Stark County, North Dakota(6,10)",38089,42.9,11,stable
+"Steele County, North Dakota(6,10)",38091,*,1,*
+"Stutsman County, North Dakota(6,10)",38093,57.2,19,stable
+"Towner County, North Dakota(6,10)",38095,*,5,*
+"Traill County, North Dakota(6,10)",38097,63,9,rising
+"Walsh County, North Dakota(6,10)",38099,57.7,12,stable
+"Ward County, North Dakota(6,10)",38101,65.3,43,stable
+"Wells County, North Dakota(6,10)",38103,41,2,stable
+"Williams County, North Dakota(6,10)",38105,54.1,12,stable
+"Adams County, Ohio(6,10)",39001,87.5,30,stable
+"Allen County, Ohio(6,10)",39003,71.2,92,stable
+"Ashland County, Ohio(6,10)",39005,62.1,43,stable
+"Ashtabula County, Ohio(6,10)",39007,80.1,105,stable
+"Athens County, Ohio(6,10)",39009,77.4,45,falling
+"Auglaize County, Ohio(6,10)",39011,68.3,38,stable
+"Belmont County, Ohio(6,10)",39013,61.3,58,stable
+"Brown County, Ohio(6,10)",39015,106.7,56,stable
+"Butler County, Ohio(6,10)",39017,75.6,287,stable
+"Carroll County, Ohio(6,10)",39019,79.8,29,stable
+"Champaign County, Ohio(6,10)",39021,65,33,stable
+"Clark County, Ohio(6,10)",39023,77,137,stable
+"Clermont County, Ohio(6,10)",39025,86.2,183,falling
+"Clinton County, Ohio(6,10)",39027,86.7,40,stable
+"Columbiana County, Ohio(6,10)",39029,69.3,103,stable
+"Coshocton County, Ohio(6,10)",39031,74.8,38,stable
+"Crawford County, Ohio(6,10)",39033,67.4,43,stable
+"Cuyahoga County, Ohio(6,10)",39035,69.4,1110,falling
+"Darke County, Ohio(6,10)",39037,66,44,stable
+"Defiance County, Ohio(6,10)",39039,68.2,34,stable
+"Delaware County, Ohio(6,10)",39041,61.6,96,stable
+"Erie County, Ohio(6,10)",39043,65.8,73,stable
+"Fairfield County, Ohio(6,10)",39045,73.8,115,falling
+"Fayette County, Ohio(6,10)",39047,87.4,30,stable
+"Franklin County, Ohio(6,10)",39049,70.6,734,stable
+"Fulton County, Ohio(6,10)",39051,48.7,23,falling
+"Gallia County, Ohio(6,10)",39053,89.5,37,stable
+"Geauga County, Ohio(6,10)",39055,52.3,65,stable
+"Greene County, Ohio(6,10)",39057,61,111,stable
+"Guernsey County, Ohio(6,10)",39059,83.1,45,stable
+"Hamilton County, Ohio(6,10)",39061,75.7,675,stable
+"Hancock County, Ohio(6,10)",39063,58.3,50,stable
+"Hardin County, Ohio(6,10)",39065,73.6,28,stable
+"Harrison County, Ohio(6,10)",39067,73.5,19,stable
+"Henry County, Ohio(6,10)",39069,55.8,22,stable
+"Highland County, Ohio(6,10)",39071,76.2,39,stable
+"Hocking County, Ohio(6,10)",39073,76.9,30,stable
+"Holmes County, Ohio(6,10)",39075,40,14,stable
+"Huron County, Ohio(6,10)",39077,78.4,52,stable
+"Jackson County, Ohio(6,10)",39079,83,35,stable
+"Jefferson County, Ohio(6,10)",39081,79.3,80,stable
+"Knox County, Ohio(6,10)",39083,69.9,49,stable
+"Lake County, Ohio(6,10)",39085,73.5,220,stable
+"Lawrence County, Ohio(6,10)",39087,84,68,stable
+"Licking County, Ohio(6,10)",39089,78.9,147,falling
+"Logan County, Ohio(6,10)",39091,71.7,42,stable
+"Lorain County, Ohio(6,10)",39093,71.7,261,stable
+"Lucas County, Ohio(6,10)",39095,62.2,304,stable
+"Madison County, Ohio(6,10)",39097,75,34,stable
+"Mahoning County, Ohio(6,10)",39099,69.7,230,stable
+"Marion County, Ohio(6,10)",39101,83,65,falling
+"Medina County, Ohio(6,10)",39103,62.1,121,stable
+"Meigs County, Ohio(6,10)",39105,72.1,20,stable
+"Mercer County, Ohio(6,10)",39107,53.6,30,stable
+"Miami County, Ohio(6,10)",39109,74.7,97,falling
+"Monroe County, Ohio(6,10)",39111,60.7,11,stable
+"Montgomery County, Ohio(6,10)",39113,76.9,509,stable
+"Morgan County, Ohio(6,10)",39115,80.6,16,stable
+"Morrow County, Ohio(6,10)",39117,80.7,36,stable
+"Muskingum County, Ohio(6,10)",39119,81,85,stable
+"Noble County, Ohio(6,10)",39121,49,10,stable
+"Ottawa County, Ohio(6,10)",39123,67,45,stable
+"Paulding County, Ohio(6,10)",39125,88.3,23,stable
+"Perry County, Ohio(6,10)",39127,79.2,35,stable
+"Pickaway County, Ohio(6,10)",39129,77.7,47,stable
+"Pike County, Ohio(6,10)",39131,91.5,31,stable
+"Portage County, Ohio(6,10)",39133,73,130,stable
+"Preble County, Ohio(6,10)",39135,73,41,stable
+"Putnam County, Ohio(6,10)",39137,46.2,21,stable
+"Richland County, Ohio(6,10)",39139,71.8,116,falling
+"Ross County, Ohio(6,10)",39141,85.4,77,stable
+"Sandusky County, Ohio(6,10)",39143,69.7,51,stable
+"Scioto County, Ohio(6,10)",39145,98.3,98,stable
+"Seneca County, Ohio(6,10)",39147,72.3,47,stable
+"Shelby County, Ohio(6,10)",39149,56.5,34,stable
+"Stark County, Ohio(6,10)",39151,68.1,336,stable
+"Summit County, Ohio(6,10)",39153,67.9,451,falling
+"Trumbull County, Ohio(6,10)",39155,81.6,239,stable
+"Tuscarawas County, Ohio(6,10)",39157,61.9,78,stable
+"Union County, Ohio(6,10)",39159,69.6,35,stable
+"Van Wert County, Ohio(6,10)",39161,56.5,19,stable
+"Vinton County, Ohio(6,10)",39163,114.4,17,stable
+"Warren County, Ohio(6,10)",39165,66.7,141,stable
+"Washington County, Ohio(6,10)",39167,75.8,65,stable
+"Wayne County, Ohio(6,10)",39169,57.9,81,stable
+"Williams County, Ohio(6,10)",39171,66.5,34,stable
+"Wood County, Ohio(6,10)",39173,53.7,71,stable
+"Wyandot County, Ohio(6,10)",39175,75.3,24,stable
+"Adair County, Oklahoma(6,10)",40001,71.7,16,stable
+"Alfalfa County, Oklahoma(6,10)",40003,61.6,3,stable
+"Atoka County, Oklahoma(6,10)",40005,80.3,12,stable
+"Beaver County, Oklahoma(6,10)",40007,*,1,*
+"Beckham County, Oklahoma(6,10)",40009,54.5,15,stable
+"Blaine County, Oklahoma(6,10)",40011,67,11,stable
+"Bryan County, Oklahoma(6,10)",40013,88.4,46,stable
+"Caddo County, Oklahoma(6,10)",40015,86.1,32,stable
+"Canadian County, Oklahoma(6,10)",40017,71.2,82,stable
+"Carter County, Oklahoma(6,10)",40019,78.1,47,stable
+"Cherokee County, Oklahoma(6,10)",40021,80,43,stable
+"Choctaw County, Oklahoma(6,10)",40023,80.6,15,stable
+"Cimarron County, Oklahoma(6,10)",40025,*,1,*
+"Cleveland County, Oklahoma(6,10)",40027,66.3,154,falling
+"Coal County, Oklahoma(6,10)",40029,86,5,stable
+"Comanche County, Oklahoma(6,10)",40031,72.9,78,stable
+"Cotton County, Oklahoma(6,10)",40033,60.1,3,stable
+"Craig County, Oklahoma(6,10)",40035,86.3,16,stable
+"Creek County, Oklahoma(6,10)",40037,88.3,80,stable
+"Custer County, Oklahoma(6,10)",40039,72.2,23,stable
+"Delaware County, Oklahoma(6,10)",40041,71.6,44,stable
+"Dewey County, Oklahoma(6,10)",40043,49.3,6,stable
+"Ellis County, Oklahoma(6,10)",40045,66.5,6,stable
+"Garfield County, Oklahoma(6,10)",40047,62.6,44,stable
+"Garvin County, Oklahoma(6,10)",40049,88.3,30,stable
+"Grady County, Oklahoma(6,10)",40051,67.9,39,stable
+"Grant County, Oklahoma(6,10)",40053,60.7,2,stable
+"Greer County, Oklahoma(6,10)",40055,90.6,9,stable
+"Harmon County, Oklahoma(6,10)",40057,*,1,*
+"Harper County, Oklahoma(6,10)",40059,77.2,2,stable
+"Haskell County, Oklahoma(6,10)",40061,76.8,15,stable
+"Hughes County, Oklahoma(6,10)",40063,88.6,15,stable
+"Jackson County, Oklahoma(6,10)",40065,59.2,19,stable
+"Jefferson County, Oklahoma(6,10)",40067,79.7,9,stable
+"Johnston County, Oklahoma(6,10)",40069,55.5,10,stable
+"Kay County, Oklahoma(6,10)",40071,73.9,47,stable
+"Kingfisher County, Oklahoma(6,10)",40073,70.4,11,stable
+"Kiowa County, Oklahoma(6,10)",40075,76.1,12,stable
+"Latimer County, Oklahoma(6,10)",40077,60.6,11,stable
+"Le Flore County, Oklahoma(6,10)",40079,62.6,36,stable
+"Lincoln County, Oklahoma(6,10)",40081,66.5,28,stable
+"Logan County, Oklahoma(6,10)",40083,67.8,30,stable
+"Love County, Oklahoma(6,10)",40085,57.7,5,stable
+"McClain County, Oklahoma(6,10)",40087,83.4,30,stable
+"McCurtain County, Oklahoma(6,10)",40089,95,41,stable
+"McIntosh County, Oklahoma(6,10)",40091,77,24,stable
+"Major County, Oklahoma(6,10)",40093,59.6,4,stable
+"Marshall County, Oklahoma(6,10)",40095,72.5,20,stable
+"Mayes County, Oklahoma(6,10)",40097,84.2,42,stable
+"Murray County, Oklahoma(6,10)",40099,98.3,20,stable
+"Muskogee County, Oklahoma(6,10)",40101,98.9,86,stable
+"Noble County, Oklahoma(6,10)",40103,60.4,11,stable
+"Nowata County, Oklahoma(6,10)",40105,59.7,7,stable
+"Okfuskee County, Oklahoma(6,10)",40107,65.8,9,stable
+"Oklahoma County, Oklahoma(6,10)",40109,70.2,515,stable
+"Okmulgee County, Oklahoma(6,10)",40111,95.2,46,stable
+"Osage County, Oklahoma(6,10)",40113,56.7,38,stable
+"Ottawa County, Oklahoma(6,10)",40115,80.9,36,stable
+"Pawnee County, Oklahoma(6,10)",40117,78,16,stable
+"Payne County, Oklahoma(6,10)",40119,62.7,44,stable
+"Pittsburg County, Oklahoma(6,10)",40121,77,49,falling
+"Pontotoc County, Oklahoma(6,10)",40123,73.5,31,stable
+"Pottawatomie County, Oklahoma(6,10)",40125,86.1,72,stable
+"Pushmataha County, Oklahoma(6,10)",40127,66.1,13,stable
+"Roger Mills County, Oklahoma(6,10)",40129,*,5,*
+"Rogers County, Oklahoma(6,10)",40131,63.6,66,stable
+"Seminole County, Oklahoma(6,10)",40133,86.6,31,stable
+"Sequoyah County, Oklahoma(6,10)",40135,71.7,40,stable
+"Stephens County, Oklahoma(6,10)",40137,69.6,40,stable
+"Texas County, Oklahoma(6,10)",40139,51.4,7,stable
+"Tillman County, Oklahoma(6,10)",40141,60.5,8,stable
+"Tulsa County, Oklahoma(6,10)",40143,67.8,423,stable
+"Wagoner County, Oklahoma(6,10)",40145,69.6,58,stable
+"Washington County, Oklahoma(6,10)",40147,78.6,54,stable
+"Washita County, Oklahoma(6,10)",40149,53.1,6,falling
+"Woods County, Oklahoma(6,10)",40151,56.1,8,stable
+"Woodward County, Oklahoma(6,10)",40153,41.1,8,stable
+"Baker County, Oregon(6,10)",41001,65.7,20,stable
+"Benton County, Oregon(6,10)",41003,49.5,45,stable
+"Clackamas County, Oregon(6,10)",41005,55.5,243,stable
+"Clatsop County, Oregon(6,10)",41007,72.8,35,stable
+"Columbia County, Oregon(6,10)",41009,63.9,40,stable
+"Coos County, Oregon(6,10)",41011,73.7,76,stable
+"Crook County, Oregon(6,10)",41013,54.1,17,stable
+"Curry County, Oregon(6,10)",41015,62.4,31,stable
+"Deschutes County, Oregon(6,10)",41017,53.2,103,stable
+"Douglas County, Oregon(6,10)",41019,67.1,116,falling
+"Gilliam County, Oregon(6,10)",41021,*,5,*
+"Grant County, Oregon(6,10)",41023,42.5,8,stable
+"Harney County, Oregon(6,10)",41025,44.2,3,stable
+"Hood River County, Oregon(6,10)",41027,45.9,9,stable
+"Jackson County, Oregon(6,10)",41029,63.2,186,stable
+"Jefferson County, Oregon(6,10)",41031,51.7,16,stable
+"Josephine County, Oregon(6,10)",41033,72.2,102,stable
+"Klamath County, Oregon(6,10)",41035,61.3,58,stable
+"Lake County, Oregon(6,10)",41037,47,4,stable
+"Lane County, Oregon(6,10)",41039,54.1,235,stable
+"Lincoln County, Oregon(6,10)",41041,74.7,58,stable
+"Linn County, Oregon(6,10)",41043,72.2,108,stable
+"Malheur County, Oregon(6,10)",41045,54.2,18,stable
+"Marion County, Oregon(6,10)",41047,66.9,229,stable
+"Morrow County, Oregon(6,10)",41049,63.2,10,stable
+"Multnomah County, Oregon(6,10)",41051,62.7,430,stable
+"Polk County, Oregon(6,10)",41053,52.7,50,stable
+"Sherman County, Oregon(6,10)",41055,*,1,*
+"Tillamook County, Oregon(6,10)",41057,64.1,25,stable
+"Umatilla County, Oregon(6,10)",41059,58.9,50,stable
+"Union County, Oregon(6,10)",41061,44.9,13,falling
+"Wallowa County, Oregon(6,10)",41063,46.3,4,stable
+"Wasco County, Oregon(6,10)",41065,75.1,28,stable
+"Washington County, Oregon(6,10)",41067,48.3,229,stable
+"Wheeler County, Oregon(6,10)",41069,*,5,*
+"Yamhill County, Oregon(6,10)",41071,65.3,71,stable
+"Adams County, Pennsylvania(6,10)",42001,60.2,81,stable
+"Allegheny County, Pennsylvania(6,10)",42003,73.4,1195,stable
+"Armstrong County, Pennsylvania(6,10)",42005,67.3,69,stable
+"Beaver County, Pennsylvania(6,10)",42007,76.9,190,stable
+"Bedford County, Pennsylvania(6,10)",42009,51.8,39,stable
+"Berks County, Pennsylvania(6,10)",42011,64.4,314,rising
+"Blair County, Pennsylvania(6,10)",42013,66.6,117,stable
+"Bradford County, Pennsylvania(6,10)",42015,71.7,65,stable
+"Bucks County, Pennsylvania(6,10)",42017,63.5,489,stable
+"Butler County, Pennsylvania(6,10)",42019,61.9,141,stable
+"Cambria County, Pennsylvania(6,10)",42021,57.5,121,stable
+"Cameron County, Pennsylvania(6,10)",42023,60.9,3,stable
+"Carbon County, Pennsylvania(6,10)",42025,72.9,66,stable
+"Centre County, Pennsylvania(6,10)",42027,53.7,79,stable
+"Chester County, Pennsylvania(6,10)",42029,54.3,299,stable
+"Clarion County, Pennsylvania(6,10)",42031,59.3,29,stable
+"Clearfield County, Pennsylvania(6,10)",42033,61.3,71,stable
+"Clinton County, Pennsylvania(6,10)",42035,68.4,36,stable
+"Columbia County, Pennsylvania(6,10)",42037,58.9,52,stable
+"Crawford County, Pennsylvania(6,10)",42039,68,79,stable
+"Cumberland County, Pennsylvania(6,10)",42041,56.9,170,stable
+"Dauphin County, Pennsylvania(6,10)",42043,67.4,212,stable
+"Delaware County, Pennsylvania(6,10)",42045,70.8,466,falling
+"Elk County, Pennsylvania(6,10)",42047,66,30,stable
+"Erie County, Pennsylvania(6,10)",42049,67.4,227,stable
+"Fayette County, Pennsylvania(6,10)",42051,77.7,149,stable
+"Forest County, Pennsylvania(6,10)",42053,68.9,6,stable
+"Franklin County, Pennsylvania(6,10)",42055,58.7,114,stable
+"Fulton County, Pennsylvania(6,10)",42057,54.6,9,stable
+"Greene County, Pennsylvania(6,10)",42059,84.4,40,stable
+"Huntingdon County, Pennsylvania(6,10)",42061,58.4,34,stable
+"Indiana County, Pennsylvania(6,10)",42063,53.8,61,stable
+"Jefferson County, Pennsylvania(6,10)",42065,67.1,45,stable
+"Juniata County, Pennsylvania(6,10)",42067,55.6,20,stable
+"Lackawanna County, Pennsylvania(6,10)",42069,70.9,206,stable
+"Lancaster County, Pennsylvania(6,10)",42071,53.7,338,stable
+"Lawrence County, Pennsylvania(6,10)",42073,71.4,93,stable
+"Lebanon County, Pennsylvania(6,10)",42075,65.7,118,stable
+"Lehigh County, Pennsylvania(6,10)",42077,64.5,273,stable
+"Luzerne County, Pennsylvania(6,10)",42079,69.1,306,stable
+"Lycoming County, Pennsylvania(6,10)",42081,67.6,103,stable
+"McKean County, Pennsylvania(6,10)",42083,68.6,41,stable
+"Mercer County, Pennsylvania(6,10)",42085,67.1,108,stable
+"Mifflin County, Pennsylvania(6,10)",42087,70.9,50,stable
+"Monroe County, Pennsylvania(6,10)",42089,72.6,137,stable
+"Montgomery County, Pennsylvania(6,10)",42091,57.4,571,stable
+"Montour County, Pennsylvania(6,10)",42093,56.6,17,stable
+"Northampton County, Pennsylvania(6,10)",42095,64.9,247,stable
+"Northumberland County, Pennsylvania(6,10)",42097,67.2,93,stable
+"Perry County, Pennsylvania(6,10)",42099,72,39,stable
+"Philadelphia County, Pennsylvania(6,10)",42101,81.9,1258,falling
+"Pike County, Pennsylvania(6,10)",42103,65.4,54,stable
+"Potter County, Pennsylvania(6,10)",42105,80,20,stable
+"Schuylkill County, Pennsylvania(6,10)",42107,68.4,142,stable
+"Snyder County, Pennsylvania(6,10)",42109,51.3,27,stable
+"Somerset County, Pennsylvania(6,10)",42111,49.1,58,stable
+"Sullivan County, Pennsylvania(6,10)",42113,70.2,10,rising
+"Susquehanna County, Pennsylvania(6,10)",42115,54.1,33,stable
+"Tioga County, Pennsylvania(6,10)",42117,70.5,43,stable
+"Union County, Pennsylvania(6,10)",42119,57.8,28,stable
+"Venango County, Pennsylvania(6,10)",42121,75.3,62,stable
+"Warren County, Pennsylvania(6,10)",42123,60.6,40,stable
+"Washington County, Pennsylvania(6,10)",42125,68.4,199,stable
+"Wayne County, Pennsylvania(6,10)",42127,65,53,stable
+"Westmoreland County, Pennsylvania(6,10)",42129,71.2,389,stable
+"Wyoming County, Pennsylvania(6,10)",42131,78,31,stable
+"York County, Pennsylvania(6,10)",42133,67.5,351,stable
+"Bristol County, Rhode Island(6,10)",44001,55,39,stable
+"Kent County, Rhode Island(6,10)",44003,68.9,148,stable
+"Newport County, Rhode Island(6,10)",44005,60.5,68,stable
+"Providence County, Rhode Island(6,10)",44007,73.3,505,stable
+"Washington County, Rhode Island(6,10)",44009,65.4,106,stable
+"Abbeville County, South Carolina(6,10)",45001,68.9,26,rising
+"Aiken County, South Carolina(6,10)",45003,58.6,120,falling
+"Allendale County, South Carolina(6,10)",45005,62.4,10,stable
+"Anderson County, South Carolina(6,10)",45007,69.8,164,stable
+"Bamberg County, South Carolina(6,10)",45009,59.6,15,stable
+"Barnwell County, South Carolina(6,10)",45011,60.2,17,stable
+"Beaufort County, South Carolina(6,10)",45013,49.5,126,stable
+"Berkeley County, South Carolina(6,10)",45015,85.2,140,stable
+"Calhoun County, South Carolina(6,10)",45017,60.4,14,stable
+"Charleston County, South Carolina(6,10)",45019,66,255,stable
+"Cherokee County, South Carolina(6,10)",45021,87.9,54,stable
+"Chester County, South Carolina(6,10)",45023,77.9,30,stable
+"Chesterfield County, South Carolina(6,10)",45025,81.3,43,stable
+"Clarendon County, South Carolina(6,10)",45027,70.3,33,stable
+"Colleton County, South Carolina(6,10)",45029,94.1,50,stable
+"Darlington County, South Carolina(6,10)",45031,72.4,60,stable
+"Dillon County, South Carolina(6,10)",45033,85.7,30,stable
+"Dorchester County, South Carolina(6,10)",45035,71.2,91,stable
+"Edgefield County, South Carolina(6,10)",45037,59.2,20,falling
+"Fairfield County, South Carolina(6,10)",45039,58.7,20,stable
+"Florence County, South Carolina(6,10)",45041,72.9,113,stable
+"Georgetown County, South Carolina(6,10)",45043,59.3,55,falling
+"Greenville County, South Carolina(6,10)",45045,65.5,326,stable
+"Greenwood County, South Carolina(6,10)",45047,64.1,56,stable
+"Hampton County, South Carolina(6,10)",45049,79,22,stable
+"Horry County, South Carolina(6,10)",45051,75.3,288,falling
+"Jasper County, South Carolina(6,10)",45053,52.1,12,stable
+"Kershaw County, South Carolina(6,10)",45055,74.5,59,stable
+"Lancaster County, South Carolina(6,10)",45057,68.4,70,stable
+"Laurens County, South Carolina(6,10)",45059,80.4,65,stable
+"Lee County, South Carolina(6,10)",45061,73.1,15,stable
+"Lexington County, South Carolina(6,10)",45063,69.1,198,stable
+"McCormick County, South Carolina(6,10)",45065,67.8,11,stable
+"Marion County, South Carolina(6,10)",45067,79.8,31,stable
+"Marlboro County, South Carolina(6,10)",45069,87.7,27,stable
+"Newberry County, South Carolina(6,10)",45071,59.3,31,stable
+"Oconee County, South Carolina(6,10)",45073,69.6,77,stable
+"Orangeburg County, South Carolina(6,10)",45075,63.6,69,stable
+"Pickens County, South Carolina(6,10)",45077,74.7,101,stable
+"Richland County, South Carolina(6,10)",45079,70.6,240,stable
+"Saluda County, South Carolina(6,10)",45081,55.2,12,stable
+"Spartanburg County, South Carolina(6,10)",45083,73.1,239,stable
+"Sumter County, South Carolina(6,10)",45085,72.2,82,stable
+"Union County, South Carolina(6,10)",45087,94.4,34,stable
+"Williamsburg County, South Carolina(6,10)",45089,66.7,27,rising
+"York County, South Carolina(6,10)",45091,67.3,159,stable
+"Aurora County, South Dakota(6,10)",46003,96.7,6,stable
+"Beadle County, South Dakota(6,10)",46005,48.8,10,stable
+"Bennett County, South Dakota(6,10)",46007,*,5,*
+"Bon Homme County, South Dakota(6,10)",46009,56.2,4,stable
+"Brookings County, South Dakota(6,10)",46011,53.8,12,stable
+"Brown County, South Dakota(6,10)",46013,57.8,25,stable
+"Brule County, South Dakota(6,10)",46015,83.7,8,stable
+"Buffalo County, South Dakota(6,10)",46017,*,5,*
+"Butte County, South Dakota(6,10)",46019,61.4,11,stable
+"Campbell County, South Dakota(6,10)",46021,*,5,*
+"Charles Mix County, South Dakota(6,10)",46023,49.3,4,stable
+"Clark County, South Dakota(6,10)",46025,*,1,*
+"Clay County, South Dakota(6,10)",46027,61.9,5,stable
+"Codington County, South Dakota(6,10)",46029,49.8,14,stable
+"Corson County, South Dakota(6,10)",46031,*,1,*
+"Custer County, South Dakota(6,10)",46033,39.5,8,stable
+"Davison County, South Dakota(6,10)",46035,64.7,15,stable
+"Day County, South Dakota(6,10)",46037,45,2,stable
+"Deuel County, South Dakota(6,10)",46039,48.9,5,stable
+"Dewey County, South Dakota(6,10)",46041,82.6,1,stable
+"Douglas County, South Dakota(6,10)",46043,81.9,2,stable
+"Edmunds County, South Dakota(6,10)",46045,*,5,*
+"Fall River County, South Dakota(6,10)",46047,64,6,falling
+"Faulk County, South Dakota(6,10)",46049,*,5,*
+"Grant County, South Dakota(6,10)",46051,55.2,4,stable
+"Gregory County, South Dakota(6,10)",46053,76.4,7,stable
+"Haakon County, South Dakota(6,10)",46055,*,5,*
+"Hamlin County, South Dakota(6,10)",46057,48,1,stable
+"Hand County, South Dakota(6,10)",46059,*,5,*
+"Hanson County, South Dakota(6,10)",46061,*,5,*
+"Harding County, South Dakota(6,10)",46063,*,1,*
+"Hughes County, South Dakota(6,10)",46065,52.4,8,stable
+"Hutchinson County, South Dakota(6,10)",46067,42.4,3,stable
+"Hyde County, South Dakota(6,10)",46069,*,5,*
+"Jackson County, South Dakota(6,10)",46071,*,5,*
+"Jerauld County, South Dakota(6,10)",46073,*,1,*
+"Jones County, South Dakota(6,10)",46075,*,5,*
+"Kingsbury County, South Dakota(6,10)",46077,63.2,8,stable
+"Lake County, South Dakota(6,10)",46079,46.9,9,stable
+"Lawrence County, South Dakota(6,10)",46081,48.5,17,stable
+"Lincoln County, South Dakota(6,10)",46083,49.5,20,stable
+"Lyman County, South Dakota(6,10)",46085,*,1,*
+"McCook County, South Dakota(6,10)",46087,86.9,9,stable
+"McPherson County, South Dakota(6,10)",46089,*,5,*
+"Marshall County, South Dakota(6,10)",46091,54,2,stable
+"Meade County, South Dakota(6,10)",46093,56.6,13,stable
+"Mellette County, South Dakota(6,10)",46095,*,5,*
+"Miner County, South Dakota(6,10)",46097,89,6,stable
+"Minnehaha County, South Dakota(6,10)",46099,65.8,108,stable
+"Moody County, South Dakota(6,10)",46101,45.1,6,stable
+"Pennington County, South Dakota(6,10)",46103,66.8,80,stable
+"Perkins County, South Dakota(6,10)",46105,*,1,*
+"Potter County, South Dakota(6,10)",46107,89,2,stable
+"Roberts County, South Dakota(6,10)",46109,47.3,8,stable
+"Sanborn County, South Dakota(6,10)",46111,*,1,*
+"Shannon County, South Dakota(6,10)",46113,60.2,3,stable
+"Spink County, South Dakota(6,10)",46115,49.2,3,stable
+"Stanley County, South Dakota(6,10)",46117,*,5,*
+"Sully County, South Dakota(6,10)",46119,*,1,*
+"Todd County, South Dakota(6,10)",46121,*,5,*
+"Tripp County, South Dakota(6,10)",46123,43.4,6,stable
+"Turner County, South Dakota(6,10)",46125,56.5,4,stable
+"Union County, South Dakota(6,10)",46127,80.6,12,stable
+"Walworth County, South Dakota(6,10)",46129,47.6,7,stable
+"Yankton County, South Dakota(6,10)",46135,61.9,16,falling
+"Ziebach County, South Dakota(6,10)",46137,*,1,*
+"Anderson County, Tennessee(6,10)",47001,71.9,77,stable
+"Bedford County, Tennessee(6,10)",47003,69.8,33,stable
+"Benton County, Tennessee(6,10)",47005,105.5,28,stable
+"Bledsoe County, Tennessee(6,10)",47007,86,17,stable
+"Blount County, Tennessee(6,10)",47009,79.4,128,stable
+"Bradley County, Tennessee(6,10)",47011,81,95,stable
+"Campbell County, Tennessee(6,10)",47013,106.6,62,stable
+"Cannon County, Tennessee(6,10)",47015,59.8,9,stable
+"Carroll County, Tennessee(6,10)",47017,80.5,34,stable
+"Carter County, Tennessee(6,10)",47019,78.4,61,stable
+"Cheatham County, Tennessee(6,10)",47021,93,40,stable
+"Chester County, Tennessee(6,10)",47023,76.8,14,rising
+"Claiborne County, Tennessee(6,10)",47025,108.5,49,stable
+"Clay County, Tennessee(6,10)",47027,76.8,11,stable
+"Cocke County, Tennessee(6,10)",47029,97.1,48,stable
+"Coffee County, Tennessee(6,10)",47031,84.6,55,stable
+"Crockett County, Tennessee(6,10)",47033,64.7,10,stable
+"Cumberland County, Tennessee(6,10)",47035,79.8,78,stable
+"Davidson County, Tennessee(6,10)",47037,72.8,426,falling
+"Decatur County, Tennessee(6,10)",47039,87.7,14,stable
+"DeKalb County, Tennessee(6,10)",47041,91.4,20,stable
+"Dickson County, Tennessee(6,10)",47043,88.2,48,stable
+"Dyer County, Tennessee(6,10)",47045,78.5,39,stable
+"Fayette County, Tennessee(6,10)",47047,59.5,33,stable
+"Fentress County, Tennessee(6,10)",47049,93,22,stable
+"Franklin County, Tennessee(6,10)",47051,70.7,39,stable
+"Gibson County, Tennessee(6,10)",47053,81.3,54,stable
+"Giles County, Tennessee(6,10)",47055,83,35,stable
+"Grainger County, Tennessee(6,10)",47057,83.2,28,stable
+"Greene County, Tennessee(6,10)",47059,97.1,96,stable
+"Grundy County, Tennessee(6,10)",47061,96.4,17,stable
+"Hamblen County, Tennessee(6,10)",47063,78.5,66,stable
+"Hamilton County, Tennessee(6,10)",47065,68.9,284,stable
+"Hancock County, Tennessee(6,10)",47067,83.3,7,stable
+"Hardeman County, Tennessee(6,10)",47069,94.8,33,stable
+"Hardin County, Tennessee(6,10)",47071,86.9,35,stable
+"Hawkins County, Tennessee(6,10)",47073,102.9,77,stable
+"Haywood County, Tennessee(6,10)",47075,80.8,16,stable
+"Henderson County, Tennessee(6,10)",47077,93.7,30,stable
+"Henry County, Tennessee(6,10)",47079,88.4,43,stable
+"Hickman County, Tennessee(6,10)",47081,91.6,25,stable
+"Houston County, Tennessee(6,10)",47083,97.2,9,stable
+"Humphreys County, Tennessee(6,10)",47085,99.2,24,stable
+"Jackson County, Tennessee(6,10)",47087,102.8,16,stable
+"Jefferson County, Tennessee(6,10)",47089,69.1,47,stable
+"Johnson County, Tennessee(6,10)",47091,88.4,21,stable
+"Knox County, Tennessee(6,10)",47093,74.4,359,falling
+"Lake County, Tennessee(6,10)",47095,97.1,7,stable
+"Lauderdale County, Tennessee(6,10)",47097,93.4,26,stable
+"Lawrence County, Tennessee(6,10)",47099,79,45,stable
+"Lewis County, Tennessee(6,10)",47101,116.3,17,stable
+"Lincoln County, Tennessee(6,10)",47103,65.1,32,stable
+"Loudon County, Tennessee(6,10)",47105,69.5,56,stable
+"McMinn County, Tennessee(6,10)",47107,81.6,57,falling
+"McNairy County, Tennessee(6,10)",47109,89.8,31,stable
+"Macon County, Tennessee(6,10)",47111,101.2,29,stable
+"Madison County, Tennessee(6,10)",47113,71,76,stable
+"Marion County, Tennessee(6,10)",47115,103.8,42,stable
+"Marshall County, Tennessee(6,10)",47117,91.7,31,falling
+"Maury County, Tennessee(6,10)",47119,73.7,67,stable
+"Meigs County, Tennessee(6,10)",47121,84.3,17,stable
+"Monroe County, Tennessee(6,10)",47123,98.9,58,stable
+"Montgomery County, Tennessee(6,10)",47125,85,108,stable
+"Moore County, Tennessee(6,10)",47127,64.2,8,stable
+"Morgan County, Tennessee(6,10)",47129,94.6,24,stable
+"Obion County, Tennessee(6,10)",47131,73.2,33,falling
+"Overton County, Tennessee(6,10)",47133,99.1,34,stable
+"Perry County, Tennessee(6,10)",47135,94.5,13,stable
+"Pickett County, Tennessee(6,10)",47137,95.6,10,stable
+"Polk County, Tennessee(6,10)",47139,116.9,30,stable
+"Putnam County, Tennessee(6,10)",47141,71.9,60,stable
+"Rhea County, Tennessee(6,10)",47143,99.7,43,stable
+"Roane County, Tennessee(6,10)",47145,88.7,70,stable
+"Robertson County, Tennessee(6,10)",47147,84.1,61,stable
+"Rutherford County, Tennessee(6,10)",47149,69.2,146,stable
+"Scott County, Tennessee(6,10)",47151,109.9,31,stable
+"Sequatchie County, Tennessee(6,10)",47153,97.1,16,stable
+"Sevier County, Tennessee(6,10)",47155,84.2,101,falling
+"Shelby County, Tennessee(6,10)",47157,67.8,585,stable
+"Smith County, Tennessee(6,10)",47159,93.4,23,stable
+"Stewart County, Tennessee(6,10)",47161,91.6,19,stable
+"Sullivan County, Tennessee(6,10)",47163,76.6,176,stable
+"Sumner County, Tennessee(6,10)",47165,66.4,123,stable
+"Tipton County, Tennessee(6,10)",47167,94.8,58,stable
+"Trousdale County, Tennessee(6,10)",47169,101.7,7,stable
+"Unicoi County, Tennessee(6,10)",47171,89.4,23,stable
+"Union County, Tennessee(6,10)",47173,100.9,22,stable
+"Van Buren County, Tennessee(6,10)",47175,56.5,6,stable
+"Warren County, Tennessee(6,10)",47177,85.3,44,stable
+"Washington County, Tennessee(6,10)",47179,72.1,108,stable
+"Wayne County, Tennessee(6,10)",47181,79.7,20,stable
+"Weakley County, Tennessee(6,10)",47183,72.9,33,stable
+"White County, Tennessee(6,10)",47185,90,31,stable
+"Williamson County, Tennessee(6,10)",47187,47.4,79,stable
+"Wilson County, Tennessee(6,10)",47189,77.1,100,stable
+"Anderson County, Texas(6,10)",48001,78.9,51,stable
+"Andrews County, Texas(6,10)",48003,64.5,7,stable
+"Angelina County, Texas(6,10)",48005,76.8,72,stable
+"Aransas County, Texas(6,10)",48007,79.1,35,stable
+"Archer County, Texas(6,10)",48009,61.9,6,stable
+"Armstrong County, Texas(6,10)",48011,*,1,*
+"Atascosa County, Texas(6,10)",48013,42.9,23,stable
+"Austin County, Texas(6,10)",48015,48.9,20,stable
+"Bailey County, Texas(6,10)",48017,*,5,*
+"Bandera County, Texas(6,10)",48019,59.3,22,stable
+"Bastrop County, Texas(6,10)",48021,69.9,56,stable
+"Baylor County, Texas(6,10)",48023,80.9,7,stable
+"Bee County, Texas(6,10)",48025,51.8,17,stable
+"Bell County, Texas(6,10)",48027,81.6,198,stable
+"Bexar County, Texas(6,10)",48029,45.6,700,falling
+"Blanco County, Texas(6,10)",48031,47.1,10,stable
+"Borden County, Texas(6,10)",48033,*,5,*
+"Bosque County, Texas(6,10)",48035,59.3,19,stable
+"Bowie County, Texas(6,10)",48037,81,90,stable
+"Brazoria County, Texas(6,10)",48039,63.2,173,stable
+"Brazos County, Texas(6,10)",48041,49.7,64,stable
+"Brewster County, Texas(6,10)",48043,37.2,6,stable
+"Briscoe County, Texas(6,10)",48045,*,5,*
+"Brooks County, Texas(6,10)",48047,*,5,*
+"Brown County, Texas(6,10)",48049,65.6,32,stable
+"Burleson County, Texas(6,10)",48051,74.1,20,stable
+"Burnet County, Texas(6,10)",48053,65.8,41,stable
+"Caldwell County, Texas(6,10)",48055,65.3,24,stable
+"Calhoun County, Texas(6,10)",48057,70.6,20,stable
+"Callahan County, Texas(6,10)",48059,80.6,14,stable
+"Cameron County, Texas(6,10)",48061,38.9,145,stable
+"Camp County, Texas(6,10)",48063,75.2,10,stable
+"Carson County, Texas(6,10)",48065,45.3,6,stable
+"Cass County, Texas(6,10)",48067,69.5,34,stable
+"Castro County, Texas(6,10)",48069,51.2,3,stable
+"Chambers County, Texas(6,10)",48071,68.5,19,stable
+"Cherokee County, Texas(6,10)",48073,83.8,49,stable
+"Childress County, Texas(6,10)",48075,72.7,4,stable
+"Clay County, Texas(6,10)",48077,69.1,9,stable
+"Cochran County, Texas(6,10)",48079,*,5,*
+"Coke County, Texas(6,10)",48081,52.9,1,stable
+"Coleman County, Texas(6,10)",48083,71.1,8,stable
+"Collin County, Texas(6,10)",48085,49.9,284,stable
+"Collingsworth County, Texas(6,10)",48087,*,5,*
+"Colorado County, Texas(6,10)",48089,65.6,18,stable
+"Comal County, Texas(6,10)",48091,58.4,81,stable
+"Comanche County, Texas(6,10)",48093,76.5,15,stable
+"Concho County, Texas(6,10)",48095,*,5,*
+"Cooke County, Texas(6,10)",48097,62.6,30,stable
+"Coryell County, Texas(6,10)",48099,81.7,43,stable
+"Cottle County, Texas(6,10)",48101,*,1,*
+"Crane County, Texas(6,10)",48103,*,1,*
+"Crockett County, Texas(6,10)",48105,*,1,*
+"Crosby County, Texas(6,10)",48107,57,3,stable
+"Culberson County, Texas(6,10)",48109,*,1,*
+"Dallam County, Texas(6,10)",48111,79.5,2,stable
+"Dallas County, Texas(6,10)",48113,56.4,1076,falling
+"Dawson County, Texas(6,10)",48115,60,11,stable
+"Deaf Smith County, Texas(6,10)",48117,55.8,12,stable
+"Delta County, Texas(6,10)",48119,58.9,3,stable
+"Denton County, Texas(6,10)",48121,54.3,247,stable
+"DeWitt County, Texas(6,10)",48123,58,15,stable
+"Dickens County, Texas(6,10)",48125,*,1,*
+"Dimmit County, Texas(6,10)",48127,32.8,6,stable
+"Donley County, Texas(6,10)",48129,74.9,7,stable
+"Duval County, Texas(6,10)",48131,46.4,9,stable
+"Eastland County, Texas(6,10)",48133,71.5,23,stable
+"Ector County, Texas(6,10)",48135,70.3,83,stable
+"Edwards County, Texas(6,10)",48137,*,5,*
+"Ellis County, Texas(6,10)",48139,65.6,93,stable
+"El Paso County, Texas(6,10)",48141,33.5,233,stable
+"Erath County, Texas(6,10)",48143,53.2,19,stable
+"Falls County, Texas(6,10)",48145,61.2,12,stable
+"Fannin County, Texas(6,10)",48147,79.5,38,stable
+"Fayette County, Texas(6,10)",48149,54.7,20,stable
+"Fisher County, Texas(6,10)",48151,47.5,5,stable
+"Floyd County, Texas(6,10)",48153,61.9,7,stable
+"Foard County, Texas(6,10)",48155,*,1,*
+"Fort Bend County, Texas(6,10)",48157,43.3,186,stable
+"Franklin County, Texas(6,10)",48159,79,14,stable
+"Freestone County, Texas(6,10)",48161,60.5,14,stable
+"Frio County, Texas(6,10)",48163,40.1,8,stable
+"Gaines County, Texas(6,10)",48165,46.9,5,stable
+"Galveston County, Texas(6,10)",48167,63.4,190,stable
+"Garza County, Texas(6,10)",48169,61.9,6,stable
+"Gillespie County, Texas(6,10)",48171,49,23,stable
+"Glasscock County, Texas(6,10)",48173,*,5,*
+"Goliad County, Texas(6,10)",48175,66,9,stable
+"Gonzales County, Texas(6,10)",48177,48,14,stable
+"Gray County, Texas(6,10)",48179,90.4,23,stable
+"Grayson County, Texas(6,10)",48181,78.1,118,stable
+"Gregg County, Texas(6,10)",48183,72.3,95,stable
+"Grimes County, Texas(6,10)",48185,48.7,17,stable
+"Guadalupe County, Texas(6,10)",48187,59.3,82,stable
+"Hale County, Texas(6,10)",48189,60.2,19,stable
+"Hall County, Texas(6,10)",48191,66,6,stable
+"Hamilton County, Texas(6,10)",48193,59.9,7,stable
+"Hansford County, Texas(6,10)",48195,62.2,6,stable
+"Hardeman County, Texas(6,10)",48197,77,6,stable
+"Hardin County, Texas(6,10)",48199,66.6,40,stable
+"Harris County, Texas(6,10)",48201,56.3,1766,stable
+"Harrison County, Texas(6,10)",48203,80.2,64,stable
+"Hartley County, Texas(6,10)",48205,*,5,*
+"Haskell County, Texas(6,10)",48207,41.1,6,stable
+"Hays County, Texas(6,10)",48209,47.4,55,stable
+"Hemphill County, Texas(6,10)",48211,86.6,1,stable
+"Henderson County, Texas(6,10)",48213,90.2,102,stable
+"Hidalgo County, Texas(6,10)",48215,32.7,198,falling
+"Hill County, Texas(6,10)",48217,70.6,37,stable
+"Hockley County, Texas(6,10)",48219,52.5,15,stable
+"Hood County, Texas(6,10)",48221,64.4,54,stable
+"Hopkins County, Texas(6,10)",48223,66.5,27,stable
+"Houston County, Texas(6,10)",48225,63.1,20,stable
+"Howard County, Texas(6,10)",48227,73.4,26,stable
+"Hudspeth County, Texas(6,10)",48229,*,5,*
+"Hunt County, Texas(6,10)",48231,80.8,84,stable
+"Hutchinson County, Texas(6,10)",48233,59,17,stable
+"Irion County, Texas(6,10)",48235,*,1,*
+"Jack County, Texas(6,10)",48237,68.3,5,stable
+"Jackson County, Texas(6,10)",48239,58.4,13,stable
+"Jasper County, Texas(6,10)",48241,60.3,27,stable
+"Jeff Davis County, Texas(6,10)",48243,*,1,*
+"Jefferson County, Texas(6,10)",48245,66.7,180,stable
+"Jim Hogg County, Texas(6,10)",48247,*,5,*
+"Jim Wells County, Texas(6,10)",48249,41.7,20,stable
+"Johnson County, Texas(6,10)",48251,71.8,107,stable
+"Jones County, Texas(6,10)",48253,60.7,16,stable
+"Karnes County, Texas(6,10)",48255,72.1,10,stable
+"Kaufman County, Texas(6,10)",48257,80.2,80,stable
+"Kendall County, Texas(6,10)",48259,44.9,23,stable
+"Kenedy County, Texas(6,10)",48261,*,5,*
+"Kent County, Texas(6,10)",48263,*,1,*
+"Kerr County, Texas(6,10)",48265,54.1,47,stable
+"Kimble County, Texas(6,10)",48267,59.2,7,stable
+"King County, Texas(6,10)",48269,*,1,*
+"Kinney County, Texas(6,10)",48271,*,5,*
+"Kleberg County, Texas(6,10)",48273,53.1,14,falling
+"Knox County, Texas(6,10)",48275,67.8,6,stable
+"Lamar County, Texas(6,10)",48277,78.6,48,stable
+"Lamb County, Texas(6,10)",48279,41.3,5,stable
+"Lampasas County, Texas(6,10)",48281,74.8,21,rising
+"La Salle County, Texas(6,10)",48283,*,1,*
+"Lavaca County, Texas(6,10)",48285,55.7,15,rising
+"Lee County, Texas(6,10)",48287,44.7,11,stable
+"Leon County, Texas(6,10)",48289,67.5,17,stable
+"Liberty County, Texas(6,10)",48291,84.8,66,stable
+"Limestone County, Texas(6,10)",48293,82.3,22,stable
+"Lipscomb County, Texas(6,10)",48295,*,1,*
+"Live Oak County, Texas(6,10)",48297,49.4,7,stable
+"Llano County, Texas(6,10)",48299,53.6,22,stable
+"Loving County, Texas(6,10)",48301,*,5,*
+"Lubbock County, Texas(6,10)",48303,53.3,137,stable
+"Lynn County, Texas(6,10)",48305,48,2,stable
+"McCulloch County, Texas(6,10)",48307,56,5,stable
+"McLennan County, Texas(6,10)",48309,66.5,162,stable
+"McMullen County, Texas(6,10)",48311,*,5,*
+"Madison County, Texas(6,10)",48313,54,6,stable
+"Marion County, Texas(6,10)",48315,89.2,14,stable
+"Martin County, Texas(6,10)",48317,*,1,*
+"Mason County, Texas(6,10)",48319,*,1,*
+"Matagorda County, Texas(6,10)",48321,68.7,33,stable
+"Maverick County, Texas(6,10)",48323,37.6,19,stable
+"Medina County, Texas(6,10)",48325,45.9,22,stable
+"Menard County, Texas(6,10)",48327,*,5,*
+"Midland County, Texas(6,10)",48329,54.2,69,stable
+"Milam County, Texas(6,10)",48331,66.1,25,stable
+"Mills County, Texas(6,10)",48333,45.1,2,stable
+"Mitchell County, Texas(6,10)",48335,82.9,10,stable
+"Montague County, Texas(6,10)",48337,92.4,24,stable
+"Montgomery County, Texas(6,10)",48339,61.6,269,falling
+"Moore County, Texas(6,10)",48341,65.6,10,stable
+"Morris County, Texas(6,10)",48343,81.8,18,stable
+"Motley County, Texas(6,10)",48345,*,5,*
+"Nacogdoches County, Texas(6,10)",48347,75.5,49,stable
+"Navarro County, Texas(6,10)",48349,62.5,33,stable
+"Newton County, Texas(6,10)",48351,66.7,15,stable
+"Nolan County, Texas(6,10)",48353,59.5,14,stable
+"Nueces County, Texas(6,10)",48355,52.7,186,stable
+"Ochiltree County, Texas(6,10)",48357,60.8,3,stable
+"Oldham County, Texas(6,10)",48359,*,5,*
+"Orange County, Texas(6,10)",48361,82.8,78,falling
+"Palo Pinto County, Texas(6,10)",48363,81.4,32,stable
+"Panola County, Texas(6,10)",48365,70.9,19,stable
+"Parker County, Texas(6,10)",48367,71.8,94,stable
+"Parmer County, Texas(6,10)",48369,42.8,6,stable
+"Pecos County, Texas(6,10)",48371,41.6,8,falling
+"Polk County, Texas(6,10)",48373,100.2,69,stable
+"Potter County, Texas(6,10)",48375,73.7,81,stable
+"Presidio County, Texas(6,10)",48377,*,5,*
+"Rains County, Texas(6,10)",48379,88,13,stable
+"Randall County, Texas(6,10)",48381,53.3,66,stable
+"Reagan County, Texas(6,10)",48383,*,1,*
+"Real County, Texas(6,10)",48385,49.5,1,stable
+"Red River County, Texas(6,10)",48387,67.9,16,stable
+"Reeves County, Texas(6,10)",48389,36,3,stable
+"Refugio County, Texas(6,10)",48391,80.1,7,stable
+"Roberts County, Texas(6,10)",48393,*,5,*
+"Robertson County, Texas(6,10)",48395,58.8,15,stable
+"Rockwall County, Texas(6,10)",48397,50.2,36,stable
+"Runnels County, Texas(6,10)",48399,61.2,8,stable
+"Rusk County, Texas(6,10)",48401,70.3,45,stable
+"Sabine County, Texas(6,10)",48403,72.2,18,stable
+"San Augustine County, Texas(6,10)",48405,74.7,13,stable
+"San Jacinto County, Texas(6,10)",48407,93.9,36,stable
+"San Patricio County, Texas(6,10)",48409,74.3,53,stable
+"San Saba County, Texas(6,10)",48411,61.1,4,stable
+"Schleicher County, Texas(6,10)",48413,*,1,*
+"Scurry County, Texas(6,10)",48415,76.9,12,stable
+"Shackelford County, Texas(6,10)",48417,*,1,*
+"Shelby County, Texas(6,10)",48419,74.2,25,stable
+"Sherman County, Texas(6,10)",48421,*,5,*
+"Smith County, Texas(6,10)",48423,67.7,164,stable
+"Somervell County, Texas(6,10)",48425,62.8,8,stable
+"Starr County, Texas(6,10)",48427,39,18,stable
+"Stephens County, Texas(6,10)",48429,84.4,13,stable
+"Sterling County, Texas(6,10)",48431,*,5,*
+"Stonewall County, Texas(6,10)",48433,*,5,*
+"Sutton County, Texas(6,10)",48435,*,5,*
+"Swisher County, Texas(6,10)",48437,50,3,stable
+"Tarrant County, Texas(6,10)",48439,60.4,901,falling
+"Taylor County, Texas(6,10)",48441,60.4,83,stable
+"Terrell County, Texas(6,10)",48443,*,1,*
+"Terry County, Texas(6,10)",48445,71.6,12,stable
+"Throckmorton County, Texas(6,10)",48447,*,5,*
+"Titus County, Texas(6,10)",48449,49.3,13,stable
+"Tom Green County, Texas(6,10)",48451,54.2,65,stable
+"Travis County, Texas(6,10)",48453,45,328,stable
+"Trinity County, Texas(6,10)",48455,91.2,25,stable
+"Tyler County, Texas(6,10)",48457,73.5,25,stable
+"Upshur County, Texas(6,10)",48459,75.6,37,stable
+"Upton County, Texas(6,10)",48461,*,1,*
+"Uvalde County, Texas(6,10)",48463,38.7,14,stable
+"Val Verde County, Texas(6,10)",48465,35.7,15,stable
+"Van Zandt County, Texas(6,10)",48467,69.1,50,stable
+"Victoria County, Texas(6,10)",48469,57.7,54,stable
+"Walker County, Texas(6,10)",48471,69.4,45,stable
+"Waller County, Texas(6,10)",48473,54.4,23,stable
+"Ward County, Texas(6,10)",48475,70.3,7,stable
+"Washington County, Texas(6,10)",48477,45.4,24,stable
+"Webb County, Texas(6,10)",48479,30.6,49,stable
+"Wharton County, Texas(6,10)",48481,50.4,27,stable
+"Wheeler County, Texas(6,10)",48483,54.4,2,stable
+"Wichita County, Texas(6,10)",48485,75.6,108,stable
+"Wilbarger County, Texas(6,10)",48487,62.7,9,stable
+"Willacy County, Texas(6,10)",48489,41.1,11,stable
+"Williamson County, Texas(6,10)",48491,51.2,176,stable
+"Wilson County, Texas(6,10)",48493,44.4,24,stable
+"Winkler County, Texas(6,10)",48495,68.4,7,stable
+"Wise County, Texas(6,10)",48497,63.1,39,stable
+"Wood County, Texas(6,10)",48499,75.8,55,stable
+"Yoakum County, Texas(6,10)",48501,66.6,3,stable
+"Young County, Texas(6,10)",48503,74.6,18,stable
+"Zapata County, Texas(6,10)",48505,38.7,6,stable
+"Zavala County, Texas(6,10)",48507,*,5,*
+"Beaver County, Utah(7)",49001,*,5,*
+"Box Elder County, Utah(7,8)",49003,20.5,8,stable
+"Cache County, Utah(7,8)",49005,15.9,10,stable
+"Carbon County, Utah(7,8)",49007,51.4,10,stable
+"Daggett County, Utah(7)",49009,*,1,*
+"Davis County, Utah(7,8)",49011,25.7,59,stable
+"Duchesne County, Utah(7,8)",49013,50.3,6,stable
+"Emery County, Utah(7,8)",49015,*,5,*
+"Garfield County, Utah(7)",49017,*,5,*
+"Grand County, Utah(7)",49019,62.5,9,stable
+"Iron County, Utah(7,8)",49021,30.4,13,stable
+"Juab County, Utah(7)",49023,*,1,*
+"Kane County, Utah(7)",49025,33.4,6,stable
+"Millard County, Utah(7)",49027,26.7,6,stable
+"Morgan County, Utah(7)",49029,*,1,*
+"Piute County, Utah(7)",49031,*,1,*
+"Rich County, Utah(7)",49033,*,5,*
+"Salt Lake County, Utah(7,8)",49035,32.6,258,falling
+"San Juan County, Utah(7)",49037,*,5,*
+"Sanpete County, Utah(7,8)",49039,29.7,6,stable
+"Sevier County, Utah(7,8)",49041,30.9,9,stable
+"Summit County, Utah(7,8)",49043,18.9,8,stable
+"Tooele County, Utah(7,8)",49045,40.5,14,stable
+"Uintah County, Utah(7,8)",49047,28.5,9,stable
+"Utah County, Utah(7,8)",49049,18.6,54,falling
+"Wasatch County, Utah(7)",49051,35.1,8,stable
+"Washington County, Utah(7,8)",49053,30,53,stable
+"Wayne County, Utah(7)",49055,*,1,*
+"Weber County, Utah(7,8)",49057,34.4,71,stable
+"Addison County, Vermont(6,10)",50001,66.2,32,falling
+"Bennington County, Vermont(6,10)",50003,64.6,34,stable
+"Caledonia County, Vermont(6,10)",50005,75.7,31,stable
+"Chittenden County, Vermont(6,10)",50007,66.1,106,stable
+"Essex County, Vermont(6,10)",50009,78.5,10,stable
+"Franklin County, Vermont(6,10)",50011,80.5,43,stable
+"Grand Isle County, Vermont(6,10)",50013,89.5,5,stable
+"Lamoille County, Vermont(6,10)",50015,66.8,21,stable
+"Orange County, Vermont(6,10)",50017,68,26,stable
+"Orleans County, Vermont(6,10)",50019,60.3,25,stable
+"Rutland County, Vermont(6,10)",50021,72.7,61,falling
+"Washington County, Vermont(6,10)",50023,61,44,stable
+"Windham County, Vermont(6,10)",50025,59.9,38,stable
+"Windsor County, Vermont(6,10)",50027,67.8,55,stable
+"Accomack County, Virginia(6,10)",51001,91.8,48,stable
+"Albemarle County, Virginia(6,10)",51003,41.5,51,stable
+"Alleghany County and Clifton Forge City, Virginia(6,10)",51005,55.2,12,falling
+"Amelia County, Virginia(6,10)",51007,76,15,falling
+"Amherst County, Virginia(6,10)",51009,65.6,30,stable
+"Appomattox County, Virginia(6,10)",51011,75.6,13,stable
+"Arlington County, Virginia(6,10)",51013,37.6,59,stable
+"Augusta County, Virginia(6,10)",51015,52.5,55,stable
+"Bath County, Virginia(6,10)",51017,66.2,3,stable
+"Bland County, Virginia(6,10)",51021,84.1,10,stable
+"Botetourt County, Virginia(6,10)",51023,56.8,24,stable
+"Brunswick County, Virginia(6,10)",51025,75.2,20,stable
+"Buchanan County, Virginia(6,10)",51027,54.5,20,stable
+"Buckingham County, Virginia(6,10)",51029,77.4,19,stable
+"Campbell County, Virginia(6,10)",51031,55,42,stable
+"Caroline County, Virginia(6,10)",51033,84.1,27,stable
+"Carroll County, Virginia(6,10)",51035,56.8,24,stable
+"Charles City County, Virginia(6,10)",51036,52.7,9,stable
+"Charlotte County, Virginia(6,10)",51037,60,13,stable
+"Chesterfield County, Virginia(6,10)",51041,70.1,213,falling
+"Clarke County, Virginia(6,10)",51043,64.2,15,stable
+"Craig County, Virginia(6,10)",51045,59.3,3,stable
+"Culpeper County, Virginia(6,10)",51047,71,33,stable
+"Cumberland County, Virginia(6,10)",51049,65.7,11,stable
+"Dickenson County, Virginia(6,10)",51051,76.8,19,stable
+"Dinwiddie County, Virginia(6,10)",51053,71.5,26,stable
+"Essex County, Virginia(6,10)",51057,82.2,15,stable
+"Fairfax County, Virginia(6,10)",51059,40.7,392,stable
+"Fauquier County, Virginia(6,10)",51061,49,35,stable
+"Floyd County, Virginia(6,10)",51063,47.8,8,stable
+"Fluvanna County, Virginia(6,10)",51065,66.6,20,stable
+"Franklin County, Virginia(6,10)",51067,54,44,falling
+"Frederick County, Virginia(6,10)",51069,72.6,62,stable
+"Giles County, Virginia(6,10)",51071,67.2,14,falling
+"Gloucester County, Virginia(6,10)",51073,88.7,40,stable
+"Goochland County, Virginia(6,10)",51075,67.1,22,stable
+"Grayson County, Virginia(6,10)",51077,64,14,falling
+"Greene County, Virginia(6,10)",51079,63,12,stable
+"Greensville County, Virginia(6,10)",51081,82.4,14,stable
+"Halifax County with South Boston City, Virginia(6,10)",51083,59.1,30,stable
+"Hanover County, Virginia(6,10)",51085,81.4,96,stable
+"Henrico County, Virginia(6,10)",51087,58,192,stable
+"Henry County, Virginia(6,10)",51089,70.1,54,stable
+"Highland County, Virginia(6,10)",51091,*,1,*
+"Isle of Wight County, Virginia(6,10)",51093,63.3,27,falling
+"James City County, Virginia(6,10)",51095,43.5,47,stable
+"King and Queen County, Virginia(6,10)",51097,80.9,10,stable
+"King George County, Virginia(6,10)",51099,93.4,21,stable
+"King William County, Virginia(6,10)",51101,61.7,13,stable
+"Lancaster County, Virginia(6,10)",51103,58.5,13,stable
+"Lee County, Virginia(6,10)",51105,82.8,25,falling
+"Loudoun County, Virginia(6,10)",51107,41.4,87,falling
+"Louisa County, Virginia(6,10)",51109,80.1,33,stable
+"Lunenburg County, Virginia(6,10)",51111,67.5,10,stable
+"Madison County, Virginia(6,10)",51113,82,13,stable
+"Mathews County, Virginia(6,10)",51115,65.3,12,stable
+"Mecklenburg County, Virginia(6,10)",51117,76.1,41,stable
+"Middlesex County, Virginia(6,10)",51119,79.7,14,stable
+"Montgomery County, Virginia(6,10)",51121,54.3,41,stable
+"Nelson County, Virginia(6,10)",51125,92.2,19,stable
+"New Kent County, Virginia(6,10)",51127,77.4,17,stable
+"Northampton County, Virginia(6,10)",51131,84.1,15,stable
+"Northumberland County, Virginia(6,10)",51133,72.3,22,stable
+"Nottoway County, Virginia(6,10)",51135,68.5,16,stable
+"Orange County, Virginia(6,10)",51137,78.4,39,stable
+"Page County, Virginia(6,10)",51139,66.4,20,stable
+"Patrick County, Virginia(6,10)",51141,52.1,17,stable
+"Pittsylvania County, Virginia(6,10)",51143,60,56,falling
+"Powhatan County, Virginia(6,10)",51145,65.8,19,stable
+"Prince Edward County, Virginia(6,10)",51147,53.9,15,stable
+"Prince George County, Virginia(6,10)",51149,66.1,26,stable
+"Prince William County, Virginia(6,10)",51153,48.5,131,stable
+"Pulaski County, Virginia(6,10)",51155,63.8,34,stable
+"Rappahannock County, Virginia(6,10)",51157,65.2,5,stable
+"Richmond County, Virginia(6,10)",51159,73.1,7,stable
+"Roanoke County, Virginia(6,10)",51161,55.2,70,stable
+"Rockbridge County, Virginia(6,10)",51163,32.4,10,falling
+"Rockingham County, Virginia(6,10)",51165,50.1,53,stable
+"Russell County, Virginia(6,10)",51167,64.2,27,stable
+"Scott County, Virginia(6,10)",51169,72.6,23,stable
+"Shenandoah County, Virginia(6,10)",51171,67.5,39,stable
+"Smyth County, Virginia(6,10)",51173,93,44,stable
+"Southampton County, Virginia(6,10)",51175,64.4,18,stable
+"Spotsylvania County, Virginia(6,10)",51177,68.9,79,stable
+"Stafford County, Virginia(6,10)",51179,77.7,70,stable
+"Surry County, Virginia(6,10)",51181,61.7,8,stable
+"Sussex County, Virginia(6,10)",51183,91.3,16,stable
+"Tazewell County, Virginia(6,10)",51185,68.5,44,stable
+"Warren County, Virginia(6,10)",51187,72.5,29,stable
+"Washington County, Virginia(6,10)",51191,75.9,58,falling
+"Westmoreland County, Virginia(6,10)",51193,75.4,24,stable
+"Wise County, Virginia(6,10)",51195,85,44,stable
+"Wythe County, Virginia(6,10)",51197,75.1,29,stable
+"York County, Virginia(6,10)",51199,49.2,35,stable
+"Alexandria City, Virginia(6,10)",51510,29.1,32,stable
+"Bristol City, Virginia(6,10)",51520,55.5,16,stable
+"Buena Vista City, Virginia(6,10)",51530,107.9,10,stable
+"Charlottesville City, Virginia(6,10)",51540,115.5,40,rising
+"Chesapeake City, Virginia(6,10)",51550,72.3,151,stable
+"Colonial Heights City, Virginia(6,10)",51570,70.2,19,stable
+"Covington City, Virginia(6,10)",51580,167.7,15,stable
+"Danville City, Virginia(6,10)",51590,92.6,55,stable
+"Emporia City, Virginia(6,10)",51595,56.8,6,rising
+"Fairfax City, Virginia(6,10)",51600,27.3,9,stable
+"Falls Church City, Virginia(6,10)",51610,45,3,stable
+"Franklin City, Virginia(6,10)",51620,83.5,11,stable
+"Fredericksburg City, Virginia(6,10)",51630,95.2,18,stable
+"Galax City, Virginia(6,10)",51640,80.9,10,stable
+"Hampton City, Virginia(6,10)",51650,77.7,112,stable
+"Harrisonburg City, Virginia(6,10)",51660,91.9,31,stable
+"Hopewell City, Virginia(6,10)",51670,90.2,26,stable
+"Lexington City, Virginia(6,10)",51678,110.5,5,stable
+"Lynchburg City, Virginia(6,10)",51680,76,59,stable
+"Manassas City, Virginia(6,10)",51683,55.6,12,stable
+"Manassas Park City, Virginia(6,10)",51685,*,1,*
+"Martinsville City, Virginia(6,10)",51690,71.6,16,stable
+"Newport News City, Virginia(6,10)",51700,75.6,123,stable
+"Norfolk City, Virginia(6,10)",51710,76.2,154,stable
+"Norton City, Virginia(6,10)",51720,100.9,3,stable
+"Petersburg City, Virginia(6,10)",51730,113.3,43,stable
+"Poquoson City, Virginia(6,10)",51735,50.7,9,stable
+"Portsmouth City, Virginia(6,10)",51740,78.7,79,stable
+"Radford City, Virginia(6,10)",51750,88.2,11,stable
+"Richmond City, Virginia(6,10)",51760,76.2,149,stable
+"Roanoke City, Virginia(6,10)",51770,95.6,108,stable
+"Salem City, Virginia(6,10)",51775,71.7,22,stable
+"Staunton City, Virginia(6,10)",51790,97.7,37,stable
+"Suffolk City, Virginia(6,10)",51800,68.7,57,falling
+"Virginia Beach City, Virginia(6,10)",51810,68.2,281,stable
+"Waynesboro City, Virginia(6,10)",51820,88.3,22,stable
+"Williamsburg City, Virginia(6,10)",51830,128.4,17,stable
+"Winchester City, Virginia(6,10)",51840,57.1,15,falling
+"Bedford City and County, Virginia(6,10)",51917,59,63,falling
+"Adams County, Washington(6,10)",53001,37.9,8,stable
+"Asotin County, Washington(6,10)",53003,67,19,stable
+"Benton County, Washington(6,10)",53005,60.2,107,stable
+"Chelan County, Washington(6,10)",53007,50.7,49,stable
+"Clallam County, Washington(7,8)",53009,69.6,88,stable
+"Clark County, Washington(6,10)",53011,62.9,268,stable
+"Columbia County, Washington(6,10)",53013,62.7,2,stable
+"Cowlitz County, Washington(6,10)",53015,66.4,86,stable
+"Douglas County, Washington(6,10)",53017,42.9,21,stable
+"Ferry County, Washington(6,10)",53019,46.2,4,stable
+"Franklin County, Washington(6,10)",53021,53.4,29,stable
+"Garfield County, Washington(6,10)",53023,*,1,*
+"Grant County, Washington(6,10)",53025,57.8,51,stable
+"Grays Harbor County, Washington(7,8)",53027,82.1,79,falling
+"Island County, Washington(7,8)",53029,49.1,58,falling
+"Jefferson County, Washington(7,8)",53031,55.7,32,falling
+"King County, Washington(7,8)",53033,52,970,falling
+"Kitsap County, Washington(7,8)",53035,60.8,171,falling
+"Kittitas County, Washington(6,10)",53037,48.2,22,stable
+"Klickitat County, Washington(6,10)",53039,48,13,stable
+"Lewis County, Washington(6,10)",53041,62.2,63,stable
+"Lincoln County, Washington(6,10)",53043,61,8,stable
+"Mason County, Washington(7,8)",53045,76.4,71,falling
+"Okanogan County, Washington(6,10)",53047,63.3,34,stable
+"Pacific County, Washington(6,10)",53049,63,26,stable
+"Pend Oreille County, Washington(6,10)",53051,75,13,stable
+"Pierce County, Washington(7,8)",53053,76.9,592,falling
+"San Juan County, Washington(7,8)",53055,34.8,9,falling
+"Skagit County, Washington(7,8)",53057,63.9,100,falling
+"Skamania County, Washington(6,10)",53059,47.9,5,stable
+"Snohomish County, Washington(7,8)",53061,64.2,431,falling
+"Spokane County, Washington(6,10)",53063,60,311,stable
+"Stevens County, Washington(6,10)",53065,58.9,36,stable
+"Thurston County, Washington(7,8)",53067,64.7,182,falling
+"Wahkiakum County, Washington(6,10)",53069,56.4,6,stable
+"Walla Walla County, Washington(6,10)",53071,53.7,35,stable
+"Whatcom County, Washington(7,8)",53073,59.9,131,stable
+"Whitman County, Washington(6,10)",53075,42.4,17,stable
+"Yakima County, Washington(6,10)",53077,58.2,139,stable
+"Barbour County, West Virginia(6,10)",54001,59.1,11,stable
+"Berkeley County, West Virginia(6,10)",54003,84.5,94,stable
+"Boone County, West Virginia(6,10)",54005,112.1,32,stable
+"Braxton County, West Virginia(6,10)",54007,73.2,18,stable
+"Brooke County, West Virginia(6,10)",54009,64.8,22,stable
+"Cabell County, West Virginia(6,10)",54011,90.8,111,stable
+"Calhoun County, West Virginia(6,10)",54013,91,9,stable
+"Clay County, West Virginia(6,10)",54015,100.2,11,stable
+"Doddridge County, West Virginia(6,10)",54017,40.7,6,stable
+"Fayette County, West Virginia(6,10)",54019,87.8,54,stable
+"Gilmer County, West Virginia(6,10)",54021,47.7,7,stable
+"Grant County, West Virginia(6,10)",54023,53.1,7,stable
+"Greenbrier County, West Virginia(6,10)",54025,68.4,40,stable
+"Hampshire County, West Virginia(6,10)",54027,84,25,stable
+"Hancock County, West Virginia(6,10)",54029,79.6,38,stable
+"Hardy County, West Virginia(6,10)",54031,69.5,15,stable
+"Harrison County, West Virginia(6,10)",54033,87.8,80,stable
+"Jackson County, West Virginia(6,10)",54035,75.2,33,stable
+"Jefferson County, West Virginia(6,10)",54037,71.8,43,stable
+"Kanawha County, West Virginia(6,10)",54039,88.3,233,stable
+"Lewis County, West Virginia(6,10)",54041,100.8,27,stable
+"Lincoln County, West Virginia(6,10)",54043,112.1,34,falling
+"Logan County, West Virginia(6,10)",54045,115.7,54,stable
+"McDowell County, West Virginia(6,10)",54047,104.1,30,stable
+"Marion County, West Virginia(6,10)",54049,77.5,59,stable
+"Marshall County, West Virginia(6,10)",54051,73.6,36,stable
+"Mason County, West Virginia(6,10)",54053,88,32,stable
+"Mercer County, West Virginia(6,10)",54055,84.8,77,stable
+"Mineral County, West Virginia(6,10)",54057,82.5,30,stable
+"Mingo County, West Virginia(6,10)",54059,106.9,33,stable
+"Monongalia County, West Virginia(6,10)",54061,66.6,58,stable
+"Monroe County, West Virginia(6,10)",54063,63.4,11,rising
+"Morgan County, West Virginia(6,10)",54065,69.2,16,stable
+"Nicholas County, West Virginia(6,10)",54067,68.3,27,stable
+"Ohio County, West Virginia(6,10)",54069,74.3,49,stable
+"Pendleton County, West Virginia(6,10)",54071,45.1,8,stable
+"Pleasants County, West Virginia(6,10)",54073,99.3,12,stable
+"Pocahontas County, West Virginia(6,10)",54075,78.6,9,stable
+"Preston County, West Virginia(6,10)",54077,69.1,33,stable
+"Putnam County, West Virginia(6,10)",54079,76.8,54,stable
+"Raleigh County, West Virginia(6,10)",54081,81.4,84,stable
+"Randolph County, West Virginia(6,10)",54083,63.7,25,stable
+"Ritchie County, West Virginia(6,10)",54085,105.9,14,stable
+"Roane County, West Virginia(6,10)",54087,77.3,18,stable
+"Summers County, West Virginia(6,10)",54089,54.5,9,stable
+"Taylor County, West Virginia(6,10)",54091,72.7,15,stable
+"Tucker County, West Virginia(6,10)",54093,75.4,7,stable
+"Tyler County, West Virginia(6,10)",54095,81.4,9,stable
+"Upshur County, West Virginia(6,10)",54097,74.9,26,stable
+"Wayne County, West Virginia(6,10)",54099,90,53,stable
+"Webster County, West Virginia(6,10)",54101,94.6,11,stable
+"Wetzel County, West Virginia(6,10)",54103,87.4,20,stable
+"Wirt County, West Virginia(6,10)",54105,78.9,5,stable
+"Wood County, West Virginia(6,10)",54107,82.2,95,stable
+"Wyoming County, West Virginia(6,10)",54109,91,29,stable
+"Adams County, Wisconsin(6,10)",55001,86.1,30,stable
+"Ashland County, Wisconsin(6,10)",55003,72,17,stable
+"Barron County, Wisconsin(6,10)",55005,59.4,36,stable
+"Bayfield County, Wisconsin(6,10)",55007,55.7,16,stable
+"Brown County, Wisconsin(6,10)",55009,58.5,151,stable
+"Buffalo County, Wisconsin(6,10)",55011,52.6,8,stable
+"Burnett County, Wisconsin(6,10)",55013,76.6,22,stable
+"Calumet County, Wisconsin(6,10)",55015,53.4,25,falling
+"Chippewa County, Wisconsin(6,10)",55017,65.9,48,stable
+"Clark County, Wisconsin(6,10)",55019,53.1,24,stable
+"Columbia County, Wisconsin(6,10)",55021,64.7,43,stable
+"Crawford County, Wisconsin(6,10)",55023,63.1,18,stable
+"Dane County, Wisconsin(6,10)",55025,55,247,stable
+"Dodge County, Wisconsin(6,10)",55027,59.6,67,stable
+"Door County, Wisconsin(6,10)",55029,54.8,29,stable
+"Douglas County, Wisconsin(6,10)",55031,58.2,29,stable
+"Dunn County, Wisconsin(6,10)",55033,46.1,23,stable
+"Eau Claire County, Wisconsin(6,10)",55035,57.1,59,stable
+"Florence County, Wisconsin(6,10)",55037,67,3,stable
+"Fond du Lac County, Wisconsin(6,10)",55039,61.5,78,stable
+"Forest County, Wisconsin(6,10)",55041,95.1,12,stable
+"Grant County, Wisconsin(6,10)",55043,52.4,35,stable
+"Green County, Wisconsin(6,10)",55045,59.3,29,stable
+"Green Lake County, Wisconsin(6,10)",55047,54.1,13,stable
+"Iowa County, Wisconsin(6,10)",55049,56.8,19,stable
+"Iron County, Wisconsin(6,10)",55051,80.1,11,stable
+"Jackson County, Wisconsin(6,10)",55053,69.4,17,stable
+"Jefferson County, Wisconsin(6,10)",55055,56.5,50,stable
+"Juneau County, Wisconsin(6,10)",55057,68.1,28,stable
+"Kenosha County, Wisconsin(6,10)",55059,74,122,stable
+"Kewaunee County, Wisconsin(6,10)",55061,51.3,16,stable
+"La Crosse County, Wisconsin(6,10)",55063,61,79,stable
+"Lafayette County, Wisconsin(6,10)",55065,48.3,13,stable
+"Langlade County, Wisconsin(6,10)",55067,64.9,22,stable
+"Lincoln County, Wisconsin(6,10)",55069,65,29,stable
+"Manitowoc County, Wisconsin(6,10)",55071,52.3,57,stable
+"Marathon County, Wisconsin(6,10)",55073,49.4,80,stable
+"Marinette County, Wisconsin(6,10)",55075,72.5,45,falling
+"Marquette County, Wisconsin(6,10)",55077,76.8,17,stable
+"Menominee County, Wisconsin(6,10)",55078,81.2,2,stable
+"Milwaukee County, Wisconsin(6,10)",55079,72,660,stable
+"Monroe County, Wisconsin(6,10)",55081,77.7,39,stable
+"Oconto County, Wisconsin(6,10)",55083,77.1,41,stable
+"Oneida County, Wisconsin(6,10)",55085,78.3,46,stable
+"Outagamie County, Wisconsin(6,10)",55087,55.7,101,stable
+"Ozaukee County, Wisconsin(6,10)",55089,50.1,57,stable
+"Pepin County, Wisconsin(6,10)",55091,53.9,4,stable
+"Pierce County, Wisconsin(6,10)",55093,37.8,13,falling
+"Polk County, Wisconsin(6,10)",55095,53,33,stable
+"Portage County, Wisconsin(6,10)",55097,54.9,44,stable
+"Price County, Wisconsin(6,10)",55099,58.1,12,stable
+"Racine County, Wisconsin(6,10)",55101,69.6,151,stable
+"Richland County, Wisconsin(6,10)",55103,58.2,12,stable
+"Rock County, Wisconsin(6,10)",55105,75.1,137,stable
+"Rusk County, Wisconsin(6,10)",55107,76.5,16,stable
+"St. Croix County, Wisconsin(6,10)",55109,46.4,37,rising
+"Sauk County, Wisconsin(6,10)",55111,57.5,42,stable
+"Sawyer County, Wisconsin(6,10)",55113,68,20,falling
+"Shawano County, Wisconsin(6,10)",55115,55.2,31,stable
+"Sheboygan County, Wisconsin(6,10)",55117,61.1,86,stable
+"Taylor County, Wisconsin(6,10)",55119,48.2,15,stable
+"Trempealeau County, Wisconsin(6,10)",55121,58,19,stable
+"Vernon County, Wisconsin(6,10)",55123,55.8,25,stable
+"Vilas County, Wisconsin(6,10)",55125,67.1,26,rising
+"Walworth County, Wisconsin(6,10)",55127,64.1,73,stable
+"Washburn County, Wisconsin(6,10)",55129,71.7,17,stable
+"Washington County, Wisconsin(6,10)",55131,58,91,stable
+"Waukesha County, Wisconsin(6,10)",55133,55.3,264,stable
+"Waupaca County, Wisconsin(6,10)",55135,64.8,46,stable
+"Waushara County, Wisconsin(6,10)",55137,73,30,stable
+"Winnebago County, Wisconsin(6,10)",55139,62.3,115,stable
+"Wood County, Wisconsin(6,10)",55141,58.3,60,stable
+"Albany County, Wyoming(6,10)",56001,41.5,13,stable
+"Big Horn County, Wyoming(6,10)",56003,42.4,9,stable
+"Campbell County, Wyoming(6,10)",56005,53.3,14,stable
+"Carbon County, Wyoming(6,10)",56007,58.7,8,stable
+"Converse County, Wyoming(6,10)",56009,59.1,11,stable
+"Crook County, Wyoming(6,10)",56011,47.1,7,stable
+"Fremont County, Wyoming(6,10)",56013,46.2,24,stable
+"Goshen County, Wyoming(6,10)",56015,53.4,12,stable
+"Hot Springs County, Wyoming(6,10)",56017,76.5,9,stable
+"Johnson County, Wyoming(6,10)",56019,38.6,3,stable
+"Laramie County, Wyoming(6,10)",56021,52.4,51,falling
+"Lincoln County, Wyoming(6,10)",56023,33.1,9,stable
+"Natrona County, Wyoming(6,10)",56025,58.3,46,stable
+"Niobrara County, Wyoming(6,10)",56027,*,5,*
+"Park County, Wyoming(6,10)",56029,37.1,17,stable
+"Platte County, Wyoming(6,10)",56031,52.2,5,stable
+"Sheridan County, Wyoming(6,10)",56033,52.6,22,stable
+"Sublette County, Wyoming(6,10)",56035,*,1,*
+"Sweetwater County, Wyoming(6,10)",56037,40.3,12,stable
+"Teton County, Wyoming(6,10)",56039,23.9,3,stable
+"Uinta County, Wyoming(6,10)",56041,32.2,8,stable
+"Washakie County, Wyoming(6,10)",56043,50.7,8,stable
+"Weston County, Wyoming(6,10)",56045,45.8,6,stable

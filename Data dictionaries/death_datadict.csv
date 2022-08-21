@@ -1,0 +1,3 @@
+ColumnID,ColumnDescription,TopicArea
+Age-Adjusted Death Rate,"Number of death caused by strokes divided by population in 2015 at the county level (age-adjusted to the 2000 US standard population and expressed as per 100,000 population in the year)",Death
+Average Deaths per Year,Average number of deaths caused by strokes per year over the past 5 years from 2011 to 2015 at the county level,Death
