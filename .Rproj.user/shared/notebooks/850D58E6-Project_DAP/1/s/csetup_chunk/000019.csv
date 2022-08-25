@@ -1,12 +1,88 @@
-"0","knitr::opts_chunk$set(echo = TRUE)"
-"0","#Installing libraries"
-"0","library(tidyverse)"
-"0","library(readr)"
-"0","library(dplyr)"
-"0","library(tidyr)"
-"0",""
-"0","library(janitor) # to clean column names "
-"0","library(psych)   # for the describe function"
-"0",""
-"0","library(""stringr"") # to add leading zeros"
-"0",""
+"0","#Installing libraries
+install.packages(""naniar"")
+"
+"2","WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/
+"
+"2","还安装相依关系‘Rcpp’, ‘plyr’, ‘norm’, ‘visdat’, ‘viridis’, ‘UpSetR’
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.2/Rcpp_1.0.9.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 2842570 bytes (2.7 MB)
+"
+"2","downloaded 2.7 MB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.2/plyr_1.8.7.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 1151241 bytes (1.1 MB)
+"
+"2","downloaded 1.1 MB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.2/norm_1.0-10.0.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 93317 bytes (91 KB)
+"
+"2","downloaded 91 KB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.2/visdat_0.5.3.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 1100112 bytes (1.0 MB)
+"
+"2","downloaded 1.0 MB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.2/viridis_0.6.2.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 2999844 bytes (2.9 MB)
+"
+"2","downloaded 2.9 MB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.2/UpSetR_1.4.0.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 4299022 bytes (4.1 MB)
+"
+"2","downloaded 4.1 MB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.2/naniar_0.6.1.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 2717594 bytes (2.6 MB)
+"
+"2","downloaded 2.6 MB
+
+"
+"1","程序包‘Rcpp’打开成功，MD5和检查也通过
+"
+"1","程序包‘plyr’打开成功，MD5和检查也通过
+"
+"1","程序包‘norm’打开成功，MD5和检查也通过
+"
+"1","程序包‘visdat’打开成功，MD5和检查也通过
+"
+"1","程序包‘viridis’打开成功，MD5和检查也通过
+"
+"1","程序包‘UpSetR’打开成功，MD5和检查也通过
+"
+"1","程序包‘naniar’打开成功，MD5和检查也通过
+"
+"1","
+"
+"1",""
+"1","下载的二进制程序包在
+	C:\Users\Vincent\AppData\Local\Temp\RtmpKcvQFQ\downloaded_packages里"
+"1",""
+"1","
+"

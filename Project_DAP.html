@@ -565,25 +565,15 @@ data_population_clean_fips &lt;- data_population_clean %&gt;%
 data_poverty_clean_fips &lt;- data_poverty_clean %&gt;% 
   mutate(state_fips_clean  = str_pad(data_poverty_clean$state_fips, width = 2, pad = &quot;0&quot;)) %&gt;% 
   mutate(county_fips_clean = str_pad(data_poverty_clean$county_fips, width = 3, pad = &quot;0&quot;)) %&gt;% 
-  mutate(fips_clean = paste(state_fips_clean, county_fips_clean, sep=&quot;&quot;))</code></pre>
+  mutate(fips_clean = paste(state_fips_clean, county_fips_clean, sep=&quot;&quot;))
+
+
+# Check in EXCEL: 
+# write_excel_csv(data_population_clean_fips, &quot;population_clean_fips.csv&quot;, col_names = TRUE)</code></pre>
 </div>
-</div>
-<div id="refine-questionsgenerate-new-questions-optional" class="section level2">
-<h2>1.5 Refine questions/generate new questions (optional)</h2>
-<p>EDA should not be viewed as just conducting the above framework as a
-series of ordered steps. This is far too simplistic as EDA typically
-involves multiple rounds of each step. For example, visualisations could
-give you new ideas for summaries you would be interested in and perhaps
-patterns you want to analyse, which could lead to more manipulations to
-the data and visualisations.</p>
-<div id="internal-checks" class="section level3">
-<h3>Internal Checks</h3>
-</div>
-<div id="check-fips" class="section level3">
-<h3>Check FIPS</h3>
-<p>Check if there are duplicate FIPS</p>
-<pre class="r"><code># Check if there are duplicate FIPS
-dim(data_death_clean_fips)[1] == length(unique(data_death_clean_fips$fips_clean)) # No duplicates</code></pre>
+<div id="check-duplicate-fips" class="section level3">
+<h3>1.4.2 Check Duplicate FIPS</h3>
+<pre class="r"><code>dim(data_death_clean_fips)[1] == length(unique(data_death_clean_fips$fips_clean)) # No duplicates</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <pre class="r"><code>dim(data_incidence_clean_fips)[1] == length(unique(data_incidence_clean_fips$fips_clean)) # No duplicates</code></pre>
 <pre><code>## [1] TRUE</code></pre>
@@ -595,6 +585,496 @@ dim(data_death_clean_fips)[1] == length(unique(data_death_clean_fips$fips_clean)
 <pre><code>## [1] TRUE</code></pre>
 <pre class="r"><code>dim(data_poverty_clean_fips)[1] == length(unique(data_poverty_clean_fips$fips_clean)) # No duplicates </code></pre>
 <pre><code>## [1] TRUE</code></pre>
+</div>
+</div>
+<div id="join-datasets" class="section level2">
+<h2>1.5 Join Datasets</h2>
+<pre class="r"><code># Step 1
+dim(data_death_clean_fips)</code></pre>
+<pre><code>## [1] 3141    5</code></pre>
+<pre class="r"><code>dim(data_incidence_clean_fips)</code></pre>
+<pre><code>## [1] 3141    6</code></pre>
+<pre class="r"><code>names(data_incidence_clean_fips)</code></pre>
+<pre><code>## [1] &quot;county&quot;                                       
+## [2] &quot;fips&quot;                                         
+## [3] &quot;age_adjusted_incidence_rate_cases_per_100_000&quot;
+## [4] &quot;average_annual_count&quot;                         
+## [5] &quot;recent_trend&quot;                                 
+## [6] &quot;fips_clean&quot;</code></pre>
+<pre class="r"><code># Remove columns that are already contained in the left-hand data
+data_incidence_clean_fips_for_join &lt;-  data_incidence_clean_fips %&gt;% 
+  select(c(3:6))
+
+# Left Join - death / incidence
+data1 &lt;- left_join(data_death_clean_fips, data_incidence_clean_fips_for_join, by=&quot;fips_clean&quot;)
+names(data1)</code></pre>
+<pre><code>## [1] &quot;county&quot;                                       
+## [2] &quot;fips&quot;                                         
+## [3] &quot;age_adjusted_death_rate&quot;                      
+## [4] &quot;average_deaths_per_year&quot;                      
+## [5] &quot;fips_clean&quot;                                   
+## [6] &quot;age_adjusted_incidence_rate_cases_per_100_000&quot;
+## [7] &quot;average_annual_count&quot;                         
+## [8] &quot;recent_trend&quot;</code></pre>
+<pre class="r"><code># Step 2
+dim(data_health_ins_clean_fips)</code></pre>
+<pre><code>## [1] 3220   64</code></pre>
+<pre class="r"><code>names(data_health_ins_clean_fips)</code></pre>
+<pre><code>##  [1] &quot;state&quot;             &quot;state_fips&quot;        &quot;county_fips&quot;      
+##  [4] &quot;area_name&quot;         &quot;hi_001&quot;            &quot;hi_002&quot;           
+##  [7] &quot;hi_003&quot;            &quot;hi_004&quot;            &quot;hi_005&quot;           
+## [10] &quot;hi_006&quot;            &quot;hi_007&quot;            &quot;hi_008&quot;           
+## [13] &quot;hi_009&quot;            &quot;hi_010&quot;            &quot;hi_011&quot;           
+## [16] &quot;hi_012&quot;            &quot;hi_013&quot;            &quot;hi_014&quot;           
+## [19] &quot;hi_015&quot;            &quot;hi_016&quot;            &quot;hi_017&quot;           
+## [22] &quot;hi_018&quot;            &quot;hi_019&quot;            &quot;hi_020&quot;           
+## [25] &quot;hi_021&quot;            &quot;hi_022&quot;            &quot;hi_023&quot;           
+## [28] &quot;hi_024&quot;            &quot;hi_025&quot;            &quot;hi_026&quot;           
+## [31] &quot;hi_027&quot;            &quot;hi_028&quot;            &quot;hi_029&quot;           
+## [34] &quot;hi_030&quot;            &quot;hi_031&quot;            &quot;hi_032&quot;           
+## [37] &quot;hi_033&quot;            &quot;hi_034&quot;            &quot;hi_035&quot;           
+## [40] &quot;hi_036&quot;            &quot;hi_037&quot;            &quot;hi_038&quot;           
+## [43] &quot;hi_039&quot;            &quot;hi_040&quot;            &quot;hi_041&quot;           
+## [46] &quot;hi_042&quot;            &quot;hi_043&quot;            &quot;hi_044&quot;           
+## [49] &quot;hi_045&quot;            &quot;hi_046&quot;            &quot;hi_047&quot;           
+## [52] &quot;hi_048&quot;            &quot;hi_049&quot;            &quot;hi_050&quot;           
+## [55] &quot;hi_051&quot;            &quot;hi_052&quot;            &quot;hi_053&quot;           
+## [58] &quot;hi_054&quot;            &quot;hi_055&quot;            &quot;hi_056&quot;           
+## [61] &quot;hi_057&quot;            &quot;state_fips_clean&quot;  &quot;county_fips_clean&quot;
+## [64] &quot;fips_clean&quot;</code></pre>
+<pre class="r"><code># Remove columns that are already contained in the left-hand data
+data_health_ins_clean_fips_for_join &lt;- data_health_ins_clean_fips %&gt;% 
+  select(c(5:61,64))
+
+# Left Join - death / incidence / health
+data2 &lt;- left_join(data1, data_health_ins_clean_fips_for_join, by=&quot;fips_clean&quot;)
+names(data2)</code></pre>
+<pre><code>##  [1] &quot;county&quot;                                       
+##  [2] &quot;fips&quot;                                         
+##  [3] &quot;age_adjusted_death_rate&quot;                      
+##  [4] &quot;average_deaths_per_year&quot;                      
+##  [5] &quot;fips_clean&quot;                                   
+##  [6] &quot;age_adjusted_incidence_rate_cases_per_100_000&quot;
+##  [7] &quot;average_annual_count&quot;                         
+##  [8] &quot;recent_trend&quot;                                 
+##  [9] &quot;hi_001&quot;                                       
+## [10] &quot;hi_002&quot;                                       
+## [11] &quot;hi_003&quot;                                       
+## [12] &quot;hi_004&quot;                                       
+## [13] &quot;hi_005&quot;                                       
+## [14] &quot;hi_006&quot;                                       
+## [15] &quot;hi_007&quot;                                       
+## [16] &quot;hi_008&quot;                                       
+## [17] &quot;hi_009&quot;                                       
+## [18] &quot;hi_010&quot;                                       
+## [19] &quot;hi_011&quot;                                       
+## [20] &quot;hi_012&quot;                                       
+## [21] &quot;hi_013&quot;                                       
+## [22] &quot;hi_014&quot;                                       
+## [23] &quot;hi_015&quot;                                       
+## [24] &quot;hi_016&quot;                                       
+## [25] &quot;hi_017&quot;                                       
+## [26] &quot;hi_018&quot;                                       
+## [27] &quot;hi_019&quot;                                       
+## [28] &quot;hi_020&quot;                                       
+## [29] &quot;hi_021&quot;                                       
+## [30] &quot;hi_022&quot;                                       
+## [31] &quot;hi_023&quot;                                       
+## [32] &quot;hi_024&quot;                                       
+## [33] &quot;hi_025&quot;                                       
+## [34] &quot;hi_026&quot;                                       
+## [35] &quot;hi_027&quot;                                       
+## [36] &quot;hi_028&quot;                                       
+## [37] &quot;hi_029&quot;                                       
+## [38] &quot;hi_030&quot;                                       
+## [39] &quot;hi_031&quot;                                       
+## [40] &quot;hi_032&quot;                                       
+## [41] &quot;hi_033&quot;                                       
+## [42] &quot;hi_034&quot;                                       
+## [43] &quot;hi_035&quot;                                       
+## [44] &quot;hi_036&quot;                                       
+## [45] &quot;hi_037&quot;                                       
+## [46] &quot;hi_038&quot;                                       
+## [47] &quot;hi_039&quot;                                       
+## [48] &quot;hi_040&quot;                                       
+## [49] &quot;hi_041&quot;                                       
+## [50] &quot;hi_042&quot;                                       
+## [51] &quot;hi_043&quot;                                       
+## [52] &quot;hi_044&quot;                                       
+## [53] &quot;hi_045&quot;                                       
+## [54] &quot;hi_046&quot;                                       
+## [55] &quot;hi_047&quot;                                       
+## [56] &quot;hi_048&quot;                                       
+## [57] &quot;hi_049&quot;                                       
+## [58] &quot;hi_050&quot;                                       
+## [59] &quot;hi_051&quot;                                       
+## [60] &quot;hi_052&quot;                                       
+## [61] &quot;hi_053&quot;                                       
+## [62] &quot;hi_054&quot;                                       
+## [63] &quot;hi_055&quot;                                       
+## [64] &quot;hi_056&quot;                                       
+## [65] &quot;hi_057&quot;</code></pre>
+<pre class="r"><code># Step 3
+dim(data_income_clean_fips)</code></pre>
+<pre><code>## [1] 3220   17</code></pre>
+<pre class="r"><code>names(data_income_clean_fips)</code></pre>
+<pre><code>##  [1] &quot;state&quot;             &quot;state_fips&quot;        &quot;county_fips&quot;      
+##  [4] &quot;area_name&quot;         &quot;income_001&quot;        &quot;income_a_001&quot;     
+##  [7] &quot;income_b_001&quot;      &quot;income_c_001&quot;      &quot;income_d_001&quot;     
+## [10] &quot;income_e_001&quot;      &quot;income_f_001&quot;      &quot;income_g_001&quot;     
+## [13] &quot;income_h_001&quot;      &quot;income_i_001&quot;      &quot;state_fips_clean&quot; 
+## [16] &quot;county_fips_clean&quot; &quot;fips_clean&quot;</code></pre>
+<pre class="r"><code># Remove columns that are already contained in the left-hand data
+data_income_clean_fips_for_join &lt;- data_income_clean_fips %&gt;% 
+  select(c(5:14,17))
+
+# Left Join - death / incidence / health / income
+data3 &lt;- left_join(data2, data_income_clean_fips_for_join, by=&quot;fips_clean&quot;)
+names(data3)</code></pre>
+<pre><code>##  [1] &quot;county&quot;                                       
+##  [2] &quot;fips&quot;                                         
+##  [3] &quot;age_adjusted_death_rate&quot;                      
+##  [4] &quot;average_deaths_per_year&quot;                      
+##  [5] &quot;fips_clean&quot;                                   
+##  [6] &quot;age_adjusted_incidence_rate_cases_per_100_000&quot;
+##  [7] &quot;average_annual_count&quot;                         
+##  [8] &quot;recent_trend&quot;                                 
+##  [9] &quot;hi_001&quot;                                       
+## [10] &quot;hi_002&quot;                                       
+## [11] &quot;hi_003&quot;                                       
+## [12] &quot;hi_004&quot;                                       
+## [13] &quot;hi_005&quot;                                       
+## [14] &quot;hi_006&quot;                                       
+## [15] &quot;hi_007&quot;                                       
+## [16] &quot;hi_008&quot;                                       
+## [17] &quot;hi_009&quot;                                       
+## [18] &quot;hi_010&quot;                                       
+## [19] &quot;hi_011&quot;                                       
+## [20] &quot;hi_012&quot;                                       
+## [21] &quot;hi_013&quot;                                       
+## [22] &quot;hi_014&quot;                                       
+## [23] &quot;hi_015&quot;                                       
+## [24] &quot;hi_016&quot;                                       
+## [25] &quot;hi_017&quot;                                       
+## [26] &quot;hi_018&quot;                                       
+## [27] &quot;hi_019&quot;                                       
+## [28] &quot;hi_020&quot;                                       
+## [29] &quot;hi_021&quot;                                       
+## [30] &quot;hi_022&quot;                                       
+## [31] &quot;hi_023&quot;                                       
+## [32] &quot;hi_024&quot;                                       
+## [33] &quot;hi_025&quot;                                       
+## [34] &quot;hi_026&quot;                                       
+## [35] &quot;hi_027&quot;                                       
+## [36] &quot;hi_028&quot;                                       
+## [37] &quot;hi_029&quot;                                       
+## [38] &quot;hi_030&quot;                                       
+## [39] &quot;hi_031&quot;                                       
+## [40] &quot;hi_032&quot;                                       
+## [41] &quot;hi_033&quot;                                       
+## [42] &quot;hi_034&quot;                                       
+## [43] &quot;hi_035&quot;                                       
+## [44] &quot;hi_036&quot;                                       
+## [45] &quot;hi_037&quot;                                       
+## [46] &quot;hi_038&quot;                                       
+## [47] &quot;hi_039&quot;                                       
+## [48] &quot;hi_040&quot;                                       
+## [49] &quot;hi_041&quot;                                       
+## [50] &quot;hi_042&quot;                                       
+## [51] &quot;hi_043&quot;                                       
+## [52] &quot;hi_044&quot;                                       
+## [53] &quot;hi_045&quot;                                       
+## [54] &quot;hi_046&quot;                                       
+## [55] &quot;hi_047&quot;                                       
+## [56] &quot;hi_048&quot;                                       
+## [57] &quot;hi_049&quot;                                       
+## [58] &quot;hi_050&quot;                                       
+## [59] &quot;hi_051&quot;                                       
+## [60] &quot;hi_052&quot;                                       
+## [61] &quot;hi_053&quot;                                       
+## [62] &quot;hi_054&quot;                                       
+## [63] &quot;hi_055&quot;                                       
+## [64] &quot;hi_056&quot;                                       
+## [65] &quot;hi_057&quot;                                       
+## [66] &quot;income_001&quot;                                   
+## [67] &quot;income_a_001&quot;                                 
+## [68] &quot;income_b_001&quot;                                 
+## [69] &quot;income_c_001&quot;                                 
+## [70] &quot;income_d_001&quot;                                 
+## [71] &quot;income_e_001&quot;                                 
+## [72] &quot;income_f_001&quot;                                 
+## [73] &quot;income_g_001&quot;                                 
+## [74] &quot;income_h_001&quot;                                 
+## [75] &quot;income_i_001&quot;</code></pre>
+<pre class="r"><code># Step 4
+dim(data_population_clean_fips)</code></pre>
+<pre><code>## [1] 3193    8</code></pre>
+<pre class="r"><code>names(data_population_clean_fips)</code></pre>
+<pre><code>## [1] &quot;state&quot;             &quot;county&quot;            &quot;stname&quot;           
+## [4] &quot;ctyname&quot;           &quot;popestimate2015&quot;   &quot;state_fips_clean&quot; 
+## [7] &quot;county_fips_clean&quot; &quot;fips_clean&quot;</code></pre>
+<pre class="r"><code># Remove columns that are already contained in the left-hand data
+data_population_clean_fips_for_join &lt;- data_population_clean_fips %&gt;% 
+  select(c(5,8))
+
+# Left Join - death / incidence / health / income / population
+data4 &lt;- left_join(data3, data_population_clean_fips_for_join, by=&quot;fips_clean&quot;)
+names(data4)</code></pre>
+<pre><code>##  [1] &quot;county&quot;                                       
+##  [2] &quot;fips&quot;                                         
+##  [3] &quot;age_adjusted_death_rate&quot;                      
+##  [4] &quot;average_deaths_per_year&quot;                      
+##  [5] &quot;fips_clean&quot;                                   
+##  [6] &quot;age_adjusted_incidence_rate_cases_per_100_000&quot;
+##  [7] &quot;average_annual_count&quot;                         
+##  [8] &quot;recent_trend&quot;                                 
+##  [9] &quot;hi_001&quot;                                       
+## [10] &quot;hi_002&quot;                                       
+## [11] &quot;hi_003&quot;                                       
+## [12] &quot;hi_004&quot;                                       
+## [13] &quot;hi_005&quot;                                       
+## [14] &quot;hi_006&quot;                                       
+## [15] &quot;hi_007&quot;                                       
+## [16] &quot;hi_008&quot;                                       
+## [17] &quot;hi_009&quot;                                       
+## [18] &quot;hi_010&quot;                                       
+## [19] &quot;hi_011&quot;                                       
+## [20] &quot;hi_012&quot;                                       
+## [21] &quot;hi_013&quot;                                       
+## [22] &quot;hi_014&quot;                                       
+## [23] &quot;hi_015&quot;                                       
+## [24] &quot;hi_016&quot;                                       
+## [25] &quot;hi_017&quot;                                       
+## [26] &quot;hi_018&quot;                                       
+## [27] &quot;hi_019&quot;                                       
+## [28] &quot;hi_020&quot;                                       
+## [29] &quot;hi_021&quot;                                       
+## [30] &quot;hi_022&quot;                                       
+## [31] &quot;hi_023&quot;                                       
+## [32] &quot;hi_024&quot;                                       
+## [33] &quot;hi_025&quot;                                       
+## [34] &quot;hi_026&quot;                                       
+## [35] &quot;hi_027&quot;                                       
+## [36] &quot;hi_028&quot;                                       
+## [37] &quot;hi_029&quot;                                       
+## [38] &quot;hi_030&quot;                                       
+## [39] &quot;hi_031&quot;                                       
+## [40] &quot;hi_032&quot;                                       
+## [41] &quot;hi_033&quot;                                       
+## [42] &quot;hi_034&quot;                                       
+## [43] &quot;hi_035&quot;                                       
+## [44] &quot;hi_036&quot;                                       
+## [45] &quot;hi_037&quot;                                       
+## [46] &quot;hi_038&quot;                                       
+## [47] &quot;hi_039&quot;                                       
+## [48] &quot;hi_040&quot;                                       
+## [49] &quot;hi_041&quot;                                       
+## [50] &quot;hi_042&quot;                                       
+## [51] &quot;hi_043&quot;                                       
+## [52] &quot;hi_044&quot;                                       
+## [53] &quot;hi_045&quot;                                       
+## [54] &quot;hi_046&quot;                                       
+## [55] &quot;hi_047&quot;                                       
+## [56] &quot;hi_048&quot;                                       
+## [57] &quot;hi_049&quot;                                       
+## [58] &quot;hi_050&quot;                                       
+## [59] &quot;hi_051&quot;                                       
+## [60] &quot;hi_052&quot;                                       
+## [61] &quot;hi_053&quot;                                       
+## [62] &quot;hi_054&quot;                                       
+## [63] &quot;hi_055&quot;                                       
+## [64] &quot;hi_056&quot;                                       
+## [65] &quot;hi_057&quot;                                       
+## [66] &quot;income_001&quot;                                   
+## [67] &quot;income_a_001&quot;                                 
+## [68] &quot;income_b_001&quot;                                 
+## [69] &quot;income_c_001&quot;                                 
+## [70] &quot;income_d_001&quot;                                 
+## [71] &quot;income_e_001&quot;                                 
+## [72] &quot;income_f_001&quot;                                 
+## [73] &quot;income_g_001&quot;                                 
+## [74] &quot;income_h_001&quot;                                 
+## [75] &quot;income_i_001&quot;                                 
+## [76] &quot;popestimate2015&quot;</code></pre>
+<pre class="r"><code># Step 5
+dim(data_poverty_clean_fips)</code></pre>
+<pre><code>## [1] 3220   66</code></pre>
+<pre class="r"><code>names(data_poverty_clean_fips)</code></pre>
+<pre><code>##  [1] &quot;state&quot;             &quot;state_fips&quot;        &quot;county_fips&quot;      
+##  [4] &quot;area_name&quot;         &quot;poverty_001&quot;       &quot;poverty_002&quot;      
+##  [7] &quot;poverty_003&quot;       &quot;poverty_004&quot;       &quot;poverty_005&quot;      
+## [10] &quot;poverty_006&quot;       &quot;poverty_007&quot;       &quot;poverty_008&quot;      
+## [13] &quot;poverty_009&quot;       &quot;poverty_010&quot;       &quot;poverty_011&quot;      
+## [16] &quot;poverty_012&quot;       &quot;poverty_013&quot;       &quot;poverty_014&quot;      
+## [19] &quot;poverty_015&quot;       &quot;poverty_016&quot;       &quot;poverty_017&quot;      
+## [22] &quot;poverty_018&quot;       &quot;poverty_019&quot;       &quot;poverty_020&quot;      
+## [25] &quot;poverty_021&quot;       &quot;poverty_022&quot;       &quot;poverty_023&quot;      
+## [28] &quot;poverty_024&quot;       &quot;poverty_025&quot;       &quot;poverty_026&quot;      
+## [31] &quot;poverty_027&quot;       &quot;poverty_028&quot;       &quot;poverty_029&quot;      
+## [34] &quot;poverty_030&quot;       &quot;poverty_031&quot;       &quot;poverty_032&quot;      
+## [37] &quot;poverty_033&quot;       &quot;poverty_034&quot;       &quot;poverty_035&quot;      
+## [40] &quot;poverty_036&quot;       &quot;poverty_037&quot;       &quot;poverty_038&quot;      
+## [43] &quot;poverty_039&quot;       &quot;poverty_040&quot;       &quot;poverty_041&quot;      
+## [46] &quot;poverty_042&quot;       &quot;poverty_043&quot;       &quot;poverty_044&quot;      
+## [49] &quot;poverty_045&quot;       &quot;poverty_046&quot;       &quot;poverty_047&quot;      
+## [52] &quot;poverty_048&quot;       &quot;poverty_049&quot;       &quot;poverty_050&quot;      
+## [55] &quot;poverty_051&quot;       &quot;poverty_052&quot;       &quot;poverty_053&quot;      
+## [58] &quot;poverty_054&quot;       &quot;poverty_055&quot;       &quot;poverty_056&quot;      
+## [61] &quot;poverty_057&quot;       &quot;poverty_058&quot;       &quot;poverty_059&quot;      
+## [64] &quot;state_fips_clean&quot;  &quot;county_fips_clean&quot; &quot;fips_clean&quot;</code></pre>
+<pre class="r"><code># Remove columns that are already contained in the left-hand data
+data_poverty_clean_fips_for_join &lt;- data_poverty_clean_fips %&gt;% 
+  select(c(5:63,66))
+
+# Left Join - death / incidence / health / income / population / poverty
+data_all &lt;- left_join(data4, data_poverty_clean_fips_for_join, by=&quot;fips_clean&quot;)
+names(data_all)</code></pre>
+<pre><code>##   [1] &quot;county&quot;                                       
+##   [2] &quot;fips&quot;                                         
+##   [3] &quot;age_adjusted_death_rate&quot;                      
+##   [4] &quot;average_deaths_per_year&quot;                      
+##   [5] &quot;fips_clean&quot;                                   
+##   [6] &quot;age_adjusted_incidence_rate_cases_per_100_000&quot;
+##   [7] &quot;average_annual_count&quot;                         
+##   [8] &quot;recent_trend&quot;                                 
+##   [9] &quot;hi_001&quot;                                       
+##  [10] &quot;hi_002&quot;                                       
+##  [11] &quot;hi_003&quot;                                       
+##  [12] &quot;hi_004&quot;                                       
+##  [13] &quot;hi_005&quot;                                       
+##  [14] &quot;hi_006&quot;                                       
+##  [15] &quot;hi_007&quot;                                       
+##  [16] &quot;hi_008&quot;                                       
+##  [17] &quot;hi_009&quot;                                       
+##  [18] &quot;hi_010&quot;                                       
+##  [19] &quot;hi_011&quot;                                       
+##  [20] &quot;hi_012&quot;                                       
+##  [21] &quot;hi_013&quot;                                       
+##  [22] &quot;hi_014&quot;                                       
+##  [23] &quot;hi_015&quot;                                       
+##  [24] &quot;hi_016&quot;                                       
+##  [25] &quot;hi_017&quot;                                       
+##  [26] &quot;hi_018&quot;                                       
+##  [27] &quot;hi_019&quot;                                       
+##  [28] &quot;hi_020&quot;                                       
+##  [29] &quot;hi_021&quot;                                       
+##  [30] &quot;hi_022&quot;                                       
+##  [31] &quot;hi_023&quot;                                       
+##  [32] &quot;hi_024&quot;                                       
+##  [33] &quot;hi_025&quot;                                       
+##  [34] &quot;hi_026&quot;                                       
+##  [35] &quot;hi_027&quot;                                       
+##  [36] &quot;hi_028&quot;                                       
+##  [37] &quot;hi_029&quot;                                       
+##  [38] &quot;hi_030&quot;                                       
+##  [39] &quot;hi_031&quot;                                       
+##  [40] &quot;hi_032&quot;                                       
+##  [41] &quot;hi_033&quot;                                       
+##  [42] &quot;hi_034&quot;                                       
+##  [43] &quot;hi_035&quot;                                       
+##  [44] &quot;hi_036&quot;                                       
+##  [45] &quot;hi_037&quot;                                       
+##  [46] &quot;hi_038&quot;                                       
+##  [47] &quot;hi_039&quot;                                       
+##  [48] &quot;hi_040&quot;                                       
+##  [49] &quot;hi_041&quot;                                       
+##  [50] &quot;hi_042&quot;                                       
+##  [51] &quot;hi_043&quot;                                       
+##  [52] &quot;hi_044&quot;                                       
+##  [53] &quot;hi_045&quot;                                       
+##  [54] &quot;hi_046&quot;                                       
+##  [55] &quot;hi_047&quot;                                       
+##  [56] &quot;hi_048&quot;                                       
+##  [57] &quot;hi_049&quot;                                       
+##  [58] &quot;hi_050&quot;                                       
+##  [59] &quot;hi_051&quot;                                       
+##  [60] &quot;hi_052&quot;                                       
+##  [61] &quot;hi_053&quot;                                       
+##  [62] &quot;hi_054&quot;                                       
+##  [63] &quot;hi_055&quot;                                       
+##  [64] &quot;hi_056&quot;                                       
+##  [65] &quot;hi_057&quot;                                       
+##  [66] &quot;income_001&quot;                                   
+##  [67] &quot;income_a_001&quot;                                 
+##  [68] &quot;income_b_001&quot;                                 
+##  [69] &quot;income_c_001&quot;                                 
+##  [70] &quot;income_d_001&quot;                                 
+##  [71] &quot;income_e_001&quot;                                 
+##  [72] &quot;income_f_001&quot;                                 
+##  [73] &quot;income_g_001&quot;                                 
+##  [74] &quot;income_h_001&quot;                                 
+##  [75] &quot;income_i_001&quot;                                 
+##  [76] &quot;popestimate2015&quot;                              
+##  [77] &quot;poverty_001&quot;                                  
+##  [78] &quot;poverty_002&quot;                                  
+##  [79] &quot;poverty_003&quot;                                  
+##  [80] &quot;poverty_004&quot;                                  
+##  [81] &quot;poverty_005&quot;                                  
+##  [82] &quot;poverty_006&quot;                                  
+##  [83] &quot;poverty_007&quot;                                  
+##  [84] &quot;poverty_008&quot;                                  
+##  [85] &quot;poverty_009&quot;                                  
+##  [86] &quot;poverty_010&quot;                                  
+##  [87] &quot;poverty_011&quot;                                  
+##  [88] &quot;poverty_012&quot;                                  
+##  [89] &quot;poverty_013&quot;                                  
+##  [90] &quot;poverty_014&quot;                                  
+##  [91] &quot;poverty_015&quot;                                  
+##  [92] &quot;poverty_016&quot;                                  
+##  [93] &quot;poverty_017&quot;                                  
+##  [94] &quot;poverty_018&quot;                                  
+##  [95] &quot;poverty_019&quot;                                  
+##  [96] &quot;poverty_020&quot;                                  
+##  [97] &quot;poverty_021&quot;                                  
+##  [98] &quot;poverty_022&quot;                                  
+##  [99] &quot;poverty_023&quot;                                  
+## [100] &quot;poverty_024&quot;                                  
+## [101] &quot;poverty_025&quot;                                  
+## [102] &quot;poverty_026&quot;                                  
+## [103] &quot;poverty_027&quot;                                  
+## [104] &quot;poverty_028&quot;                                  
+## [105] &quot;poverty_029&quot;                                  
+## [106] &quot;poverty_030&quot;                                  
+## [107] &quot;poverty_031&quot;                                  
+## [108] &quot;poverty_032&quot;                                  
+## [109] &quot;poverty_033&quot;                                  
+## [110] &quot;poverty_034&quot;                                  
+## [111] &quot;poverty_035&quot;                                  
+## [112] &quot;poverty_036&quot;                                  
+## [113] &quot;poverty_037&quot;                                  
+## [114] &quot;poverty_038&quot;                                  
+## [115] &quot;poverty_039&quot;                                  
+## [116] &quot;poverty_040&quot;                                  
+## [117] &quot;poverty_041&quot;                                  
+## [118] &quot;poverty_042&quot;                                  
+## [119] &quot;poverty_043&quot;                                  
+## [120] &quot;poverty_044&quot;                                  
+## [121] &quot;poverty_045&quot;                                  
+## [122] &quot;poverty_046&quot;                                  
+## [123] &quot;poverty_047&quot;                                  
+## [124] &quot;poverty_048&quot;                                  
+## [125] &quot;poverty_049&quot;                                  
+## [126] &quot;poverty_050&quot;                                  
+## [127] &quot;poverty_051&quot;                                  
+## [128] &quot;poverty_052&quot;                                  
+## [129] &quot;poverty_053&quot;                                  
+## [130] &quot;poverty_054&quot;                                  
+## [131] &quot;poverty_055&quot;                                  
+## [132] &quot;poverty_056&quot;                                  
+## [133] &quot;poverty_057&quot;                                  
+## [134] &quot;poverty_058&quot;                                  
+## [135] &quot;poverty_059&quot;</code></pre>
+</div>
+<div id="x-refine-questionsgenerate-new-questions-optional" class="section level2">
+<h2>1.X Refine questions/generate new questions (optional)</h2>
+<p>EDA should not be viewed as just conducting the above framework as a
+series of ordered steps. This is far too simplistic as EDA typically
+involves multiple rounds of each step. For example, visualisations could
+give you new ideas for summaries you would be interested in and perhaps
+patterns you want to analyse, which could lead to more manipulations to
+the data and visualisations.</p>
+<div id="internal-checks" class="section level3">
+<h3>Internal Checks</h3>
 </div>
 </div>
 </div>
