@@ -370,8 +370,16 @@ pre code {
 </div>
 
 
-<div id="import-data" class="section level1">
-<h1>1. Import Data</h1>
+<div id="exploratory-data-analysis" class="section level1">
+<h1>1. Exploratory Data Analysis</h1>
+<div id="import-data" class="section level2">
+<h2>1.1 Import Data</h2>
+</div>
+<div id="eda-framework" class="section level2">
+<h2>EDA Framework</h2>
+</div>
+<div id="data-exploration" class="section level2">
+<h2>1.2 Data Exploration</h2>
 <pre class="r"><code>head(data_death)</code></pre>
 <pre><code>## # A tibble: 6 × 4
 ##   County                       FIPS `Age-Adjusted Death Rate` Average Deaths p…¹
@@ -383,7 +391,7 @@ pre code {
 ## 5 Owsley County, Kentucky     21189 45.6                      2                 
 ## 6 Union County, Florida       12125 44.4                      8                 
 ## # … with abbreviated variable name ¹​`Average Deaths per Year`</code></pre>
-<pre class="r"><code>head(data_health_insurance)</code></pre>
+<pre class="r"><code>head(data_health_ins)</code></pre>
 <pre><code>## # A tibble: 6 × 61
 ##   State State…¹ Count…² AreaN…³ hi_001 hi_002 hi_003 hi_004 hi_005 hi_006 hi_007
 ##   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;    &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
@@ -457,6 +465,275 @@ pre code {
 ## #   poverty_025 &lt;dbl&gt;, poverty_026 &lt;dbl&gt;, poverty_027 &lt;dbl&gt;, poverty_028 &lt;dbl&gt;,
 ## #   poverty_029 &lt;dbl&gt;, poverty_030 &lt;dbl&gt;, poverty_031 &lt;dbl&gt;, …
 ## # ℹ Use `colnames()` to see all variable names</code></pre>
+<div id="reshaping-data-into-tidy-form" class="section level3">
+<h3>1.2.1 Reshaping Data into Tidy Form</h3>
+<p>Data will be in tidy form if it has the following 3 properties: 1.
+Each variable forms a column 2. Each observation forms a row 3. Each
+type of observational unit (e.g. persons, schools, counties) forms a
+table Sometimes data in tidy form may also be known as data in long
+form.</p>
+</div>
+</div>
+<div id="assess-data-quality" class="section level2">
+<h2>1.3 Assess Data Quality</h2>
+<div id="summarise-data" class="section level3">
+<h3>1.3.1 Summarise Data</h3>
+<pre class="r"><code>data_death_clean      &lt;- clean_names(data_death)
+data_health_ins_clean &lt;- clean_names(data_health_ins)
+data_incidence_clean  &lt;- clean_names(data_incidence)
+data_income_clean     &lt;- clean_names(data_income)
+data_population_clean &lt;- clean_names(data_population)
+data_poverty_clean    &lt;- clean_names(data_poverty)
+
+names(data_death_clean)</code></pre>
+<pre><code>## [1] &quot;county&quot;                  &quot;fips&quot;                   
+## [3] &quot;age_adjusted_death_rate&quot; &quot;average_deaths_per_year&quot;</code></pre>
+<pre class="r"><code>names(data_health_ins_clean)</code></pre>
+<pre><code>##  [1] &quot;state&quot;       &quot;state_fips&quot;  &quot;county_fips&quot; &quot;area_name&quot;   &quot;hi_001&quot;     
+##  [6] &quot;hi_002&quot;      &quot;hi_003&quot;      &quot;hi_004&quot;      &quot;hi_005&quot;      &quot;hi_006&quot;     
+## [11] &quot;hi_007&quot;      &quot;hi_008&quot;      &quot;hi_009&quot;      &quot;hi_010&quot;      &quot;hi_011&quot;     
+## [16] &quot;hi_012&quot;      &quot;hi_013&quot;      &quot;hi_014&quot;      &quot;hi_015&quot;      &quot;hi_016&quot;     
+## [21] &quot;hi_017&quot;      &quot;hi_018&quot;      &quot;hi_019&quot;      &quot;hi_020&quot;      &quot;hi_021&quot;     
+## [26] &quot;hi_022&quot;      &quot;hi_023&quot;      &quot;hi_024&quot;      &quot;hi_025&quot;      &quot;hi_026&quot;     
+## [31] &quot;hi_027&quot;      &quot;hi_028&quot;      &quot;hi_029&quot;      &quot;hi_030&quot;      &quot;hi_031&quot;     
+## [36] &quot;hi_032&quot;      &quot;hi_033&quot;      &quot;hi_034&quot;      &quot;hi_035&quot;      &quot;hi_036&quot;     
+## [41] &quot;hi_037&quot;      &quot;hi_038&quot;      &quot;hi_039&quot;      &quot;hi_040&quot;      &quot;hi_041&quot;     
+## [46] &quot;hi_042&quot;      &quot;hi_043&quot;      &quot;hi_044&quot;      &quot;hi_045&quot;      &quot;hi_046&quot;     
+## [51] &quot;hi_047&quot;      &quot;hi_048&quot;      &quot;hi_049&quot;      &quot;hi_050&quot;      &quot;hi_051&quot;     
+## [56] &quot;hi_052&quot;      &quot;hi_053&quot;      &quot;hi_054&quot;      &quot;hi_055&quot;      &quot;hi_056&quot;     
+## [61] &quot;hi_057&quot;</code></pre>
+<pre class="r"><code>names(data_incidence_clean)</code></pre>
+<pre><code>## [1] &quot;county&quot;                                       
+## [2] &quot;fips&quot;                                         
+## [3] &quot;age_adjusted_incidence_rate_cases_per_100_000&quot;
+## [4] &quot;average_annual_count&quot;                         
+## [5] &quot;recent_trend&quot;</code></pre>
+<pre class="r"><code>names(data_income_clean)       </code></pre>
+<pre><code>##  [1] &quot;state&quot;        &quot;state_fips&quot;   &quot;county_fips&quot;  &quot;area_name&quot;    &quot;income_001&quot;  
+##  [6] &quot;income_a_001&quot; &quot;income_b_001&quot; &quot;income_c_001&quot; &quot;income_d_001&quot; &quot;income_e_001&quot;
+## [11] &quot;income_f_001&quot; &quot;income_g_001&quot; &quot;income_h_001&quot; &quot;income_i_001&quot;</code></pre>
+<pre class="r"><code>names(data_population_clean)  </code></pre>
+<pre><code>## [1] &quot;state&quot;           &quot;county&quot;          &quot;stname&quot;          &quot;ctyname&quot;        
+## [5] &quot;popestimate2015&quot;</code></pre>
+<pre class="r"><code>names(data_poverty_clean)</code></pre>
+<pre><code>##  [1] &quot;state&quot;       &quot;state_fips&quot;  &quot;county_fips&quot; &quot;area_name&quot;   &quot;poverty_001&quot;
+##  [6] &quot;poverty_002&quot; &quot;poverty_003&quot; &quot;poverty_004&quot; &quot;poverty_005&quot; &quot;poverty_006&quot;
+## [11] &quot;poverty_007&quot; &quot;poverty_008&quot; &quot;poverty_009&quot; &quot;poverty_010&quot; &quot;poverty_011&quot;
+## [16] &quot;poverty_012&quot; &quot;poverty_013&quot; &quot;poverty_014&quot; &quot;poverty_015&quot; &quot;poverty_016&quot;
+## [21] &quot;poverty_017&quot; &quot;poverty_018&quot; &quot;poverty_019&quot; &quot;poverty_020&quot; &quot;poverty_021&quot;
+## [26] &quot;poverty_022&quot; &quot;poverty_023&quot; &quot;poverty_024&quot; &quot;poverty_025&quot; &quot;poverty_026&quot;
+## [31] &quot;poverty_027&quot; &quot;poverty_028&quot; &quot;poverty_029&quot; &quot;poverty_030&quot; &quot;poverty_031&quot;
+## [36] &quot;poverty_032&quot; &quot;poverty_033&quot; &quot;poverty_034&quot; &quot;poverty_035&quot; &quot;poverty_036&quot;
+## [41] &quot;poverty_037&quot; &quot;poverty_038&quot; &quot;poverty_039&quot; &quot;poverty_040&quot; &quot;poverty_041&quot;
+## [46] &quot;poverty_042&quot; &quot;poverty_043&quot; &quot;poverty_044&quot; &quot;poverty_045&quot; &quot;poverty_046&quot;
+## [51] &quot;poverty_047&quot; &quot;poverty_048&quot; &quot;poverty_049&quot; &quot;poverty_050&quot; &quot;poverty_051&quot;
+## [56] &quot;poverty_052&quot; &quot;poverty_053&quot; &quot;poverty_054&quot; &quot;poverty_055&quot; &quot;poverty_056&quot;
+## [61] &quot;poverty_057&quot; &quot;poverty_058&quot; &quot;poverty_059&quot;</code></pre>
+</div>
+<div id="visualise-and-analyse-patterns-in-data" class="section level3">
+<h3>1.3.2 Visualise and Analyse Patterns in Data</h3>
+</div>
+</div>
+<div id="manipulate-and-cleanse-the-data" class="section level2">
+<h2>1.4 Manipulate and Cleanse the Data</h2>
+<div id="clean-fips" class="section level3">
+<h3>1.4.1 Clean FIPS</h3>
+<pre class="r"><code># Make FIPS a 5-digit code 
+# For death and incidence data, most of the FIPS codes are 5-digits but if they are 4-digits, you will need to add a 0 in front. 
+data_death_clean_fips &lt;- data_death_clean %&gt;% 
+  mutate(fips_clean = str_pad(data_death_clean$fips, width = 5, pad = &quot;0&quot;))
+
+data_incidence_clean_fips &lt;- data_incidence_clean %&gt;% 
+  mutate(fips_clean = str_pad(data_incidence_clean$fips, width = 5, pad = &quot;0&quot;))
+
+# For poverty, health insurance, income and population data, you will need to combine State FIPS and County FIPS to get the 5-digit code.
+data_health_ins_clean_fips &lt;- data_health_ins_clean %&gt;% 
+  mutate(state_fips_clean  = str_pad(data_health_ins_clean$state_fips, width = 2, pad = &quot;0&quot;)) %&gt;% 
+  mutate(county_fips_clean = str_pad(data_health_ins_clean$county_fips, width = 3, pad = &quot;0&quot;)) %&gt;% 
+  mutate(fips_clean = paste(state_fips_clean, county_fips_clean, sep=&quot;&quot;))
+
+data_income_clean_fips &lt;- data_income_clean %&gt;% 
+  mutate(state_fips_clean  = str_pad(data_income_clean$state_fips, width = 2, pad = &quot;0&quot;)) %&gt;% 
+  mutate(county_fips_clean = str_pad(data_income_clean$county_fips, width = 3, pad = &quot;0&quot;)) %&gt;% 
+  mutate(fips_clean = paste(state_fips_clean, county_fips_clean, sep=&quot;&quot;))
+
+data_population_clean_fips &lt;- data_population_clean %&gt;% 
+  mutate(state_fips_clean  = str_pad(data_population_clean$state, width = 2, pad = &quot;0&quot;)) %&gt;% 
+  mutate(county_fips_clean = str_pad(data_population_clean$county, width = 3, pad = &quot;0&quot;)) %&gt;% 
+  mutate(fips_clean = paste(state_fips_clean, county_fips_clean, sep=&quot;&quot;))
+
+data_poverty_clean_fips &lt;- data_poverty_clean %&gt;% 
+  mutate(state_fips_clean  = str_pad(data_poverty_clean$state_fips, width = 2, pad = &quot;0&quot;)) %&gt;% 
+  mutate(county_fips_clean = str_pad(data_poverty_clean$county_fips, width = 3, pad = &quot;0&quot;)) %&gt;% 
+  mutate(fips_clean = paste(state_fips_clean, county_fips_clean, sep=&quot;&quot;))</code></pre>
+</div>
+</div>
+<div id="refine-questionsgenerate-new-questions-optional" class="section level2">
+<h2>1.5 Refine questions/generate new questions (optional)</h2>
+<p>EDA should not be viewed as just conducting the above framework as a
+series of ordered steps. This is far too simplistic as EDA typically
+involves multiple rounds of each step. For example, visualisations could
+give you new ideas for summaries you would be interested in and perhaps
+patterns you want to analyse, which could lead to more manipulations to
+the data and visualisations.</p>
+<div id="internal-checks" class="section level3">
+<h3>Internal Checks</h3>
+</div>
+<div id="check-fips" class="section level3">
+<h3>Check FIPS</h3>
+<p>Check if there are duplicate FIPS</p>
+<pre class="r"><code># Check if there are duplicate FIPS
+dim(data_death_clean_fips)[1] == length(unique(data_death_clean_fips$fips_clean)) # No duplicates</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>dim(data_incidence_clean_fips)[1] == length(unique(data_incidence_clean_fips$fips_clean)) # No duplicates</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>dim(data_health_ins_clean_fips)[1] == length(unique(data_health_ins_clean_fips$fips_clean)) # No duplicates</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>dim(data_income_clean_fips)[1] == length(unique(data_income_clean_fips$fips_clean)) # No duplicates</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>dim(data_population_clean_fips)[1] == length(unique(data_population_clean_fips$fips_clean)) # No duplicates</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>dim(data_poverty_clean_fips)[1] == length(unique(data_poverty_clean_fips$fips_clean)) # No duplicates </code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+</div>
+</div>
+<div id="correlation" class="section level1">
+<h1>Correlation</h1>
+<pre class="r"><code>describe(data_poverty)</code></pre>
+<pre><code>##             vars    n     mean        sd  median  trimmed      mad min     max
+## State*         1 3220    27.59     14.49    27.0    27.88    17.79   1      52
+## StateFIPS*     2 3220    27.84     14.60    27.0    28.11    17.79   1      52
+## CountyFIPS*    3 3220    64.72     57.54    53.0    55.63    45.22   1     325
+## AreaName*      4 3220  1610.50    929.68  1610.5  1610.50  1193.49   1    3220
+## poverty_001    5 3220 96947.04 314090.50 24992.0 40423.41 26448.84  79 9886133
+## poverty_002    6 3220 15330.80  53938.10  4411.0  6643.07  4882.20  10 1800265
+## poverty_003    7 3220  6879.13  24429.07  1985.5  2968.32  2213.52   5  823612
+## poverty_004    8 3220   778.12   2784.89   218.0   324.16   255.01   0   85998
+## poverty_005    9 3220   154.52    549.66    40.0    64.02    54.86   0   17342
+## poverty_006   10 3220   863.25   3151.82   245.0   361.75   283.92   0  100322
+## poverty_007   11 3220   387.91   1463.73   106.5   160.80   131.21   0   47870
+## poverty_008   12 3220   129.55    479.80    34.0    53.65    45.96   0   15706
+## poverty_009   13 3220   246.19    957.94    66.0   100.65    81.54   0   33464
+## poverty_010   14 3220  1016.38   3454.04   220.0   384.31   263.90   0  113719
+## poverty_011   15 3220   843.13   3105.26   219.0   343.67   259.46   0  105107
+## poverty_012   16 3220   685.56   2667.57   195.0   287.80   228.32   0   95628
+## poverty_013   17 3220   705.32   2497.46   216.0   314.92   247.59   0   86522
+## poverty_014   18 3220   609.43   2010.03   197.0   282.96   217.94   0   66139
+## poverty_015   19 3220   269.91    956.37    89.0   122.84    99.33   0   31427
+## poverty_016   20 3220   189.86    714.55    61.0    84.72    66.72   0   24368
+## poverty_017   21 3220  8451.67  29522.84  2421.0  3673.51  2687.95   5  976653
+## poverty_018   22 3220   748.51   2677.28   210.0   312.64   246.11   0   82339
+## poverty_019   23 3220   149.42    523.11    39.0    63.12    53.37   0   15920
+## poverty_020   24 3220   832.31   3040.24   236.0   348.15   275.76   0   94638
+## poverty_021   25 3220   373.83   1412.55   101.0   154.92   123.06   0   47387
+## poverty_022   26 3220   127.32    481.99    32.0    51.76    44.48   0   16322
+## poverty_023   27 3220   246.02    959.75    66.0   101.34    81.54   0   33628
+## poverty_024   28 3220  1237.76   4022.23   294.0   496.46   343.96   0  128854
+## poverty_025   29 3220  1274.03   4449.77   340.5   528.19   392.89   0  140190
+## poverty_026   30 3220   987.27   3849.98   270.0   405.84   312.83   0  133903
+## poverty_027   31 3220   862.87   3010.67   265.0   385.65   305.42   0  102157
+## poverty_028   32 3220   738.23   2463.51   234.5   341.85   263.16   0   81051
+## poverty_029   33 3220   424.39   1472.89   136.0   193.56   151.97   0   47449
+## poverty_030   34 3220   449.73   1570.47   156.0   210.98   155.67   0   52815
+## poverty_031   35 3220 81616.25 262248.79 19823.5 33450.48 20967.67  67 8085868
+## poverty_032   36 3220 40550.97 130347.49 10014.0 16746.48 10540.54  36 4041640
+## poverty_033   37 3220  2364.30   7963.60   531.5   904.56   580.44   0  237813
+## poverty_034   38 3220   490.71   1580.99   115.0   194.08   134.92   0   45473
+## poverty_035   39 3220  3025.32   9623.22   716.5  1221.04   777.62   0  279399
+## poverty_036   40 3220  1568.79   4922.76   390.0   647.64   427.73   0  148046
+## poverty_037   41 3220   541.35   1686.49   137.0   226.86   155.67   0   50860
+## poverty_038   42 3220  1083.12   3467.81   273.0   447.99   299.49   0  107808
+## poverty_039   43 3220  3489.99  12022.18   812.5  1388.58   896.23   0  397245
+## poverty_040   44 3220  5700.70  21097.36  1159.5  2031.79  1284.67   8  672043
+## poverty_041   45 3220  5499.09  19021.15  1236.0  2107.26  1349.17   2  602626
+## poverty_042   46 3220  5950.14  19030.97  1463.0  2442.03  1555.25   2  592275
+## poverty_043   47 3220  5281.44  15448.11  1477.0  2360.37  1531.53  12  462862
+## poverty_044   48 3220  3380.56   9168.01  1067.0  1622.67  1085.26   0  263433
+## poverty_045   49 3220  2175.46   6256.02   654.0   995.91   656.79   0  181757
+## poverty_046   50 3220 41065.28 131924.65  9889.0 16702.68 10564.27  31 4044228
+## poverty_047   51 3220  2258.06   7610.42   498.0   863.07   547.08   0  226348
+## poverty_048   52 3220   465.01   1505.23   110.0   183.73   128.99   0   42671
+## poverty_049   53 3220  2893.49   9239.24   673.0  1158.66   733.89   0  268852
+## poverty_050   54 3220  1503.79   4737.65   364.0   618.06   403.27   0  142225
+## poverty_051   55 3220   514.36   1627.30   126.5   211.66   148.26   0   48745
+## poverty_052   56 3220  1030.75   3296.96   259.0   425.05   281.69   0  102044
+## poverty_053   57 3220  3115.93  10996.26   676.0  1190.21   754.64   0  361888
+## poverty_054   58 3220  5369.19  19824.96  1052.0  1872.55  1172.74   0  617515
+## poverty_055   59 3220  5408.11  18421.20  1176.0  2056.25  1302.46   5  575255
+## poverty_056   60 3220  6111.34  19412.49  1478.0  2487.17  1570.07   5  597130
+## poverty_057   61 3220  5650.65  16784.54  1527.0  2460.73  1606.40   5  501021
+## poverty_058   62 3220  3750.67  10605.63  1111.5  1724.95  1148.27   1  308048
+## poverty_059   63 3220  2993.92   8821.52   828.0  1310.86   856.94   0  252486
+##               range  skew kurtosis      se
+## State*           51 -0.05    -1.21    0.26
+## StateFIPS*       51 -0.06    -1.21    0.26
+## CountyFIPS*     324  1.89     4.54    1.01
+## AreaName*      3219  0.00    -1.20   16.38
+## poverty_001 9886054 14.34   343.07 5535.12
+## poverty_002 1800255 16.42   426.94  950.53
+## poverty_003  823607 16.69   441.21  430.51
+## poverty_004   85998 15.00   344.29   49.08
+## poverty_005   17342 15.24   363.13    9.69
+## poverty_006  100322 15.79   379.97   55.54
+## poverty_007   47870 16.52   414.23   25.79
+## poverty_008   15706 16.15   405.54    8.46
+## poverty_009   33464 17.98   501.46   16.88
+## poverty_010  113719 15.10   390.92   60.87
+## poverty_011  105107 16.78   447.21   54.72
+## poverty_012   95628 18.87   549.93   47.01
+## poverty_013   86522 17.28   478.10   44.01
+## poverty_014   66139 15.81   403.08   35.42
+## poverty_015   31427 16.56   418.88   16.85
+## poverty_016   24368 18.30   494.95   12.59
+## poverty_017  976648 16.19   414.91  520.27
+## poverty_018   82339 14.94   340.95   47.18
+## poverty_019   15920 14.68   329.92    9.22
+## poverty_020   94638 15.37   357.17   53.58
+## poverty_021   47387 16.99   444.23   24.89
+## poverty_022   16322 16.97   450.78    8.49
+## poverty_023   33628 18.23   511.54   16.91
+## poverty_024  128854 14.42   356.50   70.88
+## poverty_025  140190 15.02   357.02   78.42
+## poverty_026  133903 18.00   498.18   67.85
+## poverty_027  102157 16.76   447.51   53.06
+## poverty_028   81051 15.98   407.00   43.41
+## poverty_029   47449 16.03   392.86   25.96
+## poverty_030   52815 17.40   458.24   27.68
+## poverty_031 8085801 13.76   318.59 4621.53
+## poverty_032 4041604 13.91   324.92 2297.07
+## poverty_033  237813 13.39   293.69  140.34
+## poverty_034   45473 12.43   256.23   27.86
+## poverty_035  279399 12.66   265.48  169.59
+## poverty_036  148046 13.16   292.86   86.75
+## poverty_037   50860 13.17   294.39   29.72
+## poverty_038  107808 13.94   326.91   61.11
+## poverty_039  397245 15.69   405.15  211.86
+## poverty_040  672035 15.11   367.37  371.79
+## poverty_041  602624 14.60   352.25  335.20
+## poverty_042  592273 13.78   323.91  335.38
+## poverty_043  462850 12.82   284.64  272.24
+## poverty_044  263433 11.95   247.61  161.56
+## poverty_045  181757 12.29   258.18  110.25
+## poverty_046 4044197 13.60   312.31 2324.87
+## poverty_047  226348 13.35   291.08  134.12
+## poverty_048   42671 12.51   253.72   26.53
+## poverty_049  268852 12.71   268.10  162.82
+## poverty_050  142225 13.10   290.16   83.49
+## poverty_051   48745 13.14   289.84   28.68
+## poverty_052  102044 13.81   321.56   58.10
+## poverty_053  361888 15.61   400.29  193.78
+## poverty_054  617515 14.54   341.46  349.37
+## poverty_055  575250 14.08   332.23  324.63
+## poverty_056  597125 13.43   310.27  342.10
+## poverty_057  501016 12.77   281.91  295.79
+## poverty_058  308047 12.22   258.06  186.90
+## poverty_059  252486 12.02   247.32  155.46</code></pre>
+<p>Exploratory data analysis</p>
+<p>Objectives: •Suggest hypotheses •Assess assumptions made •Support
+selection of appropriate models •Provide basis for further data
+collection</p>
+<p>FrameworK: 1. Assess the data quality</p>
 </div>
 
 

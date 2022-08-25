@@ -1,0 +1,10 @@
+"0","data_health_ins <- read_csv(""Data/healthinsurance.csv"")
+"
+"2","[1mRows: [22m[34m3220[39m [1mColumns: [22m[34m61[39m"
+"2","[36m──[39m [1mColumn specification[22m [36m──────────────────────────────────────────────────────────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m  (4): State, StateFIPS, CountyFIPS, AreaName
+[32mdbl[39m (57): hi_001, hi_002, hi_003, hi_004, hi_005, hi_006, hi_007, hi_008, hi_009, hi_010, hi_011, hi_012, hi_0..."
+"2","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message."
