@@ -1,0 +1,8 @@
+"0","motor_data %>% filter(veh_brand != ""B12"" & veh_age != 0) %>%
+  summarise(claim_freq = sum(claim_nb)/sum(exposure)) %>%
+  pull()
+"
+"1","[1]"
+"1"," 0.0919826"
+"1","
+"

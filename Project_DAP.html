@@ -465,8 +465,31 @@ pre code {
 ## #   poverty_025 &lt;dbl&gt;, poverty_026 &lt;dbl&gt;, poverty_027 &lt;dbl&gt;, poverty_028 &lt;dbl&gt;,
 ## #   poverty_029 &lt;dbl&gt;, poverty_030 &lt;dbl&gt;, poverty_031 &lt;dbl&gt;, …
 ## # ℹ Use `colnames()` to see all variable names</code></pre>
+<div id="convert-data-type" class="section level3">
+<h3>1.2.1 Convert Data Type</h3>
+<pre class="r"><code># Convert the type from character to numeric
+# data_death$&quot;Age-Adjusted Death Rate&quot; &lt;- as.double(&quot;Age-Adjusted Death Rate&quot;)
+# data_death$&quot;Average Deaths per Year&quot; &lt;- as.double(&quot;Average Deaths per Year&quot;)
+# 
+# data_incidence$&quot;Age-Adjusted Incidence Rate - cases per 100,000&quot; &lt;- as.double(&quot;Age-Adjusted Incidence Rate - cases per 100,000&quot;)
+# data_incidence$&quot;Average Annual Count&quot; &lt;- as.double(&quot;Average Annual Count&quot;)
+
+data_death &lt;- data_death %&gt;%
+  mutate(`Age-Adjusted Death Rate`=as.double(`Age-Adjusted Death Rate`)) %&gt;%
+  mutate(`Average Deaths per Year`=as.double(`Average Deaths per Year`))</code></pre>
+<pre><code>## Warning in mask$eval_all_mutate(quo): NAs introduced by coercion
+
+## Warning in mask$eval_all_mutate(quo): NAs introduced by coercion</code></pre>
+<pre class="r"><code>data_incidence &lt;- data_incidence %&gt;%
+  mutate(`Age-Adjusted Incidence Rate - cases per 100,000`=as.double(`Age-Adjusted Incidence Rate - cases per 100,000`)) %&gt;%
+  mutate(`Average Annual Count`=as.double(`Average Annual Count`))</code></pre>
+<pre><code>## Warning in mask$eval_all_mutate(quo): NAs introduced by coercion
+
+## Warning in mask$eval_all_mutate(quo): NAs introduced by coercion</code></pre>
+<pre class="r"><code>#write_excel_csv(data_death, &quot;test_vinc.csv&quot;, col_names = TRUE)</code></pre>
+</div>
 <div id="reshaping-data-into-tidy-form" class="section level3">
-<h3>1.2.1 Reshaping Data into Tidy Form</h3>
+<h3>1.2.2 Reshaping Data into Tidy Form</h3>
 <p>Data will be in tidy form if it has the following 3 properties: 1.
 Each variable forms a column 2. Each observation forms a row 3. Each
 type of observational unit (e.g. persons, schools, counties) forms a
@@ -586,484 +609,268 @@ data_poverty_clean_fips &lt;- data_poverty_clean %&gt;%
 <pre class="r"><code>dim(data_poverty_clean_fips)[1] == length(unique(data_poverty_clean_fips$fips_clean)) # No duplicates </code></pre>
 <pre><code>## [1] TRUE</code></pre>
 </div>
+<div id="expert-opinion" class="section level3">
+<h3>1.4.3 Expert Opinion</h3>
+<pre class="r"><code># For Incidence dataset, expert opinion suggests suppressed cells of * for Recent Trend is likely to be stable.
+# table(data_incidence_clean_fips$recent_trend)
+
+data_incidence_clean_fips_expert &lt;- data_incidence_clean_fips %&gt;% mutate(recent_trend, recent_trend = ifelse(age_adjusted_incidence_rate_cases_per_100_000 == &quot;*&quot;, &quot;stable&quot;, recent_trend))
+
+table(data_incidence_clean_fips_expert$recent_trend)</code></pre>
+<pre><code>## 
+## falling  rising  stable 
+##     200      43    2476</code></pre>
+<pre class="r"><code># Apply Dummy Encoding for categorical variable &quot;recent_trend&quot;
+data_incidence_clean_fips_expert_encoding &lt;- data_incidence_clean_fips_expert %&gt;%
+  mutate(trend_falling = ifelse(recent_trend == &quot;falling&quot;, 1, 0)) %&gt;%
+  mutate(trend_rising  = ifelse(recent_trend == &quot;rising&quot;, 1, 0))
+
+table(data_incidence_clean_fips_expert_encoding$trend_falling)</code></pre>
+<pre><code>## 
+##    0    1 
+## 2519  200</code></pre>
+<pre class="r"><code>table(data_incidence_clean_fips_expert_encoding$trend_rising)</code></pre>
+<pre><code>## 
+##    0    1 
+## 2676   43</code></pre>
+</div>
+<div id="imbalanced-data-maybe-for-data_all" class="section level3">
+<h3>1.4.4 Imbalanced Data (maybe for data_all)</h3>
+</div>
 </div>
 <div id="join-datasets" class="section level2">
 <h2>1.5 Join Datasets</h2>
-<pre class="r"><code># Step 1
-dim(data_death_clean_fips)</code></pre>
-<pre><code>## [1] 3141    5</code></pre>
-<pre class="r"><code>dim(data_incidence_clean_fips)</code></pre>
-<pre><code>## [1] 3141    6</code></pre>
-<pre class="r"><code>names(data_incidence_clean_fips)</code></pre>
-<pre><code>## [1] &quot;county&quot;                                       
-## [2] &quot;fips&quot;                                         
-## [3] &quot;age_adjusted_incidence_rate_cases_per_100_000&quot;
-## [4] &quot;average_annual_count&quot;                         
-## [5] &quot;recent_trend&quot;                                 
-## [6] &quot;fips_clean&quot;</code></pre>
-<pre class="r"><code># Remove columns that are already contained in the left-hand data
-data_incidence_clean_fips_for_join &lt;-  data_incidence_clean_fips %&gt;% 
-  select(c(3:6))
+</div>
+<div id="check-missing-values" class="section level2">
+<h2>1.6 Check Missing Values</h2>
+<ul>
+<li>are those that have been suppressed to ensure confidentiality
+missing at random: omit it missing for a specific group: impute</li>
+</ul>
+<pre class="r"><code># Replace all suppressed value &quot;*&quot; to &quot;NA&quot;
+data_all_with_NA &lt;- data_all %&gt;% mutate(across(everything(), function(x){ifelse(x == &quot;*&quot; | x == &quot;.&quot;, NA, x)}))
+glimpse(data_all_with_NA)</code></pre>
+<pre><code>## Rows: 3,141
+## Columns: 136
+## $ county                                        &lt;chr&gt; &quot;United States&quot;, &quot;Perry …
+## $ fips                                          &lt;dbl&gt; 0, 21193, 21197, 2185, 2…
+## $ age_adjusted_death_rate                       &lt;dbl&gt; 42.0, 51.7, 63.5, 54.1, …
+## $ average_deaths_per_year                       &lt;dbl&gt; 138313, 16, 9, 6, 2, 8, …
+## $ fips_clean                                    &lt;chr&gt; &quot;00000&quot;, &quot;21193&quot;, &quot;21197…
+## $ age_adjusted_incidence_rate_cases_per_100_000 &lt;dbl&gt; 62.7, 140.5, 153.7, 153.…
+## $ average_annual_count                          &lt;dbl&gt; 214612, 5, 5, 4, 5, 37, …
+## $ recent_trend                                  &lt;chr&gt; &quot;falling&quot;, &quot;falling&quot;, &quot;s…
+## $ state                                         &lt;chr&gt; NA, &quot;KY&quot;, &quot;KY&quot;, &quot;AK&quot;, &quot;K…
+## $ hi_001                                        &lt;dbl&gt; NA, 27391, 12225, 9584, …
+## $ hi_002                                        &lt;dbl&gt; NA, 13465, 5960, 6095, 2…
+## $ hi_003                                        &lt;dbl&gt; NA, 1058, 530, 445, 154,…
+## $ hi_004                                        &lt;dbl&gt; NA, 997, 511, 338, 154, …
+## $ hi_005                                        &lt;dbl&gt; NA, 61, 19, 107, 0, 0, 5…
+## $ hi_006                                        &lt;dbl&gt; NA, 2157, 945, 858, 337,…
+## $ hi_007                                        &lt;dbl&gt; NA, 2064, 928, 653, 329,…
+## $ hi_008                                        &lt;dbl&gt; NA, 93, 17, 205, 8, 71, …
+## $ hi_009                                        &lt;dbl&gt; NA, 1129, 543, 523, 187,…
+## $ hi_010                                        &lt;dbl&gt; NA, 750, 400, 361, 131, …
+## $ hi_011                                        &lt;dbl&gt; NA, 379, 143, 162, 56, 1…
+## $ hi_012                                        &lt;dbl&gt; NA, 1680, 679, 1065, 231…
+## $ hi_013                                        &lt;dbl&gt; NA, 1099, 480, 805, 187,…
+## $ hi_014                                        &lt;dbl&gt; NA, 581, 199, 260, 44, 1…
+## $ hi_015                                        &lt;dbl&gt; NA, 1828, 815, 777, 263,…
+## $ hi_016                                        &lt;dbl&gt; NA, 1469, 544, 628, 225,…
+## $ hi_017                                        &lt;dbl&gt; NA, 359, 271, 149, 38, 4…
+## $ hi_018                                        &lt;dbl&gt; NA, 2029, 882, 1183, 245…
+## $ hi_019                                        &lt;dbl&gt; NA, 1757, 748, 977, 215,…
+## $ hi_020                                        &lt;dbl&gt; NA, 272, 134, 206, 30, 2…
+## $ hi_021                                        &lt;dbl&gt; NA, 1883, 808, 984, 410,…
+## $ hi_022                                        &lt;dbl&gt; NA, 1707, 762, 831, 339,…
+## $ hi_023                                        &lt;dbl&gt; NA, 176, 46, 153, 71, 40…
+## $ hi_024                                        &lt;dbl&gt; NA, 1114, 496, 200, 177,…
+## $ hi_025                                        &lt;dbl&gt; NA, 1114, 496, 194, 177,…
+## $ hi_026                                        &lt;dbl&gt; NA, 0, 0, 6, 0, 0, 0, 0,…
+## $ hi_027                                        &lt;dbl&gt; NA, 587, 262, 60, 122, 1…
+## $ hi_028                                        &lt;dbl&gt; NA, 587, 262, 60, 122, 1…
+## $ hi_029                                        &lt;dbl&gt; NA, 0, 0, 0, 0, 0, 0, 0,…
+## $ hi_030                                        &lt;dbl&gt; NA, 13926, 6265, 3489, 2…
+## $ hi_031                                        &lt;dbl&gt; NA, 1019, 442, 411, 155,…
+## $ hi_032                                        &lt;dbl&gt; NA, 964, 351, 330, 155, …
+## $ hi_033                                        &lt;dbl&gt; NA, 55, 91, 81, 0, 32, 5…
+## $ hi_034                                        &lt;dbl&gt; NA, 1854, 1086, 721, 323…
+## $ hi_035                                        &lt;dbl&gt; NA, 1668, 1057, 600, 314…
+## $ hi_036                                        &lt;dbl&gt; NA, 186, 29, 121, 9, 17,…
+## $ hi_037                                        &lt;dbl&gt; NA, 1230, 499, 371, 192,…
+## $ hi_038                                        &lt;dbl&gt; NA, 804, 424, 225, 108, …
+## $ hi_039                                        &lt;dbl&gt; NA, 426, 75, 146, 84, 12…
+## $ hi_040                                        &lt;dbl&gt; NA, 1705, 756, 557, 277,…
+## $ hi_041                                        &lt;dbl&gt; NA, 1398, 571, 361, 251,…
+## $ hi_042                                        &lt;dbl&gt; NA, 307, 185, 196, 26, 1…
+## $ hi_043                                        &lt;dbl&gt; NA, 1872, 834, 397, 311,…
+## $ hi_044                                        &lt;dbl&gt; NA, 1638, 685, 289, 257,…
+## $ hi_045                                        &lt;dbl&gt; NA, 234, 149, 108, 54, 1…
+## $ hi_046                                        &lt;dbl&gt; NA, 2126, 874, 482, 294,…
+## $ hi_047                                        &lt;dbl&gt; NA, 1776, 811, 334, 250,…
+## $ hi_048                                        &lt;dbl&gt; NA, 350, 63, 148, 44, 23…
+## $ hi_049                                        &lt;dbl&gt; NA, 2028, 857, 354, 470,…
+## $ hi_050                                        &lt;dbl&gt; NA, 1642, 735, 244, 387,…
+## $ hi_051                                        &lt;dbl&gt; NA, 386, 122, 110, 83, 1…
+## $ hi_052                                        &lt;dbl&gt; NA, 1283, 573, 114, 220,…
+## $ hi_053                                        &lt;dbl&gt; NA, 1283, 573, 114, 220,…
+## $ hi_054                                        &lt;dbl&gt; NA, 0, 0, 0, 0, 0, 0, 0,…
+## $ hi_055                                        &lt;dbl&gt; NA, 809, 344, 82, 166, 2…
+## $ hi_056                                        &lt;dbl&gt; NA, 809, 344, 82, 166, 2…
+## $ hi_057                                        &lt;dbl&gt; NA, 0, 0, 0, 0, 0, 0, 0,…
+## $ income_001                                    &lt;dbl&gt; NA, 32667, 29736, 72576,…
+## $ income_a_001                                  &lt;dbl&gt; NA, 31911, 30476, 86250,…
+## $ income_b_001                                  &lt;chr&gt; NA, &quot;93000&quot;, NA, &quot;107500…
+## $ income_c_001                                  &lt;chr&gt; NA, NA, NA, &quot;59554&quot;, NA,…
+## $ income_d_001                                  &lt;chr&gt; NA, NA, NA, &quot;126964&quot;, NA…
+## $ income_e_001                                  &lt;chr&gt; NA, NA, NA, &quot;108500&quot;, NA…
+## $ income_f_001                                  &lt;chr&gt; NA, NA, NA, NA, NA, NA, …
+## $ income_g_001                                  &lt;chr&gt; NA, &quot;61058&quot;, &quot;18092&quot;, &quot;1…
+## $ income_h_001                                  &lt;chr&gt; NA, &quot;31877&quot;, &quot;30521&quot;, &quot;8…
+## $ income_i_001                                  &lt;chr&gt; NA, NA, &quot;16688&quot;, &quot;88563&quot;…
+## $ popestimate2015                               &lt;dbl&gt; NA, 27565, 12269, 9687, …
+## $ poverty_001                                   &lt;dbl&gt; NA, 27125, 12061, 9539, …
+## $ poverty_002                                   &lt;dbl&gt; NA, 6894, 3392, 976, 171…
+## $ poverty_003                                   &lt;dbl&gt; NA, 2903, 1361, 532, 810…
+## $ poverty_004                                   &lt;dbl&gt; NA, 222, 107, 40, 85, 10…
+## $ poverty_005                                   &lt;dbl&gt; NA, 25, 30, 5, 5, 44, 99…
+## $ poverty_006                                   &lt;dbl&gt; NA, 289, 107, 52, 97, 88…
+## $ poverty_007                                   &lt;dbl&gt; NA, 86, 13, 36, 14, 33, …
+## $ poverty_008                                   &lt;dbl&gt; NA, 46, 49, 2, 6, 11, 19…
+## $ poverty_009                                   &lt;dbl&gt; NA, 109, 61, 41, 36, 63,…
+## $ poverty_010                                   &lt;dbl&gt; NA, 340, 138, 62, 66, 91…
+## $ poverty_011                                   &lt;dbl&gt; NA, 455, 168, 101, 123, …
+## $ poverty_012                                   &lt;dbl&gt; NA, 372, 271, 67, 110, 9…
+## $ poverty_013                                   &lt;dbl&gt; NA, 359, 184, 70, 87, 10…
+## $ poverty_014                                   &lt;dbl&gt; NA, 498, 126, 50, 145, 2…
+## $ poverty_015                                   &lt;dbl&gt; NA, 69, 93, 5, 15, 33, 2…
+## $ poverty_016                                   &lt;dbl&gt; NA, 33, 14, 1, 21, 38, 4…
+## $ poverty_017                                   &lt;dbl&gt; NA, 3991, 2031, 444, 900…
+## $ poverty_018                                   &lt;dbl&gt; NA, 307, 116, 48, 64, 17…
+## $ poverty_019                                   &lt;dbl&gt; NA, 63, 4, 16, 0, 30, 21…
+## $ poverty_020                                   &lt;dbl&gt; NA, 213, 195, 80, 39, 11…
+## $ poverty_021                                   &lt;dbl&gt; NA, 158, 64, 21, 13, 43,…
+## $ poverty_022                                   &lt;dbl&gt; NA, 68, 72, 1, 0, 68, 57…
+## $ poverty_023                                   &lt;dbl&gt; NA, 119, 95, 11, 21, 23,…
+## $ poverty_024                                   &lt;dbl&gt; NA, 494, 149, 51, 116, 1…
+## $ poverty_025                                   &lt;dbl&gt; NA, 528, 341, 89, 112, 1…
+## $ poverty_026                                   &lt;dbl&gt; NA, 421, 253, 44, 75, 15…
+## $ poverty_027                                   &lt;dbl&gt; NA, 537, 237, 68, 149, 1…
+## $ poverty_028                                   &lt;dbl&gt; NA, 647, 276, 14, 171, 6…
+## $ poverty_029                                   &lt;dbl&gt; NA, 317, 167, 1, 84, 48,…
+## $ poverty_030                                   &lt;dbl&gt; NA, 119, 62, 0, 56, 81, …
+## $ poverty_031                                   &lt;dbl&gt; NA, 20231, 8669, 8563, 2…
+## $ poverty_032                                   &lt;dbl&gt; NA, 10427, 4530, 5547, 1…
+## $ poverty_033                                   &lt;dbl&gt; NA, 677, 276, 347, 19, 2…
+## $ poverty_034                                   &lt;dbl&gt; NA, 88, 81, 45, 45, 60, …
+## $ poverty_035                                   &lt;dbl&gt; NA, 493, 371, 368, 67, 3…
+## $ poverty_036                                   &lt;dbl&gt; NA, 689, 170, 164, 47, 1…
+## $ poverty_037                                   &lt;dbl&gt; NA, 86, 20, 65, 5, 20, 8…
+## $ poverty_038                                   &lt;dbl&gt; NA, 270, 118, 128, 51, 1…
+## $ poverty_039                                   &lt;dbl&gt; NA, 789, 408, 455, 121, …
+## $ poverty_040                                   &lt;dbl&gt; NA, 1225, 511, 964, 108,…
+## $ poverty_041                                   &lt;dbl&gt; NA, 1456, 544, 710, 153,…
+## $ poverty_042                                   &lt;dbl&gt; NA, 1670, 698, 1113, 158…
+## $ poverty_043                                   &lt;dbl&gt; NA, 1385, 682, 934, 265,…
+## $ poverty_044                                   &lt;dbl&gt; NA, 1045, 403, 195, 162,…
+## $ poverty_045                                   &lt;dbl&gt; NA, 554, 248, 59, 101, 1…
+## $ poverty_046                                   &lt;dbl&gt; NA, 9804, 4139, 3016, 14…
+## $ poverty_047                                   &lt;dbl&gt; NA, 497, 243, 303, 91, 2…
+## $ poverty_048                                   &lt;dbl&gt; NA, 127, 36, 37, 0, 42, …
+## $ poverty_049                                   &lt;dbl&gt; NA, 600, 267, 310, 120, …
+## $ poverty_050                                   &lt;dbl&gt; NA, 292, 230, 152, 72, 2…
+## $ poverty_051                                   &lt;dbl&gt; NA, 62, 36, 48, 0, 50, 1…
+## $ poverty_052                                   &lt;dbl&gt; NA, 236, 75, 87, 48, 147…
+## $ poverty_053                                   &lt;dbl&gt; NA, 736, 350, 309, 76, 2…
+## $ poverty_054                                   &lt;dbl&gt; NA, 1177, 415, 468, 165,…
+## $ poverty_055                                   &lt;dbl&gt; NA, 1451, 581, 353, 236,…
+## $ poverty_056                                   &lt;dbl&gt; NA, 1589, 637, 414, 145,…
+## $ poverty_057                                   &lt;dbl&gt; NA, 1381, 581, 340, 299,…
+## $ poverty_058                                   &lt;dbl&gt; NA, 966, 406, 113, 136, …
+## $ poverty_059                                   &lt;dbl&gt; NA, 690, 282, 82, 110, 2…</code></pre>
+<pre class="r"><code>miss_var_summary(data_all)</code></pre>
+<pre><code>## # A tibble: 136 × 3
+##    variable                                      n_miss pct_miss
+##    &lt;chr&gt;                                          &lt;int&gt;    &lt;dbl&gt;
+##  1 income_g_001                                     585    18.6 
+##  2 income_c_001                                     515    16.4 
+##  3 income_d_001                                     445    14.2 
+##  4 age_adjusted_incidence_rate_cases_per_100_000    422    13.4 
+##  5 recent_trend                                     422    13.4 
+##  6 income_i_001                                     421    13.4 
+##  7 income_f_001                                     378    12.0 
+##  8 age_adjusted_death_rate                          331    10.5 
+##  9 average_deaths_per_year                          331    10.5 
+## 10 income_b_001                                     308     9.81
+## # … with 126 more rows
+## # ℹ Use `print(n = ...)` to see more rows</code></pre>
+<pre class="r"><code>miss_var_summary(data_all_with_NA)</code></pre>
+<pre><code>## # A tibble: 136 × 3
+##    variable                                      n_miss pct_miss
+##    &lt;chr&gt;                                          &lt;int&gt;    &lt;dbl&gt;
+##  1 income_e_001                                    2886     91.9
+##  2 income_d_001                                    1764     56.2
+##  3 income_c_001                                    1667     53.1
+##  4 income_f_001                                    1545     49.2
+##  5 income_b_001                                    1217     38.7
+##  6 income_g_001                                    1009     32.1
+##  7 income_i_001                                     688     21.9
+##  8 age_adjusted_incidence_rate_cases_per_100_000    422     13.4
+##  9 recent_trend                                     422     13.4
+## 10 age_adjusted_death_rate                          331     10.5
+## # … with 126 more rows
+## # ℹ Use `print(n = ...)` to see more rows</code></pre>
+</div>
+<div id="visualising" class="section level2">
+<h2>1.7 Visualising</h2>
+<pre class="r"><code># Take a glance at stroke mortality rate by state
+summary_data_all_state &lt;- data_all %&gt;% group_by(state) %&gt;% summarize(death_rate = mean(age_adjusted_death_rate, na.rm=TRUE))
+summary_data_all_state </code></pre>
+<pre><code>## # A tibble: 52 × 2
+##    state death_rate
+##    &lt;chr&gt;      &lt;dbl&gt;
+##  1 AK          39.1
+##  2 AL          51.5
+##  3 AR          47.7
+##  4 AZ          30.9
+##  5 CA          38.0
+##  6 CO          33.2
+##  7 CT          27.4
+##  8 DC          36.5
+##  9 DE          40.3
+## 10 FL          37.2
+## # … with 42 more rows
+## # ℹ Use `print(n = ...)` to see more rows</code></pre>
+<pre class="r"><code>summary_data_all_state %&gt;% ggplot(aes(state, death_rate)) +
+  geom_col()</code></pre>
+<p><img src="data:image/png;base64,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AABIQIAHAACABAR4AAAASECABwAAgAQEeAAAAEhAgAcAAIAEBHgAAABIQIAHAACABAR4AAAASECABwAAgAQEeAAAAEhAgAcAAIAEBHgAAABIQIAHAACABAR4AAAASECABwAAgAQEeAAAAEhAgAcAAIAEBHgAAABIQIAHAACABAR4AAAASECABwAAgAQEeAAAAEhAgAcAAIAEBHgAAABIQIAHAACABAR4AAAASECABwAAgAQEeAAAAEhAgAcAAIAEBHgAAABIQIAHAACABAR4AAAASECABwAAgAQEeAAAAEhAgAcAAIAEBHgAAABIQIAHAACABAR4AAAASECABwAAgAQEeAAAAEhAgAcAAIAEBHgAAABIQIAHAACABAR4AAAASECABwAAgAQEeAAAAEhAgAcAAIAEBHgAAABIQIAHAACABAR4AAAASECABwAAgAQEeAAAAEjg/m03UJAHDx4UVaqqfvqyTlHNlFanqGZKq1NUM6XVKaqZ0uoU1Uy/1imqmdLqFNVMaXWKaqa0OkU1U1qdoprp1zpFNVNanSsXEeA/evv2bVGlquqnL+sU1UxpdYpqprQ6RTVTWp2imimtTlHN9GudopoprU5RzZRWp6hmSqtTVDOl1SmqmX6tU1QzpdU5XuRSYd4SegAAAEhAgAcAAIAEBHgAAABIQIAHAACABAR4AAAASECABwAAgAQEeAAAAEhAgAcAAIAEBHgAAABIQIAHAACABAR4AAAASECABwAAgAQEeAAAAEhAgAcAAIAEBHgAAABIQIAHAACABAR4AAAASECABwAAgAQEeAAAAEhAgAcAAIAEBHgAAABIQIAHAACABAR4AAAASECABwAAgAQEeAAAAEhAgAcAAIAEBHgAAABIQIAHAACABAR4AAAASECABwAAgAQEeAAAAEhAgAcAAIAEBHgAAABIQIAHAACABAR4AAAASECABwAAgAQEeAAAAEhAgAcAAIAEBHgAAABIQIAHAACABAR4AAAASECABwAAgAQEeAAAAEhAgAcAAIAEBHgAAABIQIAHAACABAR4AAAASECABwAAgAQEeAAAAEhAgAcAAIAEBHgAAABIQIAHAACABAR4AAAASECABwAAgAQEeAAAAEhAgAcAAIAEBHgAAABIQIAHAACABAR4AAAASECABwAAgAQEeAAAAEhAgAcAAIAEBHgAAABIQIAH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" width="672" /></p>
+<pre class="r"><code>#==========Example=========#
+# exposuretotal &lt;- summary_veh_brand %&gt;% select(veh_brand, exposuretot)
+# summary_veh_brand_area &lt;- motor_data %&gt;% group_by(veh_brand, area) %&gt;% summarise(exposure=sum(exposure), claim_num = sum(claim_nb))
+# 
+# summary_veh_brand_area_total &lt;- left_join(summary_veh_brand_area,summary_veh_brand, by=&quot;veh_brand&quot;) %&gt;%
+#   mutate(incr_freq = claim_num/exposuretot, rel_freq = incr_freq/frequency)
+# 
+# summary_veh_brand_area_total
+# #write_excel_csv(summary_veh_brand_area_total, &quot;Test_Vinc.csv&quot;, col_names = TRUE)
+# 
+# summary_veh_brand_area_total %&gt;% ggplot(aes(veh_brand, rel_freq, fill=area)) +
+#   geom_bar(stat = &#39;identity&#39;) #stat identity allows you to make to a y value for bar
+#==========================#
 
-# Left Join - death / incidence
-data1 &lt;- left_join(data_death_clean_fips, data_incidence_clean_fips_for_join, by=&quot;fips_clean&quot;)
-names(data1)</code></pre>
-<pre><code>## [1] &quot;county&quot;                                       
-## [2] &quot;fips&quot;                                         
-## [3] &quot;age_adjusted_death_rate&quot;                      
-## [4] &quot;average_deaths_per_year&quot;                      
-## [5] &quot;fips_clean&quot;                                   
-## [6] &quot;age_adjusted_incidence_rate_cases_per_100_000&quot;
-## [7] &quot;average_annual_count&quot;                         
-## [8] &quot;recent_trend&quot;</code></pre>
-<pre class="r"><code># Step 2
-dim(data_health_ins_clean_fips)</code></pre>
-<pre><code>## [1] 3220   64</code></pre>
-<pre class="r"><code>names(data_health_ins_clean_fips)</code></pre>
-<pre><code>##  [1] &quot;state&quot;             &quot;state_fips&quot;        &quot;county_fips&quot;      
-##  [4] &quot;area_name&quot;         &quot;hi_001&quot;            &quot;hi_002&quot;           
-##  [7] &quot;hi_003&quot;            &quot;hi_004&quot;            &quot;hi_005&quot;           
-## [10] &quot;hi_006&quot;            &quot;hi_007&quot;            &quot;hi_008&quot;           
-## [13] &quot;hi_009&quot;            &quot;hi_010&quot;            &quot;hi_011&quot;           
-## [16] &quot;hi_012&quot;            &quot;hi_013&quot;            &quot;hi_014&quot;           
-## [19] &quot;hi_015&quot;            &quot;hi_016&quot;            &quot;hi_017&quot;           
-## [22] &quot;hi_018&quot;            &quot;hi_019&quot;            &quot;hi_020&quot;           
-## [25] &quot;hi_021&quot;            &quot;hi_022&quot;            &quot;hi_023&quot;           
-## [28] &quot;hi_024&quot;            &quot;hi_025&quot;            &quot;hi_026&quot;           
-## [31] &quot;hi_027&quot;            &quot;hi_028&quot;            &quot;hi_029&quot;           
-## [34] &quot;hi_030&quot;            &quot;hi_031&quot;            &quot;hi_032&quot;           
-## [37] &quot;hi_033&quot;            &quot;hi_034&quot;            &quot;hi_035&quot;           
-## [40] &quot;hi_036&quot;            &quot;hi_037&quot;            &quot;hi_038&quot;           
-## [43] &quot;hi_039&quot;            &quot;hi_040&quot;            &quot;hi_041&quot;           
-## [46] &quot;hi_042&quot;            &quot;hi_043&quot;            &quot;hi_044&quot;           
-## [49] &quot;hi_045&quot;            &quot;hi_046&quot;            &quot;hi_047&quot;           
-## [52] &quot;hi_048&quot;            &quot;hi_049&quot;            &quot;hi_050&quot;           
-## [55] &quot;hi_051&quot;            &quot;hi_052&quot;            &quot;hi_053&quot;           
-## [58] &quot;hi_054&quot;            &quot;hi_055&quot;            &quot;hi_056&quot;           
-## [61] &quot;hi_057&quot;            &quot;state_fips_clean&quot;  &quot;county_fips_clean&quot;
-## [64] &quot;fips_clean&quot;</code></pre>
-<pre class="r"><code># Remove columns that are already contained in the left-hand data
-data_health_ins_clean_fips_for_join &lt;- data_health_ins_clean_fips %&gt;% 
-  select(c(5:61,64))
 
-# Left Join - death / incidence / health
-data2 &lt;- left_join(data1, data_health_ins_clean_fips_for_join, by=&quot;fips_clean&quot;)
-names(data2)</code></pre>
-<pre><code>##  [1] &quot;county&quot;                                       
-##  [2] &quot;fips&quot;                                         
-##  [3] &quot;age_adjusted_death_rate&quot;                      
-##  [4] &quot;average_deaths_per_year&quot;                      
-##  [5] &quot;fips_clean&quot;                                   
-##  [6] &quot;age_adjusted_incidence_rate_cases_per_100_000&quot;
-##  [7] &quot;average_annual_count&quot;                         
-##  [8] &quot;recent_trend&quot;                                 
-##  [9] &quot;hi_001&quot;                                       
-## [10] &quot;hi_002&quot;                                       
-## [11] &quot;hi_003&quot;                                       
-## [12] &quot;hi_004&quot;                                       
-## [13] &quot;hi_005&quot;                                       
-## [14] &quot;hi_006&quot;                                       
-## [15] &quot;hi_007&quot;                                       
-## [16] &quot;hi_008&quot;                                       
-## [17] &quot;hi_009&quot;                                       
-## [18] &quot;hi_010&quot;                                       
-## [19] &quot;hi_011&quot;                                       
-## [20] &quot;hi_012&quot;                                       
-## [21] &quot;hi_013&quot;                                       
-## [22] &quot;hi_014&quot;                                       
-## [23] &quot;hi_015&quot;                                       
-## [24] &quot;hi_016&quot;                                       
-## [25] &quot;hi_017&quot;                                       
-## [26] &quot;hi_018&quot;                                       
-## [27] &quot;hi_019&quot;                                       
-## [28] &quot;hi_020&quot;                                       
-## [29] &quot;hi_021&quot;                                       
-## [30] &quot;hi_022&quot;                                       
-## [31] &quot;hi_023&quot;                                       
-## [32] &quot;hi_024&quot;                                       
-## [33] &quot;hi_025&quot;                                       
-## [34] &quot;hi_026&quot;                                       
-## [35] &quot;hi_027&quot;                                       
-## [36] &quot;hi_028&quot;                                       
-## [37] &quot;hi_029&quot;                                       
-## [38] &quot;hi_030&quot;                                       
-## [39] &quot;hi_031&quot;                                       
-## [40] &quot;hi_032&quot;                                       
-## [41] &quot;hi_033&quot;                                       
-## [42] &quot;hi_034&quot;                                       
-## [43] &quot;hi_035&quot;                                       
-## [44] &quot;hi_036&quot;                                       
-## [45] &quot;hi_037&quot;                                       
-## [46] &quot;hi_038&quot;                                       
-## [47] &quot;hi_039&quot;                                       
-## [48] &quot;hi_040&quot;                                       
-## [49] &quot;hi_041&quot;                                       
-## [50] &quot;hi_042&quot;                                       
-## [51] &quot;hi_043&quot;                                       
-## [52] &quot;hi_044&quot;                                       
-## [53] &quot;hi_045&quot;                                       
-## [54] &quot;hi_046&quot;                                       
-## [55] &quot;hi_047&quot;                                       
-## [56] &quot;hi_048&quot;                                       
-## [57] &quot;hi_049&quot;                                       
-## [58] &quot;hi_050&quot;                                       
-## [59] &quot;hi_051&quot;                                       
-## [60] &quot;hi_052&quot;                                       
-## [61] &quot;hi_053&quot;                                       
-## [62] &quot;hi_054&quot;                                       
-## [63] &quot;hi_055&quot;                                       
-## [64] &quot;hi_056&quot;                                       
-## [65] &quot;hi_057&quot;</code></pre>
-<pre class="r"><code># Step 3
-dim(data_income_clean_fips)</code></pre>
-<pre><code>## [1] 3220   17</code></pre>
-<pre class="r"><code>names(data_income_clean_fips)</code></pre>
-<pre><code>##  [1] &quot;state&quot;             &quot;state_fips&quot;        &quot;county_fips&quot;      
-##  [4] &quot;area_name&quot;         &quot;income_001&quot;        &quot;income_a_001&quot;     
-##  [7] &quot;income_b_001&quot;      &quot;income_c_001&quot;      &quot;income_d_001&quot;     
-## [10] &quot;income_e_001&quot;      &quot;income_f_001&quot;      &quot;income_g_001&quot;     
-## [13] &quot;income_h_001&quot;      &quot;income_i_001&quot;      &quot;state_fips_clean&quot; 
-## [16] &quot;county_fips_clean&quot; &quot;fips_clean&quot;</code></pre>
-<pre class="r"><code># Remove columns that are already contained in the left-hand data
-data_income_clean_fips_for_join &lt;- data_income_clean_fips %&gt;% 
-  select(c(5:14,17))
-
-# Left Join - death / incidence / health / income
-data3 &lt;- left_join(data2, data_income_clean_fips_for_join, by=&quot;fips_clean&quot;)
-names(data3)</code></pre>
-<pre><code>##  [1] &quot;county&quot;                                       
-##  [2] &quot;fips&quot;                                         
-##  [3] &quot;age_adjusted_death_rate&quot;                      
-##  [4] &quot;average_deaths_per_year&quot;                      
-##  [5] &quot;fips_clean&quot;                                   
-##  [6] &quot;age_adjusted_incidence_rate_cases_per_100_000&quot;
-##  [7] &quot;average_annual_count&quot;                         
-##  [8] &quot;recent_trend&quot;                                 
-##  [9] &quot;hi_001&quot;                                       
-## [10] &quot;hi_002&quot;                                       
-## [11] &quot;hi_003&quot;                                       
-## [12] &quot;hi_004&quot;                                       
-## [13] &quot;hi_005&quot;                                       
-## [14] &quot;hi_006&quot;                                       
-## [15] &quot;hi_007&quot;                                       
-## [16] &quot;hi_008&quot;                                       
-## [17] &quot;hi_009&quot;                                       
-## [18] &quot;hi_010&quot;                                       
-## [19] &quot;hi_011&quot;                                       
-## [20] &quot;hi_012&quot;                                       
-## [21] &quot;hi_013&quot;                                       
-## [22] &quot;hi_014&quot;                                       
-## [23] &quot;hi_015&quot;                                       
-## [24] &quot;hi_016&quot;                                       
-## [25] &quot;hi_017&quot;                                       
-## [26] &quot;hi_018&quot;                                       
-## [27] &quot;hi_019&quot;                                       
-## [28] &quot;hi_020&quot;                                       
-## [29] &quot;hi_021&quot;                                       
-## [30] &quot;hi_022&quot;                                       
-## [31] &quot;hi_023&quot;                                       
-## [32] &quot;hi_024&quot;                                       
-## [33] &quot;hi_025&quot;                                       
-## [34] &quot;hi_026&quot;                                       
-## [35] &quot;hi_027&quot;                                       
-## [36] &quot;hi_028&quot;                                       
-## [37] &quot;hi_029&quot;                                       
-## [38] &quot;hi_030&quot;                                       
-## [39] &quot;hi_031&quot;                                       
-## [40] &quot;hi_032&quot;                                       
-## [41] &quot;hi_033&quot;                                       
-## [42] &quot;hi_034&quot;                                       
-## [43] &quot;hi_035&quot;                                       
-## [44] &quot;hi_036&quot;                                       
-## [45] &quot;hi_037&quot;                                       
-## [46] &quot;hi_038&quot;                                       
-## [47] &quot;hi_039&quot;                                       
-## [48] &quot;hi_040&quot;                                       
-## [49] &quot;hi_041&quot;                                       
-## [50] &quot;hi_042&quot;                                       
-## [51] &quot;hi_043&quot;                                       
-## [52] &quot;hi_044&quot;                                       
-## [53] &quot;hi_045&quot;                                       
-## [54] &quot;hi_046&quot;                                       
-## [55] &quot;hi_047&quot;                                       
-## [56] &quot;hi_048&quot;                                       
-## [57] &quot;hi_049&quot;                                       
-## [58] &quot;hi_050&quot;                                       
-## [59] &quot;hi_051&quot;                                       
-## [60] &quot;hi_052&quot;                                       
-## [61] &quot;hi_053&quot;                                       
-## [62] &quot;hi_054&quot;                                       
-## [63] &quot;hi_055&quot;                                       
-## [64] &quot;hi_056&quot;                                       
-## [65] &quot;hi_057&quot;                                       
-## [66] &quot;income_001&quot;                                   
-## [67] &quot;income_a_001&quot;                                 
-## [68] &quot;income_b_001&quot;                                 
-## [69] &quot;income_c_001&quot;                                 
-## [70] &quot;income_d_001&quot;                                 
-## [71] &quot;income_e_001&quot;                                 
-## [72] &quot;income_f_001&quot;                                 
-## [73] &quot;income_g_001&quot;                                 
-## [74] &quot;income_h_001&quot;                                 
-## [75] &quot;income_i_001&quot;</code></pre>
-<pre class="r"><code># Step 4
-dim(data_population_clean_fips)</code></pre>
-<pre><code>## [1] 3193    8</code></pre>
-<pre class="r"><code>names(data_population_clean_fips)</code></pre>
-<pre><code>## [1] &quot;state&quot;             &quot;county&quot;            &quot;stname&quot;           
-## [4] &quot;ctyname&quot;           &quot;popestimate2015&quot;   &quot;state_fips_clean&quot; 
-## [7] &quot;county_fips_clean&quot; &quot;fips_clean&quot;</code></pre>
-<pre class="r"><code># Remove columns that are already contained in the left-hand data
-data_population_clean_fips_for_join &lt;- data_population_clean_fips %&gt;% 
-  select(c(5,8))
-
-# Left Join - death / incidence / health / income / population
-data4 &lt;- left_join(data3, data_population_clean_fips_for_join, by=&quot;fips_clean&quot;)
-names(data4)</code></pre>
-<pre><code>##  [1] &quot;county&quot;                                       
-##  [2] &quot;fips&quot;                                         
-##  [3] &quot;age_adjusted_death_rate&quot;                      
-##  [4] &quot;average_deaths_per_year&quot;                      
-##  [5] &quot;fips_clean&quot;                                   
-##  [6] &quot;age_adjusted_incidence_rate_cases_per_100_000&quot;
-##  [7] &quot;average_annual_count&quot;                         
-##  [8] &quot;recent_trend&quot;                                 
-##  [9] &quot;hi_001&quot;                                       
-## [10] &quot;hi_002&quot;                                       
-## [11] &quot;hi_003&quot;                                       
-## [12] &quot;hi_004&quot;                                       
-## [13] &quot;hi_005&quot;                                       
-## [14] &quot;hi_006&quot;                                       
-## [15] &quot;hi_007&quot;                                       
-## [16] &quot;hi_008&quot;                                       
-## [17] &quot;hi_009&quot;                                       
-## [18] &quot;hi_010&quot;                                       
-## [19] &quot;hi_011&quot;                                       
-## [20] &quot;hi_012&quot;                                       
-## [21] &quot;hi_013&quot;                                       
-## [22] &quot;hi_014&quot;                                       
-## [23] &quot;hi_015&quot;                                       
-## [24] &quot;hi_016&quot;                                       
-## [25] &quot;hi_017&quot;                                       
-## [26] &quot;hi_018&quot;                                       
-## [27] &quot;hi_019&quot;                                       
-## [28] &quot;hi_020&quot;                                       
-## [29] &quot;hi_021&quot;                                       
-## [30] &quot;hi_022&quot;                                       
-## [31] &quot;hi_023&quot;                                       
-## [32] &quot;hi_024&quot;                                       
-## [33] &quot;hi_025&quot;                                       
-## [34] &quot;hi_026&quot;                                       
-## [35] &quot;hi_027&quot;                                       
-## [36] &quot;hi_028&quot;                                       
-## [37] &quot;hi_029&quot;                                       
-## [38] &quot;hi_030&quot;                                       
-## [39] &quot;hi_031&quot;                                       
-## [40] &quot;hi_032&quot;                                       
-## [41] &quot;hi_033&quot;                                       
-## [42] &quot;hi_034&quot;                                       
-## [43] &quot;hi_035&quot;                                       
-## [44] &quot;hi_036&quot;                                       
-## [45] &quot;hi_037&quot;                                       
-## [46] &quot;hi_038&quot;                                       
-## [47] &quot;hi_039&quot;                                       
-## [48] &quot;hi_040&quot;                                       
-## [49] &quot;hi_041&quot;                                       
-## [50] &quot;hi_042&quot;                                       
-## [51] &quot;hi_043&quot;                                       
-## [52] &quot;hi_044&quot;                                       
-## [53] &quot;hi_045&quot;                                       
-## [54] &quot;hi_046&quot;                                       
-## [55] &quot;hi_047&quot;                                       
-## [56] &quot;hi_048&quot;                                       
-## [57] &quot;hi_049&quot;                                       
-## [58] &quot;hi_050&quot;                                       
-## [59] &quot;hi_051&quot;                                       
-## [60] &quot;hi_052&quot;                                       
-## [61] &quot;hi_053&quot;                                       
-## [62] &quot;hi_054&quot;                                       
-## [63] &quot;hi_055&quot;                                       
-## [64] &quot;hi_056&quot;                                       
-## [65] &quot;hi_057&quot;                                       
-## [66] &quot;income_001&quot;                                   
-## [67] &quot;income_a_001&quot;                                 
-## [68] &quot;income_b_001&quot;                                 
-## [69] &quot;income_c_001&quot;                                 
-## [70] &quot;income_d_001&quot;                                 
-## [71] &quot;income_e_001&quot;                                 
-## [72] &quot;income_f_001&quot;                                 
-## [73] &quot;income_g_001&quot;                                 
-## [74] &quot;income_h_001&quot;                                 
-## [75] &quot;income_i_001&quot;                                 
-## [76] &quot;popestimate2015&quot;</code></pre>
-<pre class="r"><code># Step 5
-dim(data_poverty_clean_fips)</code></pre>
-<pre><code>## [1] 3220   66</code></pre>
-<pre class="r"><code>names(data_poverty_clean_fips)</code></pre>
-<pre><code>##  [1] &quot;state&quot;             &quot;state_fips&quot;        &quot;county_fips&quot;      
-##  [4] &quot;area_name&quot;         &quot;poverty_001&quot;       &quot;poverty_002&quot;      
-##  [7] &quot;poverty_003&quot;       &quot;poverty_004&quot;       &quot;poverty_005&quot;      
-## [10] &quot;poverty_006&quot;       &quot;poverty_007&quot;       &quot;poverty_008&quot;      
-## [13] &quot;poverty_009&quot;       &quot;poverty_010&quot;       &quot;poverty_011&quot;      
-## [16] &quot;poverty_012&quot;       &quot;poverty_013&quot;       &quot;poverty_014&quot;      
-## [19] &quot;poverty_015&quot;       &quot;poverty_016&quot;       &quot;poverty_017&quot;      
-## [22] &quot;poverty_018&quot;       &quot;poverty_019&quot;       &quot;poverty_020&quot;      
-## [25] &quot;poverty_021&quot;       &quot;poverty_022&quot;       &quot;poverty_023&quot;      
-## [28] &quot;poverty_024&quot;       &quot;poverty_025&quot;       &quot;poverty_026&quot;      
-## [31] &quot;poverty_027&quot;       &quot;poverty_028&quot;       &quot;poverty_029&quot;      
-## [34] &quot;poverty_030&quot;       &quot;poverty_031&quot;       &quot;poverty_032&quot;      
-## [37] &quot;poverty_033&quot;       &quot;poverty_034&quot;       &quot;poverty_035&quot;      
-## [40] &quot;poverty_036&quot;       &quot;poverty_037&quot;       &quot;poverty_038&quot;      
-## [43] &quot;poverty_039&quot;       &quot;poverty_040&quot;       &quot;poverty_041&quot;      
-## [46] &quot;poverty_042&quot;       &quot;poverty_043&quot;       &quot;poverty_044&quot;      
-## [49] &quot;poverty_045&quot;       &quot;poverty_046&quot;       &quot;poverty_047&quot;      
-## [52] &quot;poverty_048&quot;       &quot;poverty_049&quot;       &quot;poverty_050&quot;      
-## [55] &quot;poverty_051&quot;       &quot;poverty_052&quot;       &quot;poverty_053&quot;      
-## [58] &quot;poverty_054&quot;       &quot;poverty_055&quot;       &quot;poverty_056&quot;      
-## [61] &quot;poverty_057&quot;       &quot;poverty_058&quot;       &quot;poverty_059&quot;      
-## [64] &quot;state_fips_clean&quot;  &quot;county_fips_clean&quot; &quot;fips_clean&quot;</code></pre>
-<pre class="r"><code># Remove columns that are already contained in the left-hand data
-data_poverty_clean_fips_for_join &lt;- data_poverty_clean_fips %&gt;% 
-  select(c(5:63,66))
-
-# Left Join - death / incidence / health / income / population / poverty
-data_all &lt;- left_join(data4, data_poverty_clean_fips_for_join, by=&quot;fips_clean&quot;)
-names(data_all)</code></pre>
-<pre><code>##   [1] &quot;county&quot;                                       
-##   [2] &quot;fips&quot;                                         
-##   [3] &quot;age_adjusted_death_rate&quot;                      
-##   [4] &quot;average_deaths_per_year&quot;                      
-##   [5] &quot;fips_clean&quot;                                   
-##   [6] &quot;age_adjusted_incidence_rate_cases_per_100_000&quot;
-##   [7] &quot;average_annual_count&quot;                         
-##   [8] &quot;recent_trend&quot;                                 
-##   [9] &quot;hi_001&quot;                                       
-##  [10] &quot;hi_002&quot;                                       
-##  [11] &quot;hi_003&quot;                                       
-##  [12] &quot;hi_004&quot;                                       
-##  [13] &quot;hi_005&quot;                                       
-##  [14] &quot;hi_006&quot;                                       
-##  [15] &quot;hi_007&quot;                                       
-##  [16] &quot;hi_008&quot;                                       
-##  [17] &quot;hi_009&quot;                                       
-##  [18] &quot;hi_010&quot;                                       
-##  [19] &quot;hi_011&quot;                                       
-##  [20] &quot;hi_012&quot;                                       
-##  [21] &quot;hi_013&quot;                                       
-##  [22] &quot;hi_014&quot;                                       
-##  [23] &quot;hi_015&quot;                                       
-##  [24] &quot;hi_016&quot;                                       
-##  [25] &quot;hi_017&quot;                                       
-##  [26] &quot;hi_018&quot;                                       
-##  [27] &quot;hi_019&quot;                                       
-##  [28] &quot;hi_020&quot;                                       
-##  [29] &quot;hi_021&quot;                                       
-##  [30] &quot;hi_022&quot;                                       
-##  [31] &quot;hi_023&quot;                                       
-##  [32] &quot;hi_024&quot;                                       
-##  [33] &quot;hi_025&quot;                                       
-##  [34] &quot;hi_026&quot;                                       
-##  [35] &quot;hi_027&quot;                                       
-##  [36] &quot;hi_028&quot;                                       
-##  [37] &quot;hi_029&quot;                                       
-##  [38] &quot;hi_030&quot;                                       
-##  [39] &quot;hi_031&quot;                                       
-##  [40] &quot;hi_032&quot;                                       
-##  [41] &quot;hi_033&quot;                                       
-##  [42] &quot;hi_034&quot;                                       
-##  [43] &quot;hi_035&quot;                                       
-##  [44] &quot;hi_036&quot;                                       
-##  [45] &quot;hi_037&quot;                                       
-##  [46] &quot;hi_038&quot;                                       
-##  [47] &quot;hi_039&quot;                                       
-##  [48] &quot;hi_040&quot;                                       
-##  [49] &quot;hi_041&quot;                                       
-##  [50] &quot;hi_042&quot;                                       
-##  [51] &quot;hi_043&quot;                                       
-##  [52] &quot;hi_044&quot;                                       
-##  [53] &quot;hi_045&quot;                                       
-##  [54] &quot;hi_046&quot;                                       
-##  [55] &quot;hi_047&quot;                                       
-##  [56] &quot;hi_048&quot;                                       
-##  [57] &quot;hi_049&quot;                                       
-##  [58] &quot;hi_050&quot;                                       
-##  [59] &quot;hi_051&quot;                                       
-##  [60] &quot;hi_052&quot;                                       
-##  [61] &quot;hi_053&quot;                                       
-##  [62] &quot;hi_054&quot;                                       
-##  [63] &quot;hi_055&quot;                                       
-##  [64] &quot;hi_056&quot;                                       
-##  [65] &quot;hi_057&quot;                                       
-##  [66] &quot;income_001&quot;                                   
-##  [67] &quot;income_a_001&quot;                                 
-##  [68] &quot;income_b_001&quot;                                 
-##  [69] &quot;income_c_001&quot;                                 
-##  [70] &quot;income_d_001&quot;                                 
-##  [71] &quot;income_e_001&quot;                                 
-##  [72] &quot;income_f_001&quot;                                 
-##  [73] &quot;income_g_001&quot;                                 
-##  [74] &quot;income_h_001&quot;                                 
-##  [75] &quot;income_i_001&quot;                                 
-##  [76] &quot;popestimate2015&quot;                              
-##  [77] &quot;poverty_001&quot;                                  
-##  [78] &quot;poverty_002&quot;                                  
-##  [79] &quot;poverty_003&quot;                                  
-##  [80] &quot;poverty_004&quot;                                  
-##  [81] &quot;poverty_005&quot;                                  
-##  [82] &quot;poverty_006&quot;                                  
-##  [83] &quot;poverty_007&quot;                                  
-##  [84] &quot;poverty_008&quot;                                  
-##  [85] &quot;poverty_009&quot;                                  
-##  [86] &quot;poverty_010&quot;                                  
-##  [87] &quot;poverty_011&quot;                                  
-##  [88] &quot;poverty_012&quot;                                  
-##  [89] &quot;poverty_013&quot;                                  
-##  [90] &quot;poverty_014&quot;                                  
-##  [91] &quot;poverty_015&quot;                                  
-##  [92] &quot;poverty_016&quot;                                  
-##  [93] &quot;poverty_017&quot;                                  
-##  [94] &quot;poverty_018&quot;                                  
-##  [95] &quot;poverty_019&quot;                                  
-##  [96] &quot;poverty_020&quot;                                  
-##  [97] &quot;poverty_021&quot;                                  
-##  [98] &quot;poverty_022&quot;                                  
-##  [99] &quot;poverty_023&quot;                                  
-## [100] &quot;poverty_024&quot;                                  
-## [101] &quot;poverty_025&quot;                                  
-## [102] &quot;poverty_026&quot;                                  
-## [103] &quot;poverty_027&quot;                                  
-## [104] &quot;poverty_028&quot;                                  
-## [105] &quot;poverty_029&quot;                                  
-## [106] &quot;poverty_030&quot;                                  
-## [107] &quot;poverty_031&quot;                                  
-## [108] &quot;poverty_032&quot;                                  
-## [109] &quot;poverty_033&quot;                                  
-## [110] &quot;poverty_034&quot;                                  
-## [111] &quot;poverty_035&quot;                                  
-## [112] &quot;poverty_036&quot;                                  
-## [113] &quot;poverty_037&quot;                                  
-## [114] &quot;poverty_038&quot;                                  
-## [115] &quot;poverty_039&quot;                                  
-## [116] &quot;poverty_040&quot;                                  
-## [117] &quot;poverty_041&quot;                                  
-## [118] &quot;poverty_042&quot;                                  
-## [119] &quot;poverty_043&quot;                                  
-## [120] &quot;poverty_044&quot;                                  
-## [121] &quot;poverty_045&quot;                                  
-## [122] &quot;poverty_046&quot;                                  
-## [123] &quot;poverty_047&quot;                                  
-## [124] &quot;poverty_048&quot;                                  
-## [125] &quot;poverty_049&quot;                                  
-## [126] &quot;poverty_050&quot;                                  
-## [127] &quot;poverty_051&quot;                                  
-## [128] &quot;poverty_052&quot;                                  
-## [129] &quot;poverty_053&quot;                                  
-## [130] &quot;poverty_054&quot;                                  
-## [131] &quot;poverty_055&quot;                                  
-## [132] &quot;poverty_056&quot;                                  
-## [133] &quot;poverty_057&quot;                                  
-## [134] &quot;poverty_058&quot;                                  
-## [135] &quot;poverty_059&quot;</code></pre>
+# data_all %&gt;% ggplot(aes(state, age_adjusted_death_rate), ) + 
+#   geom_boxplot()
+#   theme(legend.position=&quot;none&quot; #不需要图例
+#         # axis.text.x=element_text(colour=&quot;black&quot;,family=&quot;Times&quot;,size=14), #设置x轴刻度标签的字体属性
+#         # axis.text.y=element_text(family=&quot;Times&quot;,size=14,face=&quot;plain&quot;), #设置x轴刻度标签的字体属性
+#         # axis.title.y=element_text(family=&quot;Times&quot;,size = 14,face=&quot;plain&quot;), #设置y轴的标题的字体属性
+#         # axis.title.x=element_text(family=&quot;Times&quot;,size = 14,face=&quot;plain&quot;), #设置x轴的标题的字体属性
+#         # plot.title = element_text(family=&quot;Times&quot;,size=15,face=&quot;bold&quot;,hjust = 0.5), #设置总标题的字体属性
+#         # panel.grid.major = element_blank(), #不显示网格线
+#         # panel.grid.minor = element_blank()
+#         )
+#   + scale_y_continuous(breaks = NULL)</code></pre>
 </div>
 <div id="x-refine-questionsgenerate-new-questions-optional" class="section level2">
 <h2>1.X Refine questions/generate new questions (optional)</h2>
@@ -1214,6 +1021,10 @@ the data and visualisations.</p>
 selection of appropriate models •Provide basis for further data
 collection</p>
 <p>FrameworK: 1. Assess the data quality</p>
+</div>
+<div id="提取各个模型的诊断信息" class="section level1">
+<h1>提取各个模型的诊断信息</h1>
+<p>by_country %&gt;% summarise(glance(model))</p>
 </div>
 
 

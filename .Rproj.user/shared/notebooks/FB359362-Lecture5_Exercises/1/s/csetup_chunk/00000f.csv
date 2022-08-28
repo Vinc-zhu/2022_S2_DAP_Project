@@ -1,0 +1,16 @@
+"0","knitr::opts_chunk$set(echo = TRUE)"
+"0","library(readr)   #this is part of tidyverse package"
+"0","library(dplyr)  #this is part of tidyverse package"
+"0","library(ggplot2) #this is part of tidyverse package"
+"0","library(tidyverse) #can just install this to get the packages above"
+"0","library(psych)"
+"0","library(gridExtra) #for Grid Arrange function"
+"2","
+载入程辑包：‘gridExtra’
+
+"
+"2","The following object is masked from ‘package:dplyr’:
+
+    combine
+
+"

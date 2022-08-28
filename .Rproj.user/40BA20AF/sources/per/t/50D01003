@@ -3,7 +3,7 @@
     "path": "D:/Study/DAP/Assessment/Project task/2022_S2_DAP_Project/Project_DAP.Rmd",
     "project_path": "Project_DAP.Rmd",
     "type": "r_markdown",
-    "hash": "0",
+    "hash": "2966135378",
     "contents": "",
     "dirty": false,
     "created": 1660558685328.0,
@@ -12,18 +12,22 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "194,26",
-        "scrollLine": "185",
-        "last_setup_crc32": "1F120A74de4ed418",
+        "cursorPosition": "173,0",
+        "scrollLine": "154",
+        "last_setup_crc32": "6494E734c165f385",
         "docOutlineVisible": "1",
-        "docOutlineSize": "194"
+        "docOutlineSize": "194",
+        "rmdVisualMode": "false",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "1260:756",
+        "rmdVisualWrapConfigured": "true"
     },
     "folds": "",
-    "lastKnownWriteTime": 1661444533,
+    "lastKnownWriteTime": 1661706396,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1661444533731,
+    "last_content_update": 1661706396366,
     "read_only": false,
     "read_only_alternatives": []
 }
