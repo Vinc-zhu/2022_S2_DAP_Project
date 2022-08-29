@@ -6,6 +6,7 @@
 "0","library(dplyr)"
 "0","library(tidyr)"
 "0","library(ggplot2)"
+"0","library(ggthemes)"
 "0",""
 "0","library(janitor) # to clean column names "
 "0","library(psych)   # for the describe function"

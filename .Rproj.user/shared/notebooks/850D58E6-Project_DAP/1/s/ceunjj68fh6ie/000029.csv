@@ -1,0 +1,1 @@
+"0","data_death_state %>% filter(is.na(state_name))  # one is United States, the other is District of Columbia (State) (DC)"

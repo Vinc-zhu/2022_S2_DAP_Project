@@ -1,0 +1,5 @@
+"0","# Check if Non-institutionalized Population (hi_001) = Non-institutionalized Population_male (hi_002) + Non-institutionalized Population female (hi_030)"
+"0","data_health_ins_clean %>% "
+"0","  mutate(check = hi_001 - hi_002 - hi_030) %>% "
+"0","  group_by(state) %>% "
+"0","  summarise(sum(check)) "

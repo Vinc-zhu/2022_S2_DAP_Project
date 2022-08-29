@@ -1,0 +1,7 @@
+"0","  # all zero, passed the check"
+"0",""
+"0","# 3) Population For Whom Poverty Status Is Determined (poverty_001) = below poverty level population (poverty_002) + above poverty level population (poverty_031)"
+"0","data_poverty_clean %>% "
+"0","  mutate(check = poverty_001 - poverty_002 - poverty_031) %>% "
+"0","  group_by(state) %>% "
+"0","  summarise(sum(check))"

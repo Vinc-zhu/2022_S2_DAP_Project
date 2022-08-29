@@ -1,0 +1,7 @@
+"0","  # all zero, passed the check"
+"0",""
+"0","# 2) above poverty level population (poverty_031) = above poverty level male (poverty_032) + above poverty level female (poverty_046)"
+"0","data_poverty_clean %>% "
+"0","  mutate(check = poverty_031 - poverty_032 - poverty_046) %>% "
+"0","  group_by(state) %>% "
+"0","  summarise(sum(check))"
