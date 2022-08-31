@@ -1,0 +1,442 @@
+---
+title: "Lecture3_Exercises"
+author: "Maggie Lee"
+date: "2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+#Installing libraries
+library(tidyverse)
+library(readr)
+library(dplyr)
+library(tidyr)  #the above 3 packages are from tidyverse to import, tidy and manipulate data.  You can just use library(tidyverse) to call these libraries
+
+
+library(janitor) #to clean column names 
+library(psych) #for the describe function
+```
+
+# Question 1 - Reshaping "fertility_two_countries.csv" 
+
+## Question 1i and ii.
+```{r}
+fertility_two_countries <- read_csv("fertility_two_countries.csv")  #importing data #read_csv treats headers as what it is
+fertility_two_countries2 <- read.csv("fertility_two_countries.csv") #read.csv treats headers as characters
+
+#Reshape this dataset to tidy data (2 alternative ways)
+## Method 1 (Using pivot_longer the updated function of gather)
+tidy_data1 <- fertility_two_countries %>%
+  pivot_longer(-country, names_to="year", values_to="fertility")
+
+?pivot_longer
+
+## Method 2 (Using gather - deprecated function)
+tidy_data2 <- fertility_two_countries %>%
+  gather(year, fertility, -country)
+
+head(tidy_data1)
+head(tidy_data2)
+
+
+```
+
+## Question 1iii
+
+```{r}
+#convert column year to numbers using the convert argument in gather (3 alternative ways below)
+
+tidy_data4 <- fertility_two_countries %>%
+  pivot_longer(cols=-country, names_to="year", values_to="fertility") %>%
+  mutate(year=as.integer(year))
+
+tidy_data4
+```
+
+
+# Question 2 - Reshaping "life_expectancy_and_fertility.csv" 
+
+```{r}
+life_exp_and_fertility <- read_csv("life_expectancy_and_fertility.csv")
+life_exp_and_fertility
+
+tidy_data5 <- life_exp_and_fertility %>% pivot_longer(-country, "key", "value")
+head(tidy_data5)
+
+tidy_data5 <- life_exp_and_fertility %>% gather(key, value, -country)
+head(tidy_data5)
+
+tidy_data5 %>% separate(key, c("year", "variable_name"), "_")
+#but this truncates life_expectancy and we lose life_expectancy
+
+#separate into 2 variables with extra="merge" 
+
+tidy_data5 %>% separate(key, c("year", "variable_name"), "_", extra = "merge") %>%  # "extra = "merge" ignores extra separators after the first one, e.g. "_"
+  pivot_wider(names_from=variable_name, values_from=value) %>%
+  mutate(year = as.integer(year))  #this uses updated spread function called pivot_wider
+
+tidy_data5 %>% separate(key, c("year", "variable_name"), "_", extra = "merge") %>%
+  spread(variable_name, value) %>%
+  mutate(year = as.integer(year)) #this uses spread function 
+
+#Using separate and unite
+
+tidy_data5 %>% separate(key, c("year", "variable_name1", "variable_name2"), "_") %>%
+  unite(variable_name, variable_name1, variable_name2, sep="_") %>%
+  pivot_wider(names_from=variable_name, values_from=value) %>%
+  rename(fertility = fertility_NA) %>%
+  mutate(year = as.integer(year)) #this uses updated spread function called pivot_wider
+
+
+tidy_data5 %>% separate(key, c("year", "variable_name1", "variable_name2"), "_") %>%
+  unite(variable_name, variable_name1, variable_name2, sep="_") %>%
+  spread(variable_name, value) %>%
+  rename(fertility = fertility_NA) %>%
+  mutate(year = as.integer(year))  #this uses spread function 
+
+
+```
+
+
+# Question 3 - Data validation after tidying a wide dataset
+
+```{r}
+#turn the wide data into tidy data 
+#check the sum of gdppercap, life_expectancy and pop columns are the same (this is a simple data-check of totals. More explored later using joins etc.)
+
+gapminder_csv <- read_csv("gapminder.csv")
+gapminder_wide_csv <- read_csv("gapminder_wide.csv")
+
+gap_long1 <- gapminder_wide_csv %>% 
+  gather(key, value, -continent, -country) %>%
+  separate(key,c("variable_name","year"), "_") %>% 
+  spread(variable_name,value) %>%
+  mutate(year=as.numeric(year))
+
+gap_long2 <- gapminder_wide_csv %>% 
+  pivot_longer(-c(continent,country), "key", "value") %>%
+  separate(key,c("variable_name","year"), "_") %>% 
+  pivot_wider(names_from=variable_name,values_from=value) %>%
+  mutate(year=as.numeric(year))
+
+sum(gap_long1$gdpPercap)-sum(gapminder_csv$gdpPercap)
+sum(gap_long1$lifeExp)-sum(gapminder_csv$lifeExp) 
+sum(gap_long1$pop)-sum(gapminder_csv$pop) 
+```
+
+# Question 4 - Summarising datasets from the case studies
+
+For all summaries, please view the code through the rmd file.  
+
+## Case Study (Gapminder)
+```{r, include=FALSE}
+gapminder_all <- read_csv("gapminderall.csv")
+
+str(gapminder_all)
+class(gapminder_all)
+head(gapminder_all) #already some NAs can be seen in infant_mortality, gdp
+dim(gapminder_all)
+table(gapminder_all$continent) #looks at count of continent
+table(gapminder_all$year)
+table(gapminder_all$country)
+length(unique(gapminder_all$year))
+prop.table(table(gapminder_all$continent)) #counts of above as proportions
+summary(gapminder_all)
+#start year 1960, ends 2016, 1453 NAs infant_mortality, 187 NAs for fertility, 185 NAs population, 2755 NAs for gdp===
+describe(gapminder_all)
+cor(gapminder_all[, 3:8], use="pairwise.complete.obs") #picked columns 3:6 which are the numeric ones 
+view(gapminder_all)
+
+gapminder_all2 <- gapminder_all %>% mutate(gdpPercap = gdp/population)
+gapminder_all2
+cor(gapminder_all2[, c(3:8,11)], use="pairwise.complete.obs")
+
+```
+
+Notes on summary of gapminder_all dataset
+
+* Response variable – life_expectancy
+* Numeric explanatory variables – year, infant_mortality, fertility, population, gdp
+* Dimensions – 10545 by 10
+* Using table – 57 years of data from 1960 to 2016 
+* Using summary – confirm there are NAs (infant_mortality, fertility, population, gdp)
+* Using describe – Rule of thumb >1 or <-1 is worth looking at for skewness.  Life expectancy might be okay for linear regression - need to check diagnostics later on.    
+* Correlation – 
+  * For life expectancy - strong correlation with infant_mortality and fertility.   gdp and population not very strong.   Could try gdppercap.  Slightly positively correlated with year
+  * Infant mortality and fertility are quite highly correlated.  Could this be an issue? Should investigate multicollinearity (covered in modelling weeks)  
+  * Fertility is slightly negatively correlated with gdpPercap
+
+===================================================================================================
+
+## Case Study (CAS Motor)
+
+```{r, include = FALSE}
+#Example 4ii) CAS Motor
+motor_data_orig <- read_csv("freMTPL2freq.csv")
+
+str(motor_data_orig) #note I need Area, VehBrand, VehGas, Region to be factors 
+class(motor_data_orig)
+head(motor_data_orig)
+motor_data_clean <- clean_names(motor_data_orig)  #names have capitals so clean the names
+motor_data <- motor_data_clean %>% rename(idpol=i_dpol) #did not like how idpol came out so rename
+dim(motor_data) #12 variables, 678013 obs
+
+motor_data$area <- as.factor(motor_data$area) #following contextualisation of the question
+motor_data$veh_gas <- as.factor(motor_data$veh_gas)  
+motor_data$veh_brand <- as.factor(motor_data$veh_brand)
+motor_data$region <- as.factor(motor_data$region)
+motor_data$veh_power <- as.integer(motor_data$veh_power)
+motor_data$veh_age <- as.integer(motor_data$veh_age)
+motor_data$driv_age<- as.integer(motor_data$driv_age)
+motor_data$bonus_malus <- as.integer(motor_data$bonus_malus)
+motor_data$density <- as.integer(motor_data$density)
+
+motor_data$veh_gas <- factor(motor_data$veh_gas, levels = c("Regular", "Diesel")) #an example of specifying the levels
+
+str(motor_data) #check final structure
+summary(motor_data)
+describe(motor_data) # rule of thumb: if skew is > 1 or < -1, it is fairly skewed.
+cor(motor_data[,c(2,3,5,6,7,8,11)]) 
+motor_data <- motor_data %>% mutate(claimfreq = claim_nb/exposure) #add claim frequency which is claim number divide by exposure
+correlations <- cor(motor_data[,c(2,3,5,6,7,8,11,13)]) # choose numeric features only
+correlations 
+
+sum(motor_data$ClaimNb)/sum(motor_data$Exposure)
+
+```
+
+Notes on summary of the CAS Motor Dataset:
+
+* Response variable – ClaimNb/Exposure
+* Explanatory variables – Area, VehPower, VehAge, DrivAge, BonusMalus, VehBrand, VehGas, Density, Region 
+* Dimensions: 678013 obs and 12 variables 
+* Based on str() - need to change my variables that are factors to factors.  Also need to change my variables to integers.  These variable types are noted in the Case Study.  
+* From summary:
+  * Max number of claims is 16 per policy…that’s high!
+  * Exposure goes to 2 years but the policy is usually one year?
+  * Veh age and driv age all go up to 100?
+* No NAs
+* From describe
+  * Claim number highly skewed and is a count number -> why we start off with using poisson glm later on
+* Correlations
+  * Claim frequency is slightly negatively correlated with veh_power, veh_age, driv_age and slightly positively correlated with bonus_malus, density
+  * vehicle power has a slight positive correlation with drivers age and slight negative correlation with bonus malus
+  * Age of car is slightly positively correlated with bonus_malus and negatively correlated with drivers age and density
+  * Older people have a lower bonus-malus level
+  * Bonus-malus level is slightly positively correlated with the population density
+  
+See RMD file for summary code
+
+===================================================================================================
+
+## Case Study (Big Bank - Fraud)
+```{r, include=FALSE}
+creditcard_orig <- read_csv("creditcardcut.csv")
+str(creditcard_orig) 
+class(creditcard_orig)
+head(creditcard_orig) #no need to clean names
+dim(creditcard_orig) #33 variables 9840 observatons
+summary(creditcard_orig)
+describe(creditcard_orig)
+
+creditcard <- creditcard_orig
+creditcard$Class <- as.factor(creditcard_orig$Class) 
+correlations <- cor(creditcard_orig[,c(1:33)]) 
+
+```
+
+Notes on summary of the Big Bank Dataset:
+
+* Response variable – Class 
+* Explanatory variables: V1-V28 and Amount 
+* From dim – 33 variables and 9840 observations 
+* Summary – 
+  * Not much can be obtained from the variable names but note that there are no NAs.  Amounts of transactions range from 0 to $4692.65
+* Describe – not really needed for this type of problem which is a classification problem (interested in fraud or not fraud)
+* Correlations – does not appear to be any very correlated variables between the explanatory variables.  This appears to make sense if the variables have already been converted to Principal Components  
+
+===================================================================================================
+
+## Case Study (Credit Default)
+```{r, include=FALSE}
+library(ISLR)
+data(Default)
+
+str(Default) 
+class(Default)
+dim(Default)
+
+summary(Default)
+describe(Default)
+cor(Default[,c(3,4)]) 
+
+```
+
+Notes on summary of the Credit Default Dataset:
+
+* Response variable - Default (Yes or No)
+* Explanatory variables - student, balance and income 
+* Number of observations:  10,000 and 5 variables
+* Data is pretty clean 
+
+===================================================================================================
+
+## Case Study (French and Swiss Mortality)
+```{r, include=FALSE}
+#Import French deaths data
+DEATHFR <- read_table("Deaths_France.txt")
+str(DEATHFR) #age is a character but should be numeric
+class(DEATHFR)
+head(DEATHFR)
+dim(DEATHFR)
+table(DEATHFR$Age)  #You will see that 110+ is neither numeric nor character.  Convert to 110. 
+
+
+DEATHFR$Age[DEATHFR$Age == "110+"] <- 110  #Covert to 110 so I can make vector numeric without introducing NAs 
+DEATHFR$Age <- as.numeric(DEATHFR$Age)
+
+summary(DEATHFR)
+describe(DEATHFR)
+cor(DEATHFR)
+
+
+#Import French exposure data
+EXPOFR <- read_table('Exposures_France.txt', skip=2)  #skip the first 2 lines
+
+str(EXPOFR) #Age is character when it should be numeric 
+class(EXPOFR)
+head(EXPOFR)
+dim(EXPOFR)
+table(EXPOFR$Age)  #Again 110 + is neither character nor numeric 
+
+EXPOFR$Age[EXPOFR$Age == "110+"] <- 110
+EXPOFR$Age <- as.numeric(EXPOFR$Age) 
+
+summary(EXPOFR) #no missing values
+describe(EXPOFR)
+cor(EXPOFR)
+
+#Consider joining the two datasets together
+
+DEATHFR <- DEATHFR %>% mutate(key = paste0(Year, "_", Age))
+EXPOFR <- EXPOFR %>% mutate(key = paste0(Year, "_", Age))
+DEATH_EXP_FR <- left_join(DEATHFR, EXPOFR, by="key")
+
+str(DEATH_EXP_FR) 
+
+#select important columns and rename column names
+DEATH_EXP_FR <- DEATH_EXP_FR %>% 
+  select(Year.x, Age.x, Female.x, Male.x, Total.x, Female.y, Male.y, Total.y) %>%
+  rename(Year = Year.x, Age = Age.x, D_f = Female.x, D_m = Male.x, D_t = Total.x, E_f = Female.y, E_m = Male.y, E_t = Total.y)
+
+head(DEATH_EXP_FR)
+
+DEATH_EXP_FR <- DEATH_EXP_FR %>% mutate(R_f = D_f/E_f, R_m = D_m/E_m) 
+
+```
+
+Notes on summary of French mortality data (Similar observations can be made for Swiss mortality data)
+
+* Response variables: Death and exposure (mortality rates)
+* Explanatory variables: Gender, age and calendar year (period)
+
+Death data
+
+* Data goes from 1899 to 2005 
+* Min age is 0, Max age 110+
+* Changed Age to numeric and converted 110+ to 110 to do so
+* No missing values 
+* 5 variables for Death data - Year, Age, number of deaths (female), deaths (male), age, year and total.   
+
+Exposure data
+
+* 5 variables for Exposure data - Year, Age, exposure (female), exposure(male) and total
+* Data goes from 1899 to 2005 
+* Changed Age to numeric and converted 110+ to 110 to do so
+* Same Min and Max age as Death 
+* No missing values 
+
+
+* 11877 observations for both datasets 
+* Have considered to join these datasets for analysis later on
+* See RMD file for r chunk of the joined dataset 
+
+```{r, include=FALSE}
+#Import Swiss deaths data
+DEATHSW <- read_table("Deaths_Swiss.txt") 
+
+#Import Swiss exposure data 
+EXPOSW <- read_table("Exposures_Swiss.txt")
+
+```
+* To make similar summary of Swiss as above for French.  
+
+
+# Question 5 - Variable Type revision 
+
+## Question 5i)
+
+```{r}
+library(titanic)
+data(titanic_train)
+str(titanic_train)
+?titanic_train
+```
+
+Type:
+
+ * Survived - Non ordinal
+ * Pclass - Ordinal
+ * Sex - Non ordinal
+ * SibSp - Discrete
+ * Parch - Discrete
+ * Fare - Continuous
+
+## Question 5ii)
+
+```{r}
+str(gapminder_all)
+str(creditcard)
+str(motor_data)
+
+```
+
+# Question 6 - More data exploration
+
+## Question 6i - Number of distinct countries in gapminderall.csv
+```{r}
+unique(gapminder_all$country)
+length(unique(gapminder_all$country)) #185 distinct countries
+```
+
+## Question 6ii - Last year of data available in gapminderall.csv
+```{r}
+tail(gapminder_all$year)  #if ordered in chronological order, you can find the last year this way
+summary(gapminder_all$year) #look at summary value 
+#2016 is the last year of data available
+
+```
+
+
+## Question 6iii - Proportion of policies for each vehicle brand in "freMTPL2freq.csv" 
+
+```{r}
+veh_brandprop <- prop.table(table(motor_data$veh_brand))
+veh_brandprop
+which.max(veh_brandprop)  #vehicle brand B12 has highest proportion
+max(veh_brandprop) #highest proportion is 0.2448685
+
+```
+
+## Question 6iv - Proportion of policies coming form Area F 
+
+```{r}
+prop.table(table(motor_data$area)) #F is 0.02648032 
+```
+
+## Question 6v - Proportion of fraudulent transactions in Big Bank
+
+```{r}
+prop.table(table(creditcard$Class)) #5% are fraudulent transactions
+```

@@ -1,0 +1,371 @@
+---
+title: "Lecture4_Exercises"
+author: "Maggie Lee"
+date: "2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readr)   #this is part of tidyverse package
+library(dplyr)  #this is part of tidyverse package
+library(ggplot2) #this is part of tidyverse package
+library(tidyverse) #can just install this to get the packages above
+library(psych)
+```
+
+# Question 1 - Gapminder Case Study
+
+## Question 1i) 
+
+```{r}
+
+gapminder_all <- read_csv("gapminderall.csv")
+
+#Using the quiz survey we can do our comparisons
+#E.g. Sri Lanka or Turkey
+gapminder_all %>% filter(year==2015 & country %in% c("Sri Lanka", "Turkey")) %>%
+  select(country, infant_mortality)
+
+#Do the same for the other countries 
+gapminder_all %>% filter(year==2015 & country %in% c("Poland", "Korea, Rep.")) %>%
+  select(country, infant_mortality)
+
+gapminder_all %>% filter(year==2015 & country %in% c("Malaysia", "Russia")) %>%
+  select(country, infant_mortality)
+
+gapminder_all %>% filter(year==2015 & country %in% c("Pakistan", "Vietnam")) %>%
+  select(country, infant_mortality)
+
+gapminder_all %>% filter(year==2015 & country %in% c("Thailand", "South Africa")) %>%
+  select(country, infant_mortality)
+
+```
+
+```{r}
+# Note: when things become quite repetitive, you can write functions and loops.  
+# This is not part of scope of the course but just for anyone interested.  
+# It's good to always think about where you can achieve efficiencies in your code  
+# See Chapter 21 of R for Data Science
+
+#Example of writing a function 
+quiz_survey <- function(x,y){gapminder_all %>% filter(year==2015 & country %in% c(x, y)) %>%
+    select(country, infant_mortality)}
+
+
+quiz_survey("Sri Lanka", "Turkey") 
+quiz_survey("Poland", "Korea, Rep.")
+quiz_survey("Malaysia", "Russia")
+quiz_survey("Pakistan", "Vietnam")
+quiz_survey("Thailand", "South Africa")
+
+#Let's say you wanted to look at Sri Lanka and Turkey for not just 2015 but 1965, 1975, 1985, 1995, 2005 and 2015
+# You have a third variable year and many values in year so you can use for loops
+
+quiz_survey2 <- function(x,y,z){gapminder_all %>% filter(year==z & country %in% c(x, y)) %>%
+    select(country, infant_mortality)}
+
+for(z in c(1965, 1975, 1985, 1995, 2005, 2015)){print(quiz_survey2("Sri Lanka","Turkey",z))}  #this is using for loops
+
+```
+
+## Question 1ii)
+
+```{r}
+# lets just look at 1960
+gapminder_all %>% filter(year == 1960) %>%
+  ggplot(aes(fertility, life_expectancy, colour=continent)) + 
+  geom_point() +
+  ggtitle("1960")
+
+## So in 1960, West vs developing worldview was grounded in some reality but is this still the case 50+ years later? 
+
+gapminder_all %>% filter(year %in% c(1960,2015)) %>%
+  ggplot(aes(fertility, life_expectancy, col=continent)) +
+  geom_point() + 
+  facet_grid(continent~year)
+
+#to simply compare 1960 and 2015
+gapminder_all %>% filter(year %in% c(1960,2015)) %>%
+  ggplot(aes(fertility, life_expectancy, col=continent)) + 
+  geom_point() +
+  facet_grid(.~year)
+
+#a series of lines use facet wrap
+years <- c(1962, 1980, 1990, 2000, 2015) 
+continents <- c("Europe", "Asia")
+
+gapminder_all %>% 
+  filter(year %in% years & continent %in% continents) %>%
+  ggplot(aes(fertility, life_expectancy, col = continent)) +
+  geom_point() + 
+  facet_wrap(.~year)
+
+#clearly shows Asia has made great improvements throughout the years 
+```
+
+# Question 2
+
+## Question 2i)
+
+```{r}
+motor_data_orig <- read_csv("freMTPL2freq.csv")
+
+#initial exploration (we did this last week)
+library(janitor)
+str(motor_data_orig) #note I need Area, VehBrand, VehGas, Region to be factors 
+class(motor_data_orig)
+head(motor_data_orig)
+motor_data_clean <- clean_names(motor_data_orig)  #names have capitals so clean the names
+motor_data <- motor_data_clean %>% rename(idpol=i_dpol) #did not like how idpol came out so rename
+dim(motor_data) #12 variables, 678013 obs
+
+motor_data$area <- as.factor(motor_data$area) #following contextualisation of the question
+motor_data$veh_gas <- as.factor(motor_data$veh_gas)  
+motor_data$veh_brand <- as.factor(motor_data$veh_brand)
+motor_data$region <- as.factor(motor_data$region)
+motor_data$veh_power <- as.integer(motor_data$veh_power)
+motor_data$veh_age <- as.integer(motor_data$veh_age)
+motor_data$driv_age<- as.integer(motor_data$driv_age)
+motor_data$bonus_malus <- as.integer(motor_data$bonus_malus)
+motor_data$density <- as.integer(motor_data$density)
+
+str(motor_data) #check final structure
+summary(motor_data)
+describe(motor_data)
+cor(motor_data[,c(2,3,5,6,7,8,11)]) 
+motor_data <- motor_data %>% mutate(claimfreq = claim_nb/exposure) #add claim frequency which is claim number divide by exposure
+correlations <- cor(motor_data[,c(2,3,5,6,7,8,11,13)]) 
+correlations 
+
+sum(motor_data$claim_nb)/sum(motor_data$exposure)
+
+#Part i
+#claim numbers
+table(motor_data$claim_nb)
+
+motor_data %>% ggplot(aes(claim_nb)) +
+  geom_histogram(binwidth=1)
+
+motor_data %>% ggplot(aes(claim_nb)) +
+  geom_boxplot()   #suggests we have a few outliers which we probably should cap at.  Likely to be data errors. Suppose suggestion is to cap at 4.
+
+
+#exposures
+motor_data %>% ggplot(aes(exposure))+
+  geom_histogram(bins=10)
+
+motor_data %>% ggplot(aes(exposure))+
+  geom_boxplot()  #exposure usually stops at 1 year because of annual policies (also as noted in the context) but there are outliers.  Looks to be a data error.  Suppose suggestion is to cap at 1.  
+
+motor_data$claim_nb <- pmin(motor_data$claim_nb,4) #makes claim numbers capped at 4
+motor_data$exposure <- pmin(motor_data$exposure,1) #makes exposure capped at 1
+
+```
+
+
+## Question 2ii)
+
+```{r}
+
+#Check:
+sum(motor_data$claim_nb)/sum(motor_data$exposure)
+```
+
+
+## Question 2iii)
+
+```{r}
+#install.packages("corrplot")
+library(corrplot)
+
+## let's explore potential explanatory variables (area code, vehicle power, vehicle age, driver's age, bonus-malus)
+str(motor_data)  #we did this from last week
+glimpse(motor_data)
+
+#correlations for numeric variables
+cor(motor_data[,c(2,3,5:8,11,13)])  #correlations of numeric values. #We explored this last week
+correlations <- cor(motor_data[,c(2,3,5:8,11,13)]) 
+corrplot(correlations)
+
+
+## area code 
+# area code by exposure (categorical vs numerical cts )
+summary_area <- motor_data %>% group_by(area) %>% summarize(exposuretot = sum(exposure),frequency = sum(claim_nb)/sum(exposure))
+summary_area 
+
+#when you start to do things a bit repetitively, you can consider creating your own function instead
+exposurefreqtab <- function(x){motor_data %>% group_by(!! sym(x)) %>% summarize(exposuretot = sum(exposure),frequency = sum(claim_nb)/sum(exposure))} #!! sym: column name
+exposurefreqtab("area")  #example of using a function
+
+area1 <- summary_area %>% ggplot(aes(area,exposuretot)) +
+  geom_col()
+
+area1a <- motor_data %>% ggplot(aes(area,exposure)) +
+  geom_col()  #same as above but takes longer due to fairly large dataset
+
+#area code by claim freq (categorical vs numerical cts)
+
+area2 <- summary_area %>% ggplot(aes(area,frequency)) +
+  geom_point(size = 2) +
+  ylim(0,0.35)  #size and ylim are just what I've set it to be but you can determine it to be whatever you like
+
+motor_data$area <- factor(motor_data$area, levels = c("A", "B", "C", "D", "E", "F"), ordered = TRUE)  #making area an ordered factor
+str(motor_data)  #if you look at area, it is now ordered with A < B < C etc.  
+
+##vehicle power 
+summary_veh_power <- motor_data %>% group_by(veh_power) %>% summarize(exposuretot = sum(exposure),frequency = sum(claim_nb)/sum(exposure))
+summary_veh_power 
+
+#vehicle power by exposure (categorical vs numerical cts )
+veh_power1 <- summary_veh_power %>% ggplot(aes(veh_power,exposuretot)) +
+  geom_col()
+
+#vehicle power by claim freq (categorical vs numerical cts )
+veh_power2 <- summary_veh_power %>% ggplot(aes(veh_power,frequency)) +
+  geom_point(size = 2) +
+  ylim(0,0.35) 
+
+##vehicle age
+summary_veh_age <- motor_data %>% group_by(veh_age) %>% summarize(exposuretot = sum(exposure),frequency = sum(claim_nb)/sum(exposure))
+summary_veh_age  
+
+summary_veh_age <- motor_data %>% filter(veh_age < 50) %>% 
+  group_by(veh_age) %>% 
+  summarize(exposuretot = sum(exposure),frequency = sum(claim_nb)/sum(exposure))
+summary_veh_age  #I have decided to filter by less than 50 for a closer look at veh_ages with more experience since anything over 50 is not visible for exposure anyway and mostly zero claims.  Again based on judgement and you can keep the visualisation without the filtering too!   
+
+#vehicle age by exposure (numerical discrete vs numerical cts )
+veh_age1 <- summary_veh_age %>% ggplot(aes(veh_age,exposuretot)) +
+  geom_col()
+
+
+#vehicle age by claim freq (numerical discrete vs numerical cts )
+veh_age2 <- summary_veh_age %>% ggplot(aes(veh_age,frequency)) +
+  geom_point(size = 2) +
+  ylim(0,0.35) 
+
+##driver's age
+summary_driv_age <- motor_data %>% group_by(driv_age) %>% summarize(exposuretot = sum(exposure),frequency = sum(claim_nb)/sum(exposure))
+summary_driv_age 
+
+#driv age by exposure (num discrete vs numerical cts )
+driv_age1 <- summary_driv_age %>% ggplot(aes(driv_age,exposuretot)) +
+  geom_col()
+
+#driv age by claim freq (num discrete vs numerical cts )
+driv_age2 <- summary_driv_age %>% ggplot(aes(driv_age,frequency)) +
+  geom_point(size = 2) +
+  ylim(0,0.35) 
+
+##bonus-malus
+summary_bonus_malus <- motor_data %>%  group_by(bonus_malus) %>% summarize(exposuretot = sum(exposure),frequency = sum(claim_nb)/sum(exposure))
+summary_bonus_malus 
+
+summary_bonus_malus <- motor_data %>% filter(bonus_malus < 100) %>%  group_by(bonus_malus) %>% summarize(exposuretot = sum(exposure),frequency = sum(claim_nb)/sum(exposure))
+summary_bonus_malus  #filtered to 100 for clearer visualisation for bonus_malus where most of the exposure belongs and less zero claims.  Based on judgement and you can keep the visualisation without the filtering too! 
+
+#bonus-malus by exposure (num discrete vs numerical cts )
+bonus_malus1 <- summary_bonus_malus %>% ggplot(aes(bonus_malus,exposuretot)) +
+  geom_col()   
+
+#bonus-malus by claim freq (num discrete vs numerical cts )
+bonus_malus2 <- summary_bonus_malus %>% ggplot(aes(bonus_malus,frequency)) +
+  geom_point(size = 2) +
+  ylim(0,0.9)  #chose a larger limit for this as the largest claim frequency is >0.75
+
+##veh brand
+summary_veh_brand <- motor_data %>% group_by(veh_brand) %>% summarize(exposuretot = sum(exposure),frequency = sum(claim_nb)/sum(exposure))
+summary_veh_brand 
+
+#vehicle brand by exposure (categorical vs numerical cts )
+veh_brand1 <- summary_veh_brand %>% ggplot(aes(veh_brand,exposuretot)) +
+  geom_col()
+
+#vehicle brand by claim freq (categorical vs numerical cts )
+veh_brand2 <- summary_veh_brand %>% ggplot(aes(veh_brand,frequency)) +
+  geom_point(size = 2) +
+  ylim(0,0.35) + 
+  scale_x_discrete(limits=c("B1", "B2", "B3", "B4", "B5", "B6", "B10", "B11", "B12", "B13", "B14")) #if you want to rearrange the x axis
+
+
+
+##fuel type (gas)
+summary_veh_gas <- motor_data %>% group_by(veh_gas) %>% summarize(exposuretot = sum(exposure),frequency = sum(claim_nb)/sum(exposure))
+summary_veh_gas 
+
+#vehicle gas by exposure (categorical vs numerical cts )
+veh_gas1 <- summary_veh_gas %>% ggplot(aes(veh_gas,exposuretot)) +
+  geom_col()
+
+#vehicle gas by claim freq (categorical vs numerical cts )
+veh_gas2 <- summary_veh_gas %>% ggplot(aes(veh_gas,frequency)) +
+  geom_point(size = 2) +
+  ylim(0,0.35) 
+
+##regional groups
+summary_region <- motor_data %>% group_by(region) %>% summarize(exposuretot = sum(exposure),frequency = sum(claim_nb)/sum(exposure))
+summary_region 
+
+#region by exposure (categorical vs numerical cts )
+region1 <- summary_region %>% ggplot(aes(region,exposuretot)) +
+  geom_col()
+
+#region by claim freq (categorical vs numerical cts )
+region2 <- summary_region %>% ggplot(aes(region,frequency)) +
+  geom_point(size = 2) +
+  ylim(0,0.35) 
+
+
+##grid arrange all the exposure information
+install.packages("gridExtra")
+library(gridExtra)
+grid.arrange(area1, veh_power1, veh_age1, driv_age1, bonus_malus1, veh_brand1, veh_gas1, region1, ncol=2)
+#helps to summarise the exposure information in one graph but scales are different so be careful with interpretation when comparing between variables.   Best practice would be best to make the scales the same if possible.  If just comparing explanatory variables to exposure (response), what is here is okay.  
+
+##grid arrange all claim frequency information
+grid.arrange(area2, veh_power2, veh_age2, driv_age2, bonus_malus2, veh_brand2, veh_gas2, region2, ncol=2)
+#helps to summarise the claim freq information in one graph but scales are different so be careful with interpretation when comparing between variables.   Best practice would be best to make the scales the same if possible.  If just comparing explanatory variables to claim freq (response), what is here is okay.   
+
+## grid arrange each component
+grid.arrange(area1, area2, ncol=2)
+grid.arrange(veh_power1, veh_power2, ncol=2)
+grid.arrange(veh_age1, veh_age2, ncol=2)
+grid.arrange(driv_age1, driv_age2, ncol=2)
+grid.arrange(bonus_malus1, bonus_malus2, ncol=2)
+grid.arrange(veh_brand1, veh_brand2, ncol=2)
+grid.arrange(veh_gas1, veh_gas2, ncol=2)
+grid.arrange(region1, region2, ncol=2)
+
+#fill in commentary on what you see
+```
+
+# Question 3
+
+
+## Question 3i)
+```{r}
+creditcard_orig <- read_csv("creditcardcut.csv")
+
+# Start with summary which we started last week
+str(creditcard_orig) 
+class(creditcard_orig)
+head(creditcard_orig) #no need to clean names
+dim(creditcard_orig) #33 variables 9840 observatons
+summary(creditcard_orig)
+describe(creditcard_orig)
+
+creditcard <- creditcard_orig
+creditcard$Class <- as.factor(creditcard_orig$Class) 
+correlations <- cor(creditcard_orig[,c(1:33)]) 
+table(creditcard$Class)
+prop.table(table(creditcard$Class))
+# This should have been covered in Week 3.  There are only 5% of the rows with Class = 1.  Because this is our response variable, and this is a classification problem, this dataset is clearly highly unbalanced which will be an issue. Covered in Week 5.  
+
+#let's view the proportions
+creditcard %>% ggplot(aes(Class, y= ..prop.., group=1)) + 
+  geom_bar(stat="count") 
+```
+
+## Question 3ii)
+Imbalanced data means that a classification algorithm could predict all entries to be non-fraudulent and still get a fairly high accuracy rate because of the imbalance between the majority class (non-fraudulent transactions) and minority class (fraudulent transactions).  We need to take this into account and may consider balancing our dataset because it is used to train our classification algorithm.  This was covered as an example in the Learning Guide.    

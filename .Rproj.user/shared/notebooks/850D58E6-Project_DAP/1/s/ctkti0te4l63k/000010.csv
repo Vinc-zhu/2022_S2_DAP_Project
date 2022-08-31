@@ -1,5 +1,0 @@
-"0","prop.table(table(data_death_clean$state_name))
-"
-"2","Warning: Unknown or uninitialised column: `state_name`."
-"1","numeric(0)
-"

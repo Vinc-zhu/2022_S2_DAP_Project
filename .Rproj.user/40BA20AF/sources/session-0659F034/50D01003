@@ -1,0 +1,33 @@
+{
+    "id": "50D01003",
+    "path": "D:/Study/DAP/Assessment/Project task/2022_S2_DAP_Project/Project_DAP.Rmd",
+    "project_path": "Project_DAP.Rmd",
+    "type": "r_markdown",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1660558685328.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "470,75",
+        "scrollLine": "463",
+        "last_setup_crc32": "0659F0341d87e297",
+        "docOutlineVisible": "1",
+        "docOutlineSize": "194",
+        "rmdVisualMode": "false",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "1260:756",
+        "rmdVisualWrapConfigured": "true"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1661961346,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1661961346233,
+    "read_only": false,
+    "read_only_alternatives": []
+}

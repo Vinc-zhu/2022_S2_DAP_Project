@@ -1,0 +1,470 @@
+---
+title: "Lecture4_Exercises"
+author: "Maggie Lee"
+date: "2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readr)   #this is part of tidyverse package
+library(dplyr)  #this is part of tidyverse package
+library(ggplot2) #this is part of tidyverse package
+library(tidyverse) #can just install this to get the packages above
+library(psych)
+library(gridExtra) #for Grid Arrange function
+```
+
+# Sample questions 1
+
+```{r}
+earned_prem     <- c(1000, 800, 500)
+incurred_claims <- c(1500, 1300, 700)
+year <- c(2018, 2019, 2020)
+
+answer_data <- tibble(year,  earned_prem, incurred_claims, loss_ratio = incurred_claims / earned_prem)
+
+answer_data %>% 
+  group_by(year) %>% 
+  summarise(test_col_name = mean(incurred_claims))
+
+mean(answer_data$incurred_claims, na.rm = TRUE)
+```
+
+# Question 1 - Gapminder Case Study
+
+## Question 1i) and ii) on data validations 
+
+```{r}
+
+gapminder_all <- read_csv("gapminderall.csv")
+gapminder_csv <- read_csv("gapminder.csv")
+library(gapminder) 
+
+data_checkv1 <- setdiff(gapminder,gapminder_csv)
+view(data_checkv1)
+
+data_checkv2 <- setdiff(gapminder_csv, gapminder)
+view(data_checkv2)
+
+c(year=sum(abs(data_checkv1$year-data_checkv2$year)), 
+  lifeExp = sum(abs(data_checkv1$lifeExp-data_checkv2$lifeExp)), 
+  pop = sum(abs(data_checkv1$pop-data_checkv2$pop)), 
+  gdpPercap= sum(abs(data_checkv1$gdpPercap-data_checkv2$gdpPercap)))
+
+gapminder_withkey <- gapminder %>% mutate (key = paste0(country, "_", year))
+gapminder_allwithkey <- gapminder_all %>% mutate (key = paste0(country, "_", year))
+
+inner_join(gapminder_withkey, gapminder_allwithkey, by = "key") %>% mutate(checkLE = lifeExp - life_expectancy, checkpop = pop - population, checkgdppercap = gdpPercap - gdp/population) %>%
+  summarize(checkLEtotal = sum(checkLE), checkpoptotal = sum(checkpop), checkgdppercaptotal = sum(checkgdppercap))
+
+#gdppercap a bit different - worth to look at and understand whether difference is acceptable.  
+
+```
+## Question 1iii)
+
+```{r}
+
+#Let's start off with a correlation scatter plot matrix of the numeric variables in gapminder_all
+cor(gapminder_all[, 3:8], use="pairwise.complete.obs") #picked columns 3:6 which are the numeric ones 
+pairs(gapminder_all[, 3:8])
+
+#We look at individual scatter plots 
+gapminder_all %>% ggplot(aes(infant_mortality, life_expectancy)) +
+  geom_point()   #pretty linear
+
+gapminder_all %>% ggplot(aes(gdp, life_expectancy)) +
+  geom_point()  #not linear
+
+gapminder_all %>% ggplot(aes(population, life_expectancy)) +
+  geom_point()  #not linear
+
+gapminder_all2 <- gapminder_all %>% mutate(gdpPercap = gdp/population) #considering looking at gdp per cap
+pairs(gapminder_all2[, c(3:8,11)])  #look at correlation scatter plot matrix again
+
+gapminder_all2 %>% ggplot(aes(gdpPercap, life_expectancy)) +
+  geom_point()  #still not linear but can consider log transformation
+
+gapminder_all3 <- gapminder_all2 %>% mutate(loggdp = log(gdpPercap))
+cor(gapminder_all3[, c(3:8,11,12)], use="pairwise.complete.obs")
+pairs(gapminder_all3[,c(3:8,11,12)]) #there are of course many other visualisations you can do but a scatter plot matrix is particularly useful when looking at numeric explanatory variables to response variable
+
+gapminder_all3 %>% ggplot(aes(loggdp,life_expectancy)) +
+  geom_point() #looking more linear.  This suggests the log of gdp per cap might be more useful for a linear regression model.  
+
+#Note: you can create the scatter plot matrix using pairs or you can also create scatter plots individually using ggplot as seen above 
+```
+
+
+## Question 1iv)
+
+```{r}
+library(simputation)
+library(naniar)
+#imputing with linear imputation
+miss_var_summary(gapminder_all)
+
+gapminder_lm <- gapminder_all %>% 
+  bind_shadow(only_miss = TRUE) %>%
+  add_label_shadow() %>%
+  impute_lm(fertility ~ life_expectancy) %>%
+  impute_lm(population ~ life_expectancy + fertility + year) %>%
+  impute_lm(infant_mortality ~ life_expectancy + fertility) %>%
+  impute_lm(gdp ~ life_expectancy + year) 
+
+#imputing with mean 
+gapminder_meanreplace <- gapminder_all %>% 
+  bind_shadow(only_miss = TRUE) %>%  #naniar function
+  add_label_shadow() %>%  #naniar function
+  impute_mean_all()  #naniar function
+
+#looking at the imputations 
+
+gapminder_lm %>% ggplot(aes(fertility, life_expectancy, colour=fertility_NA)) +
+  geom_point()
+
+
+gapminder_meanreplace %>% ggplot(aes(fertility, life_expectancy, colour=fertility_NA)) +
+  geom_point()
+```
+
+# Question 2
+
+## Question 2i)
+
+```{r}
+motor_data_orig <- read_csv("freMTPL2freq.csv")
+
+#initial exploration (we did this in previous weeks)
+library(janitor)
+str(motor_data_orig) #note I need Area, VehBrand, VehGas, Region to be factors 
+class(motor_data_orig)
+head(motor_data_orig)
+motor_data_clean <- clean_names(motor_data_orig)  #names have capitals so clean the names
+motor_data <- motor_data_clean %>% rename(idpol=i_dpol) #did not like how idpol came out so rename
+dim(motor_data) #12 variables, 678013 obs
+
+motor_data$area <- as.factor(motor_data$area) #following contextualisation of the question
+motor_data$veh_gas <- as.factor(motor_data$veh_gas)  
+motor_data$veh_brand <- as.factor(motor_data$veh_brand)
+motor_data$region <- as.factor(motor_data$region)
+motor_data$veh_power <- as.integer(motor_data$veh_power)
+motor_data$veh_age <- as.integer(motor_data$veh_age)
+motor_data$driv_age<- as.integer(motor_data$driv_age)
+motor_data$bonus_malus <- as.integer(motor_data$bonus_malus)
+motor_data$density <- as.integer(motor_data$density)
+
+str(motor_data) #check final structure
+summary(motor_data)
+describe(motor_data)
+cor(motor_data[,c(2,3,5,6,7,8,11)]) 
+motor_data <- motor_data %>% mutate(claimfreq = claim_nb/exposure) #add claim frequency which is claim number divide by exposure
+correlations <- cor(motor_data[,c(2,3,5,6,7,8,11,13)]) 
+correlations 
+
+sum(motor_data$claim_nb)/sum(motor_data$exposure)
+
+motor_data$claim_nb <- pmin(motor_data$claim_nb,4) #makes claim numbers capped at 4
+motor_data$exposure <- pmin(motor_data$exposure,1) #makes exposure capped at 1
+
+```
+
+
+```{r}
+##density groups
+summary_dentrial <- motor_data %>% group_by(density) %>% summarize(exposuretot = sum(exposure),frequency = sum(claim_nb)/sum(exposure))
+summary_dentrial
+
+#density by exposure (num discrete vs numeric cts)
+densitytrial1 <- summary_dentrial %>% ggplot(aes(density,exposuretot)) +
+  geom_col()
+
+#density by claim freq (num discrete vs numeric cts )
+densitytrial2 <- summary_dentrial %>% ggplot(aes(density,frequency)) +
+  geom_point(size = 2) +
+  ylim(0,0.35) 
+
+summary(motor_data)
+
+##make adjustments since hard to look at density by itself
+summary_density <- motor_data %>% mutate(logden = log(density)) %>% 
+  mutate(logdengroup = case_when(logden <= 1 ~ 1, 
+                                 logden >1 & logden <=2 ~ 2,
+                                 logden >2 & logden <=3 ~ 3,
+                                 logden >3 & logden <=4 ~ 4,
+                                 logden >4 & logden <=5 ~ 5,
+                                 logden >5 & logden <=6 ~ 6,
+                                 logden >6 & logden <=7 ~ 7,
+                                 logden >7 & logden <=8 ~ 8,
+                                 logden >8 & logden <=9 ~ 9,
+                                 logden >9 ~ 10)) %>%
+  group_by(logdengroup) %>% 
+  summarize(exposuretot = sum(exposure),frequency = sum(claim_nb)/sum(exposure))
+
+
+summary_density #needed to log and then group the densities given sparseness of each 
+
+#density by exposure (categorical vs numerical cts )
+density1 <- summary_density %>% ggplot(aes(logdengroup,exposuretot)) +
+  geom_col()
+
+#density by claim freq (categorical vs numerical cts )
+density2 <- summary_density %>% ggplot(aes(logdengroup,frequency)) +
+  geom_point(size = 2) +
+  ylim(0,0.35) 
+
+grid.arrange(density1, density2, ncol=2)
+```
+
+
+## Question 2ii)
+
+```{r}
+##veh brand
+summary_veh_brand <- motor_data %>% group_by(veh_brand) %>% summarize(exposuretot = sum(exposure),frequency = sum(claim_nb)/sum(exposure))
+summary_veh_brand 
+
+#vehicle brand by exposure (categorical vs numerical cts )
+veh_brand1 <- summary_veh_brand %>% ggplot(aes(veh_brand,exposuretot)) +
+  geom_col()
+
+#vehicle brand by claim freq (categorical vs numerical cts )
+veh_brand2 <- summary_veh_brand %>% ggplot(aes(veh_brand,frequency)) +
+  geom_point(size = 2) +
+  ylim(0,0.35)
+
+##lets take a closer look into veh brand
+#distribution of area, veh_power, veh_age, driv_age, bonus_malus, veh_gas for each car brand vehbrand
+
+#veh brand vs area
+exposuretotal <- summary_veh_brand %>% select(veh_brand, exposuretot)
+summary_veh_brand_area <- motor_data %>% group_by(veh_brand, area) %>% summarise(exposure=sum(exposure), claim_num = sum(claim_nb))
+
+summary_veh_brand_area_total <- left_join(summary_veh_brand_area,summary_veh_brand, by="veh_brand") %>%
+  mutate(incr_freq = claim_num/exposuretot, rel_freq = incr_freq/frequency)
+
+summary_veh_brand_area_total
+#write_excel_csv(summary_veh_brand_area_total, "Test_Vinc.csv", col_names = TRUE)
+
+summary_veh_brand_area_total %>% ggplot(aes(veh_brand, rel_freq, fill=area)) +
+  geom_bar(stat = 'identity') #stat identity allows you to make to a y value for bar
+#B2 claim freq has most proportionately from area A and B12 has the most proportionately from area F
+
+#veh brand vs veh_power
+exposuretotal <- summary_veh_brand %>% select(veh_brand, exposuretot)
+summary_veh_brand_veh_power <- motor_data %>% group_by(veh_brand, veh_power) %>% summarise(exposure=sum(exposure), claim_num = sum(claim_nb))
+
+summary_veh_brand_veh_power_total <- left_join(summary_veh_brand_veh_power,summary_veh_brand, by="veh_brand") %>%
+  mutate(incr_freq = claim_num/exposuretot, rel_freq = incr_freq/frequency)
+
+summary_veh_brand_veh_power_total
+
+summary_veh_brand_veh_power_total %>% ggplot(aes(veh_brand, rel_freq, fill=veh_brand)) +
+  geom_bar(stat = 'identity')
+#B11 claims freq is mostly made up of claims from cars with the highest power, whereas B14 has cars with the lowest power
+
+#veh brand vs veh_age
+## lets consider up to age 10
+exposuretotal <- summary_veh_brand %>% select(veh_brand, exposuretot)
+summary_veh_brand_veh_age <- motor_data %>% group_by(veh_brand, veh_age) %>% summarise(exposure=sum(exposure), claim_num = sum(claim_nb))
+
+summary_veh_brand_veh_age_total <- left_join(summary_veh_brand_veh_age,summary_veh_brand, by="veh_brand") %>%
+  mutate(incr_freq = claim_num/exposuretot, rel_freq = incr_freq/frequency)
+
+summary_veh_brand_veh_age_total
+
+summary_veh_brand_veh_age_total %>% filter(veh_age<=10) %>%
+  ggplot(aes(veh_brand, rel_freq, fill=veh_age)) +
+ geom_bar(stat = 'identity')
+
+summary_veh_brand_veh_age_total %>%
+  ggplot(aes(veh_brand, rel_freq, fill=veh_age)) +
+  geom_bar(stat = 'identity')
+
+#a big proportion of B12 claim frequency is made up of cars 0,1 years so fairly new cars
+
+#veh brand vs driv_age
+exposuretotal <- summary_veh_brand %>% select(veh_brand, exposuretot)
+summary_veh_brand_driv_age <- motor_data %>% group_by(veh_brand, driv_age) %>% summarise(exposure=sum(exposure), claim_num = sum(claim_nb))
+
+summary_veh_brand_driv_age_total <- left_join(summary_veh_brand_driv_age,summary_veh_brand, by="veh_brand") %>%
+  mutate(incr_freq = claim_num/exposuretot, rel_freq = incr_freq/frequency)
+
+summary_veh_brand_driv_age_total
+
+summary_veh_brand_driv_age_total %>% mutate(age_groups = case_when(driv_age<=20 ~ 20, 
+                                                                   driv_age>20 & driv_age<=40 ~ 40,
+                                                                   driv_age>40 & driv_age<=60 ~ 60,
+                                                                   driv_age>60 & driv_age<=80 ~ 80,
+                                                                   driv_age>80 & driv_age<=100 ~100,
+                                                                   driv_age>100 ~ 101)) %>% 
+  ggplot(aes(veh_brand, rel_freq, fill=age_groups)) +
+  geom_bar(stat = 'identity')
+
+#B10 has the largest proportion of claims by >60 year olds i.e. elderly
+
+#veh brand vs bonus_malus
+exposuretotal <- summary_veh_brand %>% select(veh_brand, exposuretot)
+summary_veh_brand_bonus_malus <- motor_data %>% group_by(veh_brand, bonus_malus) %>% summarise(exposure=sum(exposure), claim_num = sum(claim_nb))
+
+summary_veh_brand_bonus_malus_total <- left_join(summary_veh_brand_bonus_malus,summary_veh_brand, by="veh_brand") %>%
+  mutate(incr_freq = claim_num/exposuretot, rel_freq = incr_freq/frequency)
+
+summary_veh_brand_bonus_malus_total
+
+summary_veh_brand_bonus_malus_total %>% mutate(bonus_malus_groups = case_when(bonus_malus<=40 ~ 40, 
+                                                                              bonus_malus>40 & bonus_malus<=80 ~ 80,
+                                                                              bonus_malus>80 & bonus_malus<=120 ~ 120,
+                                                                              bonus_malus>120 & bonus_malus<=160 ~ 160,
+                                                                              bonus_malus>160 ~ 161)) %>% 
+  ggplot(aes(veh_brand, rel_freq, fill=bonus_malus_groups)) +
+  geom_bar(stat = 'identity')
+
+#B10 has the largest proportion of its claims with lowest bonus malus i.e. 40 or below
+
+#veh brand vs veh_gas
+exposuretotal <- summary_veh_brand %>% select(veh_brand, exposuretot)
+summary_veh_brand_veh_gas <- motor_data %>% group_by(veh_brand, veh_gas) %>% summarise(exposure=sum(exposure), claim_num = sum(claim_nb))
+
+summary_veh_brand_veh_gas_total <- left_join(summary_veh_brand_veh_gas,summary_veh_brand, by="veh_brand") %>%
+  mutate(incr_freq = claim_num/exposuretot, rel_freq = incr_freq/frequency)
+
+summary_veh_brand_veh_gas_total
+
+summary_veh_brand_veh_gas_total %>% ggplot(aes(veh_brand, rel_freq, fill=veh_gas)) +
+  geom_bar(stat = 'identity')
+
+#B10 has the highest proportion of its claims from diesel  
+
+#conclusion - B12 is probably the brand that stands out the most.  
+#It has the highest claim frequency.  
+# Most of their claims are from new cars and from an area (area F)
+
+#let's look at B12 claims freq experience compared to average
+motor_data %>% filter(veh_brand == "B12" & veh_age ==0) %>% 
+  summarise(claim_freq = sum(claim_nb)/sum(exposure)) %>%
+  pull()
+
+motor_data %>% filter(veh_brand != "B12" & veh_age != 0) %>%
+  summarise(claim_freq = sum(claim_nb)/sum(exposure)) %>%
+  pull()
+
+#the average number of claims per policy across each car brand is about 0.5 and exposure is also 0.5.
+#however B12 has more than twice the number of claims per policy and less exposure
+#seems like a new policy and potentially for a car fleet (like car rentals)
+```
+
+
+# Question 3
+
+
+## Question 3i)
+
+
+```{r}
+creditcard <- read_csv("creditcardcut.csv")
+
+library(ROSE)
+library(smotefamily)
+
+
+#Because we have such an unbalanced dataset, if we predict all cases are non-fraudulent, our accuracy rate will still be quite high.  Accuracy should therefore not be used as a measure when we have an imbalanced dataset.  O
+#One way to improve our classification algorithm may be to balance an imbalanced dataset.  The disadvantage of these methods is that biases are introduced.  
+#Making a dataset balanced should only happen for the training set 
+set.seed(123) #to ensure reproducibility of taking a random sample of 60% for training and 40% test
+dt <- sort(sample(nrow(creditcard), nrow(creditcard)*0.6)) #gets a random sample as an index of 60% of dataset
+dt
+creditcard_train <- creditcard[dt,]
+creditcard_test <- creditcard[-dt,]
+
+#check split done appropriately
+a<- nrow(creditcard_train)
+b<- nrow(creditcard_test)
+c<- sum(nrow(creditcard_train),nrow(creditcard_test))
+d<- c(a/c, b/c)
+d
+
+#check proportion of fraud to non-fraud cases on training and testing dataset
+
+prop.table(table(creditcard_train$Class))
+prop.table(table(creditcard_test$Class))
+#Both still show roughly 4-5% fraudulent cases so split is okay
+
+# under-sampling method to make training dataset more balanced (we will be deleting samples from non-fraudulent class i.e. majority class)
+table(creditcard_train$Class)
+n_new <-280/0.5  #we want to find the total number of samples to make the fraud cases 50% of samples
+undersampling_result <- ovun.sample(Class ~ ., 
+                                    data = creditcard_train,
+                                    method = "under",
+                                    N = n_new,
+                                    seed = 123)
+str(undersampling_result)
+class(undersampling_result)
+
+#check the class-balance of the under-sampled dataset
+cc_undersampled_train <- undersampling_result$data #making it a dataframe
+str(cc_undersampled_train)
+class(cc_undersampled_train )
+prop.table(table(cc_undersampled_train$Class))
+
+# over-sampling method to make training dataset more balanced (we will be adding samples from fraudulent class i.e. minority class)
+table(creditcard_train$Class)
+n_new2 <-5624/0.5  #we want to find the total number of samples to make the fraud cases 50% of the sample
+
+oversampling_result <- ovun.sample(formula = Class ~ ., 
+                                   data = creditcard_train,
+                                   method = "over",
+                                   N = n_new2,
+                                   seed = 123)
+str(oversampling_result)
+class(oversampling_result)
+
+#check the class-balance of the over-sampled dataset
+cc_oversampled_train <- oversampling_result$data #making it a dataframe
+class(cc_oversampled_train )
+prop.table(table(cc_oversampled_train$Class))
+
+#Combining random over sampling and random under sampling 
+
+# Specify the desired number of cases in the balanced dataset and the fraction of fraud cases
+n_new3 <- 8000  #pick a desired number roughly between 560 and 11000
+fraud_fraction <- 0.5
+# Combine ROS & RUS!
+sampling_result <- ovun.sample(formula = Class ~ ., 
+                               data = creditcard_train,
+                               method = "both", 
+                               N = n_new3, 
+                               p = fraud_fraction,
+                               seed = 123)   #aim for a probability of occurrence with the number
+
+# Verify the Class-balance of the re-balanced dataset
+cc_bothsample_train <- sampling_result$data
+prop.table(table(cc_bothsample_train$Class))
+
+# using SMOTE to make training dataset more balanced
+## SMOTE
+#Set the number of fraud and legitimate cases, and the desired percentage of legitimate cases
+str(creditcard_train)
+table(creditcard_train$Class)
+n0 <- 5624; n1 <- 280; r0 <- 0.5
+#n0 is the number of legit cases, n1 is the number of fraud cases and r0=50% is the desired number of legitimate cases
+
+#calculate the value for the dup_size parameter of SMOTE
+#ntimes is the desired value of the dup_size parameter in SMOTE() such that the over-sampled dataset contains 50% legitimate cases. 
+#Set ntimes equal to ((1 - r0) / r0) * (n0/n1) - 1 and print its value.
+ntimes <- ((1-r0)/r0)*(n0/n1)-1
+280*19.085
+
+#Create Synthetic fraud cases with SMOTE (over sample minority class i.e. fraud by creating synthetic minority class)
+# To do this: apply SMOTE based on all numerical variables except Time and ID, with k=5 and dup_size = ntimes.  
+smote_output <- SMOTE(X = creditcard_train[, -c(1,2,32,33)], target = creditcard_train$Class, K = 5, dup_size = ntimes)
+class(smote_output)
+cc_smote_train <- smote_output$data
+colnames(cc_smote_train)[30] <- "Class"
+prop.table(table(cc_smote_train$Class))
+str(cc_smote_train)
+
+```
+
+
+

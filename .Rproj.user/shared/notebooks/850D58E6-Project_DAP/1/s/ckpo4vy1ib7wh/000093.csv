@@ -1,0 +1,4 @@
+"0","# Check number of entries for each state"
+"0","data_death_clean_fips_with_state %>% ggplot(aes(state, fill = state), na.rm = T) +"
+"0","  geom_bar(show.legend = F) +"
+"0","  theme_economist()"
