@@ -166,7 +166,7 @@ unique(data_death_state4$state_name) # looks alright
 
 ```
 
-### 1.3.4 Internal Consistency Checks
+### 1.3.4 Internal Checks
 
 ```{r Nevada}
 data_death_state4 %>% filter(state_name == "Nevada")
