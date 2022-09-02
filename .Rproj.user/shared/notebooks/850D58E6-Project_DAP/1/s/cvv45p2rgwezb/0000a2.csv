@@ -1,0 +1,6 @@
+"0",""
+"0",""
+"0","# Response variable age_adjusted_death_rate: 331 rows have missing values. "
+"0","# Remove those rows."
+"0","joined_data_all_y <- joined_data_all_with_NA %>% filter(!is.na(age_adjusted_death_rate))"
+"0","miss_var_summary(joined_data_all_y)"

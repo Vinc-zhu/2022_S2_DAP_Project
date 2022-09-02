@@ -345,17 +345,20 @@ n_distinct(data_death_clean_fips_with_state$state, na.rm = T)
 *See Week 4 Notes Page 7
 
 
-```{r Visualisation}
+```{r Visualisation: number of state}
 # Check number of entries for each state
-data_death_clean_fips_with_state %>% ggplot(aes(state, fill = state), na.rm = T) +
+data_death_clean_fips_with_state %>% ggplot(aes(state, fill = state)) +
   geom_bar(show.legend = F) +
   theme_economist()
 
+data_death_clean_fips_with_state %>% filter(is.na(state))
 #   theme(axis.title.x=element_blank(),
 #         axis.text.x=element_blank(),
 #         axis.ticks.x=element_blank())
+```
 
 
+```{r Visualisation: stroke mortality rates}
 # Check stroke mortality rates by state and see where the average of the nation (US) sits among other states
 summary_death_data_all_state <- data_death_clean_fips_with_state %>% group_by(state) %>% summarize(death_rate = mean(age_adjusted_death_rate, na.rm=TRUE))
 
@@ -493,21 +496,37 @@ joined_data_all_y_no_us_income <- joined_data_all_y_no_us %>% select(-one_of(dro
 miss_var_summary(joined_data_all_y_no_us_income)
 
 
-# Check on incidence missing values
-joined_data_all_y_no_us_income %>% filter(is.na(age_adjusted_incidence_rate_cases_per_100_000)) %>% describe()
-  # for these rows, "average_annual_count" is also missing or less than 5 
-
-
 # Remove Nevada Data
 joined_data_all_y_no_us_income_no_nevada <- joined_data_all_y_no_us_income %>% filter(state_name != "Nevada")
+joined_data_all_y_no_us_income %>% filter(state_name == "Nevada")
 
-# Replace those NA incidence rate and average_annual_count with 0
-joined_data_all_final <- joined_data_all_y_no_us_income_no_nevada %>%
-  impute_const(age_adjusted_incidence_rate_cases_per_100_000~0) %>%
-  impute_const(average_annual_count~0)
+miss_var_summary(joined_data_all_y_no_us_income)
+
+
+# Check on incidence missing values
+joined_data_all_y_no_us_income_no_nevada %>% filter(is.na(age_adjusted_incidence_rate_cases_per_100_000))
+  # for these rows, "average_annual_count" is also missing or less than 5 
+
+# Check on incidence missing values where both "age_adjusted_incidence_rate" and "average_annual_count" are missing
+joined_data_all_y_no_us_income_no_nevada %>% group_by(state) %>% 
+  filter(is.na(age_adjusted_incidence_rate_cases_per_100_000) & is.na(average_annual_count)) %>% 
+  summarise(sum(age_adjusted_incidence_rate_cases_per_100_000)) # Zero for KS and MN, needs to check
+   
+joined_data_all_y_no_us_income_no_nevada %>% filter(state %in% c("KS", "MN")) # Incidence data is missing for KS and MN
+
+# Remove observations where both "age_adjusted_incidence_rate" and "average_annual_count" are missing (i.e. KS and MN observations)
+joined_data_all_y_no_us_income_no_nevada_incidence <- joined_data_all_y_no_us_income_no_nevada %>% filter(!is.na(average_annual_count))
+
+miss_var_summary(joined_data_all_y_no_us_income_no_nevada_incidence)
+
+# Replace remaining NAs in incidence rate with 0
+joined_data_all_final <- joined_data_all_y_no_us_income_no_nevada_incidence %>%
+  impute_const(age_adjusted_incidence_rate_cases_per_100_000~0)
 
 miss_var_summary(joined_data_all_final) # no more NAs
 
+n_distinct(joined_data_all_final$state_name) # only 48 States remain in the dataset.
+# 51 - Nevada - Kansas - Minnesota = 48
 
 ```
 
@@ -526,10 +545,14 @@ summary_below_poverty_level_per_capita_by_state <- joined_data_all_final %>%
   group_by(state) %>% 
   summarise(below_poverty_level_per_capita = sum(poverty_002) / sum(popestimate2015) ) 
 
-summary_below_poverty_level_per_capita_by_state %>% 
-  ggplot(aes(state, below_poverty_level_per_capita, fill = state)) +
+ggplot_poverty_level <- summary_below_poverty_level_per_capita_by_state %>% 
+  ggplot(aes(state, below_poverty_level_per_capita)) +
   geom_col(show.legend = F) +
   theme_economist()
+
+
+ggplot_poverty_level + labs(title = "Total below poverty line per capita",
+                            subtitle = " i.e. total population below poverty level / total population")
 ```
 
 
@@ -557,11 +580,13 @@ summary_without_health_ins_per_capita_by_state <- joined_data_all_final %>%
   group_by(state) %>% 
   summarise(without_health_ins_per_capita = sum(total_without_health_ins) / sum(popestimate2015) ) 
 
-summary_without_health_ins_per_capita_by_state %>% 
-  ggplot(aes(state, without_health_ins_per_capita, fill = state)) +
+ggplot_without_health_ins <- summary_without_health_ins_per_capita_by_state %>% 
+  ggplot(aes(state, without_health_ins_per_capita)) +
   geom_col(show.legend = F) +
   theme_economist()
 
+ggplot_without_health_ins + labs(title = "Total without health insurance per capita ",
+                            subtitle = " i.e. sum of the population without health insurance coverage for each age group / total population")
 ```
 
 
@@ -573,11 +598,13 @@ summary_median_income_by_state <- joined_data_all_final %>%
   group_by(state) %>% 
   summarise(median_income_by_state = sum(income_001*popestimate2015) / sum(popestimate2015) ) 
 
-summary_median_income_by_state %>% 
-  ggplot(aes(state, median_income_by_state, fill = state)) +
+ggplot_income <- summary_median_income_by_state %>% 
+  ggplot(aes(state, median_income_by_state)) +
   geom_col(show.legend = F) +
   theme_economist()
 
+ggplot_income + labs(title = "Median income fot the whole population",
+                  subtitle = "i.e. income_001")
 ```
 
 
@@ -589,26 +616,30 @@ summary_incidence_by_state <- joined_data_all_final %>%
   group_by(state) %>%
   summarise(incidence_rate_per_100000 = sum(age_adjusted_incidence_rate_cases_per_100_000 * popestimate2015) / sum(popestimate2015) )
 
-summary_incidence_by_state %>%
-  ggplot(aes(state, incidence_rate_per_100000, fill = state)) +
+# # Zero for KS and MN, check
+# joined_data_all_final %>% filter(state %in% c("KS", "MN")) %>% describe() # Incidence data is missing for KS and MN
+# 
+# # Remove Ks and MN rows
+# joined_data_all_final <- joined_data_all_final %>% filter(!state %in% c("KS", "MN"))
+
+ggplot_incidence <- summary_incidence_by_state %>%
+  ggplot(aes(state, incidence_rate_per_100000)) +
   geom_col(show.legend = F) +
   theme_economist()
 
+ggplot_incidence + labs(title = "Incidence rate",
+                     subtitle = "i.e. age_adjusted_incidence_rate_cases_per_100_000")
+```
 
-# Zero for KS and MN, check
-joined_data_all_final %>% filter(state %in% c("KS", "MN")) %>% describe() # Incidence data is missing for KS and MN
+```{r incidence_trend & population}
+ggplot_pop <- joined_data_all_final %>%
+  ggplot(aes(state, popestimate2015, fill = recent_trend)) +
+  geom_col() +
+  theme_economist() +
+  scale_y_continuous(labels = function(x) format(x, big.mark = ",", scientific = FALSE))
 
-# Remove Ks and MN rows
-joined_data_all_final <- joined_data_all_final %>% filter(!state %in% c("KS", "MN"))
+ggplot_pop + labs(x = "State", y = "Population", title = "Population at year of 2015")
 
-summary_incidence_by_state <- joined_data_all_final %>%
-  group_by(state) %>%
-  summarise(incidence_rate_per_100000 = sum(age_adjusted_incidence_rate_cases_per_100_000 * popestimate2015) / sum(popestimate2015) )
-
-summary_incidence_by_state %>%
-  ggplot(aes(state, incidence_rate_per_100000, fill = state)) +
-  geom_col(show.legend = F) +
-  theme_economist()
 ```
 
 

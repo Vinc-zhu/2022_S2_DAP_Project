@@ -1,0 +1,6 @@
+"0",""
+"0","# Replace remaining NAs in incidence rate with 0"
+"0","joined_data_all_final <- joined_data_all_y_no_us_income_no_nevada_incidence %>%"
+"0","  impute_const(age_adjusted_incidence_rate_cases_per_100_000~0)"
+"0",""
+"0","miss_var_summary(joined_data_all_final) # no more NAs"

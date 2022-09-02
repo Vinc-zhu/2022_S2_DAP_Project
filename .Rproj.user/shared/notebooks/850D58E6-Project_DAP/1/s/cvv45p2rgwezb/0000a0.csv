@@ -1,0 +1,5 @@
+"0","# To ensure all the suppressed values ""*"" are shown as ""NA"""
+"0","joined_data_all_with_NA <- joined_data_all %>% mutate(across(everything(), function(x){ifelse(x == ""*"" | x == ""."", NA, x)}))"
+"0",""
+"0","# Overview on missing values"
+"0","miss_var_summary(joined_data_all_with_NA)  "

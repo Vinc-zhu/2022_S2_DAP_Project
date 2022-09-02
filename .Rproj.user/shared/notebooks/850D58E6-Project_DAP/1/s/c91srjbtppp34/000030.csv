@@ -1,0 +1,2 @@
+"0",""
+"0","data_death_clean_fips_with_state %>% filter(is.na(state))"
