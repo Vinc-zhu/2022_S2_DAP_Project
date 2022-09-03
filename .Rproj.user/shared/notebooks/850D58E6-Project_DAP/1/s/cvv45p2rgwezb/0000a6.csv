@@ -1,8 +1,0 @@
-"0",""
-"0",""
-"0","# Since only income_001 is one of the explanatory variables, missing values in other income variables can be ignored."
-"0","# Hence those variables are entirely removed."
-"0","drop_cols <- c(names(data_income_clean)[6:14])"
-"0",""
-"0","joined_data_all_y_no_us_income <- joined_data_all_y_no_us %>% select(-one_of(drop_cols))"
-"0","miss_var_summary(joined_data_all_y_no_us_income)"

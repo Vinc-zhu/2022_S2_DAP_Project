@@ -1,5 +1,0 @@
-"0",""
-"0","# Remove observations where both ""age_adjusted_incidence_rate"" and ""average_annual_count"" are missing (i.e. KS and MN observations)"
-"0","joined_data_all_y_no_us_income_no_nevada_incidence <- joined_data_all_y_no_us_income_no_nevada %>% filter(!is.na(average_annual_count))"
-"0",""
-"0","miss_var_summary(joined_data_all_y_no_us_income_no_nevada_incidence)"

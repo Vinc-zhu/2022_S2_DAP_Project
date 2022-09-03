@@ -1,5 +1,0 @@
-"0",""
-"0",""
-"0","# Remove Nevada Data"
-"0","joined_data_all_y_no_us_income_no_nevada <- joined_data_all_y_no_us_income %>% filter(state_name != ""Nevada"")"
-"0","joined_data_all_y_no_us_income %>% filter(state_name == ""Nevada"")"

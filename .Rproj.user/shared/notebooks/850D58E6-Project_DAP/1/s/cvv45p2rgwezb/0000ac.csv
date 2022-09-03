@@ -1,4 +1,0 @@
-"0",""
-"0",""
-"0","# Check on incidence missing values"
-"0","joined_data_all_y_no_us_income_no_nevada %>% filter(is.na(age_adjusted_incidence_rate_cases_per_100_000))"

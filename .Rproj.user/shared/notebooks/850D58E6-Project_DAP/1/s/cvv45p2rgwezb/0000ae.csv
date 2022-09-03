@@ -1,6 +1,0 @@
-"0","  # for these rows, ""average_annual_count"" is also missing or less than 5 "
-"0",""
-"0","# Check on incidence missing values where both ""age_adjusted_incidence_rate"" and ""average_annual_count"" are missing"
-"0","joined_data_all_y_no_us_income_no_nevada %>% group_by(state) %>% "
-"0","  filter(is.na(age_adjusted_incidence_rate_cases_per_100_000) & is.na(average_annual_count)) %>% "
-"0","  summarise(sum(age_adjusted_incidence_rate_cases_per_100_000)) # Zero for KS and MN, needs to check"

@@ -1,2 +1,0 @@
-"0","   "
-"0","joined_data_all_y_no_us_income_no_nevada %>% filter(state %in% c(""KS"", ""MN"")) # Incidence data is missing for KS and MN"

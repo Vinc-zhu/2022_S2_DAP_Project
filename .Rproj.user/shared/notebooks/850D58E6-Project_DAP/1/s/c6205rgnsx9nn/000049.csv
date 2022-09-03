@@ -1,6 +1,0 @@
-"0",""
-"0","# Total below poverty level per capita"
-"0","joined_data_all_final <- joined_data_all_final %>% mutate(total_below_poverty_level_per_capita = poverty_002 / popestimate2015)"
-"0",""
-"0","# Check min and max value"
-"0","describe(joined_data_all_final$total_below_poverty_level_per_capita)"
