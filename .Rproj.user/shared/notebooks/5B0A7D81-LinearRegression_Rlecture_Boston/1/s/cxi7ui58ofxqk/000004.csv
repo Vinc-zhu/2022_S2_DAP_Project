@@ -1,0 +1,4 @@
+"0","```r
+attach(Boston)
+plot(crim,medv)
+```"

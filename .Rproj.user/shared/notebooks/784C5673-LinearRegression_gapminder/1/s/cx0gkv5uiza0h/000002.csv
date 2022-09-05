@@ -1,0 +1,37 @@
+"0","```r
+fit1=lm(lifeExp~year+I(year^2)+continent+gdpPercap+I(gdpPercap^2)+pop+I(pop^2)+log(gdpPercap), LifeExpectancy)
+summary(fit1)
+```"
+"1","
+Call:
+lm(formula = lifeExp ~ year + I(year^2) + continent + gdpPercap + 
+    I(gdpPercap^2) + pop + I(pop^2) + log(gdpPercap), data = LifeExpectancy)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-24.6784  -2.8581   0.3137   3.5159  15.3496 
+
+Coefficients:
+                    Estimate Std. Error t value Pr(>|t|)    
+(Intercept)       -8.226e+03  2.052e+03  -4.009 6.37e-05 ***
+year               8.071e+00  2.073e+00   3.893 0.000103 ***
+I(year^2)         -1.977e-03  5.237e-04  -3.776 0.000165 ***
+continentAmericas  7.891e+00  4.732e-01  16.676  < 2e-16 ***
+continentAsia      6.637e+00  4.061e-01  16.342  < 2e-16 ***
+continentEurope    1.205e+01  5.083e-01  23.697  < 2e-16 ***
+continentOceania   1.263e+01  1.251e+00  10.091  < 2e-16 ***
+gdpPercap         -2.406e-04  5.331e-05  -4.512 6.85e-06 ***
+I(gdpPercap^2)     6.164e-10  5.365e-10   1.149 0.250692    
+pop                6.567e-09  3.990e-09   1.646 0.099997 .  
+I(pop^2)          -9.854e-19  3.905e-18  -0.252 0.800784    
+log(gdpPercap)     6.547e+00  2.883e-01  22.713  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 5.661 on 1692 degrees of freedom
+Multiple R-squared:  0.8091,	Adjusted R-squared:  0.8079 
+F-statistic: 652.1 on 11 and 1692 DF,  p-value: < 2.2e-16
+"
+"0","```r
+plot(fit1)
+```"

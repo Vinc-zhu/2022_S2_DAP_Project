@@ -1,7 +1,0 @@
-"0","# [Death] Convert the data type from character to numeric"
-"0","data_death_clean2 <- data_death_clean %>%"
-"0","  mutate(age_adjusted_death_rate=as.double(age_adjusted_death_rate)) %>%"
-"0","  mutate(average_deaths_per_year=as.double(average_deaths_per_year))"
-"2","Warning: NAs introduced by coercion"
-"2","Warning: NAs introduced by coercion"
-"0","miss_var_summary(data_death_clean)"

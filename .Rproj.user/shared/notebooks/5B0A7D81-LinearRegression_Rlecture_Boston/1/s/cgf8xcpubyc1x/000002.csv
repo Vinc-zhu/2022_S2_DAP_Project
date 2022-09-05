@@ -1,0 +1,43 @@
+"0","```r
+#calculate p-values directly and compare to the above
+1-pf(309,2,503) #p-value for F-statistic
+```"
+"1","[1] 0
+"
+"0","```r
+pf(309,2,503,lower.tail = FALSE) 
+```"
+"1","[1] 2.941282e-88
+"
+"0","```r
+pvalue_age<-2*(1-pt(2.826,506-3)) #p-value for age predictor
+cat(\"p-value for age predictor =\", pvalue_age, \"\n\")
+```"
+"1","p-value for age predictor = 0.004900824 
+"
+"0","```r
+pvalue_lstat<-2*(1-pt(21.416,506-3)) #p-value for lstat predictor
+cat(\"p-value for lstat predictor =\", pvalue_lstat, \"\n\")
+```"
+"1","p-value for lstat predictor = 0 
+"
+"0","```r
+pvalue_lstat<-2*pt(-21.416,506-3) #p-value for lstat predictor
+cat(\"p-value for lstat predictor =\", pvalue_lstat, \"\n\")
+```"
+"1","p-value for lstat predictor = 8.450772e-73 
+"
+"0","```r
+#R-squared
+R_squared<-1-sum((fitted(Boston.lmfit2)-Boston$medv)^2)/sum((Boston$medv-mean(Boston$medv))^2)
+
+cat(\"R-squared =\", R_squared, \"\n\")
+```"
+"1","R-squared = 0.5512689 
+"
+"0","```r
+Rsq_adj<-1-(sum((fitted(Boston.lmfit2)-Boston$medv)^2)/sum((Boston$medv-mean(Boston$medv))^2))*(506-1)/(506-3) #R-squared adjusted
+cat(\"R-squared adjusted =\", Rsq_adj, \"\n\")
+```"
+"1","R-squared adjusted = 0.5494847 
+"

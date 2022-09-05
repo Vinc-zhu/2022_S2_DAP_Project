@@ -1,0 +1,18 @@
+"0","```r
+#try to replace poly() with power function
+# of course model parameters are different now but model fit should be the same
+attach(LifeExpectancy)
+```"
+"1","The following objects are masked from LifeExpectancy (pos = 3):
+
+    continent, country, gdpPercap, lifeExp, pop, year
+
+The following objects are masked from LifeExpectancy (pos = 6):
+
+    continent, country, gdpPercap, lifeExp, pop, year
+"
+"0","```r
+plot(LifeExpectancy$gdpPercap,LifeExpectancy$lifeExp)
+fit2<-lm(lifeExp~gdpPercap+I(gdpPercap^2)+I(gdpPercap^3),LifeExpectancy)
+points(gdpPercap,fitted(fit2),col=\"red\",pch=20) 
+```"

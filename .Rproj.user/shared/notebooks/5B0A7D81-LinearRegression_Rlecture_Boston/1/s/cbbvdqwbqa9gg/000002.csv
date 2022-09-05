@@ -1,0 +1,7 @@
+"0","```r
+attach(Boston) #to make names from Boston available in namespace
+par(mfrow=c(1,1))
+plot(medv~lstat) #plot
+#we cannot use abline() to plot nonlinear fit, so we do it directly
+points(lstat,fitted(Boston.lmfit6),col=\"red\",pch=20) 
+```"

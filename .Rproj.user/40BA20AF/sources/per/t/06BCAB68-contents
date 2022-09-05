@@ -1,0 +1,210 @@
+---
+title: "Actuarial Data Analytics R-lecture"
+output:
+  html_notebook: default
+  html_document:
+    df_print: paged
+  pdf_document: default
+editor_options:
+  chunk_output_type: inline  
+---
+
+
+Prof Pavel Shevchenko, Macquarie University
+------------------------------------------
+
+
+Linear regression modelling of Boston dataset (house prices in suburbs of Boston)
+------------------------------------------
+Example adopted from Gareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani. An introduction to statistical learning, Springer, 2013
+
+The Boston data frame has 506 rows and 14 columns as follows:
+
+$\mathtt{crim}$: per capita crime rate by town.
+
+$\mathtt{zn}$: proportion of residential land zoned for lots over 25,000 sq.ft.
+
+$\mathtt{indus}$: proportion of non-retail business acres per town.
+
+$\mathtt{chas}$: Charles River dummy variable (= 1 if tract bounds river; 0 otherwise).
+
+$\mathtt{nox}$: nitrogen oxides concentration (parts per 10 million).
+
+$\mathtt{rm}$: average number of rooms per dwelling.
+
+$\mathtt{age}$: proportion of owner-occupied units built prior to 1940.
+
+$\mathtt{dis}$: weighted mean of distances to five Boston employment centres.
+
+$\mathtt{rad}$: index of accessibility to radial highways.
+
+$\mathtt{tax}$: full-value property-tax rate per $10,000.
+
+$\mathtt{ptratio}$: pupil-teacher ratio by town.
+
+$\mathtt{black: 1000(Bk - 0.63)^2}$ where Bk is the proportion of blacks by town.
+
+$\mathtt{lstat}$: lower status of the population (percent).
+
+$\mathtt{medv}$: median value of owner-occupied homes in $1000s.
+
+$Y=\beta_0+\beta_1 X^2+\epsilon$
+
+```{r}
+library(MASS) #to get access to some datasets from MASS library (Modern Applied Statistics with S)
+names(Boston) #to see names of variables in the dataset
+#?Boston #to see help on Boston
+# write.csv(Boston, file = "Boston.csv",row.names=FALSE) #write to csv file if you need, Boston is dataframe
+str(Boston) #to see summary about this dataframe
+```
+
+```{r}
+dim(Boston)
+class(Boston)
+summary(Boston)
+```
+
+```{r}
+Boston1<-read.csv("Boston.csv") #read from files to dataframe Boston1
+names(Boston1)
+str(Boston1)
+```
+```{r}
+plot(Boston$crim,Boston$medv)
+attach(Boston)
+plot(crim,medv)
+```
+```{r}
+#fix(Boston) #to view data 
+```
+
+```{r}
+par(mfrow=c(1,2))
+plot(medv~lstat,Boston) #plot some variables, twiddle symbol ~ means "modelled as"
+plot(Boston$lstat,Boston$medv)
+```
+
+```{r}
+Boston.lmfit<-lm(medv~lstat,data=Boston) #now let's fit linear model to these data
+Boston.lmfit
+```
+
+```{r}
+summary(Boston.lmfit)
+```
+
+```{r}
+plot(Boston$lstat,Boston$medv)
+abline(Boston.lmfit,col="red") #add fit to the plot, it works for line only
+```
+
+```{r}
+names(Boston.lmfit)
+confint(Boston.lmfit) #show confidence intervals
+```
+
+```{r}
+#a confidence interval for the mean value of the response variable (accounting for uncertainty in parameter estimators only but ignoring variance of residuals)
+predict(Boston.lmfit,data.frame(lstat=c(5,10,15)),interval="confidence")
+```
+```{r}
+#confidence interval for the value of the response variable relating to a new observation with a given value for the explanatory variable (accounting for uncertainty in parameter estimators and for variance of residuals).
+
+predict(Boston.lmfit,data.frame(lstat=c(5,10,15)),interval="prediction")
+  # ==> confidence interval is wider than above.
+
+```
+
+```{r}
+### linear regression with two covariates
+Boston.lmfit2<-lm(medv~lstat+age,data=Boston)
+summary(Boston.lmfit2)
+```
+
+```{r}
+#calculate p-values directly and compare to the above
+1-pf(309,2,503) #p-value for F-statistic
+pf(309,2,503,lower.tail = FALSE) 
+
+pvalue_age<-2*(1-pt(2.826,506-3)) #p-value for age predictor
+cat("p-value for age predictor =", pvalue_age, "\n")
+
+pvalue_lstat<-2*(1-pt(21.416,506-3)) #p-value for lstat predictor
+cat("p-value for lstat predictor =", pvalue_lstat, "\n")
+
+pvalue_lstat<-2*pt(-21.416,506-3) #p-value for lstat predictor
+cat("p-value for lstat predictor =", pvalue_lstat, "\n")
+
+#R-squared
+R_squared<-1-sum((fitted(Boston.lmfit2)-Boston$medv)^2)/sum((Boston$medv-mean(Boston$medv))^2)
+
+cat("R-squared =", R_squared, "\n")
+
+Rsq_adj<-1-(sum((fitted(Boston.lmfit2)-Boston$medv)^2)/sum((Boston$medv-mean(Boston$medv))^2))*(506-1)/(506-3) #R-squared adjusted
+cat("R-squared adjusted =", Rsq_adj, "\n")
+
+```
+```{r}
+Boston.lmfit3<-lm(medv ~.,Boston) #regression wrt all covariates in dataframe
+summary(Boston.lmfit3) 
+#note that now age is not significant
+```
+
+```{r}
+par(mfrow=c(2,2))
+plot(Boston.lmfit3) #4 plots of various things for linear fit
+```
+
+```{r}
+Boston.lmfit4=update(Boston.lmfit3,~.-age-indus) #remove unimportant predictors
+summary(Boston.lmfit4) #now all variables are significant
+#note that adjusted R-squared  increased
+```
+
+```{r}
+### Nonlinear terms and Interactions
+Boston.lmfit5<-lm(medv~lstat*age,Boston) #this will include main effects automatically
+summary(Boston.lmfit5)
+```
+```{r}
+### you can do the same regression explicitly specifying predictors
+Boston.lmfit5<-lm(medv~lstat+age+lstat:age,Boston) 
+summary(Boston.lmfit5)
+```
+
+```{r}
+Boston.lmfit6<-lm(medv~lstat + I(lstat^2),Boston); summary(Boston.lmfit6)
+```
+
+```{r}
+#example of incorrect use, without I()
+# Boston.lmfit6<-lm(medv~lstat + lstat^2,Boston); summary(Boston.lmfit6)
+  # lstat^2 will be ignored without using I()
+```
+
+```{r}
+attach(Boston) #to make names from Boston available in namespace
+par(mfrow=c(1,1))
+plot(medv~lstat) #plot
+#we cannot use abline() to plot nonlinear fit, so we do it directly
+points(lstat,fitted(Boston.lmfit6),col="red",pch=20) 
+```
+
+```{r}
+plot(medv~lstat) #plot
+#we cannot use abline() to plot nonlinear fit, so we do it directly
+points(lstat,fitted(Boston.lmfit6),col="red",pch=20) 
+
+Boston.lmfit7<-lm(medv~poly(lstat,4)) #use poly function
+points(lstat,fitted(Boston.lmfit7),col="blue",pch=20) #you can see fitted curve is wiggly at the end indicating overfit
+```
+
+```{r}
+summary(Boston.lmfit7)
+summary(Boston.lmfit6)
+```
+
+```{r}
+#to see all plotting symbols
+plot(1:20,1:20,pch=1:20,cex=2)
+```

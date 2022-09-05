@@ -1,0 +1,9 @@
+"0","```r
+#a confidence interval for the mean value of the response variable (accounting for uncertainty in parameter estimators only but ignoring variance of residuals)
+predict(Boston.lmfit,data.frame(lstat=c(5,10,15)),interval=\"confidence\")
+```"
+"1","       fit      lwr      upr
+1 29.80359 29.00741 30.59978
+2 25.05335 24.47413 25.63256
+3 20.30310 19.73159 20.87461
+"

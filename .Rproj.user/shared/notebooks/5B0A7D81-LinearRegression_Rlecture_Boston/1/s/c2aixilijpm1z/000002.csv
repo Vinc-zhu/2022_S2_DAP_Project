@@ -1,0 +1,13 @@
+"0","```r
+names(Boston.lmfit)
+```"
+"1"," [1] \"coefficients\"  \"residuals\"     \"effects\"       \"rank\"          \"fitted.values\" \"assign\"        \"qr\"            \"df.residual\"  
+ [9] \"xlevels\"       \"call\"          \"terms\"         \"model\"        
+"
+"0","```r
+confint(Boston.lmfit) #show confidence intervals
+```"
+"1","                2.5 %     97.5 %
+(Intercept) 33.448457 35.6592247
+lstat       -1.026148 -0.8739505
+"

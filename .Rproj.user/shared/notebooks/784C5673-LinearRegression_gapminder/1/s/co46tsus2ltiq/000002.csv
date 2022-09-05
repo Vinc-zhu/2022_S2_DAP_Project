@@ -1,0 +1,180 @@
+"0","```r
+#add country covariate and see that continent predictor becomes redundant
+fit1<-lm(lifeExp~year+I(year^2)+country+continent+gdpPercap+I(gdpPercap^2)+pop+I(pop^2)+log(gdpPercap), LifeExpectancy)
+summary(fit1)
+```"
+"1","
+Call:
+lm(formula = lifeExp ~ year + I(year^2) + country + continent + 
+    gdpPercap + I(gdpPercap^2) + pop + I(pop^2) + log(gdpPercap), 
+    data = LifeExpectancy)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-22.3587  -1.5385   0.0025   1.7998  10.1864 
+
+Coefficients: (4 not defined because of singularities)
+                                  Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                     -1.076e+04  1.213e+03  -8.868  < 2e-16 ***
+year                             1.059e+01  1.225e+00   8.643  < 2e-16 ***
+I(year^2)                       -2.603e-03  3.093e-04  -8.414  < 2e-16 ***
+countryAlbania                   2.710e+01  1.400e+00  19.353  < 2e-16 ***
+countryAlgeria                   1.591e+01  1.423e+00  11.176  < 2e-16 ***
+countryAngola                   -4.046e+00  1.408e+00  -2.874 0.004111 ** 
+countryArgentina                 2.418e+01  1.498e+00  16.146  < 2e-16 ***
+countryAustralia                 3.116e+01  1.560e+00  19.977  < 2e-16 ***
+countryAustria                   3.019e+01  1.555e+00  19.414  < 2e-16 ***
+countryBahrain                   2.259e+01  1.562e+00  14.462  < 2e-16 ***
+countryBangladesh                8.568e+00  1.456e+00   5.883 4.92e-09 ***
+countryBelgium                   3.045e+01  1.557e+00  19.559  < 2e-16 ***
+countryBenin                     1.058e+01  1.334e+00   7.932 4.09e-15 ***
+countryBolivia                   1.110e+01  1.394e+00   7.959 3.31e-15 ***
+countryBosnia and Herzegovina    2.652e+01  1.394e+00  19.021  < 2e-16 ***
+countryBotswana                  1.367e+01  1.399e+00   9.777  < 2e-16 ***
+countryBrazil                    1.365e+01  1.653e+00   8.258 3.14e-16 ***
+countryBulgaria                  2.660e+01  1.458e+00  18.242  < 2e-16 ***
+countryBurkina Faso              7.524e+00  1.325e+00   5.676 1.64e-08 ***
+countryBurundi                   1.003e+01  1.340e+00   7.488 1.17e-13 ***
+countryCambodia                  1.181e+01  1.328e+00   8.895  < 2e-16 ***
+countryCameroon                  8.171e+00  1.351e+00   6.049 1.82e-09 ***
+countryCanada                    3.115e+01  1.573e+00  19.799  < 2e-16 ***
+countryCentral African Republic  6.477e+00  1.330e+00   4.870 1.23e-06 ***
+countryChad                      8.508e+00  1.333e+00   6.382 2.30e-10 ***
+countryChile                     2.406e+01  1.461e+00  16.466  < 2e-16 ***
+countryChina                    -9.137e-01  3.941e+00  -0.232 0.816685    
+countryColombia                  2.064e+01  1.416e+00  14.575  < 2e-16 ***
+countryComoros                   1.396e+01  1.342e+00  10.409  < 2e-16 ***
+countryCongo Dem. Rep.           7.360e+00  1.336e+00   5.507 4.26e-08 ***
+countryCongo Rep.                1.103e+01  1.406e+00   7.843 8.14e-15 ***
+countryCosta Rica                2.761e+01  1.449e+00  19.054  < 2e-16 ***
+countryCote d'Ivoire             8.246e+00  1.356e+00   6.079 1.52e-09 ***
+countryCroatia                   2.673e+01  1.493e+00  17.897  < 2e-16 ***
+countryCuba                      2.763e+01  1.466e+00  18.849  < 2e-16 ***
+countryCzech Republic            2.768e+01  1.532e+00  18.060  < 2e-16 ***
+countryDenmark                   3.159e+01  1.570e+00  20.123  < 2e-16 ***
+countryDjibouti                  5.560e+00  1.390e+00   3.999 6.66e-05 ***
+countryDominican Republic        2.060e+01  1.382e+00  14.903  < 2e-16 ***
+countryEcuador                   1.970e+01  1.454e+00  13.542  < 2e-16 ***
+countryEgypt                     1.294e+01  1.402e+00   9.233  < 2e-16 ***
+countryEl Salvador               1.721e+01  1.434e+00  12.005  < 2e-16 ***
+countryEquatorial Guinea         5.093e+00  1.337e+00   3.810 0.000145 ***
+countryEritrea                   1.087e+01  1.336e+00   8.138 8.12e-16 ***
+countryEthiopia                  7.431e+00  1.353e+00   5.491 4.65e-08 ***
+countryFinland                   2.991e+01  1.544e+00  19.370  < 2e-16 ***
+countryFrance                    2.881e+01  1.578e+00  18.249  < 2e-16 ***
+countryGabon                     7.997e+00  1.515e+00   5.279 1.48e-07 ***
+countryGambia                    8.383e+00  1.331e+00   6.300 3.86e-10 ***
+countryGermany                   2.682e+01  1.638e+00  16.373  < 2e-16 ***
+countryGhana                     1.405e+01  1.327e+00  10.588  < 2e-16 ***
+countryGreece                    3.033e+01  1.515e+00  20.012  < 2e-16 ***
+countryGuatemala                 1.449e+01  1.420e+00  10.200  < 2e-16 ***
+countryGuinea                    6.479e+00  1.326e+00   4.884 1.14e-06 ***
+countryGuinea-Bissau             3.449e+00  1.332e+00   2.590 0.009678 ** 
+countryHaiti                     1.071e+01  1.349e+00   7.939 3.88e-15 ***
+countryHonduras                  1.672e+01  1.392e+00  12.014  < 2e-16 ***
+countryHong Kong China           3.097e+01  1.507e+00  20.549  < 2e-16 ***
+countryHungary                   2.552e+01  1.510e+00  16.898  < 2e-16 ***
+countryIceland                   3.397e+01  1.562e+00  21.751  < 2e-16 ***
+countryIndia                    -7.045e+00  3.622e+00  -1.945 0.051970 .  
+countryIndonesia                 8.108e+00  1.683e+00   4.818 1.59e-06 ***
+countryIran                      1.352e+01  1.479e+00   9.144  < 2e-16 ***
+countryIraq                      1.305e+01  1.466e+00   8.898  < 2e-16 ***
+countryIreland                   3.017e+01  1.520e+00  19.842  < 2e-16 ***
+countryIsrael                    3.047e+01  1.523e+00  20.004  < 2e-16 ***
+countryItaly                     2.830e+01  1.560e+00  18.144  < 2e-16 ***
+countryJamaica                   2.580e+01  1.467e+00  17.584  < 2e-16 ***
+countryJapan                     2.670e+01  1.704e+00  15.668  < 2e-16 ***
+countryJordan                    1.854e+01  1.397e+00  13.270  < 2e-16 ***
+countryKenya                     1.361e+01  1.330e+00  10.232  < 2e-16 ***
+countryKorea Dem. Rep.           2.240e+01  1.369e+00  16.364  < 2e-16 ***
+countryKorea Rep.                2.160e+01  1.431e+00  15.095  < 2e-16 ***
+countryKuwait                    3.036e+01  1.833e+00  16.562  < 2e-16 ***
+countryLebanon                   2.262e+01  1.482e+00  15.259  < 2e-16 ***
+countryLesotho                   1.390e+01  1.330e+00  10.452  < 2e-16 ***
+countryLiberia                   6.847e+00  1.332e+00   5.141 3.08e-07 ***
+countryLibya                     1.627e+01  1.503e+00  10.823  < 2e-16 ***
+countryMadagascar                8.798e+00  1.336e+00   6.587 6.11e-11 ***
+countryMalawi                    7.677e+00  1.331e+00   5.769 9.60e-09 ***
+countryMalaysia                  2.172e+01  1.419e+00  15.301  < 2e-16 ***
+countryMali                      7.168e+00  1.327e+00   5.402 7.63e-08 ***
+countryMauritania                1.373e+01  1.341e+00  10.239  < 2e-16 ***
+countryMauritius                 2.315e+01  1.424e+00  16.258  < 2e-16 ***
+countryMexico                    1.884e+01  1.527e+00  12.340  < 2e-16 ***
+countryMongolia                  1.673e+01  1.350e+00  12.390  < 2e-16 ***
+countryMontenegro                2.741e+01  1.475e+00  18.583  < 2e-16 ***
+countryMorocco                   1.610e+01  1.370e+00  11.746  < 2e-16 ***
+countryMozambique                4.668e+00  1.331e+00   3.506 0.000468 ***
+countryMyanmar                   1.741e+01  1.354e+00  12.863  < 2e-16 ***
+countryNamibia                   1.172e+01  1.418e+00   8.265 2.96e-16 ***
+countryNepal                     1.163e+01  1.324e+00   8.787  < 2e-16 ***
+countryNetherlands               3.243e+01  1.566e+00  20.714  < 2e-16 ***
+countryNew Zealand               3.071e+01  1.558e+00  19.716  < 2e-16 ***
+countryNicaragua                 1.677e+01  1.407e+00  11.921  < 2e-16 ***
+countryNiger                     7.719e+00  1.326e+00   5.823 7.02e-09 ***
+countryNigeria                   9.459e-01  1.415e+00   0.669 0.503834    
+countryNorway                    3.383e+01  1.583e+00  21.367  < 2e-16 ***
+countryOman                      1.597e+01  1.487e+00  10.743  < 2e-16 ***
+countryPakistan                  1.167e+01  1.468e+00   7.946 3.66e-15 ***
+countryPanama                    2.517e+01  1.454e+00  17.316  < 2e-16 ***
+countryParaguay                  2.538e+01  1.401e+00  18.117  < 2e-16 ***
+countryPeru                      1.522e+01  1.451e+00  10.491  < 2e-16 ***
+countryPhilippines               1.812e+01  1.391e+00  13.028  < 2e-16 ***
+countryPoland                    2.523e+01  1.488e+00  16.959  < 2e-16 ***
+countryPortugal                  2.701e+01  1.496e+00  18.061  < 2e-16 ***
+countryPuerto Rico               2.961e+01  1.499e+00  19.750  < 2e-16 ***
+countryReunion                   2.434e+01  1.443e+00  16.871  < 2e-16 ***
+countryRomania                   2.421e+01  1.470e+00  16.469  < 2e-16 ***
+countryRwanda                    5.270e+00  1.328e+00   3.969 7.54e-05 ***
+countrySao Tome and Principe     1.934e+01  1.344e+00  14.390  < 2e-16 ***
+countrySaudi Arabia              1.544e+01  1.556e+00   9.926  < 2e-16 ***
+countrySenegal                   1.126e+01  1.345e+00   8.369  < 2e-16 ***
+countrySerbia                    2.494e+01  1.492e+00  16.710  < 2e-16 ***
+countrySierra Leone             -1.028e+00  1.331e+00  -0.772 0.440148    
+countrySingapore                 2.924e+01  1.499e+00  19.505  < 2e-16 ***
+countrySlovak Republic           2.713e+01  1.509e+00  17.978  < 2e-16 ***
+countrySlovenia                  2.847e+01  1.527e+00  18.647  < 2e-16 ***
+countrySomalia                   2.791e+00  1.333e+00   2.095 0.036367 *  
+countrySouth Africa              9.269e+00  1.478e+00   6.270 4.68e-10 ***
+countrySpain                     2.946e+01  1.518e+00  19.406  < 2e-16 ***
+countrySri Lanka                 2.648e+01  1.347e+00  19.661  < 2e-16 ***
+countrySudan                     7.657e+00  1.352e+00   5.662 1.78e-08 ***
+countrySwaziland                 7.966e+00  1.396e+00   5.705 1.39e-08 ***
+countrySweden                    3.303e+01  1.560e+00  21.174  < 2e-16 ***
+countrySwitzerland               3.333e+01  1.600e+00  20.836  < 2e-16 ***
+countrySyria                     1.979e+01  1.390e+00  14.240  < 2e-16 ***
+countryTaiwan                    2.780e+01  1.439e+00  19.313  < 2e-16 ***
+countryTanzania                  9.973e+00  1.324e+00   7.532 8.45e-14 ***
+countryThailand                  1.975e+01  1.382e+00  14.293  < 2e-16 ***
+countryTogo                      1.344e+01  1.334e+00  10.071  < 2e-16 ***
+countryTrinidad and Tobago       2.387e+01  1.480e+00  16.127  < 2e-16 ***
+countryTunisia                   1.927e+01  1.395e+00  13.810  < 2e-16 ***
+countryTurkey                    1.541e+01  1.434e+00  10.751  < 2e-16 ***
+countryUganda                    1.020e+01  1.323e+00   7.706 2.30e-14 ***
+countryUnited Kingdom            2.817e+01  1.591e+00  17.707  < 2e-16 ***
+countryUnited States             2.063e+01  2.244e+00   9.189  < 2e-16 ***
+countryUruguay                   2.754e+01  1.481e+00  18.600  < 2e-16 ***
+countryVenezuela                 2.230e+01  1.509e+00  14.779  < 2e-16 ***
+countryVietnam                   1.750e+01  1.362e+00  12.848  < 2e-16 ***
+countryWest Bank and Gaza        1.880e+01  1.409e+00  13.339  < 2e-16 ***
+countryYemen Rep.                7.430e+00  1.340e+00   5.546 3.42e-08 ***
+countryZambia                    7.114e+00  1.339e+00   5.314 1.23e-07 ***
+countryZimbabwe                  1.657e+01  1.328e+00  12.476  < 2e-16 ***
+continentAmericas                       NA         NA      NA       NA    
+continentAsia                           NA         NA      NA       NA    
+continentEurope                         NA         NA      NA       NA    
+continentOceania                        NA         NA      NA       NA    
+gdpPercap                       -4.017e-04  4.576e-05  -8.777  < 2e-16 ***
+I(gdpPercap^2)                   1.928e-09  4.031e-10   4.782 1.90e-06 ***
+pop                              5.418e-08  8.700e-09   6.228 6.06e-10 ***
+I(pop^2)                        -2.734e-17  5.180e-18  -5.277 1.50e-07 ***
+log(gdpPercap)                   4.099e+00  3.741e-01  10.958  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 3.242 on 1555 degrees of freedom
+Multiple R-squared:  0.9425,	Adjusted R-squared:  0.937 
+F-statistic: 172.2 on 148 and 1555 DF,  p-value: < 2.2e-16
+"
+"0","```r
+plot(fit1)
+```"

@@ -1,6 +1,0 @@
-"0","# Check if:"
-"0","# 1) below poverty level population (poverty_002) = below poverty level male (poverty_003) + below poverty level female (poverty_017)"
-"0","data_poverty_clean %>% "
-"0","  mutate(check = poverty_002 - poverty_003 - poverty_017) %>% "
-"0","  group_by(state) %>% "
-"0","  summarise(sum(check))"

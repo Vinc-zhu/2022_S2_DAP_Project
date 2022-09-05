@@ -1,0 +1,4 @@
+"0","predicted_values <- predict(fit_final, data.frame(median_income=median_income.values),interval=""confidence"")
+"
+"2","Error in eval(predvars, data, env) : object 'below_poverty' not found
+"

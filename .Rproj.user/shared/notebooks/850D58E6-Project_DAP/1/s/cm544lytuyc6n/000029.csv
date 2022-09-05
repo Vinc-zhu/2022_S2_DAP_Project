@@ -1,5 +1,0 @@
-"0","  # There are still 12 valid Nevada entries."
-"0","  # [Uncertainty] According to Sam, Nevada data is not available. But some Nevada data are actually valid in the death datasets. Include them for further analysis at the moment, but will ask Sam for clarification."
-"0",""
-"0",""
-"0","data_incidence_clean2 %>% filter(grepl('Nevada', county)) # Nevada data is not available"

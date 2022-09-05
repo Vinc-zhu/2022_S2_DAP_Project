@@ -1,0 +1,10 @@
+"0","```r
+#confidence interval for the value of the response variable relating to a new observation with a given value for the explanatory variable (accounting for uncertainty in parameter estimators and for variance of residuals).
+
+predict(Boston.lmfit,data.frame(lstat=c(5,10,15)),interval=\"prediction\")
+```"
+"1","       fit       lwr      upr
+1 29.80359 17.565675 42.04151
+2 25.05335 12.827626 37.27907
+3 20.30310  8.077742 32.52846
+"

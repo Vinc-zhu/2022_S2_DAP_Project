@@ -1,0 +1,4 @@
+"0","```r
+par(mfrow=c(2,2))
+plot(Boston.lmfit3) #4 plots of various things for linear fit
+```"

@@ -1,0 +1,124 @@
+---
+title: "Actuarial Data Analytics R-lecture"
+output:
+  html_document:
+    df_print: paged
+  html_notebook: default
+  pdf_document: default
+editor_options:
+  chunk_output_type: inline
+---
+
+
+
+Prof Pavel Shevchenko, Macquarie University
+------------------------------------------
+
+
+Linear regression modelling of gapminder dataset 
+------------------------------------------
+https://raw.githubusercontent.com/jennybc/gapminder/master/inst/extdata/gapminder.tsv
+
+
+https://www.gapminder.org/data/
+
+```{r}
+LifeExpectancy<-read.csv("gapminder_data.csv")
+names(LifeExpectancy)
+str(LifeExpectancy)
+```
+```{r}
+summary(LifeExpectancy)
+hist(LifeExpectancy$lifeExp)
+hist(LifeExpectancy$gdpPercap)
+plot(LifeExpectancy)
+```
+```{r}
+plot(LifeExpectancy$gdpPercap,LifeExpectancy$lifeExp)
+fit1<-lm(lifeExp~gdpPercap,LifeExpectancy)
+abline(fit1,col="red") #add fit to the plot, it works for line only
+summary(fit1)
+```
+
+```{r}
+attach(LifeExpectancy)
+plot(LifeExpectancy$gdpPercap,LifeExpectancy$lifeExp)
+fit2<-lm(lifeExp~poly(gdpPercap,3),LifeExpectancy)
+points(gdpPercap,fitted(fit2),col="red",pch=20) 
+summary(fit2)
+predictedvalues <- predict(fit2, data.frame(gdpPercap=1000),interval="confidence")
+predictedvalues[1]
+predictedvalues[2]
+predictedvalues[3]
+```
+
+```{r}
+#try to replace poly() with power function
+# of course model parameters are different now but model fit should be the same
+attach(LifeExpectancy)
+plot(LifeExpectancy$gdpPercap,LifeExpectancy$lifeExp)
+fit2<-lm(lifeExp~gdpPercap+I(gdpPercap^2)+I(gdpPercap^3),LifeExpectancy)
+points(gdpPercap,fitted(fit2),col="red",pch=20) 
+summary(fit2)
+predictedvalues <- predict(fit2, data.frame(gdpPercap=1000),interval="confidence")
+predictedvalues[1]
+predictedvalues[2]
+predictedvalues[3]
+```
+
+```{r}
+attach(LifeExpectancy)
+plot(LifeExpectancy$gdpPercap,LifeExpectancy$lifeExp)
+fit3<-lm(lifeExp~poly(gdpPercap,2)+log(gdpPercap),LifeExpectancy)
+points(gdpPercap,fitted(fit3),col="red",pch=20) 
+```
+
+```{r}
+confint(fit3)
+summary(fit3)
+```
+
+```{r}
+gdpPercap.values <- seq(1000, 100000, length = 1000)
+predictedvalues <- predict(fit3, data.frame(gdpPercap=gdpPercap.values),interval="confidence")
+
+plot(gdpPercap.values,predictedvalues[,1])
+
+points(gdpPercap,fitted(fit3),col="red",pch=20) 
+
+points(gdpPercap.values,predictedvalues[,2],col="blue",pch=20) 
+points(gdpPercap.values,predictedvalues[,3],col="blue",pch=20) 
+```
+
+
+```{r}
+fit1=lm(lifeExp~year+I(year^2)+continent+gdpPercap+I(gdpPercap^2)+pop+I(pop^2)+log(gdpPercap), LifeExpectancy)
+summary(fit1)
+plot(fit1)
+```
+
+
+```{r}
+#add country covariate and see that continent predictor becomes redundant
+fit1<-lm(lifeExp~year+I(year^2)+country+continent+gdpPercap+I(gdpPercap^2)+pop+I(pop^2)+log(gdpPercap), LifeExpectancy)
+summary(fit1)
+plot(fit1)
+```
+```{r}
+#convert country and continent to factors explicitly
+country.factor<-as.factor(country)
+continent.factor<-as.factor(continent)
+
+str(country)
+str(country.factor)
+
+str(continent)
+str(continent.factor)
+```
+
+```{r}
+fit1<-lm(lifeExp~year+I(year^2)+country.factor+continent.factor+gdpPercap+I(gdpPercap^2)+pop+I(pop^2)+log(gdpPercap), LifeExpectancy)
+summary(fit1)
+plot(fit1)
+  # exactly same as before, as the function automatically converts the character variable "continent" to "continent.factor"
+```

@@ -1,0 +1,22 @@
+"0","```r
+summary(fit1)
+```"
+"1","
+Call:
+lm(formula = lifeExp ~ gdpPercap, data = LifeExpectancy)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-82.754  -7.758   2.176   8.225  18.426 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 5.396e+01  3.150e-01  171.29   <2e-16 ***
+gdpPercap   7.649e-04  2.579e-05   29.66   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 10.49 on 1702 degrees of freedom
+Multiple R-squared:  0.3407,	Adjusted R-squared:  0.3403 
+F-statistic: 879.6 on 1 and 1702 DF,  p-value: < 2.2e-16
+"

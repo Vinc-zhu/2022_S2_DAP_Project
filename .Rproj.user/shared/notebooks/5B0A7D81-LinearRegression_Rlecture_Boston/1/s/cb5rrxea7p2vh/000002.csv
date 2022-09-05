@@ -1,0 +1,12 @@
+"0","```r
+Boston.lmfit<-lm(medv~lstat,data=Boston) #now let's fit linear model to these data
+Boston.lmfit
+```"
+"1","
+Call:
+lm(formula = medv ~ lstat, data = Boston)
+
+Coefficients:
+(Intercept)        lstat  
+      34.55        -0.95  
+"

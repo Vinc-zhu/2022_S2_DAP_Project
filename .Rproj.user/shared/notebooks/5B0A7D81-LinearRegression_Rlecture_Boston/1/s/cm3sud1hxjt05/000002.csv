@@ -1,0 +1,37 @@
+"0","```r
+Boston.lmfit4=update(Boston.lmfit3,~.-age-indus) #remove unimportant predictors
+summary(Boston.lmfit4) #now all variables are significant
+```"
+"1","
+Call:
+lm(formula = medv ~ crim + zn + chas + nox + rm + dis + rad + 
+    tax + ptratio + black + lstat, data = Boston)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-15.5984  -2.7386  -0.5046   1.7273  26.2373 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  36.341145   5.067492   7.171 2.73e-12 ***
+crim         -0.108413   0.032779  -3.307 0.001010 ** 
+zn            0.045845   0.013523   3.390 0.000754 ***
+chas          2.718716   0.854240   3.183 0.001551 ** 
+nox         -17.376023   3.535243  -4.915 1.21e-06 ***
+rm            3.801579   0.406316   9.356  < 2e-16 ***
+dis          -1.492711   0.185731  -8.037 6.84e-15 ***
+rad           0.299608   0.063402   4.726 3.00e-06 ***
+tax          -0.011778   0.003372  -3.493 0.000521 ***
+ptratio      -0.946525   0.129066  -7.334 9.24e-13 ***
+black         0.009291   0.002674   3.475 0.000557 ***
+lstat        -0.522553   0.047424 -11.019  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 4.736 on 494 degrees of freedom
+Multiple R-squared:  0.7406,	Adjusted R-squared:  0.7348 
+F-statistic: 128.2 on 11 and 494 DF,  p-value: < 2.2e-16
+"
+"0","```r
+#note that adjusted R-squared  increased
+```"

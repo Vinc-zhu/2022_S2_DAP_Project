@@ -1,0 +1,4 @@
+"0","```r
+#to see all plotting symbols
+plot(1:20,1:20,pch=1:20,cex=2)
+```"

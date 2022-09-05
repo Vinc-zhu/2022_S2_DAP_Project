@@ -1,0 +1,5 @@
+"0","```r
+par(mfrow=c(1,2))
+plot(medv~lstat,Boston) #plot some variables, twiddle symbol ~ means \"modelled as\"
+plot(Boston$lstat,Boston$medv)
+```"

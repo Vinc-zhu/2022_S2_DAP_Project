@@ -1,0 +1,41 @@
+"0","```r
+summary(fit2)
+```"
+"1","
+Call:
+lm(formula = lifeExp ~ gdpPercap + I(gdpPercap^2) + I(gdpPercap^3), 
+    data = LifeExpectancy)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-27.0491  -4.9994   0.1297   5.8643  26.2220 
+
+Coefficients:
+                 Estimate Std. Error t value Pr(>|t|)    
+(Intercept)     4.748e+01  3.228e-01  147.08   <2e-16 ***
+gdpPercap       2.723e-03  7.427e-05   36.66   <2e-16 ***
+I(gdpPercap^2) -6.815e-08  3.034e-09  -22.46   <2e-16 ***
+I(gdpPercap^3)  4.093e-13  2.301e-14   17.79   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 8.161 on 1700 degrees of freedom
+Multiple R-squared:  0.6016,	Adjusted R-squared:  0.6009 
+F-statistic: 855.6 on 3 and 1700 DF,  p-value: < 2.2e-16
+"
+"0","```r
+predictedvalues <- predict(fit2, data.frame(gdpPercap=1000),interval=\"confidence\")
+predictedvalues[1]
+```"
+"1","[1] 50.1304
+"
+"0","```r
+predictedvalues[2]
+```"
+"1","[1] 49.59225
+"
+"0","```r
+predictedvalues[3]
+```"
+"1","[1] 50.66855
+"

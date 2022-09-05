@@ -1,2 +1,0 @@
-"0","# Overall checks"
-"0","head(data_death_clean) # ""age_adjusted_death_rate"" and “average_deaths_per_year” are character"

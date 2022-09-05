@@ -1,0 +1,24 @@
+"0","```r
+#convert country and continent to factors explicitly
+country.factor<-as.factor(country)
+continent.factor<-as.factor(continent)
+
+str(country)
+```"
+"1"," chr [1:1704] \"Afghanistan\" \"Afghanistan\" \"Afghanistan\" \"Afghanistan\" \"Afghanistan\" \"Afghanistan\" \"Afghanistan\" \"Afghanistan\" ...
+"
+"0","```r
+str(country.factor)
+```"
+"1"," Factor w/ 142 levels \"Afghanistan\",..: 1 1 1 1 1 1 1 1 1 1 ...
+"
+"0","```r
+str(continent)
+```"
+"1"," chr [1:1704] \"Asia\" \"Asia\" \"Asia\" \"Asia\" \"Asia\" \"Asia\" \"Asia\" \"Asia\" \"Asia\" \"Asia\" \"Asia\" \"Asia\" \"Europe\" \"Europe\" \"Europe\" ...
+"
+"0","```r
+str(continent.factor)
+```"
+"1"," Factor w/ 5 levels \"Africa\",\"Americas\",..: 3 3 3 3 3 3 3 3 3 3 ...
+"

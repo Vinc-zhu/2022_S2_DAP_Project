@@ -1,0 +1,118 @@
+---
+title: "Actuarial Data Analytics R-lecture"
+output:
+  html_document:
+    df_print: paged
+  html_notebook: default
+  pdf_document: default
+editor_options:
+  chunk_output_type: inline
+---
+
+
+Prof Pavel Shevchenko, Macquarie University
+------------------------------------------
+
+
+Linear regression modelling of freMTPL datasets (413,169 car insurance policies during one year) from CASdatasets library 
+------------------------------------------
+freMTPLfreq contains 10 columns:
+
+$\mathtt{PolicyID}$: The policy ID (used to link with the claims dataset).
+
+$\mathtt{ClaimNb}$: Number of claims during the exposure period.
+
+$\mathtt{Exposure:}$ The period of exposure for a policy, in years.
+
+$\mathtt{Power}$: The power of the car (ordered categorical).
+
+$\mathtt{CarAge}$: The vehicle age, in years.
+
+$\mathtt{DriverAge}$: The driver age, in years (in France, people can drive a car at 18).
+
+$\mathtt{Brand}$: The car brand divided in the following groups: A- Renaut Nissan and Citroen, B- Volkswagen, Audi, Skoda and Seat, C- Opel, General Motors and Ford, D- Fiat, E- Mercedes Chrysler and BMW, F- Japanese (except Nissan) and Korean, G- other.
+
+$\mathtt{Gas}$: The car gas, Diesel or regular.
+
+$\mathtt{Region}$: The policy region in France (based on the 1970-2015 classification).
+
+$\mathtt{Density}$: The density of inhabitants (number of inhabitants per km2) in the city the driver of the car lives in.
+
+freMTPLsev contains 2 columns:
+
+$\mathtt{PolicyID}$: The occurence date (used to link with the contract dataset).
+
+$\mathtt{ClaimAmount}$: The cost of the claim, seen as at a recent date.
+
+
+```{r}
+# one can install CASdatasets and get data using steps below (but it does not work for the latest version of R so instead we provide these data in csv files
+#install.packages("CASdatasets",repos="http://dutangc.free.fr/pub/RRepos/",type="source")
+#library(CASdatasets)
+#?CASdatasets # we use version CASdatasets 1.0-8
+#data(freMTPLsev)
+#data(freMTPLfreq)
+#write.csv(freMTPLsev, file = "freMTPLsev.csv",row.names=FALSE)
+#write.csv(freMTPLfreq, file = "freMTPLfreq.csv",row.names=FALSE)
+```
+
+
+```{r}
+freMTPLsev<-read.csv("freMTPLsev.csv")
+freMTPLfreq<-read.csv("freMTPLfreq.csv")
+
+freMTPLsev.full <- merge(freMTPLsev,freMTPLfreq)
+#write.csv(freMTPLsev.full, file = "freMTPLsevfull.csv",row.names=FALSE)
+```
+
+```{r}
+summary(freMTPLsev)
+```
+```{r}
+str(freMTPLsev)
+```
+
+
+```{r}
+summary(freMTPLfreq)
+str(freMTPLfreq)
+```
+
+
+```{r}
+str(freMTPLsev.full); summary(freMTPLsev.full)
+```
+
+```{r}
+#these quantities should be the same
+sum(freMTPLsev$PolicyID %in% freMTPLfreq$PolicyID)
+sum(freMTPLfreq$ClaimNb)
+nrow(freMTPLsev)
+```
+
+
+```{r}
+fit1<-lm(log(ClaimAmount)~CarAge, data=freMTPLsev.full)
+summary(fit1)
+plot(log(ClaimAmount) ~ CarAge, data = freMTPLsev.full)
+abline(fit1,col="red")
+```
+```{r}
+fit2<-lm(log(ClaimAmount)~DriverAge, data=freMTPLsev.full)
+summary(fit2)
+plot(log(ClaimAmount) ~ DriverAge, data = freMTPLsev.full)
+abline(fit2,col="red")
+```
+
+```{r}
+fit3<-lm(log(ClaimAmount)~CarAge+DriverAge+Gas, data=freMTPLsev.full)
+summary(fit3)
+```
+
+```{r}
+fit4<-lm(log(ClaimAmount)~.+log(DriverAge), data=freMTPLsev.full)
+summary(fit4)
+```
+```{r}
+plot(fit4)
+```

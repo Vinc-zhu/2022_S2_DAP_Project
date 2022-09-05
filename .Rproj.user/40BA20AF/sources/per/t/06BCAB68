@@ -1,0 +1,27 @@
+{
+    "id": "06BCAB68",
+    "path": "D:/Study/DAP/Week 6 - Basic Concepts and Linear Regression Part 1/R lecture files-20220904/LinearRegression_Rlecture_Boston.rmd",
+    "project_path": null,
+    "type": "r_markdown",
+    "hash": "4083860334",
+    "contents": "",
+    "dirty": false,
+    "created": 1662364598494.0,
+    "source_on_save": false,
+    "relative_order": 7,
+    "properties": {
+        "chunk_output_type": "inline",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "158,79",
+        "scrollLine": "129"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1662361621,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1662361621,
+    "read_only": false,
+    "read_only_alternatives": []
+}

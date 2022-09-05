@@ -1,0 +1,33 @@
+"0","```r
+confint(fit3)
+```"
+"1","                         2.5 %     97.5 %
+(Intercept)         -17.686050  -7.055102
+poly(gdpPercap, 2)1 -79.031067 -18.356771
+poly(gdpPercap, 2)2 -64.538656 -24.391469
+log(gdpPercap)        8.155793   9.455890
+"
+"0","```r
+summary(fit3)
+```"
+"1","
+Call:
+lm(formula = lifeExp ~ poly(gdpPercap, 2) + log(gdpPercap), data = LifeExpectancy)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-29.805  -4.043   1.081   4.339  19.970 
+
+Coefficients:
+                    Estimate Std. Error t value Pr(>|t|)    
+(Intercept)         -12.3706     2.7101  -4.565 5.36e-06 ***
+poly(gdpPercap, 2)1 -48.6939    15.4674  -3.148  0.00167 ** 
+poly(gdpPercap, 2)2 -44.4651    10.2345  -4.345 1.48e-05 ***
+log(gdpPercap)        8.8058     0.3314  26.569  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 7.471 on 1700 degrees of freedom
+Multiple R-squared:  0.6661,	Adjusted R-squared:  0.6655 
+F-statistic:  1130 on 3 and 1700 DF,  p-value: < 2.2e-16
+"

@@ -1,0 +1,8 @@
+"0","```r
+plot(medv~lstat) #plot
+#we cannot use abline() to plot nonlinear fit, so we do it directly
+points(lstat,fitted(Boston.lmfit6),col=\"red\",pch=20) 
+
+Boston.lmfit7<-lm(medv~poly(lstat,4)) #use poly function
+points(lstat,fitted(Boston.lmfit7),col=\"blue\",pch=20) #you can see fitted curve is wiggly at the end indicating overfit
+```"

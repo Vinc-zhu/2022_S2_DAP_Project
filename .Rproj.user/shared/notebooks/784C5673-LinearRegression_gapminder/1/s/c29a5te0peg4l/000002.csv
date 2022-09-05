@@ -1,0 +1,12 @@
+"0","```r
+attach(LifeExpectancy)
+```"
+"1","The following objects are masked from LifeExpectancy (pos = 5):
+
+    continent, country, gdpPercap, lifeExp, pop, year
+"
+"0","```r
+plot(LifeExpectancy$gdpPercap,LifeExpectancy$lifeExp)
+fit2<-lm(lifeExp~poly(gdpPercap,3),LifeExpectancy)
+points(gdpPercap,fitted(fit2),col=\"red\",pch=20) 
+```"

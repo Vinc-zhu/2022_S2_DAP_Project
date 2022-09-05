@@ -1,0 +1,13 @@
+"0","```r
+gdpPercap.values <- seq(1000, 100000, length = 1000)
+predictedvalues <- predict(fit3, data.frame(gdpPercap=gdpPercap.values),interval=\"confidence\")
+
+plot(gdpPercap.values,predictedvalues[,1])
+
+points(gdpPercap,fitted(fit3),col=\"red\",pch=20) 
+```"
+"0","```r
+
+points(gdpPercap.values,predictedvalues[,2],col=\"blue\",pch=20) 
+points(gdpPercap.values,predictedvalues[,3],col=\"blue\",pch=20) 
+```"

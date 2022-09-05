@@ -1,0 +1,4 @@
+"0","```r
+plot(Boston$lstat,Boston$medv)
+abline(Boston.lmfit,col=\"red\") #add fit to the plot, it works for line only
+```"

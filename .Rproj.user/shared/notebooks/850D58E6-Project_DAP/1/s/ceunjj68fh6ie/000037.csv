@@ -1,6 +1,0 @@
-"0",""
-"0","data_death_state1 <- data_death_state %>% mutate(state_name  = ifelse(county_name == ""District of Columbia (State)"", ""DC"", state_name))"
-"0",""
-"0","data_death_state2 <- data_death_state1 %>% mutate(state_name  = ifelse(county_name == ""United States"", ""US"", state_name))"
-"0",""
-"0","data_death_state2 %>% filter(is.na(state_name)) # no more missing values in state_name"

@@ -1,0 +1,5 @@
+"0","```r
+plot(LifeExpectancy$gdpPercap,LifeExpectancy$lifeExp)
+fit1<-lm(lifeExp~gdpPercap,LifeExpectancy)
+abline(fit1,col=\"red\") #add fit to the plot, it works for line only
+```"

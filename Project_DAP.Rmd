@@ -696,19 +696,109 @@ joined_data_all_final_LRM <- joined_data_all_final %>% select(county_name,
                                                          incidence = "age_adjusted_incidence_rate_cases_per_100_000",
                                                          incidence_falling = "trend_falling",
                                                          incidence_rising = "trend_rising",
-                                                         population = "popestimate2015"
-                                                          )
-
-corrplot(cor(joined_data_all_final_LRM[, 5:12], use="pairwise.complete.obs"))
+                                                         population = "popestimate2015")
 
 ```
 
-                        
+# 2. Model Evaluation
+
+## 2.1 Check on Correlations
+
+```{r correlations}
+corrplot(cor(joined_data_all_final_LRM[, 5:12], use="pairwise.complete.obs"))
+
+plot(joined_data_all_final_LRM[, 5:12])
+
+```
+
+## 2.2 Fit Linear Regression
+
+### 2.2.1 With All Variables
+
+```{r linear regression all}
+fit1 <-lm(stroke_mort ~. , joined_data_all_final_LRM[, 5:12]) # regression wrt all covariates in dataframe
+summary(fit1)
+
+```
+
+### 2.2.2 Remove incidence_rising   
+
+```{r linear regression all - incidence_rising  }
+fit2 <-lm(stroke_mort ~. - incidence_rising   , joined_data_all_final_LRM[, 5:12])
+summary(fit2)
+
+```
+
+### 2.2.3 Remove incidence_falling  
+
+```{r linear regression all - incidence_rising - incidence_falling}
+fit3 <-lm(stroke_mort ~. - incidence_falling - incidence_rising, joined_data_all_final_LRM[, 5:12])
+summary(fit3)
+
+```
+
+### 2.2.4 Remove population  
+
+```{r linear regression all - incidence_falling - incidence_rising - population}
+fit4 <-lm(stroke_mort ~. - incidence_falling - incidence_rising - population, joined_data_all_final_LRM[, 5:12])
+
+# OR
+# fit4 = update(fit3,~.- incidence_falling - incidence_rising - population)
+
+summary(fit4)
+```
+```{r}
+fit5 = update(fit4,~.- incidence_falling - incidence_rising - population - median_income )
+summary(fit5)
+```
+
+
+### 2.2.5 Final Improved Preliminary Regression Model
+
+```{r final improved regression model}
+fit_final <-  fit4
+
+par(mfrow=c(2,2))
+plot(fit_final) # 4 plots of various things for linear fit
+
+```
+
+
+```{r}
 
 
 
+```
 
 
+
+## Code Bank
+
+```{r}
+
+
+
+par(mfrow=c(1,1))
+plot(medv~lstat) #plot
+#we cannot use abline() to plot nonlinear fit, so we do it directly
+points(lstat,fitted(Boston.lmfit6),col="red",pch=20)
+```
+
+
+```{r}
+gdpPercap.values <- seq(1000, 100000, length = 1000)
+predictedvalues <- predict(fit3, data.frame(gdpPercap=gdpPercap.values),interval="confidence")
+
+plot(gdpPercap.values,predictedvalues[,1])
+
+points(gdpPercap,fitted(fit3),col="red",pch=20) 
+
+points(gdpPercap.values,predictedvalues[,2],col="blue",pch=20) 
+points(gdpPercap.values,predictedvalues[,3],col="blue",pch=20) 
+```
+
+
+#
 #=======================================================#
 
 # The advantage of faceting compared to grid.arrange() below is that it keeps the axes fixed across all plots, easing comparisons between plots.
