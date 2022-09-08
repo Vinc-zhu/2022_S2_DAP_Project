@@ -1,0 +1,5 @@
+"0",""
+"0",""
+"0","# Remove ""US"" entry as none of the social determinants datasets contain input for ""US"""
+"0","joined_data_all_y_no_us <- joined_data_all_y %>% filter(state != ""US"")"
+"0","miss_var_summary(joined_data_all_y_no_us)"

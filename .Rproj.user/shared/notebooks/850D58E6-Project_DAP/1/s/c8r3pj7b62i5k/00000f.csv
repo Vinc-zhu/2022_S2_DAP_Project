@@ -1,3 +1,0 @@
-"0","Boston.lmfit3<-lm(medv ~.,Boston) #regression wrt all covariates in dataframe"
-"2","Error in is.data.frame(data) : object 'Boston' not found
-"

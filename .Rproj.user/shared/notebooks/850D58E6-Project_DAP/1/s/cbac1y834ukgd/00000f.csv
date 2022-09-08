@@ -1,5 +1,5 @@
-"0","summary(fit5)
-"
+"0","fit5 = update(fit4,~.- incidence_falling - incidence_rising - population - median_income )"
+"0","summary(fit5)"
 "1","
 Call:
 "

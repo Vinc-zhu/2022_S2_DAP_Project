@@ -1,0 +1,6 @@
+"0","# Separate state names from county"
+"0","data_death_state <- data_death_clean2 %>% separate(county, c(""county_name"",""state_name""), "", "")"
+"2","Warning: Expected 2 pieces. Missing pieces filled with `NA` in 2 rows [1, 2314]."
+"0","  # Missing pieces are autimatically filled with `NA` in 2 rows, needs to check "
+"0",""
+"0","data_death_state %>% filter(is.na(county_name)) # no ""NA"""

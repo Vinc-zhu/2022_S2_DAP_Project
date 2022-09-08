@@ -1,6 +1,0 @@
-"0","fit_final <-  fit4"
-"0",""
-"0",""
-"0","par(mfrow=c(2,2))"
-"0","plot(fit_final) # 4 plots of various things for linear fit"
-"0",""

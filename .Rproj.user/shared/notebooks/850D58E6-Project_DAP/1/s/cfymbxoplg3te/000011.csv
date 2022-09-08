@@ -1,0 +1,4 @@
+"0","fit_final <-  fit5"
+"0",""
+"0","par(mfrow=c(2,2))"
+"0","plot(fit_final) # 4 plots of various things for linear fit"

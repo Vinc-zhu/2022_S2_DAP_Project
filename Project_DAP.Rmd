@@ -60,7 +60,6 @@ names(data_incidence_clean)
 names(data_income_clean)       
 names(data_population_clean)  
 names(data_poverty_clean)
-
 ```
 
 ## 1.3 Data Exploration
@@ -130,7 +129,6 @@ data_income_clean$income_h_001 <- as.double(data_income_clean$income_h_001)
 data_income_clean$income_i_001 <- as.double(data_income_clean$income_i_001)
 
 data_income_clean
-
 ```
 
 ### 1.3.3 Reshaping Data into Tidy Form 
@@ -163,7 +161,6 @@ data_death_state4 <- data_death_state3 %>% mutate(state_name = ifelse(state_name
 # Check the number of the distinct states again
 n_distinct(data_death_state4$state_name) # 52 = 50 states + 1 federal district + US as a whole
 unique(data_death_state4$state_name) # looks alright
-
 ```
 
 ### 1.3.4 Internal Checks
@@ -173,9 +170,7 @@ data_death_state4 %>% filter(state_name == "Nevada")
   # There are still 12 valid Nevada entries.
   # [Uncertainty] According to Sam, Nevada data is not available. But some Nevada data are actually valid in the death datasets. Include them for further analysis at the moment, but will ask Sam for clarification.
 
-
 data_incidence_clean2 %>% filter(grepl('Nevada', county)) # Nevada data is not available
-
 ```
 
 ```{r health insurance}
@@ -230,7 +225,6 @@ data_death_state4 %>%
 data_population_clean_half <-  data_population_clean %>% mutate(popestimate2015 = popestimate2015/2)
 
 sum(data_population_clean_half$popestimate2015)/10**6 # 321 million
-
 ```
 
 ## 1.4 Manipulate and Cleanse the Data
@@ -266,7 +260,6 @@ data_poverty_clean_fips <- data_poverty_clean %>%
   mutate(state_fips_clean  = str_pad(data_poverty_clean$state_fips, width = 2, pad = "0")) %>% 
   mutate(county_fips_clean = str_pad(data_poverty_clean$county_fips, width = 3, pad = "0")) %>% 
   mutate(fips_clean = paste(state_fips_clean, county_fips_clean, sep=""))
-
 ```
 
 ### 1.4.2 Check Duplicate FIPS
@@ -313,9 +306,7 @@ table(data_incidence_clean_fips_expert_encoding$trend_rising)
 ```
 ### 1.4.4 Imbalanced Data (to-do: maybe for data_all)
 
-
 - The process of cleansing and manipulating the data often comes after you have understood the data and tried to look at patterns in the data through visualization.
-
 
 rising is too small?
 No, cuz it is not response variable
@@ -339,11 +330,6 @@ n_distinct(data_death_clean_fips_with_state$state, na.rm = T)
 ```
 
 ### 1.5.2 Visualisation
-- Communicate a data driven finding
-- Useful if difficult to extract insights from tables of raw values
-
-*See Week 4 Notes Page 7
-
 
 ```{r Visualisation: number of state}
 # Check number of entries for each state
@@ -358,9 +344,7 @@ data_death_clean_fips_with_state %>% ggplot(aes(state, fill = state)) +
 #         axis.text.x=element_blank(),
 #         axis.ticks.x=element_blank())
 ```
-
-
-```{r Visualisation: stroke mortality rates}
+```{r visualisation: stroke mortality rates}
 # Check the average stroke mortality rates by state and see where the average of the nation (US) sits among other states
 summary_death_data_all_state <- data_death_clean_fips_with_state %>% group_by(state) %>% summarize(death_rate = mean(age_adjusted_death_rate, na.rm=TRUE))
 
@@ -375,9 +359,7 @@ ggplot() +
   theme_economist() +
   labs(x = "State", y = "stroke death rate", title = "Stroke Mortality Rates by State", 
        subtitle = "Average county level stroke death rate for each State (per 100,000 population)")
-  
 ```
-
 ## 1.6 Create Final Dataset
 
 ### 1.6.1 Join Datasets
@@ -412,8 +394,6 @@ joined_data2 <- left_join(joined_data1, data_health_ins_join, by="fips_clean")
 joined_data2
 names(joined_data2)
 ```
-
-
 ```{r join data step 3}
 # Step 3: + income
 dim(data_income_clean_fips)
@@ -428,7 +408,6 @@ joined_data3 <- left_join(joined_data2, data_income_join, by="fips_clean")
 joined_data3
 names(joined_data3)
 ```
-
 
 ```{r join data step 4}
 # Step 4: + population
@@ -459,19 +438,9 @@ joined_data_all <- left_join(joined_data4, data_poverty_join, by="fips_clean")
 
 glimpse(joined_data_all)
 
-# Check in EXCEL: 
-# write_excel_csv(joined_data_all, "data_all.csv", col_names = TRUE)
-
 ```
 
 ### 1.6.2 Check Missing Values (To-do)
-
-- Are those that have been suppressed to ensure confidentiality
-missing at random: omit it
-missing for a specific group: impute
-
-gapminder_all %>% filter(!is.na(population)) %>%
-summarise(mean_pop = mean(population), sd_pop = sd(population))
 
 ```{r missing values}
 # To ensure all the suppressed values "*" are shown as "NA"
@@ -534,7 +503,6 @@ n_distinct(joined_data_all_final$state_name) # only 48 States remain in the data
 
 ```
 
-
 ### 1.6.3 Generate Explanatory Variables for the Preliminary Multiple Linear Regression Model
 
 ```{r total_below_poverty_level_per_capita}
@@ -563,7 +531,6 @@ ggplot_poverty_level + labs(title = "Total below poverty line per capita",
                             subtitle = " i.e. total population below poverty level / total population")
 ```
 
-
 ```{r total_without_health_ins_per_capita}
 
 # Total without health insurance
@@ -577,12 +544,6 @@ joined_data_all_final <- joined_data_all_final %>% mutate(total_without_health_i
 
 # Check min, max
 describe(joined_data_all_final$total_without_health_ins_per_capita)
-
-  # joined_data_all %>% filter(total_without_health_ins_per_capita>=1) %>% 
-  #   select(fips_clean, state, total_without_health_ins, total_without_health_ins_per_capita, popestimate2015)
-  # 
-  # joined_data_all %>% filter(is.na(state)) %>% 
-  #   select(fips_clean, state, total_without_health_ins, total_without_health_ins_per_capita, popestimate2015)
 
 summary_without_health_ins_per_capita_by_state <- joined_data_all_final %>% 
   group_by(state) %>% 
@@ -601,9 +562,7 @@ ggplot_without_health_ins + labs(title = "Total without health insurance per cap
                             subtitle = " i.e. sum of the population without health insurance coverage for each age group / total population")
 ```
 
-
 ```{r median_income}
-
 # Median income - income_001
 # Check median income by State (assume the average income is similar to the median income)
 summary_median_income_by_state <- joined_data_all_final %>% 
@@ -623,7 +582,6 @@ ggplot_income + labs(title = "Median income fot the whole population",
                   subtitle = "i.e. income_001")
 ```
 
-
 ```{r incidence_rate}
 # Incidence rate (Age-Adjusted Incidence Rate - cases per 100,000)
 # [Uncertainty: only for aged 75 and above?]
@@ -631,12 +589,6 @@ ggplot_income + labs(title = "Median income fot the whole population",
 summary_incidence_by_state <- joined_data_all_final %>%
   group_by(state) %>%
   summarise(incidence_rate_per_100000 = sum(age_adjusted_incidence_rate_cases_per_100_000 * popestimate2015) / sum(popestimate2015) )
-
-# # Zero for KS and MN, check
-# joined_data_all_final %>% filter(state %in% c("KS", "MN")) %>% describe() # Incidence data is missing for KS and MN
-# 
-# # Remove Ks and MN rows
-# joined_data_all_final <- joined_data_all_final %>% filter(!state %in% c("KS", "MN"))
 
 ggplot_incidence <- summary_incidence_by_state %>%
   ggplot(aes(state, incidence_rate_per_100000)) +
@@ -652,15 +604,14 @@ ggplot_incidence + labs(title = "Incidence rate",
 ```
 
 ```{r incidence_trend & population}
-ggplot_pop <- joined_data_all_final %>%
+ggplot_trend <- joined_data_all_final %>%
   ggplot(aes(state, fill = recent_trend)) +
   geom_bar() +
   theme_economist() +
   scale_y_continuous(labels = function(x) format(x, big.mark = ",", scientific = FALSE))
 
-ggplot_pop + labs(x = "State", title = "Incidence Trend by State") +
+ggplot_trend + labs(x = "State", title = "Incidence Trend by State") +
   theme(axis.title.y=element_blank())
-
 
 
 ggplot_pop <- joined_data_all_final %>%
@@ -671,9 +622,7 @@ ggplot_pop <- joined_data_all_final %>%
 
 ggplot_pop + labs(x = "State", y = "Population", title = "Population at year of 2015") +
   theme(axis.title.y=element_blank())
-
 ```
-
 
 ```{r final dataset}
 # The final dataset for modelling purpose
@@ -726,7 +675,6 @@ summary(fit1)
 ```{r linear regression all - incidence_rising  }
 fit2 <-lm(stroke_mort ~. - incidence_rising   , joined_data_all_final_LRM[, 5:12])
 summary(fit2)
-
 ```
 
 ### 2.2.3 Remove incidence_falling  
@@ -734,7 +682,6 @@ summary(fit2)
 ```{r linear regression all - incidence_rising - incidence_falling}
 fit3 <-lm(stroke_mort ~. - incidence_falling - incidence_rising, joined_data_all_final_LRM[, 5:12])
 summary(fit3)
-
 ```
 
 ### 2.2.4 Remove population  
@@ -742,174 +689,19 @@ summary(fit3)
 ```{r linear regression all - incidence_falling - incidence_rising - population}
 fit4 <-lm(stroke_mort ~. - incidence_falling - incidence_rising - population, joined_data_all_final_LRM[, 5:12])
 
-# OR
-# fit4 = update(fit3,~.- incidence_falling - incidence_rising - population)
-
 summary(fit4)
 ```
-```{r}
+### 2.2.5 Remove income 
+```{r remove income}
 fit5 = update(fit4,~.- incidence_falling - incidence_rising - population - median_income )
 summary(fit5)
 ```
 
-
-### 2.2.5 Final Improved Preliminary Regression Model
+### 2.2.6 Final Improved Preliminary Regression Model
 
 ```{r final improved regression model}
-fit_final <-  fit4
+fit_final <-  fit5
 
 par(mfrow=c(2,2))
 plot(fit_final) # 4 plots of various things for linear fit
-
 ```
-
-
-```{r}
-
-
-
-```
-
-
-
-## Code Bank
-
-```{r}
-
-
-
-par(mfrow=c(1,1))
-plot(medv~lstat) #plot
-#we cannot use abline() to plot nonlinear fit, so we do it directly
-points(lstat,fitted(Boston.lmfit6),col="red",pch=20)
-```
-
-
-```{r}
-gdpPercap.values <- seq(1000, 100000, length = 1000)
-predictedvalues <- predict(fit3, data.frame(gdpPercap=gdpPercap.values),interval="confidence")
-
-plot(gdpPercap.values,predictedvalues[,1])
-
-points(gdpPercap,fitted(fit3),col="red",pch=20) 
-
-points(gdpPercap.values,predictedvalues[,2],col="blue",pch=20) 
-points(gdpPercap.values,predictedvalues[,3],col="blue",pch=20) 
-```
-
-
-#
-#=======================================================#
-
-# The advantage of faceting compared to grid.arrange() below is that it keeps the axes fixed across all plots, easing comparisons between plots.
-
-
-## 1.3 Assess Data Quality
-
-### 1.3.1 Summarise Data
-
-### 1.3.2 gg plot
-
-### 1.3.3 Visualise and Analyse Patterns in Data
-```{r}
-
-
-# test
-# ggplot(data_death_clean, aes(average_deaths_per_year, age_adjusted_death_rate, group = state_name)) +
-# geom_line() +
-# facet_wrap(. ~ state_name)
-
-# state_death <- data_death_clean_state %>% ggplot(aes(state_name, death_rate, fill = state_name)) +
-#   geom_col(show.legend = F) + 
-#   theme(axis.title.x=element_blank(),
-#         axis.text.x=element_blank(),
-#         axis.ticks.x=element_blank())
-# 
-# ggsave("state_death.jpg", state_death)
-
-```
-
-
-
-
-
-
-
-```{r}
-
-
-
-#==========Example=========#
-# exposuretotal <- summary_veh_brand %>% select(veh_brand, exposuretot)
-# summary_veh_brand_area <- motor_data %>% group_by(veh_brand, area) %>% summarise(exposure=sum(exposure), claim_num = sum(claim_nb))
-# 
-# summary_veh_brand_area_total <- left_join(summary_veh_brand_area,summary_veh_brand, by="veh_brand") %>%
-#   mutate(incr_freq = claim_num/exposuretot, rel_freq = incr_freq/frequency)
-# 
-# summary_veh_brand_area_total
-# #write_excel_csv(summary_veh_brand_area_total, "Test_Vinc.csv", col_names = TRUE)
-# 
-# summary_veh_brand_area_total %>% ggplot(aes(veh_brand, rel_freq, fill=area)) +
-#   geom_bar(stat = 'identity') #stat identity allows you to make to a y value for bar
-#==========================#
-
-
-# data_all %>% ggplot(aes(state, age_adjusted_death_rate), ) + 
-#   geom_boxplot()
-#   theme(legend.position="none" #不需要图例
-#         # axis.text.x=element_text(colour="black",family="Times",size=14), #设置x轴刻度标签的字体属性
-#         # axis.text.y=element_text(family="Times",size=14,face="plain"), #设置x轴刻度标签的字体属性
-#         # axis.title.y=element_text(family="Times",size = 14,face="plain"), #设置y轴的标题的字体属性
-#         # axis.title.x=element_text(family="Times",size = 14,face="plain"), #设置x轴的标题的字体属性
-#         # plot.title = element_text(family="Times",size=15,face="bold",hjust = 0.5), #设置总标题的字体属性
-#         # panel.grid.major = element_blank(), #不显示网格线
-#         # panel.grid.minor = element_blank()
-#         )
-#   + scale_y_continuous(breaks = NULL)
-
-```
-
-## 1.X Refine questions/generate new questions (optional)
-
-EDA should not be viewed as just conducting the above framework as a
-series of ordered steps. This is far too simplistic as EDA typically
-involves multiple rounds of each step. For example, visualisations could
-give you new ideas for summaries you would be interested in and perhaps
-patterns you want to analyse, which could lead to more manipulations to
-the data and visualisations.
-
-### Internal Checks
-
-# Correlation
-
-
-Exploratory data analysis
-
-Objectives: •Suggest hypotheses •Assess assumptions made •Support
-selection of appropriate models •Provide basis for further data
-collection
-
-FrameworK: 1. Assess the data quality
-
-# 提取各个模型的诊断信息
-
-by_country %\>% summarise(glance(model))
-
-
-
-
-#================ NA in income_001 for one TX country
-# a_test <- joined_data_all_final %>% 
-#   mutate(income_pop = income_001*popestimate2015)
-#   
-#   
-# a_test %>% group_by(state) %>% 
-#   summarise(median_income_by_state = sum(income_pop) / sum(popestimate2015) ) %>% 
-#   ggplot(aes(state, median_income_by_state, fill = state), na.rm = T) +
-#   geom_col(show.legend = F) +
-#   theme_economist()  
-# 
-# a_test %>% filter(state == "TX") %>% 
-#     select(fips_clean, state, income_001, popestimate2015, income_pop)
-# 
-# a_test %>% filter(is.na(income_001))
