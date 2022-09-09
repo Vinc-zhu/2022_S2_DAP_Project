@@ -212,8 +212,7 @@ data_poverty_clean %>%
 # Check the total population at mid-year 2015 on a national level.
 sum(data_population_clean$popestimate2015)/10**6 # 642 million
 
-# [Uncertainty] Based on the domain knowledge, the population of the United States should be around 320 million. It seems the number in the population dataset was doubled.
-
+# [Uncertainty] Based on the domain knowledge, the population of the United States should be around 320 million.
 # This can be verified by the death dataset
 data_death_state4 %>% 
   mutate(population = average_deaths_per_year / (age_adjusted_death_rate/100000)) %>% 
@@ -221,10 +220,10 @@ data_death_state4 %>%
   pull(population)/10**6
   # 329 million
 
-# Reduce the entire population data by half to make it more consistent with the real world.
-data_population_clean_half <-  data_population_clean %>% mutate(popestimate2015 = popestimate2015/2)
-
-sum(data_population_clean_half$popestimate2015)/10**6 # 321 million
+# Look into datasets: this was caused by the subtotal amount of each group
+# Remove these subtotals
+data_population_clean <- data_population_clean %>% filter(county != "000")
+sum(data_population_clean$popestimate2015)/10**6 # 321 million
 ```
 
 ## 1.4 Manipulate and Cleanse the Data
@@ -251,9 +250,9 @@ data_income_clean_fips <- data_income_clean %>%
   mutate(county_fips_clean = str_pad(data_income_clean$county_fips, width = 3, pad = "0")) %>% 
   mutate(fips_clean = paste(state_fips_clean, county_fips_clean, sep=""))
 
-data_population_clean_fips <- data_population_clean_half %>% 
-  mutate(state_fips_clean  = str_pad(data_population_clean_half$state, width = 2, pad = "0")) %>% 
-  mutate(county_fips_clean = str_pad(data_population_clean_half$county, width = 3, pad = "0")) %>% 
+data_population_clean_fips <- data_population_clean %>% 
+  mutate(state_fips_clean  = str_pad(data_population_clean$state, width = 2, pad = "0")) %>% 
+  mutate(county_fips_clean = str_pad(data_population_clean$county, width = 3, pad = "0")) %>% 
   mutate(fips_clean = paste(state_fips_clean, county_fips_clean, sep=""))
 
 data_poverty_clean_fips <- data_poverty_clean %>% 
@@ -440,7 +439,7 @@ glimpse(joined_data_all)
 
 ```
 
-### 1.6.2 Check Missing Values (To-do)
+### 1.6.2 Check Missing Values
 
 ```{r missing values}
 # To ensure all the suppressed values "*" are shown as "NA"
@@ -492,30 +491,33 @@ joined_data_all_y_no_us_income_no_nevada_incidence <- joined_data_all_y_no_us_in
 
 miss_var_summary(joined_data_all_y_no_us_income_no_nevada_incidence)
 
-# Replace remaining NAs in incidence rate with 0
-joined_data_all_final <- joined_data_all_y_no_us_income_no_nevada_incidence %>%
-  impute_const(age_adjusted_incidence_rate_cases_per_100_000~0)
+# Replace remaining 5 NAs in incidence rate with median value
+index <- which(is.na(joined_data_all_y_no_us_income_no_nevada_incidence$age_adjusted_incidence_rate_cases_per_100_000))
+joined_data_all_y_no_us_income_no_nevada_incidence$age_adjusted_incidence_rate_cases_per_100_000[index]
+
+joined_data_all_final <- joined_data_all_y_no_us_income_no_nevada_incidence %>% impute_proxy(age_adjusted_incidence_rate_cases_per_100_000~median(age_adjusted_incidence_rate_cases_per_100_000, na.rm=TRUE))
+
+joined_data_all_final$age_adjusted_incidence_rate_cases_per_100_000[index]
+  # The median was 70.1 per 100,000 population
 
 miss_var_summary(joined_data_all_final) # no more NAs
 
 n_distinct(joined_data_all_final$state_name) # only 48 States remain in the dataset.
 # 51 - Nevada - Kansas - Minnesota = 48
-
 ```
 
 ### 1.6.3 Generate Explanatory Variables for the Preliminary Multiple Linear Regression Model
 
 ```{r total_below_poverty_level_per_capita}
-
 # Total below poverty level per capita
-joined_data_all_final <- joined_data_all_final %>% mutate(total_below_poverty_level_per_capita = poverty_002 / popestimate2015)
+joined_data_all_final <- joined_data_all_final %>% mutate(total_below_poverty_level_per_capita = poverty_002 / poverty_001)
 
 # Check min and max value
 describe(joined_data_all_final$total_below_poverty_level_per_capita)
 
 summary_below_poverty_level_per_capita_by_state <- joined_data_all_final %>% 
   group_by(state) %>% 
-  summarise(below_poverty_level_per_capita = sum(poverty_002) / sum(popestimate2015) ) 
+  summarise(below_poverty_level_per_capita = sum(poverty_002) / sum(poverty_001) ) 
 
 ggplot_poverty_level <- summary_below_poverty_level_per_capita_by_state %>% 
   ggplot(aes(state, below_poverty_level_per_capita)) +
@@ -526,12 +528,14 @@ ggplot_poverty_level <- summary_below_poverty_level_per_capita_by_state %>%
   geom_text(aes(label = state, y = below_poverty_level_per_capita/2), size = 4.5, color = "white") + 
   geom_hline(aes(yintercept=mean(below_poverty_level_per_capita)), linetype = 5, col="red")
 
-
 ggplot_poverty_level + labs(title = "Total below poverty line per capita",
-                            subtitle = " i.e. total population below poverty level / total population")
+                            subtitle = " i.e. total population below poverty level / total population whom poverty status Is determined")
 ```
 
 ```{r total_without_health_ins_per_capita}
+data_dict_health_ins <- read_csv("Data dictionaries/healthinsurance_datadict.csv")
+
+without_health_ins_ID <- data_dict_health_ins[str_detect(data_dict_health_ins$ColumnDescription, "No health insurance coverage"),'ColumnID']
 
 # Total without health insurance
 joined_data_all_final <- joined_data_all_final %>% 
@@ -540,14 +544,14 @@ joined_data_all_final <- joined_data_all_final %>%
            hi_033 + hi_036 + hi_039 + hi_042 + hi_045 + hi_048 + hi_051 + hi_054 + hi_057)
 
 # Total without health insurance per capita
-joined_data_all_final <- joined_data_all_final %>% mutate(total_without_health_ins_per_capita = total_without_health_ins / popestimate2015)
+joined_data_all_final <- joined_data_all_final %>% mutate(total_without_health_ins_per_capita = total_without_health_ins / hi_001)
 
 # Check min, max
 describe(joined_data_all_final$total_without_health_ins_per_capita)
 
 summary_without_health_ins_per_capita_by_state <- joined_data_all_final %>% 
   group_by(state) %>% 
-  summarise(without_health_ins_per_capita = sum(total_without_health_ins) / sum(popestimate2015) ) 
+  summarise(without_health_ins_per_capita = sum(total_without_health_ins) / sum(hi_001) ) 
 
 ggplot_without_health_ins <- summary_without_health_ins_per_capita_by_state %>% 
   ggplot(aes(state, without_health_ins_per_capita)) +
@@ -559,7 +563,7 @@ ggplot_without_health_ins <- summary_without_health_ins_per_capita_by_state %>%
   geom_hline(aes(yintercept=mean(without_health_ins_per_capita)), linetype = 5, col="red")
 
 ggplot_without_health_ins + labs(title = "Total without health insurance per capita ",
-                            subtitle = " i.e. sum of the population without health insurance coverage for each age group / total population")
+                            subtitle = " i.e. sum of the population without health insurance coverage for each age group / total civilian noninstitutionalized population")
 ```
 
 ```{r median_income}
@@ -660,7 +664,7 @@ plot(joined_data_all_final_LRM[, 5:12])
 
 ```
 
-## 2.2 Fit Linear Regression
+## 2.2 Fit Preliminary Linear Regression
 
 ### 2.2.1 With All Variables
 
@@ -673,7 +677,7 @@ summary(fit1)
 ### 2.2.2 Remove incidence_rising   
 
 ```{r linear regression all - incidence_rising  }
-fit2 <-lm(stroke_mort ~. - incidence_rising   , joined_data_all_final_LRM[, 5:12])
+fit2 <-lm(stroke_mort ~. - incidence_rising, joined_data_all_final_LRM[, 5:12])
 summary(fit2)
 ```
 

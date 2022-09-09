@@ -1,0 +1,8 @@
+"0","ggplot_trend <- joined_data_all_final %>%"
+"0","  ggplot(aes(state, fill = recent_trend)) +"
+"0","  geom_bar() +"
+"0","  theme_economist() +"
+"0","  scale_y_continuous(labels = function(x) format(x, big.mark = "","", scientific = FALSE))"
+"0",""
+"0","ggplot_trend + labs(x = ""State"", title = ""Incidence Trend by State"") +"
+"0","  theme(axis.title.y=element_blank())"

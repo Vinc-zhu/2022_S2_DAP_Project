@@ -1,0 +1,7 @@
+"0",""
+"0","n_distinct(joined_data_all_final$state_name) # only 48 States remain in the dataset."
+"1","[1]"
+"1"," 48"
+"1","
+"
+"0","# 51 - Nevada - Kansas - Minnesota = 48"
